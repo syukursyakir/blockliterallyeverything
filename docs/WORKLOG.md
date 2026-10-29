@@ -315,3 +315,42 @@ All code/runner fixes merged; this final report/handoff commit is documentation
 only and skips a redundant CI rerun. Key availability is resolved permanently for
 this workflow unless credentials later change. Current allowance remains exhausted
 at 45; user budget question is pending, no new cap assumed or paid work started.
+
+
+## 2026-10-29 — standing $3 cumulative allowance approved
+
+User explicitly answered Yes, use a $3 cumulative reservation cap. Migrated the
+AUTHORITATIVE existing ledger from .50 to 3 under exclusive lock; preserved all
+45 attempts/$0.49545216/137877 tokens and prior 62/64 metadata. Added dated
+actual authorizationHistory; no reset, per-run allowance or hidden parallel cap.
+Up to 227 additional attempts fit. Key already works; no repeated setup requests.
+
+Added shared evaluation-budget validator with hard approved $3 upper bound,
+updated static/native/preparation callers, and removed obsolete --init-budget
+CLI path so absent files cannot initialize a fresh allowance. Added trust-boundary
+cap/history tests. 65 unit tests/build and strict runner type checks passed.
+
+Continuing source inventory and real public captures on local branch
+validation/independent-corpus-20261029. New development/held-out split is by source
+family before inference; don't call repeated frames/size variants independent.
+No release, provider/default rule or threshold change. Collect labels/provenance
+and freeze manifests BEFORE any new paid predictions.
+
+
+### Public source acquisition and private capture transport
+
+Cloud Chromium failed YouTube with ERR_TUNNEL_CONNECTION_FAILED (including mobile
+and search URLs); no direct/proxy bypass attempted. Preparing capture-only Windows
+job as an authorized platform fallback, with no Jev key or model calls. Screenshots
+are encrypted (random AES-GCM key wrapped with local RSA public key); private RSA
+key stays 0600 outside Git in /workspace/work/ble-broader-2026-10-29. Only encrypted
+package and non-sensitive status artifact upload, never plaintext images. This
+permits local pixel review before labeling/inference without public redistribution.
+Round-trip/wrong-key/tamper/path tests and an actual public capture->encrypt->local
+decrypt smoke passed. Capture targets restricted to explicit public HTTPS hosts,
+no credentials/ports; isolated browser does not inherit TypeSafe key.
+
+68 local unit tests and production build passed. Candidate new adult sources have
+explicit adult declarations/free licenses; reject age-ambiguous sources and AI/
+art-only images for real-photo coverage. Professional/source families kept together;
+source labels are pending visual review, never inferred from filename alone.

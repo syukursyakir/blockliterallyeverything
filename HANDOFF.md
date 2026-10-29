@@ -34,11 +34,18 @@ Earlier authenticated run 40849807420 made two calls then cleanup crashed becaus
 application.process() was read after close; primary report was lost, not a pass.
 Fix caches the process handle and saves outcome before cleanup. Regression covered.
 
-Budget now EXHAUSTED: 45 attempts, $0.49545216 reserved, 137877 reported tokens,
-~$0.005790834 estimated. No next whole call fits the approved $0.50. A question
-about a $3 cumulative conservative cap is pending; not authorized until answered.
-No further paid calls meanwhile. Secret setup, push/merge and CI authority remain
-valid. No release publication. Product runtime/presets/provider/threshold unchanged.
+User APPROVED a $3 CUMULATIVE conservative reservation cap on 2026-10-29.
+Existing ledger migrated from .50 to 3 with authorizationHistory; all 45 attempts,
+137877 reported tokens, $0.49545216 reservations and old 62/64 history preserved.
+Up to 227 additional attempts fit (272 total). No new/reset allowance. No repeated
+per-batch approval or key prompts within this cap. No release authorization.
+
+Current work: validation/independent-corpus-20261029. Shared cap validation now
+supports the approved ceiling in static/native runners. Removed --init-budget:
+missing ledgers cannot silently create a fresh allowance. 65 unit tests/build and
+strict runner type checks passed. Gathering new public source cases and distinct
+adult-source metadata; development vs untouched held-out sets must remain separate.
+Baseline/defaults/provider/threshold stay unchanged until evidence supports a fix.
 
 ## Verified Windows evidence
 
@@ -81,16 +88,17 @@ Need broader independent development/held-out evaluation before adopting changes
 ## Retained accounting — do not reset
 
 Authoritative ledger: /workspace/work/ble-real-2026-10-29/app-budget.json
-Approved NEW allowance: $0.50 conservative reservations; prior 62/64 history is
+Approved cumulative allowance: $3 conservative reservations; prior 62/64 history is
 preserved separately and the old lab ledger is missing, not zero.
 Current: 45 reservations, $0.49545216 reserved, 137877 input tokens,
-~$0.005790834 estimated charge. ZERO further attempts fit the current cap.
-Earlier 42 figures below describe historical runs only.
+~$0.005790834 estimated charge at migration. 227 additional attempts fit the
+approved $3 ceiling; update counts after each batch. Prior exhausted .50 cap
+is historical, not the current limit.
 
 The missing-secret run preserved 42. The cleanup-failed authenticated run added
 two reservations (44), recovered from its isolated profile. The successful bounded
 live test added one (45); all wrapper/profile/report counters matched. Local
-authority is now restored, no lock remains and no further whole request fits.
+authority was restored; migration to $3 preserved those counters and history.
 Copies under ignored work/windows-live-preflight and work/windows-live-run-* are
 NON-AUTHORITATIVE. Never use one as a fresh allowance.
 
@@ -98,9 +106,9 @@ Before any remote dispatch: freeze local paid work, hold a durable authority loc
 pass the exact retained ledger JSON, then reconcile downloaded numeric artifacts
 before releasing authority. If interrupted, preserve lock and recover from the
 isolated app ledger; never blindly retry or reset. File locks cannot lock a second
-copy on another machine. No new spending allowance has been granted.
+copy on another machine. The user-authorized extension is cumulative to $3, never $3 per run or per machine.
 
-## Next work, after any necessary budget authorization
+## Current next work within the authorized $3 ceiling
 
 No repeated secret prompt. Broader independent source-separated development and
 untouched held-out coverage is still required for a 95% detection target. Candidate
