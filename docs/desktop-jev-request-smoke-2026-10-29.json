@@ -1,0 +1,43 @@
+{
+  "scope": "Actual TypeScript desktop request/prompt/schema code via Node transport; not Electron capture, secure storage or Windows enforcement. Two public/synthetic fixtures. Lab ledger reservations retained; this run reports usage separately.",
+  "rows": [
+    {
+      "case": "youtube-home",
+      "verdicts": [
+        {
+          "ruleId": "video",
+          "probability": 0.92
+        },
+        {
+          "ruleId": "social",
+          "probability": 0.02
+        },
+        {
+          "ruleId": "explicit",
+          "probability": 0.01
+        }
+      ],
+      "elapsedMs": 357.51874899999996,
+      "inputTokens": 2538
+    },
+    {
+      "case": "work-document",
+      "verdicts": [
+        {
+          "ruleId": "video",
+          "probability": 0.02
+        },
+        {
+          "ruleId": "social",
+          "probability": 0.01
+        },
+        {
+          "ruleId": "explicit",
+          "probability": 0.01
+        }
+      ],
+      "elapsedMs": 166.12424899999996,
+      "inputTokens": 2536
+    }
+  ]
+}

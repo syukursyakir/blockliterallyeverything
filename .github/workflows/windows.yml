@@ -1,0 +1,43 @@
+name: Windows Jev installer
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - run: npx playwright install chromium
+      - run: npm run test:ui
+      - run: npm run test:desktop
+      - run: npm run dist:win
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - name: Install and smoke packaged app
+        shell: pwsh
+        run: |
+          $installer = Get-ChildItem release/*setup.exe | Select-Object -First 1
+          $install = Start-Process $installer.FullName -ArgumentList '/S' -Wait -PassThru
+          if ($install.ExitCode -ne 0) { throw "Installer exited $($install.ExitCode)" }
+          $exe = Get-ChildItem "$env:LOCALAPPDATA/Programs" -Recurse -Filter 'Block Literally Everything.exe' | Select-Object -First 1
+          if (-not $exe) { throw 'Installed application missing' }
+          $env:BLE_SMOKE_APP_EXE = $exe.FullName
+          npm run test:desktop
+          if ($LASTEXITCODE -ne 0) { throw 'Installed app smoke failed' }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-jev-installer-unsigned
+          path: release/*setup.exe
+          if-no-files-found: error

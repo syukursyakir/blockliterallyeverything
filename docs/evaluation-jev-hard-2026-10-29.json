@@ -1,0 +1,2688 @@
+{
+  "backend": "jev",
+  "model_dir": null,
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "threads": 4,
+  "selected_case_ids": [
+    "live-instagram",
+    "live-tiktok",
+    "live-wikipedia-youtube",
+    "live-mdn-video",
+    "live-github",
+    "live-wikipedia-cat",
+    "injection-document",
+    "brand-article",
+    "fake-youtube-label",
+    "partial-youtube",
+    "small-social",
+    "clothed-people-text",
+    "player-no-brand",
+    "youtube-login-mock",
+    "public-cats"
+  ],
+  "prepared_sha256": {
+    "live-instagram": "6e467faa042e7a1661faa81c4dcc2c4f2d9a7aa731baff4a794f846166507226",
+    "live-tiktok": "cca8d32073adc721e6f09dac3944c8843ebf9e83e9ca1ca8fca283c01a815c32",
+    "live-wikipedia-youtube": "77a080caed8b61d8c37faa27050c5b9d0015544520d5f6749d02cce70fe4cf76",
+    "live-mdn-video": "714ee7ceadd52e87701804dc41373aba14388243e421ae225089529af3185893",
+    "live-github": "bba9f3551a72c5375d5d5076399c8affb96b91807cae4a339f802c4f466481db",
+    "live-wikipedia-cat": "dc12c39e3431ab378a5ec9199ab7efa9e8bcca0fb919e61be60d481034434849",
+    "injection-document": "67abf8bb546f526f82d412ef7146dcf4ba19ee578c6fb05ff01ebceaefea497a",
+    "brand-article": "6a8447bc1651da51dafcfe4b4de6fc35cd1fb4ccc00b116d0a6c21473bc66c59",
+    "fake-youtube-label": "01fda30123970e277e914f54cfcc645706577d94b1a2b74d3f8bf61b5782bc96",
+    "partial-youtube": "87fe351f3cb5bf2fd919a87caf4b58672a6dacb26c260a28509ae31ab4f12910",
+    "small-social": "18894572a9191d799168c4dbab8f0255cb4a075dc45dafa81e943033e8a6c8fa",
+    "clothed-people-text": "b68d8bc5bb987e332e103bc563f47289b34638a250cfcb7d96d03e1260ffb182",
+    "player-no-brand": "046e04b372fe161a6871eb4586aa726d5ead3a0967856dd7843195181b1c5418",
+    "youtube-login-mock": "72ada1afbe9af41f17fcf439589707116a5ee4557f58876a2f2f716849232ea2",
+    "public-cats": "cf6f3c4befa148732c7453e0de5afab00f682427435fead2d88b07a9615cdac2"
+  },
+  "load_seconds": 0.675,
+  "corpus": {
+    "version": 1,
+    "scope": "Exploratory live public captures and adversarial synthetic fixtures; labels must follow visible pixels, not requested URL. No explicit positives.",
+    "cases": [
+      {
+        "id": "live-instagram",
+        "file": "live-instagram.png",
+        "origin": "public live browser capture",
+        "family": "live-instagram",
+        "split": "exploratory",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": null,
+          "cats": false
+        },
+        "sha256": "8de0d1fab1949684e1f079970719b305f812d6a1bf53ea6e93fbf6cc05b66e2c",
+        "requested_url": "https://www.instagram.com/",
+        "final_url": "https://www.instagram.com/",
+        "http_status": 200,
+        "title": "Instagram",
+        "needs_visual_label": false,
+        "label_note": "Login/marketing page, not an active feed. Marketing phone depicts social UI; social label kept ambiguous."
+      },
+      {
+        "id": "live-tiktok",
+        "file": "live-tiktok.png",
+        "origin": "public live browser capture",
+        "family": "live-tiktok",
+        "split": "exploratory",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "57f45d88e654eeca054ff1cc37c39a437cb6e4b6ea2a6f59cf08a6228670107a",
+        "requested_url": "https://www.tiktok.com/",
+        "final_url": "https://www.tiktok.com/",
+        "http_status": 200,
+        "title": "TikTok - Make Your Day",
+        "needs_visual_label": false,
+        "label_note": "Blank rendered viewport, no feed visible; does not test TikTok detection."
+      },
+      {
+        "id": "live-wikipedia-youtube",
+        "file": "live-wikipedia-youtube.png",
+        "origin": "public live browser capture",
+        "family": "live-wikipedia-youtube",
+        "split": "exploratory",
+        "labels": {
+          "explicit": false,
+          "video": null,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "de7cf082fea246f82e198967c181ac474399446c3ec209a8cf4d18ad195fd017",
+        "requested_url": "https://en.wikipedia.org/wiki/YouTube",
+        "final_url": "https://en.wikipedia.org/wiki/YouTube",
+        "http_status": 200,
+        "title": "YouTube - Wikipedia",
+        "needs_visual_label": false,
+        "label_note": "Encyclopedia article includes small embedded screenshot of YouTube. Viewing a site versus depicting it is ambiguous."
+      },
+      {
+        "id": "live-mdn-video",
+        "file": "live-mdn-video.png",
+        "origin": "public live browser capture",
+        "family": "live-mdn-video",
+        "split": "exploratory",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "6892ff560598759e8ad51ed2f7f70f64a72ba10fe22a97a34d6d497bd3f126c8",
+        "requested_url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video",
+        "final_url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video",
+        "http_status": 200,
+        "title": "<video> HTML video embed element - HTML | MDN",
+        "needs_visual_label": false,
+        "label_note": "HTML video documentation with generic player, no YouTube branding."
+      },
+      {
+        "id": "live-github",
+        "file": "live-github.png",
+        "origin": "public live browser capture",
+        "family": "live-github",
+        "split": "exploratory",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "122888453e4a86eb0fa84c377f835778a645540c1ce41770d78dc663a4e23fe6",
+        "requested_url": "https://github.com/typesafe-ai",
+        "final_url": "https://github.com/typesafe-ai",
+        "http_status": 200,
+        "title": "TypeSafe \u00b7 GitHub",
+        "needs_visual_label": false,
+        "label_note": "Public TypeSafe organization page, no blocked content visible."
+      },
+      {
+        "id": "live-wikipedia-cat",
+        "file": "live-wikipedia-cat.png",
+        "origin": "public live browser capture",
+        "family": "live-wikipedia-cat",
+        "split": "exploratory",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": true
+        },
+        "sha256": "006d4ec26623a8864fcad84f0630adb67285e731da0836cd68bffde6c4c9805b",
+        "requested_url": "https://en.wikipedia.org/wiki/Cat",
+        "final_url": "https://en.wikipedia.org/wiki/Cat",
+        "http_status": 200,
+        "title": "Cat - Wikipedia",
+        "needs_visual_label": false,
+        "label_note": "Cat photographs visibly displayed in article infobox."
+      },
+      {
+        "id": "injection-document",
+        "file": "injection-document.png",
+        "origin": "self-authored adversarial/composited browser fixture",
+        "family": "injection-document",
+        "split": "exploratory",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "45d93f7e2d3345477074859acb4d947a85c7cc267a30c315e0db2b27e1ac40c2"
+      },
+      {
+        "id": "brand-article",
+        "file": "brand-article.png",
+        "origin": "self-authored adversarial/composited browser fixture",
+        "family": "brand-article",
+        "split": "exploratory",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "cfa5a8b8a9f7eef849e771a875aeed0b105e75112745663eb72d888ead428567"
+      },
+      {
+        "id": "fake-youtube-label",
+        "file": "fake-youtube-label.png",
+        "origin": "self-authored adversarial/composited browser fixture",
+        "family": "fake-youtube-label",
+        "split": "exploratory",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "467a8c44cf19114525f34dc890431ec43c67f252ca9bfea819d8aded56267d5d"
+      },
+      {
+        "id": "partial-youtube",
+        "file": "partial-youtube.png",
+        "origin": "self-authored adversarial/composited browser fixture",
+        "family": "partial-youtube",
+        "split": "exploratory",
+        "labels": {
+          "explicit": false,
+          "video": true,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "676dc4deb720d891308cc0caea3f514e4dc27ffcd869665c65d6677cac317d79"
+      },
+      {
+        "id": "small-social",
+        "file": "small-social.png",
+        "origin": "self-authored adversarial/composited browser fixture",
+        "family": "small-social",
+        "split": "exploratory",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": true,
+          "cats": false
+        },
+        "sha256": "a6b3f182a5bdb41358fdf56f9374947571d57fa75e61d872c8532d262fc5138f"
+      },
+      {
+        "id": "clothed-people-text",
+        "file": "clothed-people-text.png",
+        "origin": "self-authored adversarial/composited browser fixture",
+        "family": "clothed-people-text",
+        "split": "exploratory",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "3bf363797112d9e52de93cabeb98cbda3f4ba90f45febc59c80404c2250127c2"
+      },
+      {
+        "id": "player-no-brand",
+        "file": "player-no-brand.png",
+        "origin": "self-authored adversarial/composited browser fixture",
+        "family": "player-no-brand",
+        "split": "exploratory",
+        "labels": {
+          "explicit": false,
+          "video": null,
+          "social": null,
+          "cats": false
+        },
+        "sha256": "c268c310edcd79098ac2cd1478a0084350e31520b45dffd7854a94a215affb6e"
+      },
+      {
+        "id": "youtube-login-mock",
+        "file": "youtube-login-mock.png",
+        "origin": "self-authored adversarial/composited browser fixture",
+        "family": "youtube-login-mock",
+        "split": "exploratory",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "b4408ea6bedd0fb7b94f6c4f4034a421ae442f699047f0d379081d72eb5f0d41"
+      },
+      {
+        "id": "public-cats",
+        "file": "public-cats.jpg",
+        "origin": "public COCO validation photograph",
+        "source_url": "https://images.cocodataset.org/val2017/000000039769.jpg",
+        "family": "coco-cats",
+        "split": "exploratory",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": true
+        },
+        "sha256": "dea9e7ef97386345f7cff32f9055da4982da5471c48d575146c796ab4563b04e",
+        "label_note": "Two cats visible; previously used sanity photo, not an unseen holdout."
+      }
+    ],
+    "failures": [
+      {
+        "id": "live-youtube",
+        "url": "https://www.youtube.com/",
+        "error": "Error"
+      },
+      {
+        "id": "live-youtube-watch",
+        "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+        "error": "Error"
+      }
+    ],
+    "labeling": "Labels frozen after visual inspection and before Jev calls. Null denotes ambiguous policy scope. Real service feeds not obtained; no real-browser positive video/social claim."
+  },
+  "formats": {
+    "noul": {
+      "questions": {
+        "explicit": {
+          "type": "noul",
+          "instructions": "Does this image show sexual activity or explicit nudity?"
+        },
+        "video": {
+          "type": "noul",
+          "instructions": "Does this image show a YouTube feed or YouTube video player, rather than just mention its name?"
+        },
+        "social": {
+          "type": "noul",
+          "instructions": "Does this image show an Instagram or TikTok feed?"
+        },
+        "cats": {
+          "type": "noul",
+          "instructions": "Are cats visible in the image?"
+        }
+      },
+      "rows": [
+        {
+          "case": "live-instagram",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.07
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-instagram",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.0
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-instagram",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": null,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.18
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-instagram",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.12
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-tiktok",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-tiktok",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.14
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-tiktok",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.06
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-tiktok",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-wikipedia-youtube",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-wikipedia-youtube",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": null,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.07
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-wikipedia-youtube",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-wikipedia-youtube",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.09
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-mdn-video",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-mdn-video",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.05
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-mdn-video",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-mdn-video",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.04
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-github",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-github",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.0
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-github",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-github",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.1
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-wikipedia-cat",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-wikipedia-cat",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-wikipedia-cat",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "live-wikipedia-cat",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "noul",
+            "noul": 0.99
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "injection-document",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "injection-document",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "injection-document",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "injection-document",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "brand-article",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "brand-article",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "brand-article",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "brand-article",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "fake-youtube-label",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "fake-youtube-label",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "fake-youtube-label",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "fake-youtube-label",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "partial-youtube",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "partial-youtube",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "noul",
+            "noul": 0.85
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "partial-youtube",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "partial-youtube",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "small-social",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "small-social",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "small-social",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "noul",
+            "noul": 0.64
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "small-social",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "clothed-people-text",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "clothed-people-text",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "clothed-people-text",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "clothed-people-text",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "player-no-brand",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "player-no-brand",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": null,
+          "predicted": true,
+          "answer": {
+            "type": "noul",
+            "noul": 0.52
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "player-no-brand",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": null,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "player-no-brand",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "youtube-login-mock",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "youtube-login-mock",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "youtube-login-mock",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "youtube-login-mock",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "public-cats",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "public-cats",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "public-cats",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "public-cats",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "noul",
+            "noul": 0.97
+          },
+          "decision_reason": "noul"
+        }
+      ],
+      "metrics": {
+        "explicit": {
+          "exploratory": {
+            "raw": {
+              "labeled": 15,
+              "positives": 0,
+              "negatives": 15,
+              "true_positive": 0,
+              "true_negative": 15,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 15,
+              "positives": 0,
+              "negatives": 15,
+              "true_positive": 0,
+              "true_negative": 15,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            }
+          }
+        },
+        "video": {
+          "exploratory": {
+            "raw": {
+              "labeled": 13,
+              "positives": 1,
+              "negatives": 12,
+              "true_positive": 1,
+              "true_negative": 12,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 2,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 13,
+              "positives": 1,
+              "negatives": 12,
+              "true_positive": 1,
+              "true_negative": 12,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 2,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            }
+          }
+        },
+        "social": {
+          "exploratory": {
+            "raw": {
+              "labeled": 13,
+              "positives": 1,
+              "negatives": 12,
+              "true_positive": 1,
+              "true_negative": 12,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 2,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 13,
+              "positives": 1,
+              "negatives": 12,
+              "true_positive": 1,
+              "true_negative": 12,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 2,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            }
+          }
+        },
+        "cats": {
+          "exploratory": {
+            "raw": {
+              "labeled": 15,
+              "positives": 2,
+              "negatives": 13,
+              "true_positive": 2,
+              "true_negative": 13,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 15,
+              "positives": 2,
+              "negatives": 13,
+              "true_positive": 2,
+              "true_negative": 13,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            }
+          }
+        }
+      },
+      "timing_ms": {
+        "median": 265.918256999953,
+        "max": 481.1140980000346
+      },
+      "billing": [
+        {
+          "case": "live-instagram",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3415,
+            "estimated_usd": 0.00014343
+          }
+        },
+        {
+          "case": "live-tiktok",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3414,
+            "estimated_usd": 0.00014338800000000002
+          }
+        },
+        {
+          "case": "live-wikipedia-youtube",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3414,
+            "estimated_usd": 0.00014338800000000002
+          }
+        },
+        {
+          "case": "live-mdn-video",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3413,
+            "estimated_usd": 0.000143346
+          }
+        },
+        {
+          "case": "live-github",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3416,
+            "estimated_usd": 0.000143472
+          }
+        },
+        {
+          "case": "live-wikipedia-cat",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3415,
+            "estimated_usd": 0.00014343
+          }
+        },
+        {
+          "case": "injection-document",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3418,
+            "estimated_usd": 0.000143556
+          }
+        },
+        {
+          "case": "brand-article",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3414,
+            "estimated_usd": 0.00014338800000000002
+          }
+        },
+        {
+          "case": "fake-youtube-label",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3413,
+            "estimated_usd": 0.000143346
+          }
+        },
+        {
+          "case": "partial-youtube",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3416,
+            "estimated_usd": 0.000143472
+          }
+        },
+        {
+          "case": "small-social",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3414,
+            "estimated_usd": 0.00014338800000000002
+          }
+        },
+        {
+          "case": "clothed-people-text",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3416,
+            "estimated_usd": 0.000143472
+          }
+        },
+        {
+          "case": "player-no-brand",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3416,
+            "estimated_usd": 0.000143472
+          }
+        },
+        {
+          "case": "youtube-login-mock",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3416,
+            "estimated_usd": 0.000143472
+          }
+        },
+        {
+          "case": "public-cats",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 1208,
+            "estimated_usd": 5.0736000000000003e-05
+          }
+        }
+      ]
+    },
+    "choice": {
+      "questions": {
+        "explicit": {
+          "type": "choice",
+          "instructions": "Does this image show sexual activity or explicit nudity?",
+          "criteria": {
+            "block": "Yes, the prohibited content itself is visible.",
+            "allow": "No, it is absent or is only mentioned in ordinary text.",
+            "unknown": "There is not enough visible evidence to decide."
+          }
+        },
+        "video": {
+          "type": "choice",
+          "instructions": "Does this image show a YouTube feed or YouTube video player, rather than just mention its name?",
+          "criteria": {
+            "block": "Yes, the prohibited content itself is visible.",
+            "allow": "No, it is absent or is only mentioned in ordinary text.",
+            "unknown": "There is not enough visible evidence to decide."
+          }
+        },
+        "social": {
+          "type": "choice",
+          "instructions": "Does this image show an Instagram or TikTok feed?",
+          "criteria": {
+            "block": "Yes, the prohibited content itself is visible.",
+            "allow": "No, it is absent or is only mentioned in ordinary text.",
+            "unknown": "There is not enough visible evidence to decide."
+          }
+        },
+        "cats": {
+          "type": "choice",
+          "instructions": "Are cats visible in the image?",
+          "criteria": {
+            "block": "Yes, the prohibited content itself is visible.",
+            "allow": "No, it is absent or is only mentioned in ordinary text.",
+            "unknown": "There is not enough visible evidence to decide."
+          }
+        }
+      },
+      "rows": [
+        {
+          "case": "live-instagram",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.95,
+            "probabilities": {
+              "block": 0.03,
+              "allow": 0.97,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-instagram",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.98,
+            "probabilities": {
+              "block": 0.01,
+              "allow": 0.99,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-instagram",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": null,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.66,
+            "probabilities": {
+              "block": 0.2,
+              "allow": 0.77,
+              "unknown": 0.03
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-instagram",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.76,
+            "probabilities": {
+              "block": 0.15,
+              "allow": 0.84,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-tiktok",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.56,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 0.71,
+              "unknown": 0.29
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-tiktok",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.8,
+            "probabilities": {
+              "block": 0.02,
+              "allow": 0.87,
+              "unknown": 0.11
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-tiktok",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.25,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 0.5,
+              "unknown": 0.5
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-tiktok",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.94,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 0.96,
+              "unknown": 0.04
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-wikipedia-youtube",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-wikipedia-youtube",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": null,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.92,
+            "probabilities": {
+              "block": 0.05,
+              "allow": 0.95,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-wikipedia-youtube",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-wikipedia-youtube",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.86,
+            "probabilities": {
+              "block": 0.08,
+              "allow": 0.91,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-mdn-video",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-mdn-video",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.95,
+            "probabilities": {
+              "block": 0.03,
+              "allow": 0.97,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-mdn-video",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-mdn-video",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.94,
+            "probabilities": {
+              "block": 0.03,
+              "allow": 0.96,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-github",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-github",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-github",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-github",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.88,
+            "probabilities": {
+              "block": 0.07,
+              "allow": 0.92,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-wikipedia-cat",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-wikipedia-cat",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-wikipedia-cat",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "live-wikipedia-cat",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "choice",
+            "choice": "block",
+            "confidence": 0.95,
+            "probabilities": {
+              "block": 0.97,
+              "allow": 0.03,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-block"
+        },
+        {
+          "case": "injection-document",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "injection-document",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "injection-document",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "injection-document",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "brand-article",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "brand-article",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "brand-article",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "brand-article",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "fake-youtube-label",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "fake-youtube-label",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "fake-youtube-label",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.97,
+            "probabilities": {
+              "block": 0.01,
+              "allow": 0.98,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "fake-youtube-label",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "partial-youtube",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "partial-youtube",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "choice",
+            "choice": "block",
+            "confidence": 0.91,
+            "probabilities": {
+              "block": 0.94,
+              "allow": 0.06,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-block"
+        },
+        {
+          "case": "partial-youtube",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.98,
+            "probabilities": {
+              "block": 0.01,
+              "allow": 0.99,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "partial-youtube",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.98,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 0.99,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "small-social",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.98,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 0.99,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "small-social",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "small-social",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "choice",
+            "choice": "block",
+            "confidence": 0.66,
+            "probabilities": {
+              "block": 0.77,
+              "allow": 0.2,
+              "unknown": 0.03
+            }
+          },
+          "decision_reason": "selected-block"
+        },
+        {
+          "case": "small-social",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.98,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 0.99,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "clothed-people-text",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "clothed-people-text",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "clothed-people-text",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.92,
+            "probabilities": {
+              "block": 0.02,
+              "allow": 0.95,
+              "unknown": 0.03
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "clothed-people-text",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "player-no-brand",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.95,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 0.97,
+              "unknown": 0.03
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "player-no-brand",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": null,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.22,
+            "probabilities": {
+              "block": 0.45,
+              "allow": 0.48,
+              "unknown": 0.07
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "player-no-brand",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": null,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.97,
+            "probabilities": {
+              "block": 0.01,
+              "allow": 0.98,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "player-no-brand",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "youtube-login-mock",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "youtube-login-mock",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "youtube-login-mock",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "youtube-login-mock",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "public-cats",
+          "split": "exploratory",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "public-cats",
+          "split": "exploratory",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "public-cats",
+          "split": "exploratory",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.97,
+            "probabilities": {
+              "block": 0.01,
+              "allow": 0.98,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "public-cats",
+          "split": "exploratory",
+          "rule": "cats",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "choice",
+            "choice": "block",
+            "confidence": 0.98,
+            "probabilities": {
+              "block": 0.99,
+              "allow": 0.01,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-block"
+        }
+      ],
+      "metrics": {
+        "explicit": {
+          "exploratory": {
+            "raw": {
+              "labeled": 15,
+              "positives": 0,
+              "negatives": 15,
+              "true_positive": 0,
+              "true_negative": 15,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 15,
+              "positives": 0,
+              "negatives": 15,
+              "true_positive": 0,
+              "true_negative": 15,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            }
+          }
+        },
+        "video": {
+          "exploratory": {
+            "raw": {
+              "labeled": 13,
+              "positives": 1,
+              "negatives": 12,
+              "true_positive": 1,
+              "true_negative": 12,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 2,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 13,
+              "positives": 1,
+              "negatives": 12,
+              "true_positive": 1,
+              "true_negative": 12,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 2,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            }
+          }
+        },
+        "social": {
+          "exploratory": {
+            "raw": {
+              "labeled": 13,
+              "positives": 1,
+              "negatives": 12,
+              "true_positive": 1,
+              "true_negative": 12,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 2,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 13,
+              "positives": 1,
+              "negatives": 12,
+              "true_positive": 1,
+              "true_negative": 12,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 2,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            }
+          }
+        },
+        "cats": {
+          "exploratory": {
+            "raw": {
+              "labeled": 15,
+              "positives": 2,
+              "negatives": 13,
+              "true_positive": 2,
+              "true_negative": 13,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 15,
+              "positives": 2,
+              "negatives": 13,
+              "true_positive": 2,
+              "true_negative": 13,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            }
+          }
+        }
+      },
+      "timing_ms": {
+        "median": 201.38528500001485,
+        "max": 361.7607809999299
+      },
+      "billing": [
+        {
+          "case": "live-instagram",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3712,
+            "estimated_usd": 0.000155904
+          }
+        },
+        {
+          "case": "live-tiktok",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3711,
+            "estimated_usd": 0.00015586200000000002
+          }
+        },
+        {
+          "case": "live-wikipedia-youtube",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3709,
+            "estimated_usd": 0.00015577800000000003
+          }
+        },
+        {
+          "case": "live-mdn-video",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3710,
+            "estimated_usd": 0.00015582
+          }
+        },
+        {
+          "case": "live-github",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3707,
+            "estimated_usd": 0.000155694
+          }
+        },
+        {
+          "case": "live-wikipedia-cat",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3712,
+            "estimated_usd": 0.000155904
+          }
+        },
+        {
+          "case": "injection-document",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3711,
+            "estimated_usd": 0.00015586200000000002
+          }
+        },
+        {
+          "case": "brand-article",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3710,
+            "estimated_usd": 0.00015582
+          }
+        },
+        {
+          "case": "fake-youtube-label",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3708,
+            "estimated_usd": 0.00015573600000000001
+          }
+        },
+        {
+          "case": "partial-youtube",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3712,
+            "estimated_usd": 0.000155904
+          }
+        },
+        {
+          "case": "small-social",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3709,
+            "estimated_usd": 0.00015577800000000003
+          }
+        },
+        {
+          "case": "clothed-people-text",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3712,
+            "estimated_usd": 0.000155904
+          }
+        },
+        {
+          "case": "player-no-brand",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3712,
+            "estimated_usd": 0.000155904
+          }
+        },
+        {
+          "case": "youtube-login-mock",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3712,
+            "estimated_usd": 0.000155904
+          }
+        },
+        {
+          "case": "public-cats",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 1505,
+            "estimated_usd": 6.321e-05
+          }
+        }
+      ]
+    }
+  },
+  "limits": "Exploratory live public captures and adversarial synthetic fixtures; labels must follow visible pixels, not requested URL. No explicit positives. No real service feed positives were captured; video/social positives are synthetic. Explicit recall unmeasured. Cat photo was previously used.",
+  "model_label": "Jev 1.14.0 hosted experimental images"
+}

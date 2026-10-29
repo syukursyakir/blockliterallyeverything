@@ -1,0 +1,143 @@
+{
+  "scope": "Diagnostic question-framing comparison on two benign images; not a policy accuracy evaluation. Direct-preset questions are diagnostics, not arbitrary rule support.",
+  "experiments": [
+    {
+      "name": "short_rule",
+      "questions": {
+        "explicit": {
+          "type": "noul",
+          "instructions": "Does the image actually show content prohibited by this rule? Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content."
+        },
+        "video": {
+          "type": "noul",
+          "instructions": "Does the image actually show content prohibited by this rule? Block visible YouTube browsing, video playback, Shorts, and the YouTube home feed."
+        },
+        "social": {
+          "type": "noul",
+          "instructions": "Does the image actually show content prohibited by this rule? Block visible Instagram and TikTok feeds, including short-form video scrolling."
+        },
+        "cats": {
+          "type": "noul",
+          "instructions": "Does the image actually show content prohibited by this rule? Block images showing cats."
+        }
+      },
+      "images": [
+        {
+          "image": "cats.jpg",
+          "verdicts": [
+            {
+              "ruleId": "explicit",
+              "probability": 0.5824
+            },
+            {
+              "ruleId": "video",
+              "probability": 0.1729
+            },
+            {
+              "ruleId": "social",
+              "probability": 0.0834
+            },
+            {
+              "ruleId": "cats",
+              "probability": 0.9536
+            }
+          ],
+          "elapsedMs": 5381,
+          "foregroundChanged": false
+        },
+        {
+          "image": "dashboard.png",
+          "verdicts": [
+            {
+              "ruleId": "explicit",
+              "probability": 0.5087
+            },
+            {
+              "ruleId": "video",
+              "probability": 0.8339
+            },
+            {
+              "ruleId": "social",
+              "probability": 0.148
+            },
+            {
+              "ruleId": "cats",
+              "probability": 0.0496
+            }
+          ],
+          "elapsedMs": 5147,
+          "foregroundChanged": false
+        }
+      ]
+    },
+    {
+      "name": "direct_preset",
+      "questions": {
+        "explicit": {
+          "type": "noul",
+          "instructions": "Does the image show sexual activity or explicit nudity?"
+        },
+        "video": {
+          "type": "noul",
+          "instructions": "Is a YouTube website or YouTube video player visible, rather than just the name YouTube in a list?"
+        },
+        "social": {
+          "type": "noul",
+          "instructions": "Is an Instagram or TikTok feed visible?"
+        },
+        "cats": {
+          "type": "noul",
+          "instructions": "Are cats visible in the image?"
+        }
+      },
+      "images": [
+        {
+          "image": "cats.jpg",
+          "verdicts": [
+            {
+              "ruleId": "explicit",
+              "probability": 0.809
+            },
+            {
+              "ruleId": "video",
+              "probability": 0.0509
+            },
+            {
+              "ruleId": "social",
+              "probability": 0.0303
+            },
+            {
+              "ruleId": "cats",
+              "probability": 0.9486
+            }
+          ],
+          "elapsedMs": 4618,
+          "foregroundChanged": false
+        },
+        {
+          "image": "dashboard.png",
+          "verdicts": [
+            {
+              "ruleId": "explicit",
+              "probability": 0.8202
+            },
+            {
+              "ruleId": "video",
+              "probability": 0.944
+            },
+            {
+              "ruleId": "social",
+              "probability": 0.7528
+            },
+            {
+              "ruleId": "cats",
+              "probability": 0.035
+            }
+          ],
+          "elapsedMs": 4544,
+          "foregroundChanged": false
+        }
+      ]
+    }
+  ]
+}

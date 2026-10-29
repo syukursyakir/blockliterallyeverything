@@ -1,0 +1,2965 @@
+{
+  "backend": "jev",
+  "model_dir": null,
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "threads": 4,
+  "selected_case_ids": [
+    "youtube-home",
+    "youtube-player",
+    "youtube-shorts",
+    "instagram-feed",
+    "tiktok-feed",
+    "generic-video",
+    "article-youtube",
+    "settings-list",
+    "code-list",
+    "news-social",
+    "work-document",
+    "ambiguous-player",
+    "app-dashboard",
+    "app-cover"
+  ],
+  "prepared_sha256": {
+    "youtube-home": "b7d3668fdfb58400fc0461eb987a67381a852e3b4ffafc30f16cd543f82934a8",
+    "youtube-player": "c0480a2cd64a31b7bfedbd69e8b211e8eee0cf70474026324d22323981c9b0a3",
+    "youtube-shorts": "e6832ebdcbd0635ef6c2e65ae43c3885815f02422c992ceea9bf4f59b3b17a83",
+    "instagram-feed": "c3ff946bf655520c3b541d786fd25852bcc97442d6a031b5c39f22771a81cf4e",
+    "tiktok-feed": "cfaa0424080b7052d1ccbee36bb45afbae77a2088c0b21acf95dd0bd0da9ca9a",
+    "generic-video": "f595dc4963afa630aa892602326f79426eff3532490a7223b6c849049a0c340c",
+    "article-youtube": "d05a8e191a9eabac513d9db4828ee2b94a6fa0e53af77248b247d2eac09f1cb8",
+    "settings-list": "2961efb48e48f9df0bf8a48325ef830e8b1dff5bed526e7b3433571a6bf048d4",
+    "code-list": "8ceeab75c98409133a23447fe0fd894e0594f38943f6b40ef9b9f966d6d55881",
+    "news-social": "a7f24238c5b5eba8928d6b26b5e0df7398cb33df2a8dc5e85d415bc5add6d8ef",
+    "work-document": "a8758134d1a2eb36376e60631fc74c2e9c9d731a73643ec4eb13db6110b6a5e8",
+    "ambiguous-player": "794cf7215a615dfa89392177b21fc0dead1fcbeda0ad234804f9bc8182b2e6f4",
+    "app-dashboard": "08ef367425619a0d40db3eceb06303a3ec3b21ed8a24fd733cbd0cc20ee7875f",
+    "app-cover": "3c6ef68e2a9df4bf448aa600f3fdaf8d31e99ac8091949a771c6899c4936776f"
+  },
+  "load_seconds": 0.588,
+  "corpus": {
+    "version": 1,
+    "scope": "Small development/synthetic holdout suite, not a real-world reliability benchmark. Explicit-content cases are negative-only.",
+    "cases": [
+      {
+        "id": "youtube-home",
+        "file": "youtube-home.png",
+        "origin": "self-authored synthetic browser UI",
+        "family": "youtube-home",
+        "split": "development",
+        "labels": {
+          "explicit": false,
+          "video": true,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "b2813a9d54626dc51505557cd6d7efbadc0fde20f4ba5c02ae47d393e971f579"
+      },
+      {
+        "id": "youtube-player",
+        "file": "youtube-player.png",
+        "origin": "self-authored synthetic browser UI",
+        "family": "youtube-player",
+        "split": "holdout",
+        "labels": {
+          "explicit": false,
+          "video": true,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "e26dc47ec50dc5583c368386737febe4d6150c5cf6ebaf78543e0ca8b4be2ce4"
+      },
+      {
+        "id": "youtube-shorts",
+        "file": "youtube-shorts.png",
+        "origin": "self-authored synthetic browser UI",
+        "family": "youtube-shorts",
+        "split": "holdout",
+        "labels": {
+          "explicit": false,
+          "video": true,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "bb05e36b4bafd4d8cca7c11f4239194e85b2355c6872e62eaa27c590d871a0b3"
+      },
+      {
+        "id": "instagram-feed",
+        "file": "instagram-feed.png",
+        "origin": "self-authored synthetic browser UI",
+        "family": "instagram-feed",
+        "split": "development",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": true,
+          "cats": false
+        },
+        "sha256": "9bea8707677a60b85a1a32b27c2861cae0b4f0e473f8d1ef48960214db0e8cd1"
+      },
+      {
+        "id": "tiktok-feed",
+        "file": "tiktok-feed.png",
+        "origin": "self-authored synthetic browser UI",
+        "family": "tiktok-feed",
+        "split": "holdout",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": true,
+          "cats": false
+        },
+        "sha256": "117afef4749d89cad7c46be48c3a859cf78fb973fae49449a2057402a2f93380"
+      },
+      {
+        "id": "generic-video",
+        "file": "generic-video.png",
+        "origin": "self-authored synthetic browser UI",
+        "family": "generic-video",
+        "split": "holdout",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "c8fda16cd25b5bac6bf9e7dbab2624dcb7b4c8ad755a4ddb31ba308cba060435"
+      },
+      {
+        "id": "article-youtube",
+        "file": "article-youtube.png",
+        "origin": "self-authored synthetic browser UI",
+        "family": "article-youtube",
+        "split": "development",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "3eab6b7a5b58a4afe0745e46511abb783ab4f802ca1384cbaba0046630aba4fb"
+      },
+      {
+        "id": "settings-list",
+        "file": "settings-list.png",
+        "origin": "self-authored synthetic browser UI",
+        "family": "settings-list",
+        "split": "holdout",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "becf8696e93c45a4df51e937824c6832e8d27c99ff153a5c62a75b7fee44caa1"
+      },
+      {
+        "id": "code-list",
+        "file": "code-list.png",
+        "origin": "self-authored synthetic browser UI",
+        "family": "code-list",
+        "split": "development",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "75cc540eeebfcb62002f91b59e37822c59131ef9fe09d332e7a0e01e3e85fd76"
+      },
+      {
+        "id": "news-social",
+        "file": "news-social.png",
+        "origin": "self-authored synthetic browser UI",
+        "family": "news-social",
+        "split": "holdout",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "3103a37c3644c68dd84461b4eb36c378e44fbbc582eafd469aa65b44d8e7e55a"
+      },
+      {
+        "id": "work-document",
+        "file": "work-document.png",
+        "origin": "self-authored synthetic browser UI",
+        "family": "work-document",
+        "split": "development",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "672161981c43b2da47e8d01af72aefb9e55c8f18e9f7b3082a5958d8aaa56cb3"
+      },
+      {
+        "id": "ambiguous-player",
+        "file": "ambiguous-player.png",
+        "origin": "self-authored synthetic browser UI",
+        "family": "ambiguous-player",
+        "split": "ambiguity",
+        "labels": {
+          "explicit": false,
+          "video": null,
+          "social": null,
+          "cats": false
+        },
+        "sha256": "384a8311bd4d55a042b9d1639caf2b6e894422205122528d1121e68b0db0dcea"
+      },
+      {
+        "id": "app-dashboard",
+        "file": "app-dashboard.png",
+        "origin": "own application screenshot",
+        "family": "own-app",
+        "split": "development",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "12fe429b53c6d2a0767a31c5701a2e52e91e0b40b7da67dbe2deda432c3bae97"
+      },
+      {
+        "id": "app-cover",
+        "file": "app-cover.png",
+        "origin": "own application screenshot",
+        "family": "own-app",
+        "split": "holdout",
+        "labels": {
+          "explicit": false,
+          "video": false,
+          "social": false,
+          "cats": false
+        },
+        "sha256": "df9c8760c174405939dfdc3577e09ef9d30e7c3386cd4f065a78553e1beb4d11"
+      }
+    ]
+  },
+  "formats": {
+    "noul": {
+      "questions": {
+        "explicit": {
+          "type": "noul",
+          "instructions": "Does this image show sexual activity or explicit nudity?"
+        },
+        "video": {
+          "type": "noul",
+          "instructions": "Does this image show a YouTube feed or YouTube video player, rather than just mention its name?"
+        },
+        "social": {
+          "type": "noul",
+          "instructions": "Does this image show an Instagram or TikTok feed?"
+        },
+        "cats": {
+          "type": "noul",
+          "instructions": "Are cats visible in the image?"
+        }
+      },
+      "rows": [
+        {
+          "case": "youtube-home",
+          "split": "development",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "youtube-home",
+          "split": "development",
+          "rule": "video",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "noul",
+            "noul": 0.96
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "youtube-home",
+          "split": "development",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "youtube-home",
+          "split": "development",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "youtube-player",
+          "split": "holdout",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "youtube-player",
+          "split": "holdout",
+          "rule": "video",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "noul",
+            "noul": 0.99
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "youtube-player",
+          "split": "holdout",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.0
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "youtube-player",
+          "split": "holdout",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "youtube-shorts",
+          "split": "holdout",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "youtube-shorts",
+          "split": "holdout",
+          "rule": "video",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "noul",
+            "noul": 0.89
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "youtube-shorts",
+          "split": "holdout",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "youtube-shorts",
+          "split": "holdout",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "instagram-feed",
+          "split": "development",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "instagram-feed",
+          "split": "development",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "instagram-feed",
+          "split": "development",
+          "rule": "social",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "noul",
+            "noul": 0.88
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "instagram-feed",
+          "split": "development",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "tiktok-feed",
+          "split": "holdout",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "tiktok-feed",
+          "split": "holdout",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "tiktok-feed",
+          "split": "holdout",
+          "rule": "social",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "noul",
+            "noul": 0.9
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "tiktok-feed",
+          "split": "holdout",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "generic-video",
+          "split": "holdout",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "generic-video",
+          "split": "holdout",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "generic-video",
+          "split": "holdout",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "generic-video",
+          "split": "holdout",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "article-youtube",
+          "split": "development",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "article-youtube",
+          "split": "development",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "article-youtube",
+          "split": "development",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "article-youtube",
+          "split": "development",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "settings-list",
+          "split": "holdout",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "settings-list",
+          "split": "holdout",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "settings-list",
+          "split": "holdout",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "settings-list",
+          "split": "holdout",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "code-list",
+          "split": "development",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "code-list",
+          "split": "development",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.0
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "code-list",
+          "split": "development",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "code-list",
+          "split": "development",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "news-social",
+          "split": "holdout",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "news-social",
+          "split": "holdout",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.0
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "news-social",
+          "split": "holdout",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "news-social",
+          "split": "holdout",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "work-document",
+          "split": "development",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "work-document",
+          "split": "development",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.0
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "work-document",
+          "split": "development",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.0
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "work-document",
+          "split": "development",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "ambiguous-player",
+          "split": "ambiguity",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "ambiguous-player",
+          "split": "ambiguity",
+          "rule": "video",
+          "expected": null,
+          "predicted": true,
+          "answer": {
+            "type": "noul",
+            "noul": 0.57
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "ambiguous-player",
+          "split": "ambiguity",
+          "rule": "social",
+          "expected": null,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "ambiguous-player",
+          "split": "ambiguity",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "app-dashboard",
+          "split": "development",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "app-dashboard",
+          "split": "development",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "app-dashboard",
+          "split": "development",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "app-dashboard",
+          "split": "development",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "app-cover",
+          "split": "holdout",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "app-cover",
+          "split": "holdout",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "app-cover",
+          "split": "holdout",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "decision_reason": "noul"
+        },
+        {
+          "case": "app-cover",
+          "split": "holdout",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "noul",
+            "noul": 0.02
+          },
+          "decision_reason": "noul"
+        }
+      ],
+      "metrics": {
+        "explicit": {
+          "ambiguity": {
+            "raw": {
+              "labeled": 1,
+              "positives": 0,
+              "negatives": 1,
+              "true_positive": 0,
+              "true_negative": 1,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 1,
+              "positives": 0,
+              "negatives": 1,
+              "true_positive": 0,
+              "true_negative": 1,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            }
+          },
+          "development": {
+            "raw": {
+              "labeled": 6,
+              "positives": 0,
+              "negatives": 6,
+              "true_positive": 0,
+              "true_negative": 6,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 6,
+              "positives": 0,
+              "negatives": 6,
+              "true_positive": 0,
+              "true_negative": 6,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            }
+          },
+          "holdout": {
+            "raw": {
+              "labeled": 7,
+              "positives": 0,
+              "negatives": 7,
+              "true_positive": 0,
+              "true_negative": 7,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 7,
+              "positives": 0,
+              "negatives": 7,
+              "true_positive": 0,
+              "true_negative": 7,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            }
+          }
+        },
+        "video": {
+          "ambiguity": {
+            "raw": {
+              "labeled": 0,
+              "positives": 0,
+              "negatives": 0,
+              "true_positive": 0,
+              "true_negative": 0,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 1,
+              "positive_detection_rate": null,
+              "false_block_rate": null
+            },
+            "cover_unknown": {
+              "labeled": 0,
+              "positives": 0,
+              "negatives": 0,
+              "true_positive": 0,
+              "true_negative": 0,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 1,
+              "positive_detection_rate": null,
+              "false_block_rate": null
+            }
+          },
+          "development": {
+            "raw": {
+              "labeled": 6,
+              "positives": 1,
+              "negatives": 5,
+              "true_positive": 1,
+              "true_negative": 5,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 6,
+              "positives": 1,
+              "negatives": 5,
+              "true_positive": 1,
+              "true_negative": 5,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            }
+          },
+          "holdout": {
+            "raw": {
+              "labeled": 7,
+              "positives": 2,
+              "negatives": 5,
+              "true_positive": 2,
+              "true_negative": 5,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 7,
+              "positives": 2,
+              "negatives": 5,
+              "true_positive": 2,
+              "true_negative": 5,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            }
+          }
+        },
+        "social": {
+          "ambiguity": {
+            "raw": {
+              "labeled": 0,
+              "positives": 0,
+              "negatives": 0,
+              "true_positive": 0,
+              "true_negative": 0,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 1,
+              "positive_detection_rate": null,
+              "false_block_rate": null
+            },
+            "cover_unknown": {
+              "labeled": 0,
+              "positives": 0,
+              "negatives": 0,
+              "true_positive": 0,
+              "true_negative": 0,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 1,
+              "positive_detection_rate": null,
+              "false_block_rate": null
+            }
+          },
+          "development": {
+            "raw": {
+              "labeled": 6,
+              "positives": 1,
+              "negatives": 5,
+              "true_positive": 1,
+              "true_negative": 5,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 6,
+              "positives": 1,
+              "negatives": 5,
+              "true_positive": 1,
+              "true_negative": 5,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            }
+          },
+          "holdout": {
+            "raw": {
+              "labeled": 7,
+              "positives": 1,
+              "negatives": 6,
+              "true_positive": 1,
+              "true_negative": 6,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 7,
+              "positives": 1,
+              "negatives": 6,
+              "true_positive": 1,
+              "true_negative": 6,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            }
+          }
+        },
+        "cats": {
+          "ambiguity": {
+            "raw": {
+              "labeled": 1,
+              "positives": 0,
+              "negatives": 1,
+              "true_positive": 0,
+              "true_negative": 1,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 1,
+              "positives": 0,
+              "negatives": 1,
+              "true_positive": 0,
+              "true_negative": 1,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            }
+          },
+          "development": {
+            "raw": {
+              "labeled": 6,
+              "positives": 0,
+              "negatives": 6,
+              "true_positive": 0,
+              "true_negative": 6,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 6,
+              "positives": 0,
+              "negatives": 6,
+              "true_positive": 0,
+              "true_negative": 6,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            }
+          },
+          "holdout": {
+            "raw": {
+              "labeled": 7,
+              "positives": 0,
+              "negatives": 7,
+              "true_positive": 0,
+              "true_negative": 7,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 7,
+              "positives": 0,
+              "negatives": 7,
+              "true_positive": 0,
+              "true_negative": 7,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            }
+          }
+        }
+      },
+      "timing_ms": {
+        "median": 192.27547999999217,
+        "max": 421.65024199999834
+      },
+      "billing": [
+        {
+          "case": "youtube-home",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2451,
+            "estimated_usd": 0.000102942
+          }
+        },
+        {
+          "case": "youtube-player",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2449,
+            "estimated_usd": 0.00010285800000000001
+          }
+        },
+        {
+          "case": "youtube-shorts",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2451,
+            "estimated_usd": 0.000102942
+          }
+        },
+        {
+          "case": "instagram-feed",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2449,
+            "estimated_usd": 0.00010285800000000001
+          }
+        },
+        {
+          "case": "tiktok-feed",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2453,
+            "estimated_usd": 0.00010302600000000001
+          }
+        },
+        {
+          "case": "generic-video",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2454,
+            "estimated_usd": 0.00010306800000000001
+          }
+        },
+        {
+          "case": "article-youtube",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2450,
+            "estimated_usd": 0.00010290000000000001
+          }
+        },
+        {
+          "case": "settings-list",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2450,
+            "estimated_usd": 0.00010290000000000001
+          }
+        },
+        {
+          "case": "code-list",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2448,
+            "estimated_usd": 0.000102816
+          }
+        },
+        {
+          "case": "news-social",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2448,
+            "estimated_usd": 0.000102816
+          }
+        },
+        {
+          "case": "work-document",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2452,
+            "estimated_usd": 0.00010298400000000002
+          }
+        },
+        {
+          "case": "ambiguous-player",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2452,
+            "estimated_usd": 0.00010298400000000002
+          }
+        },
+        {
+          "case": "app-dashboard",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3781,
+            "estimated_usd": 0.00015880200000000002
+          }
+        },
+        {
+          "case": "app-cover",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3326,
+            "estimated_usd": 0.00013969200000000002
+          }
+        }
+      ]
+    },
+    "choice": {
+      "questions": {
+        "explicit": {
+          "type": "choice",
+          "instructions": "Does this image show sexual activity or explicit nudity?",
+          "criteria": {
+            "block": "Yes, the prohibited content itself is visible.",
+            "allow": "No, it is absent or is only mentioned in ordinary text.",
+            "unknown": "There is not enough visible evidence to decide."
+          }
+        },
+        "video": {
+          "type": "choice",
+          "instructions": "Does this image show a YouTube feed or YouTube video player, rather than just mention its name?",
+          "criteria": {
+            "block": "Yes, the prohibited content itself is visible.",
+            "allow": "No, it is absent or is only mentioned in ordinary text.",
+            "unknown": "There is not enough visible evidence to decide."
+          }
+        },
+        "social": {
+          "type": "choice",
+          "instructions": "Does this image show an Instagram or TikTok feed?",
+          "criteria": {
+            "block": "Yes, the prohibited content itself is visible.",
+            "allow": "No, it is absent or is only mentioned in ordinary text.",
+            "unknown": "There is not enough visible evidence to decide."
+          }
+        },
+        "cats": {
+          "type": "choice",
+          "instructions": "Are cats visible in the image?",
+          "criteria": {
+            "block": "Yes, the prohibited content itself is visible.",
+            "allow": "No, it is absent or is only mentioned in ordinary text.",
+            "unknown": "There is not enough visible evidence to decide."
+          }
+        }
+      },
+      "rows": [
+        {
+          "case": "youtube-home",
+          "split": "development",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "youtube-home",
+          "split": "development",
+          "rule": "video",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "choice",
+            "choice": "block",
+            "confidence": 0.89,
+            "probabilities": {
+              "block": 0.9299999999999999,
+              "allow": 0.06,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-block"
+        },
+        {
+          "case": "youtube-home",
+          "split": "development",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.97,
+            "probabilities": {
+              "block": 0.02,
+              "allow": 0.98,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "youtube-home",
+          "split": "development",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "youtube-player",
+          "split": "holdout",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "youtube-player",
+          "split": "holdout",
+          "rule": "video",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "choice",
+            "choice": "block",
+            "confidence": 0.97,
+            "probabilities": {
+              "block": 0.98,
+              "allow": 0.02,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-block"
+        },
+        {
+          "case": "youtube-player",
+          "split": "holdout",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.98,
+            "probabilities": {
+              "block": 0.01,
+              "allow": 0.99,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "youtube-player",
+          "split": "holdout",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "youtube-shorts",
+          "split": "holdout",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.98,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 0.99,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "youtube-shorts",
+          "split": "holdout",
+          "rule": "video",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "choice",
+            "choice": "block",
+            "confidence": 0.88,
+            "probabilities": {
+              "block": 0.92,
+              "allow": 0.07,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-block"
+        },
+        {
+          "case": "youtube-shorts",
+          "split": "holdout",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.89,
+            "probabilities": {
+              "block": 0.06,
+              "allow": 0.93,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "youtube-shorts",
+          "split": "holdout",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "instagram-feed",
+          "split": "development",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "instagram-feed",
+          "split": "development",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.98,
+            "probabilities": {
+              "block": 0.01,
+              "allow": 0.99,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "instagram-feed",
+          "split": "development",
+          "rule": "social",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "choice",
+            "choice": "block",
+            "confidence": 0.37,
+            "probabilities": {
+              "block": 0.58,
+              "allow": 0.32,
+              "unknown": 0.1
+            }
+          },
+          "decision_reason": "selected-block"
+        },
+        {
+          "case": "instagram-feed",
+          "split": "development",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.98,
+            "probabilities": {
+              "block": 0.01,
+              "allow": 0.99,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "tiktok-feed",
+          "split": "holdout",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "tiktok-feed",
+          "split": "holdout",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.98,
+            "probabilities": {
+              "block": 0.01,
+              "allow": 0.99,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "tiktok-feed",
+          "split": "holdout",
+          "rule": "social",
+          "expected": true,
+          "predicted": true,
+          "answer": {
+            "type": "choice",
+            "choice": "block",
+            "confidence": 0.67,
+            "probabilities": {
+              "block": 0.78,
+              "allow": 0.19,
+              "unknown": 0.03
+            }
+          },
+          "decision_reason": "selected-block"
+        },
+        {
+          "case": "tiktok-feed",
+          "split": "holdout",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "generic-video",
+          "split": "holdout",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.98,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 0.99,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "generic-video",
+          "split": "holdout",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.95,
+            "probabilities": {
+              "block": 0.03,
+              "allow": 0.97,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "generic-video",
+          "split": "holdout",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.98,
+            "probabilities": {
+              "block": 0.01,
+              "allow": 0.99,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "generic-video",
+          "split": "holdout",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "article-youtube",
+          "split": "development",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "article-youtube",
+          "split": "development",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "article-youtube",
+          "split": "development",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "article-youtube",
+          "split": "development",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "settings-list",
+          "split": "holdout",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "settings-list",
+          "split": "holdout",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "settings-list",
+          "split": "holdout",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "settings-list",
+          "split": "holdout",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "code-list",
+          "split": "development",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "code-list",
+          "split": "development",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "code-list",
+          "split": "development",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "code-list",
+          "split": "development",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "news-social",
+          "split": "holdout",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "news-social",
+          "split": "holdout",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "news-social",
+          "split": "holdout",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "news-social",
+          "split": "holdout",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "work-document",
+          "split": "development",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "work-document",
+          "split": "development",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "work-document",
+          "split": "development",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "work-document",
+          "split": "development",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "ambiguous-player",
+          "split": "ambiguity",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.95,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 0.97,
+              "unknown": 0.03
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "ambiguous-player",
+          "split": "ambiguity",
+          "rule": "video",
+          "expected": null,
+          "predicted": true,
+          "answer": {
+            "type": "choice",
+            "choice": "block",
+            "confidence": 0.4,
+            "probabilities": {
+              "block": 0.6,
+              "allow": 0.35,
+              "unknown": 0.05
+            }
+          },
+          "decision_reason": "selected-block"
+        },
+        {
+          "case": "ambiguous-player",
+          "split": "ambiguity",
+          "rule": "social",
+          "expected": null,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.95,
+            "probabilities": {
+              "block": 0.02,
+              "allow": 0.97,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "ambiguous-player",
+          "split": "ambiguity",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "app-dashboard",
+          "split": "development",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "app-dashboard",
+          "split": "development",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "app-dashboard",
+          "split": "development",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.98,
+            "probabilities": {
+              "block": 0.01,
+              "allow": 0.99,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "app-dashboard",
+          "split": "development",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "app-cover",
+          "split": "holdout",
+          "rule": "explicit",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 1.0,
+            "probabilities": {
+              "block": 0.0,
+              "allow": 1.0,
+              "unknown": 0.0
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "app-cover",
+          "split": "holdout",
+          "rule": "video",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.97,
+            "probabilities": {
+              "block": 0.01,
+              "allow": 0.98,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "app-cover",
+          "split": "holdout",
+          "rule": "social",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.95,
+            "probabilities": {
+              "block": 0.02,
+              "allow": 0.97,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        },
+        {
+          "case": "app-cover",
+          "split": "holdout",
+          "rule": "cats",
+          "expected": false,
+          "predicted": false,
+          "answer": {
+            "type": "choice",
+            "choice": "allow",
+            "confidence": 0.97,
+            "probabilities": {
+              "block": 0.01,
+              "allow": 0.98,
+              "unknown": 0.01
+            }
+          },
+          "decision_reason": "selected-allow"
+        }
+      ],
+      "metrics": {
+        "explicit": {
+          "ambiguity": {
+            "raw": {
+              "labeled": 1,
+              "positives": 0,
+              "negatives": 1,
+              "true_positive": 0,
+              "true_negative": 1,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 1,
+              "positives": 0,
+              "negatives": 1,
+              "true_positive": 0,
+              "true_negative": 1,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            }
+          },
+          "development": {
+            "raw": {
+              "labeled": 6,
+              "positives": 0,
+              "negatives": 6,
+              "true_positive": 0,
+              "true_negative": 6,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 6,
+              "positives": 0,
+              "negatives": 6,
+              "true_positive": 0,
+              "true_negative": 6,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            }
+          },
+          "holdout": {
+            "raw": {
+              "labeled": 7,
+              "positives": 0,
+              "negatives": 7,
+              "true_positive": 0,
+              "true_negative": 7,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 7,
+              "positives": 0,
+              "negatives": 7,
+              "true_positive": 0,
+              "true_negative": 7,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            }
+          }
+        },
+        "video": {
+          "ambiguity": {
+            "raw": {
+              "labeled": 0,
+              "positives": 0,
+              "negatives": 0,
+              "true_positive": 0,
+              "true_negative": 0,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 1,
+              "positive_detection_rate": null,
+              "false_block_rate": null
+            },
+            "cover_unknown": {
+              "labeled": 0,
+              "positives": 0,
+              "negatives": 0,
+              "true_positive": 0,
+              "true_negative": 0,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 1,
+              "positive_detection_rate": null,
+              "false_block_rate": null
+            }
+          },
+          "development": {
+            "raw": {
+              "labeled": 6,
+              "positives": 1,
+              "negatives": 5,
+              "true_positive": 1,
+              "true_negative": 5,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 6,
+              "positives": 1,
+              "negatives": 5,
+              "true_positive": 1,
+              "true_negative": 5,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            }
+          },
+          "holdout": {
+            "raw": {
+              "labeled": 7,
+              "positives": 2,
+              "negatives": 5,
+              "true_positive": 2,
+              "true_negative": 5,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 7,
+              "positives": 2,
+              "negatives": 5,
+              "true_positive": 2,
+              "true_negative": 5,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            }
+          }
+        },
+        "social": {
+          "ambiguity": {
+            "raw": {
+              "labeled": 0,
+              "positives": 0,
+              "negatives": 0,
+              "true_positive": 0,
+              "true_negative": 0,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 1,
+              "positive_detection_rate": null,
+              "false_block_rate": null
+            },
+            "cover_unknown": {
+              "labeled": 0,
+              "positives": 0,
+              "negatives": 0,
+              "true_positive": 0,
+              "true_negative": 0,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 1,
+              "positive_detection_rate": null,
+              "false_block_rate": null
+            }
+          },
+          "development": {
+            "raw": {
+              "labeled": 6,
+              "positives": 1,
+              "negatives": 5,
+              "true_positive": 1,
+              "true_negative": 5,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 6,
+              "positives": 1,
+              "negatives": 5,
+              "true_positive": 1,
+              "true_negative": 5,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            }
+          },
+          "holdout": {
+            "raw": {
+              "labeled": 7,
+              "positives": 1,
+              "negatives": 6,
+              "true_positive": 1,
+              "true_negative": 6,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 7,
+              "positives": 1,
+              "negatives": 6,
+              "true_positive": 1,
+              "true_negative": 6,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": 1.0,
+              "false_block_rate": 0.0
+            }
+          }
+        },
+        "cats": {
+          "ambiguity": {
+            "raw": {
+              "labeled": 1,
+              "positives": 0,
+              "negatives": 1,
+              "true_positive": 0,
+              "true_negative": 1,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 1,
+              "positives": 0,
+              "negatives": 1,
+              "true_positive": 0,
+              "true_negative": 1,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            }
+          },
+          "development": {
+            "raw": {
+              "labeled": 6,
+              "positives": 0,
+              "negatives": 6,
+              "true_positive": 0,
+              "true_negative": 6,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 6,
+              "positives": 0,
+              "negatives": 6,
+              "true_positive": 0,
+              "true_negative": 6,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            }
+          },
+          "holdout": {
+            "raw": {
+              "labeled": 7,
+              "positives": 0,
+              "negatives": 7,
+              "true_positive": 0,
+              "true_negative": 7,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            },
+            "cover_unknown": {
+              "labeled": 7,
+              "positives": 0,
+              "negatives": 7,
+              "true_positive": 0,
+              "true_negative": 7,
+              "missed": 0,
+              "false_block": 0,
+              "unknown": 0,
+              "invalid": 0,
+              "ambiguous_cases": 0,
+              "positive_detection_rate": null,
+              "false_block_rate": 0.0
+            }
+          }
+        }
+      },
+      "timing_ms": {
+        "median": 188.02484100000072,
+        "max": 342.9893349999986
+      },
+      "billing": [
+        {
+          "case": "youtube-home",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2745,
+            "estimated_usd": 0.00011529
+          }
+        },
+        {
+          "case": "youtube-player",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2744,
+            "estimated_usd": 0.000115248
+          }
+        },
+        {
+          "case": "youtube-shorts",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2745,
+            "estimated_usd": 0.00011529
+          }
+        },
+        {
+          "case": "instagram-feed",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2746,
+            "estimated_usd": 0.00011533200000000001
+          }
+        },
+        {
+          "case": "tiktok-feed",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2744,
+            "estimated_usd": 0.000115248
+          }
+        },
+        {
+          "case": "generic-video",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2747,
+            "estimated_usd": 0.00011537400000000001
+          }
+        },
+        {
+          "case": "article-youtube",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2747,
+            "estimated_usd": 0.00011537400000000001
+          }
+        },
+        {
+          "case": "settings-list",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2749,
+            "estimated_usd": 0.00011545800000000002
+          }
+        },
+        {
+          "case": "code-list",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2746,
+            "estimated_usd": 0.00011533200000000001
+          }
+        },
+        {
+          "case": "news-social",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2749,
+            "estimated_usd": 0.00011545800000000002
+          }
+        },
+        {
+          "case": "work-document",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2744,
+            "estimated_usd": 0.000115248
+          }
+        },
+        {
+          "case": "ambiguous-player",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 2747,
+            "estimated_usd": 0.00011537400000000001
+          }
+        },
+        {
+          "case": "app-dashboard",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 4080,
+            "estimated_usd": 0.00017136
+          }
+        },
+        {
+          "case": "app-cover",
+          "billing": {
+            "model": "jev-1.14.0",
+            "input_tokens": 3617,
+            "estimated_usd": 0.000151914
+          }
+        }
+      ]
+    }
+  },
+  "limits": "Small synthetic/development corpus. Explicit-content coverage is negative-only. No real-world accuracy or Windows timing claim.",
+  "model_label": "Jev 1.14.0 (hosted experimental images)"
+}

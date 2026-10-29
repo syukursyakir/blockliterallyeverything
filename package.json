@@ -1,0 +1,83 @@
+{
+  "name": "block-literally-everything",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Windows desktop focus tool with Jev image decisions",
+  "author": "Block Literally Everything contributors",
+  "license": "MIT",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "dev:desktop": "node scripts/dev-desktop.mjs",
+    "build": "tsc -b && vite build && node scripts/build-electron.mjs",
+    "test": "vitest run",
+    "test:ui": "playwright test",
+    "test:desktop": "node scripts/smoke-desktop.mjs",
+    "test:worker": "uv run --project worker python -m unittest discover -s worker/tests -v",
+    "worker:setup": "uv sync --project worker",
+    "worker:bundle": "uv run --project worker pyinstaller --noconfirm --distpath worker/dist --workpath worker/build worker/worker.spec",
+    "dist:win": "npm run build && electron-builder --win nsis --x64 --publish never",
+    "dist:win:local": "npm run worker:bundle && npm run build && electron-builder --config electron-builder.local.cjs --win nsis --x64 --publish never"
+  },
+  "build": {
+    "appId": "org.blockliterallyeverything.desktop",
+    "productName": "Block Literally Everything",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "LICENSE",
+      "THIRD_PARTY.md",
+      "docs/licenses/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "extraResources": [],
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": [
+        "nsis"
+      ],
+      "artifactName": "BlockLiterallyEverything-${version}-setup.${ext}",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "runAfterFinish": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "deleteAppDataOnUninstall": false,
+      "script": "installer/windows.nsi"
+    }
+  },
+  "dependencies": {
+    "@fontsource/geist": "5.3.0",
+    "@fontsource/geist-mono": "5.3.0",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "1.63.0",
+    "radix-ui": "1.8.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "tailwind-merge": "3.7.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@tailwindcss/vite": "4.3.3",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "electron": "45.1.0",
+    "electron-builder": "26.18.0",
+    "esbuild": "0.28.2",
+    "shadcn": "4.23.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  }
+}

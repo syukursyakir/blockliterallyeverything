@@ -1,0 +1,40 @@
+{
+  "backend": "worker",
+  "upstream_commit": "14dbec4f71e194852c8d7b88ab36ef639493f400",
+  "rows": [
+    {
+      "image": "cats.jpg",
+      "variant": "batch",
+      "scores": {
+        "explicit": 0.3996,
+        "video": 0.1357,
+        "social": 0.5394,
+        "cats": 0.7766
+      }
+    },
+    {
+      "image": "cats.jpg",
+      "variant": "single-cats",
+      "scores": {
+        "cats": 0.7766
+      }
+    },
+    {
+      "image": "dashboard.png",
+      "variant": "batch",
+      "scores": {
+        "explicit": 0.4195,
+        "video": 0.9218,
+        "social": 0.604,
+        "cats": 0.0522
+      }
+    },
+    {
+      "image": "dashboard.png",
+      "variant": "single-cats",
+      "scores": {
+        "cats": 0.0522
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "artifact": "BlockLiterallyEverything-0.1.0-setup.exe",
+  "bytes": 126845742,
+  "sha256": "84181b4dfb436ac23fbe5b7bd995297958095d5482a8732fe9f76c5adbb4810f",
+  "edition": "Windows 10+ x64 Jev, no local worker",
+  "signed": false,
+  "checks": [
+    "NSIS outer archive integrity passed",
+    "Inner application payload integrity passed",
+    "Embedded app.asar matches audited packaged app",
+    "Onboarding renderer and native IPC handlers present",
+    "No API key or local AI runtime bundled",
+    "45 unit tests passed",
+    "8 UI tests passed"
+  ],
+  "limits": "Cross-built in Linux. Actual Windows install/uninstall, OS encryption, capture and fullscreen overlays remain unverified. Offline Wine attempt did not establish runtime behavior."
+}

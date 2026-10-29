@@ -1,0 +1,92 @@
+{
+  "scope": "Four-case visual-reference pilot for YouTube only; not a general accuracy benchmark. Multi-image panels are intentionally cached research fixtures, never private screenshots.",
+  "references": [
+    "youtube-home.png",
+    "work-document.png"
+  ],
+  "question": {
+    "video": {
+      "type": "choice",
+      "instructions": "Picture 1 is the target. Picture 2 is an example of a YouTube screen. Picture 3 is an allowed ordinary document. Does picture 1 itself show a YouTube feed or YouTube video player, rather than only mention the name?",
+      "criteria": {
+        "block": "It is a YouTube feed or player like picture 2.",
+        "allow": "It is not YouTube, or only mentions it, like picture 3.",
+        "unknown": "There is not enough visible evidence to tell."
+      }
+    }
+  },
+  "rows": [
+    {
+      "case": "youtube-player",
+      "expected": true,
+      "answer": {
+        "choice": "block",
+        "probabilities": {
+          "block": 0.8815,
+          "allow": 0.0941,
+          "unknown": 0.0236
+        },
+        "abstain": 0.0008,
+        "valid": true,
+        "confidence": 0.842,
+        "latency_s": 5.5394,
+        "latency_total_s": 5.5394
+      },
+      "milliseconds": 5612
+    },
+    {
+      "case": "youtube-shorts",
+      "expected": true,
+      "answer": {
+        "choice": "block",
+        "probabilities": {
+          "block": 0.7525,
+          "allow": 0.1941,
+          "unknown": 0.0524
+        },
+        "abstain": 0.001,
+        "valid": true,
+        "confidence": 0.67,
+        "latency_s": 5.5743,
+        "latency_total_s": 5.5743
+      },
+      "milliseconds": 5629
+    },
+    {
+      "case": "settings-list",
+      "expected": false,
+      "answer": {
+        "choice": "block",
+        "probabilities": {
+          "block": 0.8653,
+          "allow": 0.1118,
+          "unknown": 0.0223
+        },
+        "abstain": 0.0006,
+        "valid": true,
+        "confidence": 0.8204,
+        "latency_s": 5.3082,
+        "latency_total_s": 5.3082
+      },
+      "milliseconds": 5360
+    },
+    {
+      "case": "generic-video",
+      "expected": false,
+      "answer": {
+        "choice": "block",
+        "probabilities": {
+          "block": 0.9292,
+          "allow": 0.0584,
+          "unknown": 0.012
+        },
+        "abstain": 0.0003,
+        "valid": true,
+        "confidence": 0.9056,
+        "latency_s": 5.529,
+        "latency_total_s": 5.529
+      },
+      "milliseconds": 5585
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+dist-electron/
+release/
+worker/.venv/
+worker/dist/
+worker/build/
+*.tsbuildinfo
+__pycache__/
+*.pyc
+.playwright-cli/
+playwright-report/
+test-results/
+.env
+*.log
