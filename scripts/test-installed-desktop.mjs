@@ -192,10 +192,11 @@ try {
   await run('fixture replacement and cropped movement discard stale matches without covers', async () => {
     for (const capture of ['replacement', 'cropped']) {
       await fixture('match', capture)
-      const previous = (await snapshot()).status.activity.filter(a => a.message === 'Screen changed during analysis; checking the new view next.').length
+      const before = (await snapshot()).status
+      const previous = before.activity.filter(a => a.message === 'Screen changed during analysis; checking the new view next.').length
       await api('start')
       await expect.poll(async () => (await snapshot()).status.activity.filter(a => a.message === 'Screen changed during analysis; checking the new view next.').length).toBeGreaterThan(previous)
-      expect((await snapshot()).status.blocks).toBe(0); await waitNoCovers()
+      expect((await snapshot()).status.blocks).toBe(before.blocks); await waitNoCovers()
       await api('stop'); await expectPaused()
     }
     await fixture('allow')
