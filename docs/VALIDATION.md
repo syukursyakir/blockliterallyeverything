@@ -220,3 +220,9 @@ edition hides local setup. Eight new mocked native onboarding tests and one new
 UI test cover the flow, bringing totals to 45 unit and eight UI tests. The Windows
 workflow includes silent install plus a real packaged-shell smoke, still unrun
 here. No signing certificate is configured.
+
+## Windows delivery verification — 2026-10-29
+
+[Run 40822062404](https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40822062404) passed on Windows: production build, 45 unit tests, eight UI tests, real developer Electron desktop smoke, NSIS build, silent installation, and installed-app smoke (onboarding, IPC, nonblank screen thumbnails, always-on-top cover and recovery). Initial failures exposed POSIX-only test paths and a forward-slash NSIS asset path; both were fixed and rerun. The run uploaded and published the actual Windows-built installer and checksum. This supersedes earlier statements that no Windows install/capture check had run.
+
+The public installer download was verified with HTTP 200, application/octet-stream and attachment disposition. Workspace file-preview links did not provide usable download delivery. Jev-key encryption/verification is covered with mocked unit/UI tests; the Windows smoke does not use a real key. Live AI-to-cover behavior, content accuracy and fullscreen behavior across user PCs remain unverified.

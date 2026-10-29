@@ -1,6 +1,6 @@
 # Install the Windows app
 
-Use **BlockLiterallyEverything-0.1.0-setup.exe** — not the source ZIP. This is the
+[Download BlockLiterallyEverything-0.1.0-setup.exe](https://github.com/syukursyakir/blockliterallyeverything/releases/download/v0.1.0-alpha.1/BlockLiterallyEverything-0.1.0-setup.exe) — not the source ZIP. This is the
 64-bit Windows 10/11 Jev edition. It includes the desktop runtime: you do not need
 Node.js, PowerShell commands, Python, or a local AI download.
 
@@ -35,7 +35,5 @@ Quit from the tray menu to exit completely. Windows **Installed apps** can
 uninstall the app. Preferences, encrypted key and budget history are preserved;
 remove the saved API key in the app before uninstalling if you want it cleared.
 
-The installer was cross-built in Linux. Onboarding and request behavior have
-automated coverage, but actual Windows installation, encryption, capture and
-fullscreen blocking still need a real Windows run. Jev image support remains
+The published installer was built and installed by the [Windows CI run](https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40822062404). It passed first-launch onboarding, IPC, screen thumbnails, topmost-cover and recovery checks. Live screenshot-to-Jev enforcement, OS key encryption with your account, and fullscreen behavior still need testing on your own PC. Jev image support remains
 experimental; neither real-feed accuracy nor explicit-content recall is certified.

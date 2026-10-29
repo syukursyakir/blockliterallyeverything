@@ -37,13 +37,13 @@ yet meet the intended reliable, few-seconds blocking experience.
 
 ## Install on Windows
 
-Use **BlockLiterallyEverything-0.1.0-setup.exe** from the built artifacts. Double-click
+[Download the Windows installer](https://github.com/syukursyakir/blockliterallyeverything/releases/download/v0.1.0-alpha.1/BlockLiterallyEverything-0.1.0-setup.exe). Double-click
 to install the Jev edition for your account; it adds shortcuts and opens a first-use
 guide. No terminal, Node.js, Python or model download is required for users.
 Setup covers encrypted key entry, explicit cloud consent, a generated-image
 connection check, presets and detection-only mode. It never starts capture itself.
 See [Windows setup](docs/QUICKSTART-WINDOWS.md). This alpha is unsigned and the
-cross-built installer still needs real Windows installation/runtime verification.
+[Windows CI run](https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40822062404) passed build, installation and packaged desktop smoke checks. Fullscreen behavior and live screenshot-to-Jev blocking still need testing on your PC.
 
 ## Develop on Windows
 
