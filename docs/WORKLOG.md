@@ -430,3 +430,51 @@ step skipped; existing public alpha assets still show original05:15 UTC updates.
 Updated RELIABILITY.md current section to supersede obsolete audit prerequisites;
 HANDOFF.md contains current cap/counters, completed runs and remaining gaps.
 No paid test or remote authority lock remains. Final follow-up only continuity docs.
+
+
+### Confirmatory extension and controlled-motion preparation
+
+User authorized next independent cases/moving checks within existing3 cap. Read
+current handoff/skills; no redo of completed batches. Frozen next protocol before
+new inference. Encrypted-only Windows capture40860317868 obtained14 fresh pages;
+local browser7 new IG grids. Five incomplete/private feeds excluded before calls.
+New adult-declared source/API requests unavailable403; no bypass/download/positive
+claim.21 labeled/hash-frozen cases, unchanged setting hash; raw report retained.
+YouTube9/9, social7/7, zero platform false matches. Explicit1/21 matches against
+frozen negatives, no positives. Full-resolution post-prediction inspection of MoMA
+revealed tiny nude painted figures missed in initial contact-sheet labeling; keep
+original result with caveat, not a clean ordinary-photo false positive. No tuning.
+Cumulative after batch156,$1.717567488 reserved,517346 tokens.
+
+Added live_motion pan (+/-12px continuous source-screenshot motion) and switch-away
+during inference with actual capture/provider. Switching must discard changed frame,
+recheck neutral, keep no cover, stop; not a positive-blocking pass. Unit helper
+rejects mixed startup/motion modes; strict tsc passed. Pan run40860770322 owns
+authority/lock; no local paid calls. No product/runtime/preset/provider changes.
+
+
+### Controlled-motion outcomes and runner corrections
+
+Pan40860770322 failed BEFORE API use: initial blank/protected capture, counters156
+unchanged and all copies verified. Native show/focus can precede compositor paint;
+runner now waits on varied actual capture pixels before starting, discards bytes in
+memory, preserves production blank checks.16 focused unit tests/strict tsc passed.
+Retry40861132261 PASSED with actual pinned adult source panning +/-12px:score.98,
+4214ms observed, full cover+button recovery.271 animation callbacks sampled after
+cover, not a visible-frame count. Two calls, accounting158. No real-video claim.
+
+Switch-away40861359039 failed fresh-check assertion: restored exact initial neutral,
+which legitimately reused30s cache; mode watching, checks1, blocks0, two new calls.
+Preserved failure and reservations160. Changed neutral document, app cache unchanged.
+Retry40861748575 PASSED: observed positive request, different neutral painted5ms
+later, changed-frame discard and fresh neutral check, zero covers/blocks, clean stop.
+Three calls. Discarded verdict not observable; not a positive-blocking result.
+All report/wrapper/profile counters matched and reconciled sequentially.
+
+Current163 attempts,$1.794637824 reserved of approved cumulative3,542374 tokens,
+~$0.022779708 estimated usage.109 further maximum reservations fit; prior history
+retained, no remote lock/paid job. No screenshots/keys public, no release. Rewrote
+WINDOWS-LIVE-VALIDATION.md as current protocol; historical stale key/approval/cap
+statements superseded to avoid repeating user setup or old work. PR #4 CI40861757089
+PASSED (final logs verified):71 unit +one intentional skip,8 UI, desktop smoke,
+installer build/install and11 fixture-provider scenarios; release skipped.

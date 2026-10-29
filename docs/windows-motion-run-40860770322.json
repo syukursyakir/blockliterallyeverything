@@ -1,0 +1,98 @@
+{
+  "scope": "Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.",
+  "passed": false,
+  "caseId": "native-explicit-public",
+  "preparedSha256": "e5f7d46d60213e2ead2b1f0c9f04dba17cc23ffa85e0b8f714722c5671ad51ad",
+  "manifestSha256": "7b4ae7bfcd0b860b5c3ecc91c5bacbf47b0969edd4b622db2bd3e5ea8d3e69d3",
+  "rule": {
+    "id": "explicit",
+    "name": "Explicit content",
+    "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+    "enabled": true
+  },
+  "caseProvenance": {
+    "origin": "real licensed source-declared adult photograph, exact source hash verified",
+    "source": "https://commons.wikimedia.org/wiki/File:ERA110_Erika_Kole_nude_R_4_030.jpg",
+    "source_sha256": "9304d80530f8d9fa8c8405d911f5f8850335df417a8269a0566523e0c0af0b12",
+    "adult_provenance": "Source declares model adult age 22 at capture.",
+    "rights": {
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution": "Carol Ash"
+    }
+  },
+  "protocol": "neutral-to-positive-during-session",
+  "startedAt": "2026-10-29T10:51:56.973Z",
+  "timingMethod": "Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.",
+  "motion": "pan",
+  "maximumRequests": 3,
+  "budgetBefore": {
+    "requests": 156,
+    "reservedUsd": 1.717567487999998,
+    "inputTokens": 517346
+  },
+  "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\report.json.profile",
+  "runtime": {
+    "os": "10.0.26100",
+    "electron": "45.1.0",
+    "appVersion": "0.1.0",
+    "displays": [
+      {
+        "id": 1496136807,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768
+        },
+        "scaleFactor": 1
+      }
+    ]
+  },
+  "settings": {
+    "backend": "jev",
+    "cloudConsent": true,
+    "cloudBudgetUsd": 1.7505976319999978,
+    "rules": [
+      {
+        "id": "explicit",
+        "name": "Explicit content",
+        "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+        "enabled": true
+      },
+      {
+        "id": "video",
+        "name": "YouTube",
+        "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+        "enabled": false
+      },
+      {
+        "id": "social",
+        "name": "Social feeds",
+        "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+        "enabled": false
+      }
+    ],
+    "threshold": 0.4,
+    "intervalSeconds": 3,
+    "sessionMinutes": 25,
+    "detectionOnly": false
+  },
+  "failedPhase": "neutral-control",
+  "errorType": "Error",
+  "lastStatus": {
+    "mode": "error",
+    "error": "Screen capture is blank or protected. Protection is paused.",
+    "checks": 0,
+    "blocks": 0,
+    "cloudRequests": 156
+  },
+  "failure": "Live validation failed; inspect native state/accounting. No sensitive screenshot, provider response body or credentials retained.",
+  "budgetAfter": {
+    "requests": 156,
+    "reservedUsd": 1.717567487999998,
+    "inputTokens": 517346
+  },
+  "workflowRun": 40860770322,
+  "workflowConclusion": "failure"
+}
