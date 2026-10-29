@@ -42,6 +42,7 @@ vi.mock('electron', () => {
     destroy() { this.destroyed = true }
     removeAllListeners() {}
     setContentProtection() {}
+    setFullScreen() {}
     setAlwaysOnTop() {}
     focus() {}
     hide() {}

@@ -133,6 +133,14 @@ try {
     report.displays = displayBounds.length
     await expect.poll(() => desktop.windows().filter(p => p.url().endsWith('#block')).length).toBe(displayBounds.length)
     const covers = desktop.windows().filter(p => p.url().endsWith('#block'))
+    await expect.poll(async () => {
+      const result = []
+      for (const overlay of covers) {
+        const window = await desktop.browserWindow(overlay)
+        result.push(await window.evaluate(win => win.getBounds()))
+      }
+      return result
+    }).toEqual(expect.arrayContaining(displayBounds))
     const bounds = []
     for (const overlay of covers) {
       await expect(overlay.getByRole('heading', { name: 'This content is blocked.' })).toBeVisible()
