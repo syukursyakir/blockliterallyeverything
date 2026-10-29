@@ -1,0 +1,70 @@
+{
+  "scope": "Real Windows installed-app checks with fixture provider replies, injected blank/missing captures, and emitted lock/suspend signals. No real AI inference or paid calls.",
+  "cases": [
+    {
+      "name": "first launch stays inactive; real encrypted key save and verification retry",
+      "passed": true,
+      "milliseconds": 650
+    },
+    {
+      "name": "detection-only session records fixture matches without covers",
+      "passed": true,
+      "milliseconds": 519
+    },
+    {
+      "name": "fullscreen test window is covered; native bounds/topmost/focus and button recovery",
+      "passed": true,
+      "milliseconds": 936
+    },
+    {
+      "name": "native close dismisses covers and pauses rather than trapping the desktop",
+      "passed": true,
+      "milliseconds": 466
+    },
+    {
+      "name": "real Windows emergency keyboard shortcut releases the blocking cover",
+      "passed": true,
+      "milliseconds": 1875
+    },
+    {
+      "name": "lock and suspend signals release covers",
+      "passed": true,
+      "milliseconds": 948
+    },
+    {
+      "name": "HTTP failure, offline connection and malformed replies pause with no automatic retry",
+      "passed": true,
+      "milliseconds": 1309
+    },
+    {
+      "name": "pause aborts a pending request and a real timeout does not retry",
+      "passed": true,
+      "milliseconds": 11500
+    },
+    {
+      "name": "blank and unavailable capture fail before any provider request",
+      "passed": true,
+      "milliseconds": 286
+    },
+    {
+      "name": "budget blocks network requests; preferences/key/usage survive restart without auto-start",
+      "passed": true,
+      "milliseconds": 1095
+    },
+    {
+      "name": "corrupted budget history refuses protection without resetting spend or sending requests",
+      "passed": true,
+      "milliseconds": 588
+    }
+  ],
+  "displays": 1,
+  "run_url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40824967950",
+  "tested_commit": "2c1eec2",
+  "limitations": [
+    "One hosted runner display; no multi-monitor or mixed-DPI certification.",
+    "Fullscreen fixture was a normal Electron window, not an exclusive-fullscreen game.",
+    "Provider replies and capture failures were explicit fixtures; no real model accuracy or network authentication was tested.",
+    "Lock and suspend were emitted signals, not physical OS lock/sleep.",
+    "Current public release and user installations were not replaced."
+  ]
+}

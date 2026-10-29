@@ -190,3 +190,5 @@ The Windows workflow runs this suite against the installed application and uploa
 `windows-desktop-test-evidence` with a structured report and app-only screenshots,
 including failure evidence. These checks do not publish or replace your release
 unless the workflow is explicitly dispatched with `publish_alpha` enabled.
+
+The [reviewed Windows run](https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40824967950) passed all 11 installed-app scenarios. It found and fixed a work-area-sized cover gap using a resizable native fullscreen surface. This single-display result does not certify mixed DPI, exclusive games or model accuracy; the public alpha release was not automatically replaced.
