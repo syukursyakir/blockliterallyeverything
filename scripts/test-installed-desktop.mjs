@@ -69,6 +69,16 @@ async function run(name, action) {
   catch (error) {
     report.cases.push({ name, passed: false, milliseconds: Date.now() - started, error: String(error.message) })
     await page?.screenshot({ path: path.join(evidence, 'failure.png') }).catch(() => {})
+    if (desktop) {
+      const diagnostics = await desktop.evaluate(({ BrowserWindow, screen }) => ({
+        displays: screen.getAllDisplays().map(d => ({ bounds:d.bounds, workArea:d.workArea, scaleFactor:d.scaleFactor })),
+        windows: BrowserWindow.getAllWindows().map(w => ({title:w.getTitle(),bounds:w.getBounds(),contentBounds:w.getContentBounds(),fullscreen:w.isFullScreen(),resizable:w.isResizable(),focused:w.isFocused(),visible:w.isVisible()})),
+      })).catch(() => null)
+      await writeFile(path.join(evidence, 'window-diagnostics.json'), JSON.stringify(diagnostics,null,2))
+      for (const [index, overlay] of desktop.windows().filter(p => p.url().endsWith('#block')).entries()) {
+        await overlay.screenshot({path:path.join(evidence,`failure-cover-${index}.png`)}).catch(() => {})
+      }
+    }
     throw error
   } finally { await writeFile(path.join(evidence, 'report.json'), JSON.stringify(report, null, 2) + '\n') }
 }
@@ -228,6 +238,7 @@ try {
     await launch(); await api('start'); await waitMode('error')
     expect((await snapshot()).status.error).toContain('budget history is unreadable')
     expect((await counts()).calls).toBe(0)
+    expect(await readFile(path.join(profile, 'jev-budget.json'), 'utf8')).toBe('corrupt-fixture')
   })
   console.log(`PASS: ${report.cases.length} real Windows scenarios; provider decisions were fixtures, no live AI inference.`)
 } finally {

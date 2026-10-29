@@ -107,10 +107,10 @@ function fail(error: unknown) {
 }
 function showCover(displayId: string, info: BlockInfo) {
   const display = screen.getAllDisplays().find(d => String(d.id) === displayId) ?? screen.getPrimaryDisplay()
-  const cover = new BrowserWindow({ ...display.bounds, frame: false, alwaysOnTop: true, skipTaskbar: true, backgroundColor: '#090909', show: false, resizable: false, movable: false, minimizable: false, webPreferences: browserOptions() })
+  const cover = new BrowserWindow({ ...display.bounds, frame: false, alwaysOnTop: true, skipTaskbar: true, backgroundColor: '#090909', show: false, resizable: true, fullscreenable: true, movable: false, minimizable: false, webPreferences: browserOptions() })
   covers.add(cover); cover.setContentProtection(true)
-  // Windows clamps ordinary window bounds to the work area; native fullscreen
-  // covers the taskbar area as well on the display selected by initial bounds.
+  // Fullscreen needs a resizable native window on Windows. The frameless
+  // fullscreen surface itself has no resize handles and covers the taskbar.
   cover.setFullScreen(true); cover.setAlwaysOnTop(true, 'screen-saver')
   coverInfo.set(cover.webContents.id, info)
   const coverFailed = () => { if (!cover.isDestroyed()) fail(new Error('The blocking screen could not be displayed. Protection is paused.')) }
