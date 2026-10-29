@@ -184,3 +184,10 @@ No secret-administration access is available through the integration (403).
 Do not put values in chat, dispatch inputs or Git. After user confirms the actual
 Actions secret is available, use the retained ledger and authority protocol for
 one controlled dispatch. No automatic retries while the configuration is unchanged.
+
+
+PR #1 is now merged (2884b48). Latest PR run 40848323490 and post-merge main run
+40848861167 both passed the full ordinary Windows suite. Workflow is enabled;
+no release was published. The live secret blocker is unchanged. New main workflow
+references the exact repository/organization secret; no GitHub environments exist.
+Only the user can supply the secret with the currently available permissions.

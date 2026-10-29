@@ -236,3 +236,24 @@ actual numeric evidence before retrying, merging or releasing that authority.
   Do not extract/copy a proxy credential or retry identical missing configuration.
 - Publication remains disabled; nothing replaced the public alpha. Merge of
   validation tooling is authorized; live integration remains blocked, not proved.
+
+
+### Merge completed and main verified
+
+PR #1 merged at 2884b487230c28b62f58ecc9a7e5f2f7d59ba975 after latest-head PR
+run 40848323490 passed. Post-merge main push run 40848861167 also PASSED: 53
+unit + one Linux-only skip, eight browser tests, native smoke, installer build/
+install, 11 fixture-provider installed scenarios. Release publication skipped.
+Saved numeric summaries for both current-head and main runs. Workflow is enabled.
+
+User said they thought the key was added. Rechecked safe metadata: main workflow
+references the exact secrets.TYPESAFE_API_KEY; repository environments list is
+empty. Secret listing remains inaccessible; no values accessed. Explained that
+working Codex cloud binding does not configure a GitHub Actions repository secret.
+Waiting for repository Actions key availability; no further paid/live retry.
+
+Authoritative ledger remains unchanged at 42 after verified failed-run artifact
+reconciliation; three attempts still fit. Handoff rewritten as current state to
+remove stale permission/provider instructions and preserve next-action clarity.
+This final evidence/handoff update is documentation only; use [skip ci] to avoid
+another identical native build, with already-completed main checks recorded above.

@@ -1,0 +1,14 @@
+{
+  "scope": "Full Windows PR checks; installed scenarios use fixture provider replies. No live provider evidence.",
+  "run_url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40848323490",
+  "tested_commit": "bea6f28f0a098479b4221dbc18e94ab90041a47a",
+  "conclusion": "success",
+  "unit_tests_passed": 53,
+  "unit_tests_skipped": 1,
+  "skip_reason": "Linux-only host refusal test",
+  "browser_tests_passed": 8,
+  "installed_fixture_scenarios_passed": 11,
+  "native_desktop_smoke": true,
+  "installer_build_and_install": true,
+  "release_published": false
+}

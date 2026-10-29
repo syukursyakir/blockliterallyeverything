@@ -1,0 +1,13 @@
+{
+  "scope": "Post-merge main Windows checks; fixture-provider installed tests, not live inference.",
+  "run_url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40848861167",
+  "tested_commit": "2884b487230c28b62f58ecc9a7e5f2f7d59ba975",
+  "conclusion": "success",
+  "unit_tests_passed": 53,
+  "unit_tests_skipped": 1,
+  "browser_tests_passed": 8,
+  "installed_fixture_scenarios_passed": 11,
+  "native_desktop_smoke": true,
+  "installer_build_and_install": true,
+  "release_published": false
+}
