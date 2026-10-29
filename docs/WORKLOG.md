@@ -212,3 +212,27 @@ on validation/live-windows-20261029. Added safe failure-phase/status diagnostics
 to native runner before first execution; no provider bodies, key or screenshots.
 Freeze local paid requests while remote ledger authority is active. Reconcile
 actual numeric evidence before retrying, merging or releasing that authority.
+
+
+### Windows runs and budget reconciliation
+
+- Pushed authorized validation branch; opened PR #1. Enabled existing workflow
+  and dispatched live mode with publish_alpha=false. Held local budget authority
+  lock while GitHub owned its snapshot; no parallel paid work occurred.
+- Regular PR Windows run 40847626785 passed at f17aa9a: 53 unit, 1 intentionally
+  Linux-only guard skipped, 8 UI, real desktop smoke, installer build/install,
+  all 11 installed fixture-provider scenarios. Downloaded/verified numeric report;
+  saved docs/windows-extended-run-40847626785.json. Release step was SKIPPED.
+- Live run 40847626764 failed because Actions TYPESAFE_API_KEY was empty. Runner
+  guard stopped BEFORE native launch/network: zero provider calls. No fake pass.
+  Downloaded numeric budget artifact via GitHub connector after direct gh artifact
+  redirect was forbidden. Its counters exactly equal local: 42, $0.462422016,
+  127172 tokens. Reconciled and removed local authority lock. No reset or spend.
+- Saved docs/windows-live-blocked-run-40847626764.json. Added earlier missing-key
+  workflow check so another unavailable-secret dispatch stops before build/setup.
+  Key is scoped only to preflight and live invocation, never ordinary build/tests.
+- User confirmation did not make the secret available to Actions. Need exact
+  repository Actions secret configured securely; managed cloud key is separate.
+  Do not extract/copy a proxy credential or retry identical missing configuration.
+- Publication remains disabled; nothing replaced the public alpha. Merge of
+  validation tooling is authorized; live integration remains blocked, not proved.

@@ -12,6 +12,27 @@ notes saying push/Actions need permission are historical and superseded. Do not
 extract or copy the cloud key. Check the real run result and reconcile accounting
 before further calls; no new spending allowance was granted.
 
+## Windows execution results — 2026-10-29
+
+PR #1: https://github.com/syukursyakir/blockliterallyeverything/pull/1
+Branch pushed with user authorization. Regular Windows run 40847626785 PASSED:
+53 unit + 1 Linux-only guard skipped, 8 UI, real desktop smoke, installer build/
+install, 11 fixture-provider installed scenarios. Evidence saved separately in
+docs/windows-extended-run-40847626785.json. Do not call fixtures live AI evidence.
+
+Live dispatch 40847626764 FAILED BEFORE NATIVE LAUNCH: GitHub Actions supplied
+empty TYPESAFE_API_KEY, despite prior user confirmation. No provider call or
+charge/reservation was made. Artifact budget downloaded, verified identical to
+local (42), and local authority lock released. See
+windows-live-blocked-run-40847626764.json. Secret-name access remains HTTP403;
+no key was copied/extracted. Need the user to add the exact repository ACTIONS
+SECRET securely; cloud-environment secret is separate. No more approval needed
+for branch/merge/dispatch after the key is available. Three attempts still fit.
+
+An earlier workflow preflight now refuses an unavailable key before checkout/
+build. Release publication remains disabled; current public installer unchanged.
+Do not automatically retry the paid job until the secret configuration changes.
+
 ## Latest work — actual app evaluation (2026-10-29)
 
 Read docs/APP-EVALUATION.md and docs/WINDOWS-LIVE-VALIDATION.md first. Paid

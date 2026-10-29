@@ -214,3 +214,17 @@ Retained allowance: 42 requests, $0.462422016 reserved, 127,172 input tokens,
 Windows integration gate. No more image experiments should consume them silently.
 The authoritative ledger remains at its original path. Other local preflight
 copies are non-authoritative and must never be used as a fresh allowance.
+
+
+## Windows execution update
+
+Regular Windows CI now passed the current validation code (run 40847626785):
+53 unit tests, one Linux-only skip, eight UI, desktop smoke, installer build/
+install and 11 fixture-provider scenarios. Numeric report is
+[windows-extended-run-40847626785.json](windows-extended-run-40847626785.json).
+
+The live dispatch stopped before native launch because Actions received an empty
+TYPESAFE_API_KEY; [blocked outcome](windows-live-blocked-run-40847626764.json).
+No provider call or extra reservation occurred. Retained accounting is still
+42 requests, with THREE available. Need the exact repository Actions secret
+configured securely; there is no live Windows timing result yet. No release.

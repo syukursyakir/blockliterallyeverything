@@ -88,14 +88,16 @@ jobs:
     permissions:
       contents: read
     steps:
-      - name: Refuse publishing or missing accounting
+      - name: Refuse publishing, missing accounting or missing provider secret
         shell: pwsh
         env:
           PUBLISH_REQUESTED: ${{ inputs.publish_alpha }}
           RETAINED_BUDGET: ${{ inputs.retained_budget }}
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
         run: |
           if ($env:PUBLISH_REQUESTED -eq 'true') { throw 'Live detection never publishes a release.' }
           if (-not $env:RETAINED_BUDGET) { throw 'Retained accounting is required; no new allowance.' }
+          if ([string]::IsNullOrWhiteSpace($env:TYPESAFE_API_KEY)) { throw 'Repository Actions secret TYPESAFE_API_KEY is unavailable. Add it under repository Settings > Secrets and variables > Actions.' }
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:

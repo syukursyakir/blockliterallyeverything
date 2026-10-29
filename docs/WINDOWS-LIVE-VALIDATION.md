@@ -160,3 +160,27 @@ its live invocation; builds and unrelated test steps do not receive it.
 54 unit tests, build, candidate dry-run tests, prep execution, YAML structure/
 release-isolation checks and runner checks passed locally. Windows execution and
 its native runner behavior remain UNRUN; no Actions run was dispatched.
+
+
+## Attempted execution: configuration block, not a native result
+
+User authorized pushing/merging and dispatch. PR #1 was opened and regular Windows
+run [40847626785](https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40847626785)
+passed all 11 fixture-provider installed scenarios, 53 unit tests (one Linux-only
+guard skipped), eight UI tests, desktop smoke and installer build/install.
+
+The [live run 40847626764](https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40847626764)
+failed at key preflight: Actions supplied an EMPTY TYPESAFE_API_KEY. No native
+session or provider call ran; downloaded accounting exactly matched 42 retained
+requests and $0.462422016. Local authority was restored after verification.
+There is no live inference-to-cover result. Numerical evidence is in the two
+run-specific JSON files in docs/. No release was published.
+
+Workflow now checks the key before setup/build. Configure the repository ACTIONS
+SECRET securely, not an ordinary variable or only the cloud-environment binding:
+https://github.com/syukursyakir/blockliterallyeverything/settings/secrets/actions
+
+No secret-administration access is available through the integration (403).
+Do not put values in chat, dispatch inputs or Git. After user confirms the actual
+Actions secret is available, use the retained ledger and authority protocol for
+one controlled dispatch. No automatic retries while the configuration is unchanged.
