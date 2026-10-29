@@ -27,3 +27,16 @@ provenance, settings and hashes frozen before requests. Report sexual-activity a
 nudity strata separately, all errors/false matches, and confidence limitations.
 Do not aggregate related frames or infer a95% population guarantee from small data.
 Update HANDOFF.md and WORKLOG.md; keep failed attempts and prior reports intact.
+
+## Diagnostic replication fixed before dispatch
+
+Source27 baseline live run40866332567 failed to block within its three-request
+bound. Audited repeat40867576811 passed, real input visible, score.94. Seven
+neighboring/replayed stills with ONLY explicit enabled all scored.94–.96; not a
+reproduced still-image miss or evidence to change prompts/thresholds. Freeze SIX
+audited native replications before dispatch, all source27 and unchanged settings.
+Each fresh isolated profile retains cumulative ledger and maximum3 calls (18
+worst-case preflight). Preserve every outcome and any failure frames encrypted.
+Continue only fully reconciled bounded detection misses; stop remaining trials on
+capture/provider/auth/accounting failures. Never run until success or drop misses.
+These replications investigate reliability, not independent accuracy samples.

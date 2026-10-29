@@ -8,8 +8,9 @@ export function nativeExitGuard(application: { process(): { exitCode: number | n
   const child = application.process()
   return () => child.exitCode !== null || child.signalCode !== null
 }
-export function nativeBudget(ledger: CloudLedger, cap: number, positiveAtStart: boolean) {
-  const maximumRequests = positiveAtStart ? 1 : 3
+export function nativeBudget(ledger: CloudLedger, cap: number, positiveAtStart: boolean, trials=1) {
+  if(![1,6].includes(trials) || (positiveAtStart && trials!==1))throw new Error('Only one trial or six full-protocol diagnostic replications are supported.')
+  const maximumRequests = (positiveAtStart ? 1 : 3)*trials
   let planned = validateLedger(ledger)
   for (let i = 0; i < maximumRequests; i++) planned = reserveCloud(planned, cap)
   return { maximumRequests, limitUsd: planned.reservedUsd }

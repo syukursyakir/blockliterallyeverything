@@ -51,6 +51,11 @@ on:
         description: Encrypt actual submitted frames to capture_public_key and retain numeric scores for failure diagnosis
         type: boolean
         default: false
+      live_trials:
+        description: One trial or six fixed diagnostic replications, never an until-success retry loop
+        type: choice
+        options: ['1', '6']
+        default: '1'
       retained_budget:
         description: Exact retained evaluation budget JSON; coordinate exclusive ownership before dispatch
         type: string
@@ -152,7 +157,7 @@ jobs:
           BLE_LIVE_POSITIVE_AT_START: ${{ inputs.positive_at_start }}
           BLE_LIVE_SCENE: ${{ inputs.live_scene }}
       - name: Real capture, live Jev, native cover and recovery
-        run: node scripts/test-live-windows.mjs --allow-cloud --corpus native-live/manifest.json --case native-${{ inputs.live_scene || 'social-synthetic' }} --ledger native-live/budget.json --output native-live/report.json --motion ${{ inputs.live_motion || 'none' }} ${{ inputs.positive_at_start && '--positive-at-start' || '' }} ${{ inputs.live_audit && '--audit' || '' }}
+        run: node scripts/test-live-series.mjs --trials ${{ inputs.live_trials || '1' }} --allow-cloud --corpus native-live/manifest.json --case native-${{ inputs.live_scene || 'social-synthetic' }} --ledger native-live/budget.json --output native-live/report.json --motion ${{ inputs.live_motion || 'none' }} ${{ inputs.positive_at_start && '--positive-at-start' || '' }} ${{ inputs.live_audit && '--audit' || '' }}
         env:
           TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
           BLE_CAPTURE_PUBLIC_KEY: ${{ inputs.capture_public_key }}
@@ -164,6 +169,10 @@ jobs:
           path: |
             native-live/report.json
             native-live/report.json.audit.enc.json
+            native-live/report.json.series.json
+            native-live/series/*/report.json
+            native-live/series/*/report.json.audit.enc.json
+            native-live/series/*/report.json.profile/jev-budget.json
             native-live/budget.json
             native-live/report.json.profile/jev-budget.json
           if-no-files-found: warn

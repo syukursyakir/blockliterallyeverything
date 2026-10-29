@@ -6,6 +6,14 @@ import path from 'node:path'
 import { createHash } from 'node:crypto'
 import { RESERVED_PER_REQUEST } from '../../electron/jev'
 describe('live native cleanup and explicit protocol accounting',()=>{
+ it('preflights the whole diagnostic series without resetting or mutating history',()=>{
+  const ledger={requests:199,reservedUsd:199*RESERVED_PER_REQUEST,inputTokens:100}
+  expect(nativeBudget(ledger,3,false,6)).toMatchObject({maximumRequests:18})
+  expect(ledger.requests).toBe(199)
+  expect(()=>nativeBudget(ledger,2.2,false,6)).toThrow(/budget limit/)
+  expect(()=>nativeBudget(ledger,3,true,6)).toThrow(/full-protocol/)
+  expect(()=>nativeBudget(ledger,3,false,0)).toThrow()
+ })
  it('rejects invalid or unbounded playback ranges',()=>{
   expect(nativeVideoRange()).toEqual({start:10,end:25})
   expect(nativeVideoRange(2,10)).toEqual({start:2,end:10})
