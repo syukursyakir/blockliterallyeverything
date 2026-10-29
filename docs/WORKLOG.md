@@ -570,3 +570,18 @@ max3 each sequentially.19 focused unit tests and strict runner tsc passed.
 Native run40884733211 at8d977ca owns authority lock before223/$2.455240704.
 PR #6 draft, ordinary fixture CI40884747224 also running (no provider charges).
 No production/provider/prompt/threshold/freshness changes or release.
+
+
+Large-motion photo40884733211 PASSED4144ms/.98, cover/recovery, two calls.
+YouTube40885047863 FAILED within3-call bound: neutral.02, actualpositive.97/.96;
+both positives discarded as screen changed, checks1/blocks0 then budget pause.
+Confirmed motion/freshness failure; encrypted input frames privately decrypted and
+reviewed (fully visible real page). Originalfailure retained, not old source27.
+All wrapper/report/profile ledgers reconciled228/$2.510290944/774352tokens, no lock.
+Added bounded whole-frame axis translation comparison only over uniform padding,
+stricter2% aligned overlap and8-level clean strips; never accept offscreen/cropped
+content or new exposed regions. Five meaningful unit tests (24 focused total) and
+build pass. Freeze failed-condition regression and switch-away before paid calls.
+Also froze4x adult30/safe flower conditions. Free actual-scene browser test caught
+resource load resetting playbackRate to1; set4x afterseek and assert before evidence.
+No paid accelerated trial yet; no provider/prompt/threshold changes or release.

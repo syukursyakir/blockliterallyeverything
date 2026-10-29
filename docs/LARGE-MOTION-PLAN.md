@@ -37,3 +37,30 @@ recovery; negative requires two fresh accepted video checks, no cover and clean 
 This is accelerated motion of known sources, not representative fast-cut video or
 new independent accuracy. Keep any freshness rejection, classification miss or
 provider failure. No production changes based merely on this prospective extension.
+
+## Demonstrated failure and bounded correction — before regression calls
+
+Run40885047863 failed: actual moving YouTube inputs scored .97/.96, both discarded
+as screen changes; only neutral check accepted, no blocks before3-request stop.
+Actual encrypted submitted frames decrypted privately and inspected: page remains
+visible. This is a confirmed freshness/translation failure, NOT the old source27
+unexplained miss. Keep original failed report and counters.
+
+Correction: retain the8% original change test; additionally recognize a whole frame
+translated horizontally OR vertically over the same uniform background. Search at
+64px resolution, max half-frame displacement; require overlap mean RGB difference
+<=2%, and EVERY newly exposed/vacated strip pixel within8 RGB levels of the original
+corner background. This rejects content leaving the screen, new exposed content,
+vanished positives and unrelated scenes. It does not approve general scrolling,
+zoom, rotation or scene cuts, and does not raise the original8% threshold. This is
+an image-comparison heuristic, not a semantic/identity guarantee.
+
+Freeze regression run of the same failing YouTube condition, then existing positive
+switch-away-to-DIFFERENT-neutral control. Both use actual capture/provider, encrypted
+submitted frames, fixed3-request maximum. Follow with the two already frozen4x
+video conditions.12 worst-case requests preflight against retained228 attempts.
+No model/rule/threshold change. Keep every outcome, including a failed correction.
+Unit tests cover translation, resampling/alpha, disappearance, replacement, cropped
+content, newly exposed pixels, changed background and malformed dimensions. A local
+actual-scene browser check also caught playbackRate resetting on resource load;
+set4x AFTER seek and assert it before any fast-video claim. No paid fast run yet.

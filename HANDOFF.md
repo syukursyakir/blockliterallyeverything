@@ -20,15 +20,17 @@ v0.1.0-alpha.1, third-party messages or laptop remote access authorized.
 
 ## Active large-motion continuation (PR #6)
 
-User authorized continuing remaining gaps. Branch validation/large-motion-20261029,
-PR https://github.com/syukursyakir/blockliterallyeverything/pull/6. Read frozen
-`docs/LARGE-MOTION-PLAN.md`: two new native stress CONDITIONS using existing sources,
-not new independent accuracy. Pan-wide keeps full image within screen, max65vw/90vh,
-+/-16vw,1131ms period. Production unchanged.19 focused tests/strict runner tsc pass.
-Run40884733211 owns authoritative budget lock, before223. Do NOT start paid local
-or remote work until completed artifacts/report/profile are reconciled into authority.
-Second planned condition real loaded YouTube is NOT yet dispatched. Numeric discard
-counts and encrypted submitted frames retained for future failures. No release.
+Branch validation/large-motion-20261029, PR #6 draft. Read LARGE-MOTION-PLAN.md.
+Photo pan-wide40884733211 PASSED4144ms/.98; YouTube pan-wide40885047863 FAILED:
+Jev .97/.96, both discarded due screen movement, no cover. Confirmed freshness
+translation failure, not old source27 miss. All228 attempts/$2.510290944 reconciled,
+no authority lock at this checkpoint. Next source adds bounded uniform-background
+whole-frame translation recognition (see plan/tests), preserving original8% guard
+otherwise. Before merge, require failed-condition native regression + real switch-away
+negative control, then frozen4x adult30/safe flower playback. Each max3 sequential.
+24 focused unit tests/build pass. Accelerated playback source load reset found in
+free local browser smoke, corrected by setting rate AFTER seek; assert actual4x.
+No fast-video paid calls yet. Original failures retained. No release.
 
 ## Current adult/video continuation
 
