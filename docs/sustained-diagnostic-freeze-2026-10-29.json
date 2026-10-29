@@ -1,0 +1,34 @@
+{
+  "frozenAt": "2026-10-29T15:22:17.757433+00:00",
+  "budgetBefore": {
+    "capUsd": 3,
+    "priorUsage": {
+      "retainedReservations": 62,
+      "cap": 64,
+      "ledgerMissing": true,
+      "source": "HANDOFF.md; not reset or included in new allowance"
+    },
+    "current": {
+      "requests": 251,
+      "reservedUsd": 2.7635220480000076,
+      "inputTokens": 853050
+    },
+    "authorizationHistory": [
+      {
+        "approved_at": "2026-10-29T09:46:06.126178+00:00",
+        "fromCapUsd": 0.5,
+        "toCapUsd": 3,
+        "atRequests": 45,
+        "source": "Explicit user approval: Yes, use a $3 cumulative reservation cap. Not a new/reset allowance."
+      }
+    ]
+  },
+  "maximumRequests": 3,
+  "scene": "youtube-compact-video",
+  "motion": "video-switch-away",
+  "reason": "One fixed diagnostic after preserved original stale-block failure; not until-success",
+  "codeSha256": {
+    "lab/run-windows-live.ts": "f2dc9c309123188928599ff05c006e82af45b56f416bb34ec82b808f7db9e14d",
+    "lab/capture-observer.ts": "19be891e419e9b5512631ec2ca08801a2bf8c197c1e2e079e275faa404556c9e"
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "accountingEvidence": {
+    "run": 40899997617,
+    "source": "in-run numeric accounting verifier compared wrapper/report/profile before emission",
+    "noExtraProviderCalls": true
+  },
+  "workflow": {
+    "conclusion": "failure",
+    "headSha": "b7e4a04ed999675af08a351edeeeb4bd2d025af3",
+    "jobs": [
+      {
+        "completedAt": "2026-10-29T15:18:57Z",
+        "conclusion": "failure",
+        "databaseId": 123539359243,
+        "name": "live-detection",
+        "startedAt": "2026-10-29T15:17:16Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Refuse publishing, missing accounting or missing provider secret",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-node@v4",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run npm ci",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run npm run build",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run npm test",
+            "number": 7,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run npx playwright install chromium",
+            "number": 8,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Prepare controlled scene and retained ledger copy",
+            "number": 9,
+            "status": "completed"
+          },
+          {
+            "conclusion": "failure",
+            "name": "Real capture, live Jev, native cover and recovery",
+            "number": 10,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify and emit numeric accounting only",
+            "number": 11,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Preserve numerical evidence and accounting only",
+            "number": 12,
+            "status": "completed"
+          },
+          {
+            "conclusion": "skipped",
+            "name": "Post Run actions/setup-node@v4",
+            "number": 23,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 24,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 25,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40899997617/job/123539359243"
+      },
+      {
+        "completedAt": "2026-10-29T15:17:13Z",
+        "conclusion": "skipped",
+        "databaseId": 123539361186,
+        "name": "capture-public",
+        "startedAt": "2026-10-29T15:17:13Z",
+        "status": "completed",
+        "steps": [],
+        "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40899997617/job/123539361186"
+      },
+      {
+        "completedAt": "2026-10-29T15:17:13Z",
+        "conclusion": "skipped",
+        "databaseId": 123539361857,
+        "name": "reconcile",
+        "startedAt": "2026-10-29T15:17:13Z",
+        "status": "completed",
+        "steps": [],
+        "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40899997617/job/123539361857"
+      },
+      {
+        "completedAt": "2026-10-29T15:17:13Z",
+        "conclusion": "skipped",
+        "databaseId": 123539362152,
+        "name": "windows",
+        "startedAt": "2026-10-29T15:17:13Z",
+        "status": "completed",
+        "steps": [],
+        "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40899997617/job/123539362152"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40899997617"
+  },
+  "source": "b7e4a04ed999675af08a351edeeeb4bd2d025af3",
+  "report": {
+    "scope": "Real Windows stale-result control: actual capture/provider, positive replaced by neutral during inference. Must remain uncovered, recheck neutral and stop cleanly. Does not test successful positive blocking/recovery.",
+    "passed": false,
+    "caseId": "native-youtube-compact-video",
+    "preparedSha256": "96caada03ba5bd7c7b314c42083bde8a957c21360ddcc715eeb7d5893fc90d13",
+    "manifestSha256": "2461dfefba4b7fea7c1b1688a0f44fd347a8d85f8ff8e9951c82a8377cf6cb4f",
+    "rule": {
+      "id": "video",
+      "name": "YouTube",
+      "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+      "enabled": true
+    },
+    "caseProvenance": {
+      "origin": "self-authored YouTube-like watch interface with actual decoded CC0 flower video",
+      "source": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm",
+      "source_sha256": "c6f8a348953395598a9a73b9bab1676436410797bce9f398f4be1531d6e76dda",
+      "adult_provenance": "Nonhuman plant-only sample, not an adult-content source.",
+      "rights": {
+        "license": "CC0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attribution": "MDN interactive-examples CC0 video sample"
+      }
+    },
+    "protocol": "switch-away-during-inference",
+    "startedAt": "2026-10-29T15:18:29.000Z",
+    "timingMethod": "Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.",
+    "motion": "video-switch-away",
+    "videoContext": "youtube-compact",
+    "maximumRequests": 3,
+    "budgetBefore": {
+      "requests": 249,
+      "reservedUsd": 2.7415019520000072,
+      "inputTokens": 845866
+    },
+    "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\report.json.profile",
+    "instrumentation": "Pass-through net.fetch audit, unchanged request/response and real capture/provider. Only encrypted submitted frames and numeric score metadata retained; no headers/credentials/error bodies.",
+    "runtime": {
+      "os": "10.0.26100",
+      "electron": "45.1.0",
+      "appVersion": "0.1.0",
+      "displays": [
+        {
+          "id": 1562750811,
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 768
+          },
+          "scaleFactor": 1
+        }
+      ]
+    },
+    "capturePreflight": "Actual display capture varied before session start; pixels discarded without provider call or file.",
+    "settings": {
+      "backend": "jev",
+      "cloudConsent": true,
+      "cloudBudgetUsd": 2.7745320960000077,
+      "rules": [
+        {
+          "id": "explicit",
+          "name": "Explicit content",
+          "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+          "enabled": false
+        },
+        {
+          "id": "video",
+          "name": "YouTube",
+          "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+          "enabled": true
+        },
+        {
+          "id": "social",
+          "name": "Social feeds",
+          "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+          "enabled": false
+        }
+      ],
+      "threshold": 0.4,
+      "intervalSeconds": 3,
+      "sessionMinutes": 25,
+      "detectionOnly": false
+    },
+    "negativeControl": "Live neutral frame allowed without a cover.",
+    "playbackAtStart": {
+      "time": 0.534606,
+      "paused": false,
+      "readyState": 4,
+      "decodedFrames": 20,
+      "playbackRate": 1
+    },
+    "videoSha256": "c6f8a348953395598a9a73b9bab1676436410797bce9f398f4be1531d6e76dda",
+    "videoRangeSeconds": [
+      0.2,
+      4.5
+    ],
+    "playbackRate": 1,
+    "positiveRequestObservedAt": 1793287117705,
+    "replacedAt": 1793287117721,
+    "failedPhase": "verify-stale-result-rejected",
+    "errorType": "Error",
+    "lastStatus": {
+      "mode": "blocked",
+      "error": null,
+      "checks": 2,
+      "blocks": 1,
+      "cloudRequests": 251
+    },
+    "failure": "Live validation failed; inspect numeric state/accounting and optional encrypted audit. No plaintext screenshot, provider error body or credentials retained.",
+    "playbackAtEnd": null,
+    "activityCounts": {
+      "changedDuringAnalysis": 0,
+      "translatedView": 0,
+      "allowed": 1,
+      "blocked": 1,
+      "checks": 2
+    },
+    "requestAudit": [
+      {
+        "index": 0,
+        "sha256": "4e610577733f6debe51ecdd5b03a75acf1e6b0ecc5cba4b6b2c282e227717415",
+        "scores": {
+          "video": 0.02
+        }
+      },
+      {
+        "index": 1,
+        "sha256": "133c06d9c972d931eba2678de31a45584ab7852c60f31f5f2c5d964e06fecea9",
+        "scores": {
+          "video": 0.95
+        }
+      }
+    ],
+    "budgetAfter": {
+      "requests": 251,
+      "reservedUsd": 2.7635220480000076,
+      "inputTokens": 853050
+    }
+  },
+  "accountingReconciled": true,
+  "budget": {
+    "capUsd": 3,
+    "priorUsage": {
+      "retainedReservations": 62,
+      "cap": 64,
+      "ledgerMissing": true,
+      "source": "HANDOFF.md; not reset or included in new allowance"
+    },
+    "current": {
+      "requests": 251,
+      "reservedUsd": 2.7635220480000076,
+      "inputTokens": 853050
+    },
+    "authorizationHistory": [
+      {
+        "approved_at": "2026-10-29T09:46:06.126178+00:00",
+        "fromCapUsd": 0.5,
+        "toCapUsd": 3,
+        "atRequests": 45,
+        "source": "Explicit user approval: Yes, use a $3 cumulative reservation cap. Not a new/reset allowance."
+      }
+    ]
+  }
+}

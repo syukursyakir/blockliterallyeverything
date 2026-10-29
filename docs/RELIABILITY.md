@@ -7,6 +7,20 @@ The next milestone is measured reliability, ahead of UI polish or publishing.
 
 ## Latest evidence — supersedes historical audit below
 
+Read [SUSTAINED-VIDEO-RESULTS.md](SUSTAINED-VIDEO-RESULTS.md): screenshot-only
+periodic checks target sustained distraction; brief appearances are acceptable.
+New synthetic YouTube-like moving-player layouts blocked in4261/3277ms (.94/.95),
+full native cover/recovery. Known CC0 media, correlated new compositions, not real
+YouTube/new-source accuracy. Compact switch-away FAILED with stale positive block;
+one fixed diagnostic reproduced it and measured actual whole-screen difference5.53%
+below8% guard after neutral replacement. Local-change dilution is demonstrated in
+that controlled diagnostic; original exact capture absent. Detector unchanged; no
+speculative threshold change, no claim that old source27 miss is explained.
+Warning PR7 merged with full Windows CI (79unit+skip,9UI,13fixtures plus installer/
+native smoke). Final authority253/$2.785542144/860235tokens,19 max remaining, no paid
+job/lock. No95% proof or release. Older snapshots below are historical.
+
+
 Read [FRESH-FAMILY-RESULTS.md](FRESH-FAMILY-RESULTS.md): two newly tested declared
 adult35/37 author/source files, four full/small variants caught(.74–.96), no platform
 false matches. No new explicit negatives or activity context. Initial operator raw-
@@ -24,7 +38,7 @@ flower40887744347 FAILED two-fresh-check bound: correct .02/.02, one discard/one
 accepted video check, zero blocks; not a false positive or a safe-control pass.
 General fast-video motion remains limited. No threshold/model/preset change.
 
-Current authority245/$2.697461760/831497tokens,27 maximum reservations remain,
+At the fresh-family phase authority245/$2.697461760/831497tokens,27 maximum reservations remained,
 no paid job/lock. Original source27 miss stays OPEN;95% is not established.
 Historical PR #5 evidence and its then-current accounting follow.
 

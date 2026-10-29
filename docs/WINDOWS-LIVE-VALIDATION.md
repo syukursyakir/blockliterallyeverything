@@ -60,6 +60,9 @@ frame-accurate timing. One trial does not establish median or tail latency.
   pass. Without the optional audit, the discarded verdict is not observable;
   do not infer its score from the positive stimulus label.
 
+- `--motion video-switch-away`: decoded playback then the same stale-result
+  negative control as switch-away. Video motion/time must advance before the
+  request is replaced by different neutral content; no positive-blocking claim.
 - `--motion video`: plays pinned decoded WebM in its reviewed segment; verify
   media time and decoded-frame count advance, then full cover/recovery checks.
 - `--motion video-fast` / `video-safe-fast`: corresponding positive/negative
@@ -67,6 +70,12 @@ frame-accurate timing. One trial does not establish median or tail latency.
   media time/decoded frames. Accelerated known clips are not rapid-cut coverage.
 - `--motion video-safe`: labeled nonhuman negative playback, two fresh video
   checks with zero blocks/covers and clean stop. This is not positive-block proof.
+
+Test-only scenes `youtube-video` and `youtube-compact-video` place the pinned CC0
+flower clip in a self-authored YouTube-like watch UI (78vw/65vh or42vw/38vh player).
+They exercise the video starter rule with actual decoded pixels. Synthetic UI and
+known media are correlated integration conditions, not real YouTube browsing or
+independent accuracy evidence. Frozen plan: SUSTAINED-VIDEO-PLAN.md.
 
 Reviewed sources/ranges/hashes are in lab/reviewed-videos.json. Preparation verifies
 source bytes; native preflight checks WebM basename/container/hash/12MB bound and
@@ -116,6 +125,17 @@ Verify wrapper, report budgetAfter and isolated profile ledger agree, counters n
 regress, cap stays respected and previous history remains intact. Atomically reconcile
 local authority before removing its lock. Preparation failure may leave only an
 unchanged wrapper; confirm the inference step never ran before releasing authority.
+Single-trial live jobs also compare persisted report/wrapper/profile counters and
+emit one `VERIFIED_ACCOUNTING=` numeric record to the Actions log. The fixed six-trial
+series keeps its existing separate profile/summary protocol. If this cloud workspace
+cannot download storage artifacts, the existing workflow supports recovery-only
+`recover_run=COMPLETED_SINGLE_TRIAL_RUN_ID`, with live_detection/capture_only/
+publish_alpha all false. That job has actions:read/contents:read, no provider secret,
+downloads only this repository's named artifact and verifies/emits the numeric chain.
+It never reruns detection. Preserve the recovery-run ID with the original report;
+compare exact retained before/history and verify monotonic/capped after locally
+before atomic reconciliation/unlock. A successful detection log alone is insufficient.
+
 On a crash, empty primary report or accounting disagreement, retain the lock and
 recover from the isolated profile after proving the native process has stopped.
 Do not blindly retry, reset or use a stale snapshot. No parallel paid local/remote work.

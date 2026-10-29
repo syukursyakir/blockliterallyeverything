@@ -1,5 +1,6 @@
 // No provider calls. Prepares a controlled reviewed scene and a retained budget COPY.
 import { chromium } from '@playwright/test'
+import { paintReviewedVideo } from '../lab/video-scene.ts'
 import reviewedVideos from '../lab/reviewed-videos.json' with {type:'json'}
 import { mkdir, writeFile, readFile, readdir } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
@@ -7,9 +8,10 @@ import path from 'node:path'
 import { validateEvaluationBudget } from '../lab/evaluation-budget.ts'
 import { nativeBudget } from '../lab/native-process.ts'
 const scene=process.env.BLE_LIVE_SCENE || 'social-synthetic'
-if(!['social-synthetic','youtube-public','explicit-public',...Object.keys(reviewedVideos)].includes(scene))throw new Error('Unknown controlled scene.')
+if(!['social-synthetic','youtube-public','explicit-public','youtube-video','youtube-compact-video',...Object.keys(reviewedVideos)].includes(scene))throw new Error('Unknown controlled scene.')
 const sourceHeaders={'User-Agent':'BlockLiterallyEverythingValidation/0.1 (https://github.com/syukursyakir/blockliterallyeverything; provenance research)'}
-const videoReference=reviewedVideos[scene]
+const videoContext=scene==='youtube-video'?'youtube':scene==='youtube-compact-video'?'youtube-compact':undefined
+const videoReference=reviewedVideos[videoContext?'safe-video':scene]
 const explicitReference={"url":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/ERA110_Erika_Kole_nude_R_4_030.jpg/960px-ERA110_Erika_Kole_nude_R_4_030.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","sha256":"9304d80530f8d9fa8c8405d911f5f8850335df417a8269a0566523e0c0af0b12","source":"https://commons.wikimedia.org/wiki/File:ERA110_Erika_Kole_nude_R_4_030.jpg","adult_provenance":"Source declares model adult age 22 at capture.","rights":{"license":"CC BY-SA 4.0","license_url":"https://creativecommons.org/licenses/by-sa/4.0","attribution":"Carol Ash"}}
 const destination=path.resolve(process.argv[2] || 'native-live')
 if(!process.env.BLE_RETAINED_BUDGET)throw new Error('Provide the authoritative retained budget metadata in BLE_RETAINED_BUDGET. No empty allowance is created.')
@@ -38,7 +40,9 @@ try {
   await writeFile(path.join(destination,'reviewed.webm'),bytes,{flag:'wx',mode:0o600})
   await page.setContent('<html><body style="margin:0;background:#eee;display:grid;place-items:center;height:100vh"><video muted style="width:96vw;max-height:96vh" src="data:video/webm;base64,'+bytes.toString('base64')+'"></video></body></html>')
   await page.locator('video').evaluate(async(v,start)=>{if(v.readyState<1)await new Promise((r,j)=>{v.onloadedmetadata=r;v.onerror=j});v.currentTime=start;await new Promise(r=>v.onseeked=r)},videoReference.start)
+  if(videoContext)await page.evaluate(paintReviewedVideo,{data:'data:video/webm;base64,'+bytes.toString('base64'),start:videoReference.start,end:videoReference.end,rate:1,context:videoContext})
   provenance={origin:videoReference.explicit===false?'actual decoded CC0 nonhuman safe-video control':'actual decoded licensed source-declared adult educational video, pinned hash',labels:{explicit:videoReference.explicit!==false,video:false,social:false},label_note:'Reviewed adult source segment before native inference. Actual decoded video, source/author correlation retained; poster is only preflight metadata, not a still substitution.',source:videoReference.source,source_sha256:videoReference.sha256,adult_provenance:videoReference.adult_provenance,rights:videoReference.rights,video_file:'reviewed.webm',video_sha256:videoReference.sha256,video_start:videoReference.start,video_end:videoReference.end}
+  if(videoContext)Object.assign(provenance,{origin:'self-authored YouTube-like watch interface with actual decoded CC0 flower video',labels:{explicit:false,video:true,social:false},video_context:videoContext,label_note:'New controlled moving-player composition. Synthetic UI, known CC0 media; integration-only condition, not real-service or independent accuracy coverage.'})
  }else{
   const response=await fetch(explicitReference.url,{redirect:'error',headers:sourceHeaders,signal:AbortSignal.timeout(30000)});if(!response.ok)throw new Error('Adult reference download unavailable; no provider call.')
   const bytes=Buffer.from(await response.arrayBuffer());if(bytes.length>12*1024*1024 || createHash('sha256').update(bytes).digest('hex')!==explicitReference.sha256)throw new Error('Reviewed adult reference hash changed; no provider call.')

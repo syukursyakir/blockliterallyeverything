@@ -4,6 +4,8 @@ import { open, mkdir, readFile, writeFile, rename, unlink } from 'node:fs/promis
 import path from 'node:path'
 import { parseArgs } from 'node:util'
 import { validateEvaluationBudget, type EvaluationBudget } from './evaluation-budget.ts'
+import { observeCaptures } from './capture-observer.ts'
+import { paintReviewedVideo } from './video-scene.ts'
 import { nativeExitGuard, nativeBudget, nativeMotion, nativeVideo, nativeVideoRange } from './native-process.ts'
 import { preflight, evaluationSettings } from './app-evaluation.ts'
 import { validateLedger } from '../electron/jev.ts'
@@ -15,6 +17,7 @@ if (process.platform !== 'win32') throw new Error('Live native validation requir
 const { values } = parseArgs({ options: { corpus:{type:'string'}, case:{type:'string'}, ledger:{type:'string'}, output:{type:'string'}, motion:{type:'string'}, audit:{type:'boolean'}, 'allow-cloud':{type:'boolean'}, 'positive-at-start':{type:'boolean'} } })
 if(values.audit && !process.env.BLE_CAPTURE_PUBLIC_KEY)throw new Error('Audit requires the local review public encryption key; no plaintext frame output.')
 const motion=nativeMotion(values.motion,values['positive-at-start']===true)
+const switchesAway=motion==='switch-away' || motion==='video-switch-away'
 const playsVideo=motion.startsWith('video')
 const safeVideo=motion==='video-safe' || motion==='video-safe-fast'
 const playbackRate=motion.endsWith('-fast')?4:1
@@ -22,6 +25,7 @@ if (!values['allow-cloud'] || !values.corpus || !values.case || !values.ledger |
 const prepared=await preflight(values.corpus)
 const selected=prepared.cases.find(c=>c.item.id===values.case)
 if (!selected) throw new Error('Case not found.')
+if(selected.item.video_context!==undefined && !['youtube','youtube-compact'].includes(selected.item.video_context))throw new Error('Unknown video context.')
 if(Boolean(selected.item.video_file)!==playsVideo)throw new Error('A video case requires explicit video motion mode; still cases cannot claim playback.')
 const media=playsVideo?await nativeVideo(path.dirname(path.resolve(values.corpus)),selected.item.video_file,selected.item.video_sha256):undefined
 const range=nativeVideoRange(selected.item.video_start,selected.item.video_end)
@@ -40,7 +44,8 @@ let reconcile=false, profileSeeded=false, reportReady=false, profileConfirmed=fa
 let ledger: EvaluationBudget
 const report: Record<string,unknown>={scope:'Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.',passed:false,caseId:selected.item.id,preparedSha256:selected.item.sha256,manifestSha256:prepared.manifestSha256,rule:positive,caseProvenance:{origin:selected.item.origin,source:selected.item.source,source_sha256:selected.item.source_sha256,adult_provenance:selected.item.adult_provenance,rights:selected.item.rights},protocol:positiveAtStart?'positive-at-session-start':'neutral-to-positive-during-session',startedAt:new Date().toISOString(),timingMethod:'Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.'}
 report.motion=motion
-if(motion==='switch-away'){
+report.videoContext=selected.item.video_context
+if(switchesAway){
   report.scope='Real Windows stale-result control: actual capture/provider, positive replaced by neutral during inference. Must remain uncovered, recheck neutral and stop cleanly. Does not test successful positive blocking/recovery.'
   report.protocol='switch-away-during-inference'
 }
@@ -73,7 +78,8 @@ try {
   profileConfirmed=true
   if(values.audit){
     report.instrumentation='Pass-through net.fetch audit, unchanged request/response and real capture/provider. Only encrypted submitted frames and numeric score metadata retained; no headers/credentials/error bodies.'
-    await desktop.evaluate(({net})=>{
+    await desktop.evaluate(({net,desktopCapturer},observer)=>{
+      ;(globalThis as any).bleCaptureAudit=Function('return ('+observer+')')()(desktopCapturer)
       const original=net.fetch.bind(net),audits:any[]=[]
       ;(globalThis as any).bleRequestAudit=audits
       net.fetch=async(input,init)=>{
@@ -81,14 +87,15 @@ try {
         if(input==='https://api.typesafe.ai/v1/systemone' && typeof init?.body==='string' && audits.length<3){
           try{
             const payload=JSON.parse(init.body),asset:any=Object.values(payload.assets)[0]
-            if(asset.format==='png' && typeof asset.data_base64==='string' && asset.data_base64.length<16*1024*1024){row={frame:asset.data_base64};audits.push(row)}
+            if(asset.format==='png' && typeof asset.data_base64==='string' && asset.data_base64.length<16*1024*1024){row={frame:asset.data_base64,requestAt:Date.now()};audits.push(row)}
           }catch{/* Audit must not alter the real request. */}
         }
         const response=await original(input,init)
+        if(row)row.responseAt=Date.now()
         if(row && response.ok)void response.clone().json().then((body:any)=>{row.scores=Object.fromEntries(Object.entries(body.answers??{}).filter(([k,v]:any)=>['explicit','video','social'].includes(k) && typeof v?.noul==='number' && Number.isFinite(v.noul) && v.noul>=0 && v.noul<=1).map(([k,v]:any)=>[k,v.noul]))}).catch(()=>{row.auditError=true})
         return response
       }
-    })
+    },observeCaptures.toString())
   }
   const displays=await desktop.evaluate(({screen,app})=>({os:process.getSystemVersion(),electron:process.versions.electron,appVersion:app.getVersion(),displays:screen.getAllDisplays().map(d=>({id:d.id,bounds:d.bounds,scaleFactor:d.scaleFactor}))}))
   report.runtime=displays
@@ -114,11 +121,11 @@ try {
   },{timeout:10_000}).toBe(true)
   report.capturePreflight='Actual display capture varied before session start; pixels discarded without provider call or file.'
   const snapshot=()=>page.evaluate(()=>window.desktop!.snapshot())
-  const paintPositive=async()=>desktop!.evaluate(async(_,{data,motion,range,playbackRate})=>{
+  const paintPositive=async()=>desktop!.evaluate(async(_,{data,motion,range,playbackRate,videoContext,videoPainter})=>{
     const scene=(globalThis as any).bleLiveScene
-    if(motion.startsWith('video'))return await scene.webContents.executeJavaScript(`(async()=>{const v=document.createElement('video');v.muted=true;v.style='width:96vw;max-height:96vh;object-fit:contain';v.src=${JSON.stringify(data)};document.body.replaceChildren(v);await new Promise((r,j)=>{v.onloadedmetadata=r;v.onerror=()=>j(new Error('Reviewed video decoding failed'));setTimeout(()=>j(new Error('Video metadata timeout')),8000)});if(v.duration<${range.end})throw new Error('Reviewed video too short');v.currentTime=${range.start};await new Promise((r,j)=>{v.onseeked=r;setTimeout(()=>j(new Error('Video seek timeout')),8000)});v.ontimeupdate=()=>{if(v.currentTime>=${range.end})v.currentTime=${range.start}};v.onseeked=()=>{void v.play()};v.playbackRate=${playbackRate};await v.play();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return Date.now()})()`)
+    if(motion.startsWith('video'))return await scene.webContents.executeJavaScript('('+videoPainter+')('+JSON.stringify({data,start:range.start,end:range.end,rate:playbackRate,context:videoContext})+')')
     return await scene.webContents.executeJavaScript(`(async()=>{ const img=new Image();img.src=${JSON.stringify(data)};await img.decode();img.style=${JSON.stringify(motion==='pan-wide'?'max-width:65vw;max-height:90vh;object-fit:contain':motion==='pan'?'max-width:96vw;max-height:96vh;object-fit:contain':'max-width:100vw;max-height:100vh;object-fit:contain')};document.body.replaceChildren(img);if(['pan','pan-wide'].includes(${JSON.stringify(motion)})){globalThis.bleMotionFrames=0;const start=performance.now();function move(now){img.style.transform='translateX('+(${JSON.stringify(motion)}==='pan-wide'?innerWidth*0.16*Math.sin((now-start)/180):12*Math.sin((now-start)/400))+'px)';globalThis.bleMotionFrames++;requestAnimationFrame(move)}requestAnimationFrame(move)}await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return Date.now()})()`)
-  },{data:media?'data:video/webm;base64,'+media.toString('base64'):'data:image/png;base64,'+selected.bytes.toString('base64'),motion,range,playbackRate})
+  },{data:media?'data:video/webm;base64,'+media.toString('base64'):'data:image/png;base64,'+selected.bytes.toString('base64'),motion,range,playbackRate,videoContext:selected.item.video_context,videoPainter:paintReviewedVideo.toString()})
   let paintedAt:number
   report.settings=(await snapshot()).settings
   let negativeChecks=0, negativeRequests=0
@@ -143,7 +150,7 @@ try {
     expect(report.playbackAtStart).toMatchObject({paused:false,playbackRate})
     report.playbackRate=playbackRate
   }
-  if(motion==='switch-away'){
+  if(switchesAway){
     phase='await-positive-request'
     await expect.poll(async()=>(await snapshot()).status.cloudRequests,{intervals:[5],timeout:10_000}).toBe(negativeRequests+1)
     const inFlight=await snapshot()
@@ -189,7 +196,7 @@ try {
     report.playbackAtCover=await playback()
     expect(report.playbackAtCover).toMatchObject({paused:false})
     expect((report.playbackAtCover as {decodedFrames:number}).decodedFrames).toBeGreaterThan((report.playbackAtStart as {decodedFrames:number}).decodedFrames)
-    report.motionLimits='Actual decoded licensed adult video in reviewed range, source correlation retained, one trial; not representative video recall.'
+    report.motionLimits=selected.item.video_context?'Synthetic YouTube-like UI with actual decoded CC0 video; new composition, reused media, not real-service or independent accuracy evidence.':'Actual decoded licensed adult video in reviewed range, source correlation retained, one trial; not representative video recall.'
   }
   if(motion==='pan' || motion==='pan-wide'){
     report.motionFrames=await desktop.evaluate(async()=>await (globalThis as any).bleLiveScene.webContents.executeJavaScript('globalThis.bleMotionFrames'))
@@ -226,11 +233,12 @@ try {
   }
   if(values.audit && desktop && profileConfirmed){
     try{
+      report.captureAudit=await desktop.evaluate(()=>(globalThis as any).bleCaptureAudit??[])
       const rows=await desktop.evaluate(()=>(globalThis as any).bleRequestAudit??[])
       const files:Record<string,Buffer>={}
       report.requestAudit=rows.map((row:any,index:number)=>{
         const bytes=Buffer.from(row.frame,'base64'),name='request-'+index+'.png';files[name]=bytes
-        return {index,sha256:createHash('sha256').update(bytes).digest('hex'),scores:row.scores,auditError:row.auditError}
+        return {index,requestAt:row.requestAt,responseAt:row.responseAt,sha256:createHash('sha256').update(bytes).digest('hex'),scores:row.scores,auditError:row.auditError}
       })
       if(rows.length)await writeFile(output+'.audit.enc.json',encryptCaptures(files,process.env.BLE_CAPTURE_PUBLIC_KEY!),{flag:'wx',mode:0o600})
     }catch{report.auditError='Encrypted diagnostic capture failed; no plaintext frame written.'}

@@ -4,18 +4,43 @@ Read AGENTS.md, DESIGN.md, docs/WORKLOG.md, docs/RELIABILITY.md and this file fi
 WORKLOG.md and saved reports retain history; this file supersedes old missing-key,
 permission and budget blockers. Do not repeat completed experiments as new evidence.
 
-## Current continuation — warning validation, then sustained-video checks
+## Current continuation — warning merged, video evidence complete
 
-User approved finishing/merging the movement warning with Windows CI, followed by
-bounded sustained-video and switch-away tests. No release. Screenshot-only approach;
-brief appearances between periodic checks are acceptable, sustained distraction is
-the target. TimeSlicer research is complete and browser-context proposal historical.
-Production source902565c passed CI40889272599 before this change. The current local
-warning implementation and its completed focused checks are described below.
-Budget authority remains245/$2.697461760/831497tokens;27 max reservations fit.
-Private ledger was absent on resume; recover exact retained budget including prior
-history from committed evaluation-fresh-family-corrected-2026-10-29.json, not empty
-counters. No paid job dispatched yet. Do not rerun prior motion cohorts as new evidence.
+PR #7 MERGED at3c2a80b931943164158683fd254df80514236455. SourceCI40898018412 and
+main40898675905 PASSED79unit+oneintendedskip,9UI,native smoke,installer/install,
+13fixture scenarios; release skipped. Warning tracks per-display movement delays;
+no extension/provider/threshold change. Periodic checks target sustained distraction;
+brief appearances between checks are acceptable per user.
+
+PR #8 https://github.com/syukursyakir/blockliterallyeverything/pull/8 is test-only
+sustained-player tooling/evidence. Read SUSTAINED-VIDEO-RESULTS.md and raw linked JSON.
+Original frozen three-trial cohort uses synthetic YouTube-like UI with actual1x
+CC0 flower video, not real-service/new-source/independent accuracy evidence:
+- Wide40898793801 PASSED4261ms/.94, decoded20->137, full cover/recovery,2calls.
+- Compact40899628128 PASSED3277ms/.95, decoded21->108, cover/recovery,2calls.
+- Compact switch40899997617 FAILED: positive.95 accepted after neutral replacement,
+  zero changed-screen discards, one stale block,2calls. Preserve failure.
+ONE separately frozen diagnostic40900883106 reproduced staleblock/.94,2calls.
+Actual captured64px pair mean difference5.53% below8% global guard; postcapture
+recorded121ms after replacement, response82ms after. This demonstrates local-change
+dilution in the controlled diagnostic. Original pair absent; its exact measurement
+unknown. No production fix, threshold relaxation or older source27 causal claim.
+No further paid trials planned. Next: prospectively assess localized-change handling
+without starving ongoing video; do not rerun these cases as new independent evidence.
+
+Current253/$2.785542144/860235tokens,19 max reservations left under cumulative3.
+All8 new reservations/history reconciled from wrapper/report/profile chains, no paid
+job/lock. Private authority /workspace/work/ble-real-2026-10-29/app-budget.json;
+review key/captures /workspace/work/ble-sustained-2026-10-29 outside Git.
+Direct cloud artifact storage denied403; read-only Actions recovery40899448984
+verified first-run files without provider secret/calls. New single-trial log verifier
+emits independently compared numeric chain; fixed six-trial protocol unchanged.
+No network-policy bypass, no release. Raw report records recovery evidence source.
+Test-only observer unit and strict runner tsc pass; original8 focused helpers pass.
+SourceCI40900898602 atf4b644f PASSED80unit+oneintendedskip,9UI,native smoke,
+installer/install,13fixtures; release skipped (adds observer unit).
+Earlier source40898845707/40900022596 passed79unit+skip/9UI/13fixtures, same build/
+installer/native smoke, release skipped. Update this checkpoint after merge/CI.
 
 ## Periodic-check goal and movement-warning implementation
 
@@ -30,14 +55,14 @@ polling change; warning threshold is a UI choice, not a response guarantee.
 Build/tsc passed; newly extended desktop lifecycle fixture and new focused Playwright
 movement-warning test passed. Initial UI attempt used stale dist and failed; rebuilt
 then passed. No full old suite rerun or Windows/live/provider test; no release/spend.
-Changes are being prepared for a validation PR. Review scope is warning only; actual fast-motion
+Warning change is merged in PR #7. Review scope is warning only; actual fast-motion
 coverage and old source27 miss remain open. Native fixture is not Windows proof.
 
 ## Current user direction — screenshot-only
 
 User declined the browser-extension direction after discussing TimeSlicer. Keep
 screenshot-only detection; the assessment below is historical, not the active build
-plan. Current request is an independent progress/code review and recommendations.
+plan. User authorized the warning merge and bounded sustained-video checks described above.
 Review found cloud checkLoop can repeatedly discard moving frames and return to
 watching without a sustained-freshness warning; activity records individual discards
 but the overview lacks accepted-decision age. Coverage warning is now implemented locally as described above; prioritize
@@ -45,10 +70,10 @@ prospective motion/switch-away evaluation before changing freshness.
 Do not simply loosen the whole-screen difference threshold. Model reliability and
 physical display limits remain open.
 
-## Browser-context assessment checkpoint
+## Historical browser-context assessment (declined)
 
 Read docs/BROWSER-CONTEXT-ASSESSMENT.md for the scoped continuation assessment.
-Recommended first experiment is local-only, opt-in observation with verified native
+The declined research proposal recommended local-only, opt-in observation with verified native
 foreground/window/tab/document binding, minimal route categories and fresh stale-
 message/switch-away checks. Current Jev interface is image-only; do not inject page
 metadata into rules or bypass visual freshness. No extension or runtime change was
@@ -86,7 +111,7 @@ proxy-aware scripts/evaluate-app.mjs wrapper. USE THAT WRAPPER; it already passe
 amended BEFORE one controlled four-case run; all four then passed. Not a pristine
 first-attempt4/4 cohort or five independent samples. No retry loop/key extraction.
 
-Current authority245/$2.697461760/831497tokens;27 further maximum reservations fit.
+At fresh-family completion authority245/$2.697461760/831497tokens;27 further maximum reservations fit THEN.
 All before/report/authority counters matched, prior history preserved, NO paid job/
 lock. Raw pixels private /workspace/work/ble-fresh-families-2026-10-29. Do not replay
 these four cases as new independent evidence. Latest code remains merged PR #6,
@@ -279,9 +304,9 @@ Installed fixture tests/emitted OS signals do not certify these conditions.
 ## Authoritative accounting — never reset
 
 /workspace/work/ble-real-2026-10-29/app-budget.json
-Current245 reservations,$2.697461760 of approved cumulative3,831497 input tokens,
-~$0.034922874 estimated usage at.042/million. Reservations are not bills; old missing
-62/64 history remains separately preserved, not zero.27 more maximum reservations
+Current253 reservations,$2.785542144 of approved cumulative3,860235 input tokens,
+~$0.036129870 estimated usage at.042/million. Reservations are not bills; old missing
+62/64 history remains separately preserved, not zero.19 more maximum reservations
 fit (272 total). Migration from.50 to3 retained45 attempts/137877 tokens and explicit
 authorizationHistory. No remote paid job or authority lock remains.
 

@@ -751,3 +751,63 @@ setup, original failure retained in session. Reviewed semantic Alert/icon/clock
 changes using pinned web guidelines snapshot. git diff --check passed. No completed
 full suites repeated, Windows/native live run or paid calls; authority245 unchanged.
 No release. Local uncommitted changes; hardware reliability unchanged.
+
+
+### Warning merge and first sustained-player result
+
+PR7 source40898018412 PASSED79unit+1intendedskip/9UI/native smoke/installer/install/
+13fixtures; merged3c2a80b with explicit clean squash message. Main40898675905 PASSED
+same sequence, release skipped. Private ledger absent on resume; restored full245
+authority with priorUsage/authorizationHistory from committed final fresh report.
+No allowance reset. Frozen three new synthetic moving-player conditions, reused
+CC0 flower media, visual labels before inference. Local serialized painter passed
+both decoding/loop/advancement and invalid-media rejection without provider calls;
+8 focused native-helper/hostguard tests and strict runner tsc passed.
+Wide40898793801 PASSED4261ms/.94, real decode20->137frames, full cover/recovery,
+2calls. Artifact storage403 prevented independent local download. Kept authority
+lock; used normal read-only Actions artifact recovery40899448984 (no provider key/
+calls) to compare wrapper/report/profile and emit numeric chain. Reconciled local
+247/$2.719481856/838679 atomically, history preserved. New single-trial log verifier
+keeps future numeric chain accessible; actual inline self-check accepts match,
+rejects mismatched profile and token regression; fixed six-trial emitter exclusion.
+Compact40899628128 running under exclusive authority lock, no other paid work.
+Original old misses remain open; controlled new layouts are not real-YouTube or
+independent95% evidence. No release. PR8 contains test-runner/plan work, not detector
+changes. First standalone recovery workflow dispatch404 because new workflow absent
+on default; used existing Windows workflow recovery-only mode instead, no inference.
+
+
+Compact40899628128 PASSED3277ms/.95, decoded21->108, full cover/recovery,2calls.
+In-run numeric verifier compared wrapper/report/profile; atomic authority249 reconciled.
+Original compact switch40899997617 FAILED verify-stale-result-rejected: positive.95
+accepted, no changed-screen discard, nativeblock after neutral replaced positive16ms
+after request reservation observed.2calls; all counters reconcile251/$2.763522048/
+853050. Not a detection miss; stale-block failure. Exact original recapture timing/
+pixels absent, so no asserted cause. Froze ONE extra diagnostic before dispatch,
+optional pass-through actual capture/response timestamps and64px mean difference;
+no source/provider/guard substitution. Unit verifies unchanged returned sources,
+mean agreement, metadata bound and isolated audit errors; strict runner tsc passed.
+Diagnostic40900883106 atf4b644f running under authority lock, max3, no further paid
+diagnostic regardless outcome. Final-source fullCI40900898602 running. Earlier
+sourceCI40898845707/40900022596 passed79unit+skip,9UI,native smoke,installer/install,
+13fixtures; release skipped. No production detection change or new95% evidence.
+
+
+Supplementary diagnostic40900883106 FAILED same stale-control requirement (.94,
+checks2/blocks1,zero discards). Actual1280capture observer measured pairwise64px
+mean5.5251416973%, below production8% guard. Neutral replaced17ms after reservation
+observed, response82ms after replacement, capture recorded121ms after replacement.
+Controlled local-change dilution demonstrated; original failedrun pair absent and
+not retroactively measured. No cause/fix claimed for older source27 miss. No detector
+change or speculative threshold reduction; needs prospective localized-change strategy
+that preserves moving-player detection. Both original positives passed; original
+switchcontrol plus diagnostic remain failures, no retry to green. All four chains
+reconciled to253/$2.785542144/860235,8new reservations,19maximum left, prior history
+retained. No paidjob/lock, no further paid trials planned, no release. Results and
+raw numeric reports saved. FinalsourceCI40900898602 pending verification.
+
+
+Final diagnostic-sourceCI40900898602 atf4b644f PASSED80unit+oneintendedskip,9UI,
+native smoke,installer build/install and13fixture scenarios; conclusion/head/steps/
+log counts verified, release skipped. Saved numeric summary. Follow-up now evidence/
+continuity docs only; no repeated paid trials or production detector changes.
