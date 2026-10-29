@@ -1,228 +1,175 @@
-# Session handoff
+# Session handoff — current state
 
-Read this, AGENTS.md, DESIGN.md, docs/WORKLOG.md and docs/APP-EVALUATION.md first.
-This file is CURRENT state. WORKLOG.md/VALIDATION.md retain chronological history;
-older statements there about providers, authorizations or missing tests can be superseded.
+Read AGENTS.md, DESIGN.md, docs/WORKLOG.md, docs/RELIABILITY.md and this file first.
+WORKLOG.md and saved reports retain history; this file supersedes old missing-key,
+permission and budget blockers. Do not repeat completed experiments as new evidence.
 
-## Current priority and authorization
+## Goal and authorization
 
-Prove detection and blocking reliability before UI polish or another release.
-User prioritizes fewer missed violations over false blocks; no 95% claim is proved.
-User explicitly authorized pushing/merging and enabling/running Windows CI.
-PR #1 is MERGED into main at 2884b487230c28b62f58ecc9a7e5f2f7d59ba975:
-https://github.com/syukursyakir/blockliterallyeverything/pull/1
-No further permission is needed to continue that validation after its key is available.
-Release publication remains disabled; do not overwrite v0.1.0-alpha.1.
-Do not send third-party messages or start laptop remote access. Neither is authorized.
+Detection and native blocking reliability come before UI polish or release.
+The user prioritizes fewer misses over false blocks. **95% reliability is NOT
+established.** Arbitrary editable English rules are unvalidated.
 
-## Current evidence and authorization
+User authorized pushing/merging and enabling/running Windows CI. Secret
+TYPESAFE_API_KEY works in Actions and the scoped cloud environment; do not ask for
+it again absent an actual auth failure. Never extract/print/copy key values.
+User explicitly approved **$3 CUMULATIVE conservative reservations**, preserving
+all prior counters/history. Continue useful bounded testing without per-batch
+permission questions within this cap. No release publication, overwriting
+v0.1.0-alpha.1, third-party messages or laptop remote access authorized.
 
-Actions secret works; do not ask again absent an actual new authentication failure.
-User explicitly approved a $3 CUMULATIVE conservative reservation ceiling. Existing
-45 attempts and prior missing-ledger 62/64 history were preserved, not reset.
-No per-batch approval needed within this cap. No release authorized.
+## Repository stage
 
-PR #3 MERGED into main at fdfdc5a39e2402ee5cc44a739b62255cde9825e3:
-https://github.com/syukursyakir/blockliterallyeverything/pull/3
-Read docs/BROADER-EVALUATION.md and docs/LIVE-WINDOWS-RESULT.md.
-
-48 fresh source-family cases, development24/held-out24 split before inference.
-Platform clarification selected using development only, frozen before held-out.
-Held-out: explicit6/6, YouTube3/3, social4/4; zero false blocks. Twelve correlated
-small-panel/injection/mixed-rule stress cases passed. Too few independent positives
-for a95% claim. Two covered-body/swimwear development false positives remain;
-explicit rule/threshold/provider unchanged. No convenient relabeling.
-
-Clarified platform starter wording adopted; ONLY exact old canonical stock strings
-upgrade on saved-preference load. Custom instructions, names, enabled flags and all
-other settings preserved. Validator/user edits literal; no automatic capture.
-71 local tests/build/strict runner checks passed. Windows run40857750402 passed:
-70 unit +one intentional skip,8 UI, installer/smoke and11 fixture scenarios.
-
-Full already-active Windows neutral->positive->native cover->button recovery:
--40858303368 adult: actual reviewed licensed source, exact pinned hash, score.98,
-  observed4264ms, two requests, PASSED and workflow green.
--40858537258 YouTube: loaded actual public search page, score.93, observed3938ms,
-  two requests, PASSED and workflow green.
-Both full1024x768 visible/focused/topmost/fullscreen. These reuse development
-sources; not new independent accuracy samples or latency-distribution/hardware proof.
-YouTube preparation run40857749164 failed before calls; unchanged129 reconciled.
-Fixed2.5s wait replaced by bounded loaded-thumbnail wait; retry above passed.
-Social full control40858809731 PASSED, workflow green: score.95, observed3902ms,
-two calls, same cover and recovery assertions. All three full checks passed.
-Authoritative ledger reconciled after each run; lock released, no paid job active.
-Latest ordinary PR CI40858351838 also passed the full Windows pipeline.
-
-Historical startup-only synthetic social pass40850770758:951ms, score.95.
-Native/report passed but overall workflow CANCELLED after artifact upload; preserve
-both facts. Earlier40849807420 lost primary report after cleanup process getter
-error; counters recovered, not a claimed pass. PR #2 fixed runner cleanup.
-
-Encrypted-only Windows capture40853592968 made NO model calls. Decrypted pixels
-and private RSA key remain outside Git/public artifacts. No raw screenshots uploaded.
-
-## Verified Windows evidence
-
-- PR run 40847626785 at f17aa9a PASSED: 53 unit tests, one Linux-only guard skip,
-  eight UI, native desktop smoke, installer build/install and 11 installed-app
-  scenarios. Saved report: docs/windows-extended-run-40847626785.json.
-- Latest PR run 40848323490 at bea6f28 PASSED the same pipeline after the early
-  secret guard update. Release publication was skipped.
-- Post-merge push run 40848861167: PASSED the same full Windows pipeline.
-  Numeric summary: docs/windows-ci-main-run-40848861167.json.
-- PR #2 run 40850774234 passed after cleanup correction; local 57 tests/build passed.
-- Main post-PR #2 run 40851411369 PASSED: 56 unit + one intentional skip,
-  eight UI, desktop smoke, installer build/install and 11 fixture-provider scenarios.
-- Live run 40847626764 FAILED at missing-key preflight. Numeric outcome is
-  docs/windows-live-blocked-run-40847626764.json. Historical result; successful controlled live result is described above.
-
-The 11 installed scenarios use fixture provider replies. They are real Windows
-capture/storage/cover/recovery checks, NOT model-accuracy or live-provider proof.
-One display and ordinary fullscreen; no mixed-DPI, multi-monitor, exclusive-game
-or physical OS sleep/lock certification. Emitted lock/suspend signals stay separate.
-
-## Detection evidence and unresolved errors
-
-Five raw docs/evaluation-app*-2026-10-29.json reports preserve 42 paid attempts:
-38 baseline inputs and FOUR candidate retests. Never combine settings or count
-retests/size variants as independent held-out samples.
-
-Baseline: explicit 8/8 input positives, 0/30 false blocks; video 4/4 with TWO false
-matches on non-YouTube activity frames, 0 misses in this tiny set; social 7/7 with
-one false Shorts match. Ambiguous video/social cases are excluded and preserved.
-Explicit positives span FOUR source families (three source-declared adult anatomy
-photos plus one adult educational activity-video frame), with related size variants.
-No broad sexual-content recall estimate or 95% reliability claim is supported.
-
-Earlier four-case candidate reduced one TikTok score .78 -> .50. Later broader
-development/held-out and stress evidence is in BROADER-EVALUATION.md; only platform
-stock wording is clarified, custom rules and explicit threshold/provider unchanged.
-
-## Retained accounting — do not reset
-
-Authoritative ledger: /workspace/work/ble-real-2026-10-29/app-budget.json
-Approved cumulative allowance: $3 conservative reservations; prior 62/64 history is
-preserved separately and the old lab ledger is missing, not zero.
-At migration: 45 reservations, $0.49545216 reserved, 137877 input tokens.
-Current:163 reservations,$1.794637824 reserved of3,542374 tokens
-(~$0.022779708 estimated charge).109 further maximum-size attempts fit. Prior exhausted .50 cap
-is historical, not the current limit.
-
-The missing-secret run preserved 42. The cleanup-failed authenticated run added
-two reservations (44), recovered from its isolated profile. The successful bounded
-live test added one (45); all wrapper/profile/report counters matched. Local
-authority was restored; migration to $3 preserved those counters and history.
-Copies under ignored work/windows-live-preflight and work/windows-live-run-* are
-NON-AUTHORITATIVE. Never use one as a fresh allowance.
-
-Before any remote dispatch: freeze local paid work, hold a durable authority lock,
-pass the exact retained ledger JSON, then reconcile downloaded numeric artifacts
-before releasing authority. If interrupted, preserve lock and recover from the
-isolated app ledger; never blindly retry or reset. File locks cannot lock a second
-copy on another machine. The user-authorized extension is cumulative to $3, never $3 per run or per machine.
-
-## Current continuation — source extension and controlled motion
-
-Branch validation/motion-coverage-20261029, PR #4:
+PR #4 MERGED into main at10a7ea4627ee578b6ae7d8486c97639950f88287:
 https://github.com/syukursyakir/blockliterallyeverything/pull/4
-Read docs/CONFIRMATORY-RESULTS.md, docs/MOTION-RESULTS.md and raw reports.
-New21 public cases, labels/hash/settings frozen before calls: YouTube9/9 positives,
-social7/7 (Instagram), zero platform false matches. No new explicit positives;
-1/21 explicit false matches against frozen negatives. MoMA full-resolution follow-up
-shows small nude painted figures missed at initial annotation. Keep original result
-with annotation/scope caveat, not a clean ordinary-clothing false-positive claim.
-No prompt/threshold/provider/product changes. Four TikTok skeletons and one empty/
-private IG profile excluded before inference. New adult-source acquisition403;
-no image/positive obtained, no source-access bypass or broader explicit proof.
+Source branch validation/motion-coverage-20261029 is completed, not pending work.
+Earlier PR #3 merged atfdfdc5a39e2402ee5cc44a739b62255cde9825e3:
+https://github.com/syukursyakir/blockliterallyeverything/pull/3
 
-Windows pan40861132261 PASSED: pinned reviewed adult photo with +/-12px continuous
-motion, explicit.98, observed4214ms, full focused/topmost/fullscreen cover, button
-recovery.271 animation callbacks sampled after cover (not frame-accurate visible
-frames). Not actual playback, large motion or an independent accuracy sample.
-First pan40860770322 failed at blank initial capture BEFORE any call; counters156
-unchanged. Runner now waits for real varied capture pixels before starting, without
-relaxing app blank-check/provider substitution;16 focused unit/strict tsc passed.
+PR #4 Windows CI40861757089 PASSED:71 unit +one intended Linux-only guard skip,
+eight UI, desktop smoke, installer build/install and11 fixture-provider scenarios.
+Post-merge main CI40862226406 PASSED the same full pipeline; release skipped.
+Summary: docs/windows-ci-main-run-40862226406.json. No release.
+Earlier main CI40859115538 passed before PR #4 (70 unit +one skip, same rest).
+Ordinary CI uses fixture replies for native scenarios; it is NOT model accuracy.
+Local16 focused unit tests and strict native-runner tsc passed for PR #4.
 
-Switch-away40861748575 PASSED: positive stimulus request observed, different neutral
-painted5ms later, changed-frame discard and fresh neutral check observed, no covers/
-blocks, clean stop, three calls. Discarded model verdict not exposed; no score claim.
-First switch40861359039 FAILED its fresh-check assertion: it restored exact cached
-neutral and waited less than30s cache lifetime, so no new request. Two calls retained;
-changed replacement to different neutral, not app cache/runtime. Failed reports kept.
+Public v0.1.0-alpha.1 installer was NOT replaced and lacks newer tested fullscreen
+sizing fixes. CI-built installers are artifacts, not an auto-update. Existing
+publisher clobbers the old tag; explicit release authorization and a new version/
+release strategy are required before using it.
 
-Current ledger163 attempts,$1.794637824 reserved of cumulative3,542374 tokens
-(~$0.022779708 estimated usage).109 further maximum reservations fit. All three
-accounting copies agreed sequentially; lock released, no paid remote job active.
-Ordinary PR CI40861757089 PASSED:71 unit +one intended skip,8 UI,
-native smoke, installer build/install and11 fixture-provider scenarios. No release.
-Updated WINDOWS-LIVE-VALIDATION.md to current protocol/authority, removing obsolete
-missing-key/approval/budget blockers that caused repeated setup questions.
+## Detection evidence — preserve strata and caveats
 
-## Current next work within the authorized $3 ceiling
+Read docs/BROADER-EVALUATION.md and docs/CONFIRMATORY-RESULTS.md with raw JSON.
 
-Main post-merge CI40859115538 PASSED:70 unit +1 intended skip,8 UI,
-native smoke, installer build/install and11 fixture scenarios; release skipped.
-Saved numeric summary: docs/windows-ci-main-run-40859115538.json.
-Next expand independently sourced adult-positive coverage (especially activity)
-when declared-adult/appropriately licensed sources are available. Current new batch
-adds only platform positives. Large/continuous video motion, hardware and multiple
-displays remain unproved; +/-12px and one stale-result switch are limited controls.
-Design/freeze future cases before calls; do not redo these source batches. Do not retune against the
-used held-out set and call it untouched.
+- Earlier38 baseline app inputs +four candidate retests: explicit8/8 positives
+  (related sizes/four source families); platform cross-rule false matches found.
+  These are development evidence, not independent acceptance coverage.
+- Broader48 fresh source/session cases split development24/held-out24 BEFORE
+  inference. Platform wording selected with development ONLY and exact settings/
+  manifest hash frozen before held-out. Held-out caught explicit6/6, YouTube3/3,
+  social4/4; no false blocks. Too few positives for a95% claim. Twelve later
+  correlated panel/injection/mixed-rule stress variants passed; not extra subjects.
+- Only platform starter text was clarified. Exact old stock instructions upgrade
+  on saved-preference load; custom text/names/enabled flags/settings preserved.
+  Validator/user edits stay literal. Explicit instruction, threshold.4 and provider
+  unchanged. Two covered/suggestive-body development false positives remain.
+- New21 confirmatory cases used unchanged settings and labels/hashes frozen before
+  calls. YouTube9/9 and social7/7 (all Instagram) caught, no platform false matches;
+  one ambiguous empty subscriptions shell excluded from video binary scoring.
+  Shared platform templates/topics remain correlated; no independence guarantee.
+- New explicit stratum has ZERO positives and1/21 matches against frozen negatives.
+  Full-resolution follow-up found tiny nude painted figures at MoMA grid bottom
+  missed in contact-sheet annotation. Original label/result retained with caveat:
+  not a clean ordinary-clothing false-positive example. Do not quietly relabel it
+  or advertise a pristine specificity result. Art-scope needs prospective labels.
+- Four TikTok skeletons and an empty/private Instagram profile excluded BEFORE
+  inference. New adult-source requests returned403, no image/positive obtained.
+  No source-access bypass or new TikTok/explicit-positive coverage claimed.
 
-No repeated secret prompt. Broader independent source-separated development and
-untouched held-out coverage is still required for a 95% detection target. Platform candidate wording passed frozen held-out checks and was adopted on this
-branch; explicit wording and threshold stay unchanged.
+Labels were set by this agent, not an independent human panel. Adult provenance is
+source-declared, not ID verification. Do not tune on used held-out data and still
+call it untouched. Do not increase thresholds or relabel errors to hide misses.
 
-Full live protocol remains neutral-to-positive while already active, maximum three
-attempts. Explicit positive_at_start mode uses one request and reports startup/
-transition limits. Docs/WINDOWS-LIVE-VALIDATION.md explains execution and authority.
-Three full transitions (two real sources) plus historical synthetic startup passed;
-no repeated-trial, hardware or latency guarantee.
+## Real Windows integration proof
 
-Do not rerun completed image batches, old local-model comparisons or fixture tests
-and relabel them as new accuracy evidence. Do not reset/recreate the budget.
+Read docs/LIVE-WINDOWS-RESULT.md, docs/MOTION-RESULTS.md and run-specific JSON.
+All actual capture and hosted Jev, isolated seeded profiles/onboarding, one hosted
+1024x768 display. Source repeats are integration tests, not new accuracy samples.
 
-## Product and implementation context
+Full already-active neutral->positive->native cover->button recovery PASSED:
+-40858303368: real reviewed licensed adult source, pinned hash, explicit.98,
+ observed4264ms, two requests.
+-40858537258: real loaded public YouTube search page, video.93,3938ms, two calls.
+-40858809731: synthetic social control,.95,3902ms, two calls.
+All covers visible/focused/topmost/fullscreen with exact display bounds; recovery
+removed cover and paused session. Timing includes three-second polling/IPC, one
+trial per input; no median/tail, hardware or frame-accurate guarantee.
 
-Windows-first Electron/React/shadcn focus blocker; user has installed the alpha
-and likes its dark UI. Current user-selected provider is hosted TypeSafe Jev
-1.14.0 experimental images, with explicit screenshot consent. Optional local
-OmniJev had serious errors; do not silently change providers or use cloud invisibly.
-Default explicit scope is sexual activity and explicit nudity; no medical/art
-exception guarantee. Arbitrary editable English rules remain unvalidated.
+Controlled-motion extension:
+-40861132261 pan PASSED: same reviewed adult screenshot continuously +/-12px,
+ explicit.98,4214ms, complete cover and button recovery.271 animation callbacks
+ sampled after cover, not visible-frame measurement or actual video playback.
+-40861748575 switch-away PASSED: known positive stimulus request observed,
+ DIFFERENT neutral document painted5ms later, changed-frame discard and fresh
+ neutral check observed, zero covers/blocks, clean stop. Three requests. Discarded
+ verdict not observable, no score claim; this is a negative stale-result control.
 
-- src/shared.ts: presets/settings validation/matchingRule; threshold .4, interval
-  three seconds, explicit preset enabled, video/social disabled, detection-only.
-- electron/main.ts: session/capture/freshness/full-display cover, encrypted key,
-  persisted budget; stale/error states pause, not count as safe. A match covers
-  ALL connected monitors. Ctrl+Shift+F12/button/native-close/tray Pause recover.
-- electron/jev.ts: fixed endpoint/model, real request/prompt/parser, no retries.
-- electron/screen-cache.ts: exact unchanged-screen skip up to 30 seconds.
-- lab/app-evaluation.ts + run-app-evaluation.ts: actual-app image evaluator;
-  --settings records experiments; scripts/evaluate-app.mjs is the entry point.
-- lab/run-windows-live.ts, scripts/test-live-windows.mjs and
-  scripts/prepare-windows-live.mjs: opt-in native runner and preparation.
-- .github/workflows/windows.yml: regular Windows build/tests and gated live job.
+Failed attempts retained:
+-40857749164 YouTube preparation insufficient thumbnails before any call; added
+ bounded loaded-thumbnail wait, then full retry passed.
+-40860770322 initial pan failed blank/protected initial capture before calls,
+ counters156 unchanged. Runner now waits for varied actual capture pixels before
+ starting; no runtime blank-check relaxation/provider or capture substitution.
+-40861359039 first switch failed fresh-check assertion: restored identical initial
+ neutral frame within30s cache lifetime. Watching/checks1/blocks0, two calls.
+ Corrected test to DIFFERENT neutral, cache/runtime unchanged; retry above passed.
+-40850770758 historical startup-only synthetic social native step/report PASSED
+ (.95,951ms) but overall workflow CANCELLED after artifact upload. Preserve both
+ facts; not already-active-session timing. No rerun just to relabel workflow green.
+-40849807420 authenticated cleanup failure lost primary report; counters recovered,
+ NOT a claimed pass. PR #2 cached child handle before close/saved report before
+ cleanup.40847626764 earlier empty-secret preflight is superseded, not current.
 
-No intentional screenshot retention in normal runtime; consented hosted frames
-leave the device and provider terms apply. Test corpus files remain outside Git.
-Cloud key is not bundled or automatically present on the user's laptop.
+Mixed DPI, multiple monitors, exclusive games, physical OS sleep/lock, repeated
+latency distributions and continuous large-motion/real-video blocking unproved.
+Installed fixture tests/emitted OS signals do not certify these conditions.
 
-Public installer v0.1.0-alpha.1 was NOT replaced and lacks the newer tested
-fullscreen sizing fix; corrected installers exist as CI artifacts. Do not claim
-an auto-update. Existing release publisher clobbers the old tag: new release/version
-strategy and explicit release authorization are needed before using it.
+## Authoritative accounting — never reset
 
-## Files, checks and continuity
+/workspace/work/ble-real-2026-10-29/app-budget.json
+Current163 reservations,$1.794637824 of approved cumulative3,542374 input tokens,
+~$0.022779708 estimated usage at.042/million. Reservations are not bills; old missing
+62/64 history remains separately preserved, not zero.109 more maximum reservations
+fit (272 total). The migration from.50 to3 retained45 attempts/137877 tokens and
+has explicit authorizationHistory. No remote paid job or authority lock remains.
 
-Corpora/manifests: /workspace/work/ble-real-2026-10-29,
-ble-followup-2026-10-29, ble-activity-2026-10-29 and ble-candidate-2026-10-29.
-Source declarations/licenses, hashes, labels and exact questions are in reports.
-Adult image bytes and keys are excluded from Git/public artifacts.
+Before a remote paid run: freeze local paid work, create durable authority `.lock`
+with before state/run identity, pass EXACT current retained JSON, run sequentially.
+After completion, verify report/wrapper/profile counters agree, are monotonic and
+within cap; atomically reconcile local authority BEFORE removing lock. If interrupted,
+keep lock/recover isolated profile after process exit. A file lock cannot lock a
+second machine's copy. Never use ignored work copies as fresh authority or blindly
+retry failed runs. docs/WINDOWS-LIVE-VALIDATION.md is the current protocol.
 
-Local 71 unit tests/build and runner type/bundle checks passed. Latest PR Windows
-log verified 71 passes plus one intended Linux-only skip, eight UI and 11 native
-fixture scenarios. Use Ponytail full and relevant skills; smallest complete change, actual failure checks, no speculative rewrite.
-Append actual outcomes to WORKLOG.md and update this current state after work.
-Do not reconfigure/republish the managed environment or repeat old setup work.
+## Next useful work
+
+Post-merge CI40862226406 is VERIFIED. PR #4 and its source branch are completed.
+Prioritize new independently sourced, adult-declared, appropriately licensed
+explicit positives, especially sexual activity and realistic safe lookalikes.
+Freeze sources/labels/settings before calls; a second annotator would improve the
+MoMA-style ambiguity. Acquisition failures are not successful coverage. Avoid
+more same-template platform screenshots merely to inflate denominators.
+
+Next dynamic gate is actual moving video/large sustained changes during inference;
+small panning and one switch-away do not establish it. Measure misses/discards/
+unknowns and protection state honestly before changing production behavior. Expand
+hardware/display conditions only on available real devices; no laptop access.
+Do not rerun completed source batches, old local-model comparisons or fixture CI
+and call them independent model proof. No UI redesign or release before reliability.
+
+## Implementation and private files
+
+Windows-first Electron/React/shadcn, dark UI. User-selected hosted TypeSafe Jev
+jev-1.14.0 experimental images; screenshot consent required. Do not silently switch
+to local OmniJev, which had documented serious errors. Defaults threshold.4,
+interval3s, session25min, explicit enabled/video-social disabled, detection-only.
+
+src/shared.ts: settings/presets/matcher/exact starter upgrade.
+electron/main.ts: screen capture/freshness/all-display cover/encrypted key/budget.
+electron/jev.ts: fixed request/parser/reservations, no retries.
+electron/screen-cache.ts: exact unchanged30s cache,8% mean pixel freshness check.
+lab/run-app-evaluation.ts: actual request/matcher fixed-image evaluation.
+lab/run-windows-live.ts: real native opt-in full/startup/pan/switch-away controls.
+.github/workflows/windows.yml: ordinary CI, gated live and encrypted capture-only.
+
+Normal runtime has no intentional screenshot retention; hosted consented frames
+leave device, provider terms apply, OS paging/dumps prevent absolute guarantees.
+Cloud key is not bundled or automatically installed on the user's laptop.
+Corpora under /workspace/work/ble-real-2026-10-29, ble-broader-2026-10-29 and
+ble-motion-coverage-2026-10-29 plus earlier follow-up/activity/candidate dirs.
+Encrypted-only capture runs40853592968/40860317868 made NO model calls. Decrypted
+pixels/private RSA key remain local outside Git/public artifacts. Raw reports
+include source URLs/hashes/licensing/provenance, no raw image bytes or credentials.
+Append meaningful outcomes/limits/next work to WORKLOG.md and keep this file current.

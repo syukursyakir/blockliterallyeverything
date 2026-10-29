@@ -478,3 +478,10 @@ WINDOWS-LIVE-VALIDATION.md as current protocol; historical stale key/approval/ca
 statements superseded to avoid repeating user setup or old work. PR #4 CI40861757089
 PASSED (final logs verified):71 unit +one intentional skip,8 UI, desktop smoke,
 installer build/install and11 fixture-provider scenarios; release skipped.
+
+PR #4 MERGED at10a7ea4627ee578b6ae7d8486c97639950f88287. Post-merge main
+run40862226406 PASSED (conclusion/step/log verified):71 unit +one intended skip,
+eight UI, desktop smoke, installer build/install and11 fixture-provider scenarios.
+Release step skipped. Consolidated HANDOFF.md so current stage/authority/remaining
+gaps appear without obsolete permission/key blockers. No paid job/lock; counters163
+unchanged. Final follow-up only continuity docs and numeric CI summary, no app change.

@@ -1,5 +1,8 @@
 # Live Windows result — 2026-10-29
 
+Subsequent controlled-motion/stale-result outcomes and later accounting are in
+[MOTION-RESULTS.md](MOTION-RESULTS.md); HANDOFF.md is the current authority summary.
+
 ## Full active-session transitions
 
 Real adult-reference run [40858303368](https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40858303368)
