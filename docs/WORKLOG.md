@@ -422,3 +422,11 @@ Final cumulative authority:135 attempts,$1.48635648 reserved of3,442937 tokens,
 ~$0.018603354 estimated actual charge. Prior history retained, no remote job/lock.
 137 further maximum reservations fit; no reset. Next larger independent positive
 coverage plus dynamic-screen/hardware conditions. No release publication.
+
+PR #3 MERGED at fdfdc5a39e2402ee5cc44a739b62255cde9825e3. Post-merge main
+run40859115538 PASSED (verified final conclusion/log):70 unit +1 intentional
+skip,8 UI, desktop smoke, installer build/install and11 fixture scenarios. Release
+step skipped; existing public alpha assets still show original05:15 UTC updates.
+Updated RELIABILITY.md current section to supersede obsolete audit prerequisites;
+HANDOFF.md contains current cap/counters, completed runs and remaining gaps.
+No paid test or remote authority lock remains. Final follow-up only continuity docs.

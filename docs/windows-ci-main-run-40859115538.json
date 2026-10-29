@@ -1,0 +1,15 @@
+{
+  "conclusion": "success",
+  "headSha": "fdfdc5a39e2402ee5cc44a739b62255cde9825e3",
+  "status": "completed",
+  "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40859115538",
+  "scope": "Post-PR3 Windows CI, actual installer/capture/cover mechanisms with fixture provider replies; not model accuracy.",
+  "unitPassed": 70,
+  "unitSkipped": 1,
+  "uiPassed": 8,
+  "installedFixtureScenariosPassed": 11,
+  "buildPassed": true,
+  "desktopSmokePassed": true,
+  "installerBuildInstallPassed": true,
+  "releasePublished": false
+}

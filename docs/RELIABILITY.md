@@ -5,14 +5,37 @@ existing results were inspected, not rerun. Current provider: hosted TypeSafe Je
 1.14.0 experimental images. User prioritizes missed violations over false blocks.
 The next milestone is measured reliability, ahead of UI polish or publishing.
 
-## Latest update
+## Latest update — supersedes historical audit below
 
-The audit below is historical. Subsequent user-approved work completed a new
-36-request actual-app evaluation (including a later ten-case follow-up); read [APP-EVALUATION.md](APP-EVALUATION.md)
-for results, retained budget, runner commands and remaining gaps. Three real live
-social positives and one archived real YouTube positive were detected. One social
-false match was found. The follow-up caught six nudity inputs from THREE source photographs; sexual-activity
-recall and live Windows intervention remain unmeasured. The original missing ledger was NOT reset.
+PR #3 merged independent source-split evaluation and real Windows full transitions.
+Read [BROADER-EVALUATION.md](BROADER-EVALUATION.md) and
+[LIVE-WINDOWS-RESULT.md](LIVE-WINDOWS-RESULT.md), including their numerical reports.
+
+Held-out 24 source-family cases: explicit 6/6, YouTube 3/3 and social 4/4 positives
+caught, zero false blocks. Twelve correlated stress variants also passed. Small
+positive denominators and no independent second labeler mean **95% reliability is
+not established**. Two covered-body development explicit false positives remain.
+Clarified platform starter wording passed frozen held-out checks and was adopted;
+explicit rule, threshold and provider stay unchanged. Custom instructions preserved.
+
+Full already-active Windows neutral->positive->native cover->button recovery passed
+for real public YouTube, a pinned reviewed licensed adult reference and synthetic
+social control. All actual capture and hosted Jev, no provider substitutions.
+Full focused/topmost covers and recovery passed on one 1024x768 hosted display;
+observed 3902–4264 ms, one trial per case. Controlled static scenes reuse sources;
+not independent recall samples, moving-video or hardware certification.
+
+Cumulative $3 conservative reservation ceiling explicitly approved. Current ledger:
+135 attempts, $1.48635648 reservations, 442937 tokens (~$0.018603354 estimated API
+cost). Prior history preserved. Secret works; no repeated setup/budget questions
+within the authorized cap. No release authorized or published; installed alpha unchanged.
+
+Next: larger representative independently sourced positives and safe lookalikes,
+especially explicit activity; freeze labels/source splits/settings before calls.
+Keep misses/unknowns/false blocks and confidence intervals. Then dynamic-screen
+stale-result handling and broader display/hardware trials. Do not replay old
+batches and call them new independent evidence. Historical audit below is retained
+for traceability; its missing-proof and setup statements are not current state.
 
 ## What the evidence actually establishes
 

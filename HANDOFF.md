@@ -22,7 +22,7 @@ User explicitly approved a $3 CUMULATIVE conservative reservation ceiling. Exist
 45 attempts and prior missing-ledger 62/64 history were preserved, not reset.
 No per-batch approval needed within this cap. No release authorized.
 
-Current branch validation/independent-corpus-20261029, PR #3:
+PR #3 MERGED into main at fdfdc5a39e2402ee5cc44a739b62255cde9825e3:
 https://github.com/syukursyakir/blockliterallyeverything/pull/3
 Read docs/BROADER-EVALUATION.md and docs/LIVE-WINDOWS-RESULT.md.
 
@@ -123,7 +123,10 @@ copy on another machine. The user-authorized extension is cumulative to $3, neve
 
 ## Current next work within the authorized $3 ceiling
 
-Finish PR #3 merge and verify main CI (no release). Then expand independent
+Main post-merge CI40859115538 PASSED:70 unit +1 intended skip,8 UI,
+native smoke, installer build/install and11 fixture scenarios; release skipped.
+Saved numeric summary: docs/windows-ci-main-run-40859115538.json.
+Next expand independent
 positive-source coverage and realistic safe lookalikes, especially explicit activity
 and motion during analysis; design/freeze before calls. Do not retune against the
 used held-out set and call it untouched.
