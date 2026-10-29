@@ -94,8 +94,8 @@ async function run(name, action) {
   } finally { await writeFile(path.join(evidence, 'report.json'), JSON.stringify(report, null, 2) + '\n') }
 }
 async function save(patch) { return api('save', { ...(await snapshot()).settings, ...patch }) }
-async function startCover() {
-  await fixture('match')
+async function startCover(capture = 'real') {
+  await fixture('match', capture)
   await save({ detectionOnly: false, intervalSeconds: 1 })
   const created = desktop.waitForEvent('window', { timeout: 20_000 })
   await api('start')
@@ -183,10 +183,8 @@ try {
     await desktop.evaluate(() => globalThis.bleFullscreenFixture.destroy())
   })
   await run('fixture translated capture blocks through the new freshness path and recovers', async () => {
-    await fixture('match', 'translated'); await save({ detectionOnly: false, intervalSeconds: 1 })
-    await api('start'); await waitMode('blocked')
+    const cover = await startCover('translated')
     expect((await snapshot()).status.activity.some(a => a.message === 'Screen moved; the full analyzed view is still visible.')).toBe(true)
-    const cover = desktop.windows().find(p => p.url().endsWith('#block'))
     await cover.getByRole('button', { name: 'Pause & return to app' }).click(); await expectPaused()
   })
   await run('fixture replacement and cropped movement discard stale matches without covers', async () => {
