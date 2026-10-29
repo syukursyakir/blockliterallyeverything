@@ -1,14 +1,15 @@
 // No provider calls. Prepares a controlled reviewed scene and a retained budget COPY.
 import { chromium } from '@playwright/test'
+import reviewedVideos from '../lab/reviewed-videos.json' with {type:'json'}
 import { mkdir, writeFile, readFile, readdir } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
 import path from 'node:path'
 import { validateEvaluationBudget } from '../lab/evaluation-budget.ts'
 import { nativeBudget } from '../lab/native-process.ts'
 const scene=process.env.BLE_LIVE_SCENE || 'social-synthetic'
-if(!['social-synthetic','youtube-public','explicit-public','explicit-video','activity30-video'].includes(scene))throw new Error('Unknown controlled scene.')
+if(!['social-synthetic','youtube-public','explicit-public',...Object.keys(reviewedVideos)].includes(scene))throw new Error('Unknown controlled scene.')
 const sourceHeaders={'User-Agent':'BlockLiterallyEverythingValidation/0.1 (https://github.com/syukursyakir/blockliterallyeverything; provenance research)'}
-const videoReference=scene==='activity30-video'?{url:'https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d5/Male_masturbate.webm/Male_masturbate.webm.240p.vp9.webm',sha256:'38634e0ad58bd80f6613d2f0ddf5ca358717ee9004e2d9fb9b1c72b515ee5387',source:'https://commons.wikimedia.org/wiki/File:Male_masturbate.webm',adult_provenance:'Source explicitly declares the subject adult age30 at capture; own-work educational demonstration.',rights:{license:'CC0',license_url:'https://creativecommons.org/publicdomain/zero/1.0/',attribution:'Olivetreebycliff'}}:{url:'https://upload.wikimedia.org/wikipedia/commons/transcoded/7/76/A_44_years_old_male_masturbating.webm/A_44_years_old_male_masturbating.webm.240p.vp9.webm',sha256:'99b5597fc13b0fc03b31b734e7bf1849b3032d15b2371fc94643d758d4a3984e',source:'https://commons.wikimedia.org/wiki/File:A_44_years_old_male_masturbating.webm',adult_provenance:'Source describes self-taken educational demonstration by a44-year-old adult.',rights:{license:'CC BY-SA 4.0',license_url:'https://creativecommons.org/licenses/by-sa/4.0',attribution:'Richiex'}}
+const videoReference=reviewedVideos[scene]
 const explicitReference={"url":"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/ERA110_Erika_Kole_nude_R_4_030.jpg/960px-ERA110_Erika_Kole_nude_R_4_030.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail","sha256":"9304d80530f8d9fa8c8405d911f5f8850335df417a8269a0566523e0c0af0b12","source":"https://commons.wikimedia.org/wiki/File:ERA110_Erika_Kole_nude_R_4_030.jpg","adult_provenance":"Source declares model adult age 22 at capture.","rights":{"license":"CC BY-SA 4.0","license_url":"https://creativecommons.org/licenses/by-sa/4.0","attribution":"Carol Ash"}}
 const destination=path.resolve(process.argv[2] || 'native-live')
 if(!process.env.BLE_RETAINED_BUDGET)throw new Error('Provide the authoritative retained budget metadata in BLE_RETAINED_BUDGET. No empty allowance is created.')
@@ -30,14 +31,14 @@ try {
   const loaded=await page.locator('ytd-thumbnail img').evaluateAll(images=>images.filter(i=>i.naturalWidth>100 && i.getBoundingClientRect().top<900 && i.getBoundingClientRect().bottom>0).length)
   if(response?.status()!==200 || new URL(page.url()).hostname!=='www.youtube.com' || !await page.locator('ytd-app').count() || loaded<2)throw new Error('Real YouTube UI not sufficiently loaded. No provider request.')
   provenance={origin:'real public YouTube search-page screenshot, reviewed source URL with DOM loading guard',labels:{explicit:false,video:true,social:false},label_note:'Same search source previously inspected in the frozen development corpus. Actual visible thumbnails required; integration-only repeat, not a new accuracy sample.',source:url,visible_loaded_thumbnails:loaded}
- }else if(scene==='explicit-video' || scene==='activity30-video'){
+ }else if(videoReference){
   const response=await fetch(videoReference.url,{redirect:'error',headers:sourceHeaders,signal:AbortSignal.timeout(30000)});if(!response.ok)throw new Error('Reviewed video unavailable; no provider call.')
   if(Number(response.headers.get('content-length'))>12*1024*1024)throw new Error('Video too large.')
   const bytes=Buffer.from(await response.arrayBuffer());if(bytes.length>12*1024*1024 || createHash('sha256').update(bytes).digest('hex')!==videoReference.sha256)throw new Error('Reviewed video hash changed; no provider call.')
   await writeFile(path.join(destination,'reviewed.webm'),bytes,{flag:'wx',mode:0o600})
   await page.setContent('<html><body style="margin:0;background:#eee;display:grid;place-items:center;height:100vh"><video muted style="width:96vw;max-height:96vh" src="data:video/webm;base64,'+bytes.toString('base64')+'"></video></body></html>')
-  await page.locator('video').evaluate(async v=>{if(v.readyState<1)await new Promise((r,j)=>{v.onloadedmetadata=r;v.onerror=j});v.currentTime=10;await new Promise(r=>v.onseeked=r)})
-  provenance={origin:'actual decoded licensed source-declared adult educational video, pinned hash',labels:{explicit:true,video:false,social:false},label_note:'Frames10–24s reviewed before inference at2s intervals. Native runner plays actual10–25s clip; poster is only preflight metadata. Existing source repeat, not independent recall.',source:videoReference.source,source_sha256:videoReference.sha256,adult_provenance:videoReference.adult_provenance,rights:videoReference.rights,video_file:'reviewed.webm',video_sha256:videoReference.sha256}
+  await page.locator('video').evaluate(async(v,start)=>{if(v.readyState<1)await new Promise((r,j)=>{v.onloadedmetadata=r;v.onerror=j});v.currentTime=start;await new Promise(r=>v.onseeked=r)},videoReference.start)
+  provenance={origin:'actual decoded licensed source-declared adult educational video, pinned hash',labels:{explicit:true,video:false,social:false},label_note:'Reviewed adult source segment before native inference. Actual decoded video, source/author correlation retained; poster is only preflight metadata, not a still substitution.',source:videoReference.source,source_sha256:videoReference.sha256,adult_provenance:videoReference.adult_provenance,rights:videoReference.rights,video_file:'reviewed.webm',video_sha256:videoReference.sha256,video_start:videoReference.start,video_end:videoReference.end}
  }else{
   const response=await fetch(explicitReference.url,{redirect:'error',headers:sourceHeaders,signal:AbortSignal.timeout(30000)});if(!response.ok)throw new Error('Adult reference download unavailable; no provider call.')
   const bytes=Buffer.from(await response.arrayBuffer());if(bytes.length>12*1024*1024 || createHash('sha256').update(bytes).digest('hex')!==explicitReference.sha256)throw new Error('Reviewed adult reference hash changed; no provider call.')

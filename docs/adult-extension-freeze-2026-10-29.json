@@ -1,0 +1,12 @@
+{
+  "frozenAt": "2026-10-29T11:27:36.984165+00:00",
+  "manifestSha256": "b2e691d4dc87ab8876b418c8fb6994fc12fb66cd169a1f1cd10b6ddb8837c872",
+  "settingsSha256": "46eb297437d81a4553c8e10d27a632232a562a8c641f73fef287b847842f7fc2",
+  "cases": 15,
+  "positiveVariants": 13,
+  "negativeCrops": 2,
+  "sourceFiles": 5,
+  "newAuthorGroups": 4,
+  "oldAuthorCorrelatedSources": 1,
+  "note": "All final prepared pixels reviewed before predictions; source declarations/rights in manifest. Not independent13-positive recall."
+}

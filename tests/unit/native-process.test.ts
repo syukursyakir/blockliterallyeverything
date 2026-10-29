@@ -1,11 +1,16 @@
 import { describe, expect, it } from 'vitest'
-import { nativeExitGuard, nativeBudget, nativeMotion, nativeVideo } from '../../lab/native-process'
+import { nativeExitGuard, nativeBudget, nativeMotion, nativeVideo, nativeVideoRange } from '../../lab/native-process'
 import { mkdtemp, writeFile, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { createHash } from 'node:crypto'
 import { RESERVED_PER_REQUEST } from '../../electron/jev'
 describe('live native cleanup and explicit protocol accounting',()=>{
+ it('rejects invalid or unbounded playback ranges',()=>{
+  expect(nativeVideoRange()).toEqual({start:10,end:25})
+  expect(nativeVideoRange(2,10)).toEqual({start:2,end:10})
+  for(const [a,b] of [[NaN,10],[-1,10],[10,10],[10,9],[0,31],[290,301]])expect(()=>nativeVideoRange(a,b)).toThrow()
+ })
  it('rejects unsupported motion and mixing motion with startup-only evidence',()=>{
   expect(nativeMotion(undefined,false)).toBe('none')
   expect(nativeMotion('pan',false)).toBe('pan')

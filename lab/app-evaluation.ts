@@ -5,7 +5,7 @@ import { defaultSettings, matchingRule, presets, type CheckResult, type Settings
 
 export const evaluationSettings = { ...defaultSettings, rules: presets.map(rule => ({ ...rule, enabled: true })) }
 export const sha256 = (bytes: Buffer | string) => createHash('sha256').update(bytes).digest('hex')
-export type EvaluationCase = { id: string; file: string; sha256: string; family: string; split: string; origin: string; labels: Record<string, boolean | null>; needs_visual_label?: boolean; label_note: string; source?: string; source_sha256?: string; adult_provenance?: string; rights?: unknown; video_file?: string; video_sha256?: string }
+export type EvaluationCase = { id: string; file: string; sha256: string; family: string; split: string; origin: string; labels: Record<string, boolean | null>; needs_visual_label?: boolean; label_note: string; source?: string; source_sha256?: string; adult_provenance?: string; rights?: unknown; video_file?: string; video_sha256?: string; video_start?:number; video_end?:number }
 export async function preflight(manifestPath: string) {
   const source = await readFile(manifestPath, 'utf8')
   const manifest = JSON.parse(source) as { cases: EvaluationCase[] }

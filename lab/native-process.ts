@@ -29,3 +29,8 @@ export async function nativeVideo(root: string, file: string | undefined, sha256
   if (bytes.subarray(0,4).toString('hex')!=='1a45dfa3' || createHash('sha256').update(bytes).digest('hex')!==sha256) throw new Error('Reviewed video bytes changed.')
   return bytes
 }
+
+export function nativeVideoRange(start=10,end=25) {
+  if(!Number.isFinite(start) || !Number.isFinite(end) || start<0 || end<=start || end>300 || end-start>30)throw new Error('Reviewed playback range must be finite, ordered and at most30 seconds.')
+  return {start,end}
+}
