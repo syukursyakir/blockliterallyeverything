@@ -4,6 +4,7 @@ import { open, mkdir, readFile, writeFile, rename, unlink } from 'node:fs/promis
 import path from 'node:path'
 import { parseArgs } from 'node:util'
 import { validateEvaluationBudget, type EvaluationBudget } from './evaluation-budget.ts'
+import { observeCaptures } from './capture-observer.ts'
 import { paintReviewedVideo } from './video-scene.ts'
 import { nativeExitGuard, nativeBudget, nativeMotion, nativeVideo, nativeVideoRange } from './native-process.ts'
 import { preflight, evaluationSettings } from './app-evaluation.ts'
@@ -77,7 +78,8 @@ try {
   profileConfirmed=true
   if(values.audit){
     report.instrumentation='Pass-through net.fetch audit, unchanged request/response and real capture/provider. Only encrypted submitted frames and numeric score metadata retained; no headers/credentials/error bodies.'
-    await desktop.evaluate(({net})=>{
+    await desktop.evaluate(({net,desktopCapturer},observer)=>{
+      ;(globalThis as any).bleCaptureAudit=Function('return ('+observer+')')()(desktopCapturer)
       const original=net.fetch.bind(net),audits:any[]=[]
       ;(globalThis as any).bleRequestAudit=audits
       net.fetch=async(input,init)=>{
@@ -85,14 +87,15 @@ try {
         if(input==='https://api.typesafe.ai/v1/systemone' && typeof init?.body==='string' && audits.length<3){
           try{
             const payload=JSON.parse(init.body),asset:any=Object.values(payload.assets)[0]
-            if(asset.format==='png' && typeof asset.data_base64==='string' && asset.data_base64.length<16*1024*1024){row={frame:asset.data_base64};audits.push(row)}
+            if(asset.format==='png' && typeof asset.data_base64==='string' && asset.data_base64.length<16*1024*1024){row={frame:asset.data_base64,requestAt:Date.now()};audits.push(row)}
           }catch{/* Audit must not alter the real request. */}
         }
         const response=await original(input,init)
+        if(row)row.responseAt=Date.now()
         if(row && response.ok)void response.clone().json().then((body:any)=>{row.scores=Object.fromEntries(Object.entries(body.answers??{}).filter(([k,v]:any)=>['explicit','video','social'].includes(k) && typeof v?.noul==='number' && Number.isFinite(v.noul) && v.noul>=0 && v.noul<=1).map(([k,v]:any)=>[k,v.noul]))}).catch(()=>{row.auditError=true})
         return response
       }
-    })
+    },observeCaptures.toString())
   }
   const displays=await desktop.evaluate(({screen,app})=>({os:process.getSystemVersion(),electron:process.versions.electron,appVersion:app.getVersion(),displays:screen.getAllDisplays().map(d=>({id:d.id,bounds:d.bounds,scaleFactor:d.scaleFactor}))}))
   report.runtime=displays
@@ -230,11 +233,12 @@ try {
   }
   if(values.audit && desktop && profileConfirmed){
     try{
+      report.captureAudit=await desktop.evaluate(()=>(globalThis as any).bleCaptureAudit??[])
       const rows=await desktop.evaluate(()=>(globalThis as any).bleRequestAudit??[])
       const files:Record<string,Buffer>={}
       report.requestAudit=rows.map((row:any,index:number)=>{
         const bytes=Buffer.from(row.frame,'base64'),name='request-'+index+'.png';files[name]=bytes
-        return {index,sha256:createHash('sha256').update(bytes).digest('hex'),scores:row.scores,auditError:row.auditError}
+        return {index,requestAt:row.requestAt,responseAt:row.responseAt,sha256:createHash('sha256').update(bytes).digest('hex'),scores:row.scores,auditError:row.auditError}
       })
       if(rows.length)await writeFile(output+'.audit.enc.json',encryptCaptures(files,process.env.BLE_CAPTURE_PUBLIC_KEY!),{flag:'wx',mode:0o600})
     }catch{report.auditError='Encrypted diagnostic capture failed; no plaintext frame written.'}

@@ -46,3 +46,25 @@ checks make no model calls. Freeze metadata is sustained-video-freeze-2026-10-29
 remote frame/poster hashes naturally depend on runtime and are recorded in reports.
 Report all three outcomes separately, with source correlation and hosted1024x768
 single-display limits. No release or laptop access.
+
+## Supplementary diagnostic frozen after the original three trials
+
+Original switch-away40899997617 FAILED: positive .95, switched to neutral16ms
+after request reservation observed, zero changed-screen discards and a block.
+Preserve this failure; exact original recapture timing/pixels were not retained.
+Do not infer dilution versus capture/paint timing from that report alone.
+
+One additional, separate compact video-switch-away trial is authorized under the
+existing cap for diagnosis, not to obtain a passing result. Before dispatch, add
+optional test-only pass-through capture statistics (1280px capture calls only),
+request/response timestamps and pairwise64px RGB mean difference. Sources returned
+unchanged, prior small bitmap held only in bounded RAM, numeric metadata only.
+Existing encrypted submitted-frame audit remains; no new production retention.
+Do not catch/convert original capture/provider failures into success. Unit check
+verifies passthrough, numeric agreement, record bound and audit-error isolation.
+
+Before251/$2.763522048/853050. Maximum3 additional reservations; at most254 overall,
+within cumulative3. No further paid diagnostic after this trial, regardless of
+outcome. Record capture times relative to neutral replacement and the actual
+comparison value before claiming a cause. A later pass does not erase the first
+failure. Detector, threshold, rules, polling and freshness remain unchanged.
