@@ -108,7 +108,7 @@ try {
     phase='replace-with-neutral'
     report.replacedAt=await desktop.evaluate(async()=>{
       const scene=(globalThis as any).bleLiveScene
-      return await scene.webContents.executeJavaScript(`(async()=>{document.body.replaceChildren(Object.assign(document.createElement('p'),{textContent:'Neutral work notes'}));await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return Date.now()})()`)
+      return await scene.webContents.executeJavaScript(`(async()=>{document.body.replaceChildren(Object.assign(document.createElement('p'),{textContent:'A different neutral document'}));await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return Date.now()})()`)
     })
     phase='verify-stale-result-rejected'
     await expect.poll(async()=>(await snapshot()).status.activity.some(a=>a.message==='Screen changed during analysis; checking the new view next.'),{timeout:15_000}).toBe(true)
