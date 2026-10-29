@@ -1,7 +1,9 @@
 # Visual-decision experiments
 
-Development-only research, separate from the desktop app. The app does not send
-screenshots to Jev. A Jev comparison is optional and requires a secure API key.
+Development-only research harness, separate from the desktop runtime. The app
+now offers a separately consented hosted Jev backend; these experiments do not
+by themselves validate its prompt or end-to-end behavior. See
+[the current reliability audit](../docs/RELIABILITY.md) before new experiments.
 
 The corpus distinguishes a visible feed/player from text merely mentioning a
 site. Synthetic screenshots are explicitly identified and cannot establish
@@ -44,3 +46,12 @@ cache. Live captures initially have null labels and `needs_visual_label: true`;
 inspect pixels and freeze labels before evaluation. Re-captures change hashes
 and are a new experiment. The saved report embeds the inspected manifest and
 capture failures; it does not claim real active-service positive coverage.
+
+
+## Current actual-app runner
+
+Use [APP-EVALUATION.md](../docs/APP-EVALUATION.md) for the actual hosted app
+request/prompt/parser/matcher runner, completed real-public-image results, and
+retained budget. The older Python evaluator above does not use cloudQuestions()
+and must not be rerun with a new empty ledger. Current reliability priority is
+broader evidence and live Windows validation, not another local-model comparison.

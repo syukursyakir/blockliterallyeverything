@@ -1,6 +1,42 @@
 # Session handoff
 
-Read this, AGENTS.md, DESIGN.md and docs/VALIDATION.md before continuing.
+Read this, AGENTS.md, DESIGN.md, docs/WORKLOG.md and docs/RELIABILITY.md before continuing.
+Consult docs/VALIDATION.md for historical checks; later entries supersede earlier ones.
+
+## Latest work — actual app evaluation (2026-10-29)
+
+Read docs/APP-EVALUATION.md and docs/WINDOWS-LIVE-VALIDATION.md first. Paid
+accounting is now 42 attempts: 38 baseline inputs plus FOUR candidate retests.
+Baseline explicit 8/8 (four source families; nudity and two same-source activity
+views); video 4/4 with TWO false matches on non-YouTube activity frames; social
+7/7 with one false Shorts match. Correlated small development corpus; no 95% claim.
+
+Five raw reports: evaluation-app-2026-10-29.json (25), archived (1), followup (10),
+activity (2), candidate (4), all under docs/ with date suffix 2026-10-29.json.
+Candidate clarifies platform-only scope and corrected two tested false matches,
+but reduced real TikTok score .78->.50. NOT adopted; defaults/provider/threshold
+remain unchanged. It needs broader held-out checks. Do not combine retests into
+baseline accuracy or automatically migrate saved rules.
+
+Authoritative ledger /workspace/work/ble-real-2026-10-29/app-budget.json:
+42 requests, $0.462422016 reserved of the approved $0.50, 127,172 tokens,
+~$0.005341224 estimated. THREE further attempts fit, intended for Windows live
+integration. No new budget or reset; original 62/64 prior history is preserved.
+Do not spend the final three on more image repeats. Local prep ledger copies
+are NON-AUTHORITATIVE. Freeze local calls during any remote ownership transfer.
+
+54 unit tests and build passed. Added --settings evaluator option with dry-run
+coverage. Prepared local opt-in live_detection Windows job in existing windows.yml,
+scripts/prepare-windows-live.mjs and the real native runner. No native execution.
+No source push/release or secret transfer. Need USER INPUT to allow a test-branch
+push/Windows Actions (earlier no-publishing restriction) and securely provision or
+confirm a capped TYPESAFE_API_KEY GitHub Actions secret. Secret-name read attempt
+returned HTTP403; do not try to extract the cloud key or paste keys into chat.
+
+Next action after input: run the prepared Windows job WITHOUT release publishing,
+with exact retained accounting, then reconcile its numeric artifacts. Preserve
+in-flight lock/authority on failure. No authorized laptop remote access exists.
+See WORKLOG.md for completed tasks and corpus paths; do not redo paid batches.
 
 ## Current product and user
 
@@ -28,7 +64,9 @@ GitHub Windows testing first, rather than control their laptop.
 ## Repository and delivery
 
 - Repository: https://github.com/syukursyakir/blockliterallyeverything
-- Remote branch main. Local branch is work; pushes used HEAD:main. No force pushes.
+- Remote branch main. Validation work is on local branch
+  validation/live-windows-20261029; earlier sessions used work and pushed HEAD:main.
+  No push or publication is authorized; no force pushes.
 - Latest app/test commit: 2c1eec2. Latest evidence/docs commit before this handoff: 8233d13.
 - Published alpha: https://github.com/syukursyakir/blockliterallyeverything/releases/tag/v0.1.0-alpha.1
 - Working download: https://github.com/syukursyakir/blockliterallyeverything/releases/download/v0.1.0-alpha.1/BlockLiterallyEverything-0.1.0-setup.exe
@@ -130,9 +168,10 @@ GitHub source/API access and pushes worked. Direct cloud gh release asset upload
 returned HTTP401 at uploads.github.com despite API access; the Windows workflow's
 GITHUB_TOKEN uploaded successfully. No need to expose or extract tokens to fix it.
 
-No active implementation remains pending from the previous task. User is asking
-about a fresh-chat handoff. Good next work, when requested: clarify current mode
-and next action in UI, gather specific popup feedback, or prepare a separately
-versioned update containing the tested fix. No environment publishing/reconfiguration
+Current user priority (2026-10-29): establish detection and blocking reliability
+before UI polish or another release. Audit completed; see docs/RELIABILITY.md for
+verified counts, gaps and the ordered validation plan, and docs/WORKLOG.md for
+completed work. No 95% reliability claim is supported. Do not repeat old model
+comparisons or prioritize mode guidance/popup redesign over this milestone. No environment publishing/reconfiguration
 is needed for handoff. Earlier user explicitly said not to republish/reapply old
 environment changes; preserve that.

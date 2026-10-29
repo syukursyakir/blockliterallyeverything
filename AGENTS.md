@@ -5,6 +5,15 @@ plain-English rules. The interface is React/TypeScript in a desktop host; native
 capture/enforcement and model runtime are separate concerns. Host choice and
 OmniJev-0.8B viability are not yet validated. Jev cloud is explicitly authorized; require visible screenshot consent and secure key handling. Do not silently change inference providers.
 
+## Continuity
+
+Read HANDOFF.md, docs/WORKLOG.md and docs/RELIABILITY.md before choosing work.
+Detection and blocking reliability is the current priority, ahead of UI polish.
+After meaningful work, append outcomes, evidence, limits and the next step to
+docs/WORKLOG.md; update HANDOFF.md when the current state or priority changes.
+Check existing evidence before rerunning experiments. Do not count fixture tests
+as model accuracy or publish without explicit user authorization.
+
 ## Coding workflow
 
 Local project adaptations in each skill override conflicting retained upstream
