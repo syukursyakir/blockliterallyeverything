@@ -1,5 +1,5 @@
 // A fixed diagnostic replication plan, never an until-success or network-retry loop.
-import {readFile,writeFile,mkdir,rename} from 'node:fs/promises'
+import {readFile,writeFile,mkdir,rename,open} from 'node:fs/promises'
 import {spawnSync} from 'node:child_process'
 import path from 'node:path'
 import {validateEvaluationBudget} from '../lab/evaluation-budget.ts'
@@ -13,6 +13,7 @@ const output=value('--output'),ledgerFile=value('--ledger')
 const initial=validateEvaluationBudget(JSON.parse(await readFile(ledgerFile,'utf8')))
 nativeBudget(initial.current,initial.capUsd,args.includes('--positive-at-start'),trials)
 if(trials===1){const run=spawnSync(process.execPath,['scripts/test-live-windows.mjs',...args],{stdio:'inherit',env:process.env});process.exit(run.status??1)}
+const handle=await open(output+'.series.json','wx',0o600);await handle.close()
 const summary={scope:'Six preplanned diagnostic replications of one known intermittent miss. Correlated trials, not independent accuracy. Continue only reconciled bounded detection misses; stop on capture/provider/accounting errors.',budgetBefore:initial.current,budgetAfter:initial.current,trials:[]}
 for(let i=1;i<=trials;i++){
  const trialOutput=path.join(path.dirname(output),'series','trial-'+i,'report.json')

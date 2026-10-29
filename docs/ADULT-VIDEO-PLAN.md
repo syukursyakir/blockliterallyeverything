@@ -40,3 +40,10 @@ worst-case preflight). Preserve every outcome and any failure frames encrypted.
 Continue only fully reconciled bounded detection misses; stop remaining trials on
 capture/provider/auth/accounting failures. Never run until success or drop misses.
 These replications investigate reliability, not independent accuracy samples.
+
+All six audited replications40869174152 passed; exact-image scores.94/.95 and
+original unaudited miss remain preserved. BEFORE next calls, freeze a separate
+SIX uninstrumented replications at identical settings/source. This checks whether
+the pass-through audit perturbs timing/capture. Same18-request worst-case guard,
+new profiles, retained cumulative ledger, all outcomes kept, same fatal-error stops.
+No model/prompt/threshold changes warranted by currently nonreproduced diagnosis.
