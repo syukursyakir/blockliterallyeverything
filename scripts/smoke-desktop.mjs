@@ -7,7 +7,7 @@ import path from 'node:path'
 const userData = await mkdtemp(path.join(tmpdir(), 'ble-desktop-smoke-'))
 let desktop
 try {
-  desktop = await _electron.launch({ executablePath: process.env.BLE_SMOKE_APP_EXE || undefined, args: process.env.BLE_SMOKE_APP_EXE ? [] : [path.resolve('.')], env: { ...process.env, BLE_DEV_URL: '', BLE_SMOKE_USER_DATA_DIR: userData }, timeout: 60_000 })
+  desktop = await _electron.launch({ executablePath: process.env.BLE_SMOKE_APP_EXE || undefined, args: [...(process.env.BLE_SMOKE_APP_EXE ? [] : [path.resolve('.')]), '--user-data-dir=' + userData], env: { ...process.env, BLE_DEV_URL: '', BLE_SMOKE_USER_DATA_DIR: userData }, timeout: 60_000 })
   const page = await desktop.firstWindow()
   await expect(page.getByRole('heading', { name: 'A little setup. A little more focus.' })).toBeVisible()
   await expect(page.getByText('Interface preview', { exact: true })).toHaveCount(0)

@@ -174,3 +174,19 @@ completion/restart persistence, failed verification, encrypted-key failures and
 marker-write recovery. The Windows CI workflow now builds/installs the Jev edition
 and checks the installed Electron shell; that workflow is prepared but has not
 been executed here.
+
+## Extended installed-app Windows checks
+
+`npm run test:desktop:extended` runs real Electron, Windows key encryption, screen
+capture and cover/recovery checks in an isolated `--user-data-dir` profile. The
+provider transport replies are explicit fixtures: no real API key or paid request
+is used, and this suite does not measure AI accuracy. It includes a fullscreen
+fixture, native emergency keyboard events, failed/malformed/timeout replies,
+blank/missing captures, restart persistence and corrupted-budget handling.
+Lock/suspend signals are emitted in-process; the runner is not physically locked
+or put to sleep. A single runner display cannot establish multi-monitor support.
+
+The Windows workflow runs this suite against the installed application and uploads
+`windows-desktop-test-evidence` with a structured report and app-only screenshots,
+including failure evidence. These checks do not publish or replace your release
+unless the workflow is explicitly dispatched with `publish_alpha` enabled.

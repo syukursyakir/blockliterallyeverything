@@ -194,7 +194,10 @@ function guard(event: IpcMainInvokeEvent, allowCover = false) {
   if (event.sender !== mainWindow.webContents && !(allowCover && [...covers].some(c => c.webContents === event.sender))) throw new Error('Untrusted desktop request.')
 }
 app.setAppUserModelId('org.blockliterallyeverything.desktop')
-if (!app.isPackaged && process.env.BLE_SMOKE_USER_DATA_DIR) app.setPath('userData', process.env.BLE_SMOKE_USER_DATA_DIR)
+// Standard Chromium profile switch also isolates installed-app tests from real preferences.
+const requestedUserData = app.commandLine?.getSwitchValue('user-data-dir')
+if (requestedUserData) app.setPath('userData', path.resolve(requestedUserData))
+else if (!app.isPackaged && process.env.BLE_SMOKE_USER_DATA_DIR) app.setPath('userData', process.env.BLE_SMOKE_USER_DATA_DIR)
 if (!app.requestSingleInstanceLock()) app.quit()
 else {
   app.on('second-instance', () => { mainWindow?.show(); mainWindow?.focus() })

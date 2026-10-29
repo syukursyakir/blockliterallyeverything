@@ -17,7 +17,8 @@
     "worker:setup": "uv sync --project worker",
     "worker:bundle": "uv run --project worker pyinstaller --noconfirm --distpath worker/dist --workpath worker/build worker/worker.spec",
     "dist:win": "npm run build && electron-builder --win nsis --x64 --publish never",
-    "dist:win:local": "npm run worker:bundle && npm run build && electron-builder --config electron-builder.local.cjs --win nsis --x64 --publish never"
+    "dist:win:local": "npm run worker:bundle && npm run build && electron-builder --config electron-builder.local.cjs --win nsis --x64 --publish never",
+    "test:desktop:extended": "node scripts/test-installed-desktop.mjs"
   },
   "build": {
     "appId": "org.blockliterallyeverything.desktop",

@@ -41,13 +41,23 @@ jobs:
           $exe = Get-ChildItem "$env:LOCALAPPDATA/Programs" -Recurse -Filter 'Block Literally Everything.exe' | Select-Object -First 1
           if (-not $exe) { throw 'Installed application missing' }
           $env:BLE_SMOKE_APP_EXE = $exe.FullName
-          npm run test:desktop
+          npm run test:desktop:extended
           if ($LASTEXITCODE -ne 0) { throw 'Installed app smoke failed' }
       - uses: actions/upload-artifact@v4
         with:
           name: windows-jev-installer-unsigned
           path: release/*setup.exe
           if-no-files-found: error
+      - name: Upload desktop test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-desktop-test-evidence
+          path: |
+            desktop-test-results/**
+            test-results/**
+          if-no-files-found: ignore
+          retention-days: 7
       - name: Publish verified alpha download
         if: github.event_name == 'workflow_dispatch' && inputs.publish_alpha
         shell: pwsh
