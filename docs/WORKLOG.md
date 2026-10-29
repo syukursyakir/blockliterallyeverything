@@ -430,3 +430,24 @@ step skipped; existing public alpha assets still show original05:15 UTC updates.
 Updated RELIABILITY.md current section to supersede obsolete audit prerequisites;
 HANDOFF.md contains current cap/counters, completed runs and remaining gaps.
 No paid test or remote authority lock remains. Final follow-up only continuity docs.
+
+
+### Confirmatory extension and controlled-motion preparation
+
+User authorized next independent cases/moving checks within existing3 cap. Read
+current handoff/skills; no redo of completed batches. Frozen next protocol before
+new inference. Encrypted-only Windows capture40860317868 obtained14 fresh pages;
+local browser7 new IG grids. Five incomplete/private feeds excluded before calls.
+New adult-declared source/API requests unavailable403; no bypass/download/positive
+claim.21 labeled/hash-frozen cases, unchanged setting hash; raw report retained.
+YouTube9/9, social7/7, zero platform false matches. Explicit1/21 matches against
+frozen negatives, no positives. Full-resolution post-prediction inspection of MoMA
+revealed tiny nude painted figures missed in initial contact-sheet labeling; keep
+original result with caveat, not a clean ordinary-photo false positive. No tuning.
+Cumulative after batch156,$1.717567488 reserved,517346 tokens.
+
+Added live_motion pan (+/-12px continuous source-screenshot motion) and switch-away
+during inference with actual capture/provider. Switching must discard changed frame,
+recheck neutral, keep no cover, stop; not a positive-blocking pass. Unit helper
+rejects mixed startup/motion modes; strict tsc passed. Pan run40860770322 owns
+authority/lock; no local paid calls. No product/runtime/preset/provider changes.

@@ -121,6 +121,28 @@ before releasing authority. If interrupted, preserve lock and recover from the
 isolated app ledger; never blindly retry or reset. File locks cannot lock a second
 copy on another machine. The user-authorized extension is cumulative to $3, never $3 per run or per machine.
 
+## In-progress continuation after PR #3
+
+Branch validation/motion-coverage-20261029. Frozen plan docs/MOTION-COVERAGE-PLAN.md.
+Read docs/CONFIRMATORY-RESULTS.md and evaluation-confirmatory-2026-10-29.json.
+New21 public cases, frozen labels/hash/settings before calls: YouTube9/9 positives,
+social7/7 (Instagram), zero platform false matches. Explicit0 positive samples,
+1/21 false matches against original labels. MoMA full-resolution follow-up shows
+small nude painted figures missed at initial labeling; retain frozen result and
+annotation/scope caveat, do not quietly relabel or call it clean ordinary clothing.
+Four TikTok skeleton captures and one empty/private IG profile excluded pre-inference.
+New adult-source downloads/API searches returned403; no new adult image/positive.
+No source-access workaround or provider change. Raw captures/RSA key stay private.
+
+Current pre-motion ledger156 attempts,$1.717567488 reserved,517346 tokens.
+Windows pan run40860770322 currently owns authority with durable lock. NO local
+paid calls until remote report/profile/wrapper downloaded and reconciled. Next
+switch-away-during-inference control sequentially. New live_motion choices none/pan/
+switch-away; pan is only +/-12px controlled screenshot motion, not actual video.
+Switch-away must prove discarded changed frame, rechecked neutral and no block;
+discarded model verdict is not observable, so do not claim its value. Native runner
+helpers unit tests and strict tsc passed; no product code changed in this branch.
+
 ## Current next work within the authorized $3 ceiling
 
 Main post-merge CI40859115538 PASSED:70 unit +1 intended skip,8 UI,

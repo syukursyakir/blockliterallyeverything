@@ -1,0 +1,29 @@
+{
+  "frozenAt": "2026-10-29T10:50:31.598790+00:00",
+  "manifestSha256": "d8fdc155df59db62f45082665952878f85d496f51a2d89c17d5f58740d540ca5",
+  "settingsSha256": "46eb297437d81a4553c8e10d27a632232a562a8c641f73fef287b847842f7fc2",
+  "cases": 21,
+  "exclusions": [
+    {
+      "id": "next-ig-louvre",
+      "reason": "No visible feed: skeleton/empty/private profile; not a positive acquisition."
+    },
+    {
+      "id": "next-tt-washingtonpost",
+      "reason": "No visible feed: skeleton/empty/private profile; not a positive acquisition."
+    },
+    {
+      "id": "next-tt-nationalgeographic",
+      "reason": "No visible feed: skeleton/empty/private profile; not a positive acquisition."
+    },
+    {
+      "id": "next-tt-britishmuseum",
+      "reason": "No visible feed: skeleton/empty/private profile; not a positive acquisition."
+    },
+    {
+      "id": "next-tt-duolingo",
+      "reason": "No visible feed: skeleton/empty/private profile; not a positive acquisition."
+    }
+  ],
+  "adultAcquisition": "New declared40 adult thumbnail and Wikimedia API searches returned403; no image obtained, no positive/model proof claimed."
+}
