@@ -4,6 +4,11 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      publish_alpha:
+        description: Publish or replace the alpha installer after all Windows checks pass
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -44,7 +49,7 @@ jobs:
           path: release/*setup.exe
           if-no-files-found: error
       - name: Publish verified alpha download
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'workflow_dispatch' && inputs.publish_alpha
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}

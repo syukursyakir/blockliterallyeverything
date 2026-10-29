@@ -6,8 +6,8 @@
 Name "${PRODUCT_NAME}"
 InstallDir "$LOCALAPPDATA\Programs\${PRODUCT_NAME}"
 RequestExecutionLevel user
-Icon "${PROJECT_DIR}/assets/icon.ico"
-UninstallIcon "${PROJECT_DIR}/assets/icon.ico"
+Icon "${PROJECT_DIR}\assets\icon.ico"
+UninstallIcon "${PROJECT_DIR}\assets\icon.ico"
 ShowInstDetails nevershow
 ShowUninstDetails show
 Page instfiles
@@ -49,7 +49,7 @@ Section "Install"
   ClearErrors
   CopyFiles /SILENT "$PLUGINSDIR\unpacked\*" "$INSTDIR"
   IfErrors install_failed
-  File /oname=app.ico "${PROJECT_DIR}/assets/icon.ico"
+  File /oname=app.ico "${PROJECT_DIR}\assets\icon.ico"
   WriteUninstaller "$INSTDIR\Uninstall.exe"
   IfErrors install_failed
   ClearErrors
