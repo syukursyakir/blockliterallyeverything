@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "conclusion": "success",
+  "headSha": "3d1d58c212bbe129c21ce18f2232af9b0a57f1bb",
+  "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40898845707",
+  "scope": "Windows fixture CI; not model accuracy. Release step verified skipped.",
+  "unitPassed": 79,
+  "unitSkipped": 1,
+  "uiPassed": 9,
+  "installedFixtureScenariosPassed": 13,
+  "buildPassed": true,
+  "desktopSmokePassed": true,
+  "installerBuildInstallPassed": true,
+  "releasePublished": false
+}
