@@ -4,12 +4,13 @@ import { open, mkdir, readFile, writeFile, rename, unlink } from 'node:fs/promis
 import path from 'node:path'
 import { parseArgs } from 'node:util'
 import { validateEvaluationBudget, type EvaluationBudget } from './evaluation-budget.ts'
-import { nativeExitGuard, nativeBudget } from './native-process.ts'
+import { nativeExitGuard, nativeBudget, nativeMotion } from './native-process.ts'
 import { preflight, evaluationSettings } from './app-evaluation.ts'
 import { validateLedger } from '../electron/jev.ts'
 
 if (process.platform !== 'win32') throw new Error('Live native validation requires an interactive Windows desktop; no test ran.')
-const { values } = parseArgs({ options: { corpus:{type:'string'}, case:{type:'string'}, ledger:{type:'string'}, output:{type:'string'}, 'allow-cloud':{type:'boolean'}, 'positive-at-start':{type:'boolean'} } })
+const { values } = parseArgs({ options: { corpus:{type:'string'}, case:{type:'string'}, ledger:{type:'string'}, output:{type:'string'}, motion:{type:'string'}, 'allow-cloud':{type:'boolean'}, 'positive-at-start':{type:'boolean'} } })
+const motion=nativeMotion(values.motion,values['positive-at-start']===true)
 if (!values['allow-cloud'] || !values.corpus || !values.case || !values.ledger || !values.output || !process.env.TYPESAFE_API_KEY) throw new Error('Requires --allow-cloud --corpus MANIFEST --case ID --ledger RETAINED --output NEW_REPORT and a securely configured TYPESAFE_API_KEY. All visible displays may be uploaded.')
 const prepared=await preflight(values.corpus)
 const selected=prepared.cases.find(c=>c.item.id===values.case)
@@ -27,6 +28,11 @@ const positiveAtStart = values['positive-at-start'] === true
 let reconcile=false, profileSeeded=false, reportReady=false, profileConfirmed=false, nativeStopped=true
 let ledger: EvaluationBudget
 const report: Record<string,unknown>={scope:'Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.',passed:false,caseId:selected.item.id,preparedSha256:selected.item.sha256,manifestSha256:prepared.manifestSha256,rule:positive,caseProvenance:{origin:selected.item.origin,source:selected.item.source,source_sha256:selected.item.source_sha256,adult_provenance:selected.item.adult_provenance,rights:selected.item.rights},protocol:positiveAtStart?'positive-at-session-start':'neutral-to-positive-during-session',startedAt:new Date().toISOString(),timingMethod:'Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.'}
+report.motion=motion
+if(motion==='switch-away'){
+  report.scope='Real Windows stale-result control: actual capture/provider, positive replaced by neutral during inference. Must remain uncovered, recheck neutral and stop cleanly. Does not test successful positive blocking/recovery.'
+  report.protocol='switch-away-during-inference'
+}
 const atomic=async(file:string,value:unknown)=>{await writeFile(file+'.tmp',JSON.stringify(value,null,2)+'\n',{mode:0o600});await rename(file+'.tmp',file)}
 try {
   ledger=validateEvaluationBudget(JSON.parse(await readFile(file,'utf8')))
@@ -62,12 +68,13 @@ try {
     scene.setFullScreen(true);scene.show();scene.focus()
   })
   const snapshot=()=>page.evaluate(()=>window.desktop!.snapshot())
-  const paintPositive=async()=>desktop!.evaluate(async(_,{data})=>{
+  const paintPositive=async()=>desktop!.evaluate(async(_,{data,motion})=>{
     const scene=(globalThis as any).bleLiveScene
-    return await scene.webContents.executeJavaScript(`(async()=>{ const img=new Image();img.src=${JSON.stringify(data)};await img.decode();img.style='max-width:100vw;max-height:100vh;object-fit:contain';document.body.replaceChildren(img);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return Date.now()})()`)
-  },{data:'data:image/png;base64,'+selected.bytes.toString('base64')})
+    return await scene.webContents.executeJavaScript(`(async()=>{ const img=new Image();img.src=${JSON.stringify(data)};await img.decode();img.style=${JSON.stringify(motion==='pan'?'max-width:96vw;max-height:96vh;object-fit:contain':'max-width:100vw;max-height:100vh;object-fit:contain')};document.body.replaceChildren(img);if(${JSON.stringify(motion)}==='pan'){globalThis.bleMotionFrames=0;const start=performance.now();function move(now){img.style.transform='translateX('+12*Math.sin((now-start)/400)+'px)';globalThis.bleMotionFrames++;requestAnimationFrame(move)}requestAnimationFrame(move)}await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return Date.now()})()`)
+  },{data:'data:image/png;base64,'+selected.bytes.toString('base64'),motion})
   let paintedAt:number
   report.settings=(await snapshot()).settings
+  let negativeChecks=0, negativeRequests=0
   if(positiveAtStart){
     phase='paint-positive';paintedAt=await paintPositive()
     phase='start-positive-session';await page.evaluate(()=>window.desktop!.start())
@@ -76,15 +83,44 @@ try {
     await expect.poll(async()=>(await snapshot()).status.mode,{timeout:20_000}).toBe('watching')
     const negative=await snapshot()
     if(negative.status.blocks!==0)throw new Error('Negative control matched; stopped before showing positive.')
+    negativeChecks=negative.status.checks;negativeRequests=negative.status.cloudRequests
     report.negativeControl='Live neutral frame allowed without a cover.'
     phase='paint-positive';paintedAt=await paintPositive()
   }
+  if(motion==='switch-away'){
+    phase='await-positive-request'
+    await expect.poll(async()=>(await snapshot()).status.cloudRequests,{intervals:[5],timeout:10_000}).toBe(negativeRequests+1)
+    const inFlight=await snapshot()
+    if(inFlight.status.mode!=='checking')throw new Error('Inference already completed; switch-away race not exercised.')
+    report.positiveRequestObservedAt=Date.now()
+    phase='replace-with-neutral'
+    report.replacedAt=await desktop.evaluate(async()=>{
+      const scene=(globalThis as any).bleLiveScene
+      return await scene.webContents.executeJavaScript(`(async()=>{document.body.replaceChildren(Object.assign(document.createElement('p'),{textContent:'Neutral work notes'}));await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return Date.now()})()`)
+    })
+    phase='verify-stale-result-rejected'
+    await expect.poll(async()=>(await snapshot()).status.activity.some(a=>a.message==='Screen changed during analysis; checking the new view next.'),{timeout:15_000}).toBe(true)
+    await expect.poll(async()=>(await snapshot()).status.checks,{timeout:15_000}).toBeGreaterThan(negativeChecks)
+    const final=await snapshot()
+    expect(final.status.blocks).toBe(0)
+    expect(final.status.mode).toBe('watching')
+    expect(desktop.windows().filter(p=>p.url().endsWith('#block'))).toHaveLength(0)
+    report.staleControl={discarded:true,neutralRechecked:true,blocks:final.status.blocks,checks:final.status.checks,cloudRequests:final.status.cloudRequests}
+    await page.evaluate(()=>window.desktop!.stop())
+    await expect.poll(async()=>(await snapshot()).status.mode).toBe('idle')
+    report.passed=true
+  }else{
   phase='wait-for-cover'
   await expect.poll(async()=>(await snapshot()).status.mode,{timeout:20_000}).toBe('blocked')
   const cover=desktop.windows().find(p=>p.url().endsWith('#block'))
   if(!cover)throw new Error('No native cover window found.')
   await expect(cover.getByRole('heading',{name:'This content is blocked.'})).toBeVisible()
   report.contentToObservedCoverMs=Date.now()-paintedAt
+  if(motion==='pan'){
+    report.motionFrames=await desktop.evaluate(async()=>await (globalThis as any).bleLiveScene.webContents.executeJavaScript('globalThis.bleMotionFrames'))
+    expect(report.motionFrames).toBeGreaterThan(10)
+    report.motionLimits='Reviewed screenshot pans horizontally +/-12px continuously; not actual video playback, large motion or new accuracy data.'
+  }
   report.blockInfo=await cover.evaluate(async()=>(await window.desktop!.snapshot()).block)
   report.cover=await desktop.evaluate(({BrowserWindow})=>{
     const w=BrowserWindow.getAllWindows().find(w=>w.webContents.getURL().endsWith('#block'))!
@@ -100,6 +136,7 @@ try {
   await expect.poll(async()=>(await snapshot()).status.mode).toBe('idle')
   await expect.poll(()=>desktop!.windows().filter(p=>p.url().endsWith('#block')).length).toBe(0)
   report.recovery='Button released cover and paused session.';report.passed=true
+  }
 } catch (error) {
   report.failedPhase=phase
   report.errorType=error instanceof Error ? error.name : 'UnknownError'

@@ -1,7 +1,15 @@
 import { describe, expect, it } from 'vitest'
-import { nativeExitGuard, nativeBudget } from '../../lab/native-process'
+import { nativeExitGuard, nativeBudget, nativeMotion } from '../../lab/native-process'
 import { RESERVED_PER_REQUEST } from '../../electron/jev'
 describe('live native cleanup and explicit protocol accounting',()=>{
+ it('rejects unsupported motion and mixing motion with startup-only evidence',()=>{
+  expect(nativeMotion(undefined,false)).toBe('none')
+  expect(nativeMotion('pan',false)).toBe('pan')
+  expect(nativeMotion('switch-away',false)).toBe('switch-away')
+  expect(()=>nativeMotion('unknown',false)).toThrow()
+  expect(()=>nativeMotion('pan',true)).toThrow()
+  expect(()=>nativeMotion('switch-away',true)).toThrow()
+ })
  it('uses a cached child handle after the Playwright application dispatcher is disposed',()=>{
   let closed=false,calls=0
   const child:{exitCode:number|null;signalCode:string|null}={exitCode:null,signalCode:null}
