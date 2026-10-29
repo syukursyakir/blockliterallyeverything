@@ -1,5 +1,13 @@
 # Actual app detection evaluation — 2026-10-29
 
+Managed cloud Node24 transport: keep inherited proxy/CA and use `node --use-env-proxy`
+(or `NODE_USE_ENV_PROXY=1`) for charged evaluator commands. Before paid work, a
+public non-provider GET can verify transport without spending a reservation. A ready
+scoped secret can be a proxy placeholder; never extract/copy it. A241st attempt
+failed when this flag was omitted; see FRESH-FAMILY-PLAN.md. Current authority and
+all approvals are in HANDOFF.md; old chronological counters below are historical.
+
+
 The counts below are historical. Later frozen adult-source and actual-video results
 are in [ADULT-VIDEO-RESULTS.md](ADULT-VIDEO-RESULTS.md); HANDOFF.md is current.
 

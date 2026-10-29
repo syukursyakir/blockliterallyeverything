@@ -25,3 +25,17 @@ than four suitable cases survive review, do not backfill after seeing model scor
 Fixed-image Node evaluation, not real Windows enforcement or independent human
 annotation. Report explicit recall, platform false matches and errors with small
 correlated denominators; this cannot establish95%. No release or app behavior change.
+
+## Explicit transport correction before a single controlled rerun
+
+Initial local run stopped on FIRST file with request/parsing failure; no score,
+reservation241 retained, original partial report preserved. No automatic retries.
+No other case attempted. Runtime check found Node env-proxy support disabled;
+FREE public robots.txt fetch timed out normally and returned200 with --use-env-proxy.
+Use the inherited managed proxy/CA; no network/secret bypass or key replacement.
+
+BEFORE new calls, amend the bound to one controlled four-case run after that
+transport correction: at most FIVE total attempts across initial failure + rerun,
+within the existing cumulative$3 cap. Preserve original error separately, do not
+advertise a clean first-attempt4/4 cohort. Same frozen manifest/settings/labels; no
+prompt/threshold/image changes. If this fails, stop again; no retry loop.

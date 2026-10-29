@@ -658,3 +658,13 @@ and freeze; two author/source groups, no activity/negative coverage. Settings ha
 46eb2974 identical to prior frozen evaluator defaults, manifest1e33fa96 frozen before
 paid requests. Existing evaluator dry-run passed. Plan max4 local requests against
 exact240 authority; no remote paidjob, no reset. Pixels outsideGit, no release.
+
+
+First fresh-family local request stopped with opaque request/parsing/persistence
+error; no score/tokens, reservation241/$2.653421568 retained, reportcompletedfalse,
+three inputs unattempted. Original partial JSON saved. No automaticretry. Free
+publicGET diagnosed transport: Node env proxy disabled, defaultfetchTimeoutError;
+--use-env-proxy returns200. Keep inherited proxy/CA, no key extraction/replacement.
+Frozen plan amended BEFORE paid calls to one controlled4-case rerun withflag, max5
+attempts total including firstfailure withinexisting3cap. Same labels/settings/images;
+not a clean first-attempt4/4. Updated evaluator runtime docs to prevent recurrence.

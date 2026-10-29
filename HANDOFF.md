@@ -26,8 +26,11 @@ CC BY-SA metadata verified before binary. Deduplicated source hashes against pri
 reports; old Jade result excluded. All four full/small prepared variants inspected
 before labels/settings/hash freeze. TWO families, not four independent subjects.
 No new activity-video or negative coverage. Original settings hash46eb2974 unchanged.
-Dry-run existing evaluator passed. Next: at most FOUR sequential local provider calls
-against EXACT retained authority, current240/$2.642411520; no remote paidjob/lock.
+Initial local request FAILED without score, stopped;241/$2.653421568 retained.
+No other input attempted. Free GET diagnosed omitted Node env-proxy flag (normal
+fetch timeout, --use-env-proxy200). See plan amendment BEFORE controlled four-case
+rerun: max5 attempts including first error, same frozen inputs/settings, no resets.
+Use node --use-env-proxy; no remote paid job or lock.
 Local evaluator acquires authority lock automatically, preserves reservations/errors;
 no new budget or retries. Raw pixels private /workspace/work/ble-fresh-families-2026-10-29.
 Do not rerun after results or call these Windows enforcement/95% proof.
