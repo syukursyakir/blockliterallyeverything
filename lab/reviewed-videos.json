@@ -50,5 +50,19 @@
     },
     "start": 2,
     "end": 10
+  },
+  "safe-video": {
+    "url": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm",
+    "sha256": "c6f8a348953395598a9a73b9bab1676436410797bce9f398f4be1531d6e76dda",
+    "source": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm",
+    "adult_provenance": "Nonhuman plant-only sample, not an adult-content source.",
+    "rights": {
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution": "MDN interactive-examples CC0 video sample"
+    },
+    "start": 0.2,
+    "end": 4.5,
+    "explicit": false
   }
 }

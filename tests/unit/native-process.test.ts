@@ -16,10 +16,12 @@ describe('live native cleanup and explicit protocol accounting',()=>{
   expect(nativeMotion('pan',false)).toBe('pan')
   expect(nativeMotion('switch-away',false)).toBe('switch-away')
   expect(nativeMotion('video',false)).toBe('video')
+  expect(nativeMotion('video-safe',false)).toBe('video-safe')
   expect(()=>nativeMotion('unknown',false)).toThrow()
   expect(()=>nativeMotion('pan',true)).toThrow()
   expect(()=>nativeMotion('switch-away',true)).toThrow()
   expect(()=>nativeMotion('video',true)).toThrow()
+  expect(()=>nativeMotion('video-safe',true)).toThrow()
  })
  it('rejects video path traversal, changed bytes and wrong container headers before native launch',async()=>{
   const root=await mkdtemp(path.join(tmpdir(),'ble-video-'))

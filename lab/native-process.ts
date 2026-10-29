@@ -17,8 +17,8 @@ export function nativeBudget(ledger: CloudLedger, cap: number, positiveAtStart: 
 
 export function nativeMotion(value: string | undefined, positiveAtStart: boolean) {
   const motion = value ?? 'none'
-  if (!['none', 'pan', 'switch-away', 'video'].includes(motion) || (positiveAtStart && motion !== 'none')) throw new Error('Motion requires the full active-session protocol and a recognized mode.')
-  return motion as 'none' | 'pan' | 'switch-away' | 'video'
+  if (!['none', 'pan', 'switch-away', 'video', 'video-safe'].includes(motion) || (positiveAtStart && motion !== 'none')) throw new Error('Motion requires the full active-session protocol and a recognized mode.')
+  return motion as 'none' | 'pan' | 'switch-away' | 'video' | 'video-safe'
 }
 
 export async function nativeVideo(root: string, file: string | undefined, sha256: string | undefined) {

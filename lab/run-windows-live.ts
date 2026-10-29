@@ -8,18 +8,23 @@ import { nativeExitGuard, nativeBudget, nativeMotion, nativeVideo, nativeVideoRa
 import { preflight, evaluationSettings } from './app-evaluation.ts'
 import { validateLedger } from '../electron/jev.ts'
 import { isBlankCapture } from '../electron/screen-cache.ts'
+import { encryptCaptures } from './capture-package.ts'
+import { createHash } from 'node:crypto'
 
 if (process.platform !== 'win32') throw new Error('Live native validation requires an interactive Windows desktop; no test ran.')
-const { values } = parseArgs({ options: { corpus:{type:'string'}, case:{type:'string'}, ledger:{type:'string'}, output:{type:'string'}, motion:{type:'string'}, 'allow-cloud':{type:'boolean'}, 'positive-at-start':{type:'boolean'} } })
+const { values } = parseArgs({ options: { corpus:{type:'string'}, case:{type:'string'}, ledger:{type:'string'}, output:{type:'string'}, motion:{type:'string'}, audit:{type:'boolean'}, 'allow-cloud':{type:'boolean'}, 'positive-at-start':{type:'boolean'} } })
+if(values.audit && !process.env.BLE_CAPTURE_PUBLIC_KEY)throw new Error('Audit requires the local review public encryption key; no plaintext frame output.')
 const motion=nativeMotion(values.motion,values['positive-at-start']===true)
+const playsVideo=motion==='video' || motion==='video-safe'
 if (!values['allow-cloud'] || !values.corpus || !values.case || !values.ledger || !values.output || !process.env.TYPESAFE_API_KEY) throw new Error('Requires --allow-cloud --corpus MANIFEST --case ID --ledger RETAINED --output NEW_REPORT and a securely configured TYPESAFE_API_KEY. All visible displays may be uploaded.')
 const prepared=await preflight(values.corpus)
 const selected=prepared.cases.find(c=>c.item.id===values.case)
 if (!selected) throw new Error('Case not found.')
-if(Boolean(selected.item.video_file)!==(motion==='video'))throw new Error('A video case requires explicit video motion mode; still cases cannot claim playback.')
-const media=motion==='video'?await nativeVideo(path.dirname(path.resolve(values.corpus)),selected.item.video_file,selected.item.video_sha256):undefined
+if(Boolean(selected.item.video_file)!==playsVideo)throw new Error('A video case requires explicit video motion mode; still cases cannot claim playback.')
+const media=playsVideo?await nativeVideo(path.dirname(path.resolve(values.corpus)),selected.item.video_file,selected.item.video_sha256):undefined
 const range=nativeVideoRange(selected.item.video_start,selected.item.video_end)
-const positive=evaluationSettings.rules.find(rule=>selected.item.labels[rule.id]===true)
+if(motion==='video-safe' && Object.values(selected.item.labels).some(label=>label!==false))throw new Error('Safe-video control requires all policies labeled negative before inference.')
+const positive=motion==='video-safe'?evaluationSettings.rules.find(rule=>rule.id==='explicit'):evaluationSettings.rules.find(rule=>selected.item.labels[rule.id]===true)
 if (!positive) throw new Error('Select a reviewed positive case.')
 const file=path.resolve(values.ledger), output=path.resolve(values.output), profile=output+'.profile'
 // A retained lock after interruption prevents a new process from using stale accounting.
@@ -36,6 +41,10 @@ report.motion=motion
 if(motion==='switch-away'){
   report.scope='Real Windows stale-result control: actual capture/provider, positive replaced by neutral during inference. Must remain uncovered, recheck neutral and stop cleanly. Does not test successful positive blocking/recovery.'
   report.protocol='switch-away-during-inference'
+}
+if(motion==='video-safe'){
+  report.scope='Real decoded safe-video control: actual capture/provider, neutral then plant-only playback, two fresh video checks with zero blocks/covers and clean stop. Not positive-blocking proof.'
+  report.protocol='negative-video-during-session'
 }
 const atomic=async(file:string,value:unknown)=>{await writeFile(file+'.tmp',JSON.stringify(value,null,2)+'\n',{mode:0o600});await rename(file+'.tmp',file)}
 try {
@@ -59,6 +68,25 @@ try {
   const actual=await desktop.evaluate(({app})=>app.getPath('userData'))
   if(path.resolve(actual).toLowerCase()!==profile.toLowerCase())throw new Error('Profile isolation failed; no session started.')
   profileConfirmed=true
+  if(values.audit){
+    report.instrumentation='Pass-through net.fetch audit, unchanged request/response and real capture/provider. Only encrypted submitted frames and numeric score metadata retained; no headers/credentials/error bodies.'
+    await desktop.evaluate(({net})=>{
+      const original=net.fetch.bind(net),audits:any[]=[]
+      ;(globalThis as any).bleRequestAudit=audits
+      net.fetch=async(input,init)=>{
+        let row:any
+        if(input==='https://api.typesafe.ai/v1/systemone' && typeof init?.body==='string' && audits.length<3){
+          try{
+            const payload=JSON.parse(init.body),asset:any=Object.values(payload.assets)[0]
+            if(asset.format==='png' && typeof asset.data_base64==='string' && asset.data_base64.length<16*1024*1024){row={frame:asset.data_base64};audits.push(row)}
+          }catch{/* Audit must not alter the real request. */}
+        }
+        const response=await original(input,init)
+        if(row && response.ok)void response.clone().json().then((body:any)=>{row.scores=Object.fromEntries(Object.entries(body.answers??{}).filter(([,v]:any)=>typeof v?.noul==='number').map(([k,v]:any)=>[k,v.noul]))}).catch(()=>{row.auditError=true})
+        return response
+      }
+    })
+  }
   const displays=await desktop.evaluate(({screen,app})=>({os:process.getSystemVersion(),electron:process.versions.electron,appVersion:app.getVersion(),displays:screen.getAllDisplays().map(d=>({id:d.id,bounds:d.bounds,scaleFactor:d.scaleFactor}))}))
   report.runtime=displays
   if(displays.displays.length!==1)throw new Error('First live check requires exactly one controlled display. No session started.')
@@ -86,7 +114,7 @@ try {
   const playback=()=>desktop!.evaluate(async()=>await (globalThis as any).bleLiveScene.webContents.executeJavaScript(`(()=>{const v=document.querySelector('video');return v?{time:v.currentTime,paused:v.paused,readyState:v.readyState,decodedFrames:v.getVideoPlaybackQuality().totalVideoFrames}:null})()`))
   const paintPositive=async()=>desktop!.evaluate(async(_,{data,motion,range})=>{
     const scene=(globalThis as any).bleLiveScene
-    if(motion==='video')return await scene.webContents.executeJavaScript(`(async()=>{const v=document.createElement('video');v.muted=true;v.style='width:96vw;max-height:96vh;object-fit:contain';v.src=${JSON.stringify(data)};document.body.replaceChildren(v);await new Promise((r,j)=>{v.onloadedmetadata=r;v.onerror=()=>j(new Error('Reviewed video decoding failed'));setTimeout(()=>j(new Error('Video metadata timeout')),8000)});if(v.duration<${range.end})throw new Error('Reviewed video too short');v.currentTime=${range.start};await new Promise((r,j)=>{v.onseeked=r;setTimeout(()=>j(new Error('Video seek timeout')),8000)});v.ontimeupdate=()=>{if(v.currentTime>=${range.end})v.currentTime=${range.start}};await v.play();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return Date.now()})()`)
+    if(motion==='video' || motion==='video-safe')return await scene.webContents.executeJavaScript(`(async()=>{const v=document.createElement('video');v.muted=true;v.style='width:96vw;max-height:96vh;object-fit:contain';v.src=${JSON.stringify(data)};document.body.replaceChildren(v);await new Promise((r,j)=>{v.onloadedmetadata=r;v.onerror=()=>j(new Error('Reviewed video decoding failed'));setTimeout(()=>j(new Error('Video metadata timeout')),8000)});if(v.duration<${range.end})throw new Error('Reviewed video too short');v.currentTime=${range.start};await new Promise((r,j)=>{v.onseeked=r;setTimeout(()=>j(new Error('Video seek timeout')),8000)});v.ontimeupdate=()=>{if(v.currentTime>=${range.end})v.currentTime=${range.start}};await v.play();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return Date.now()})()`)
     return await scene.webContents.executeJavaScript(`(async()=>{ const img=new Image();img.src=${JSON.stringify(data)};await img.decode();img.style=${JSON.stringify(motion==='pan'?'max-width:96vw;max-height:96vh;object-fit:contain':'max-width:100vw;max-height:100vh;object-fit:contain')};document.body.replaceChildren(img);if(${JSON.stringify(motion)}==='pan'){globalThis.bleMotionFrames=0;const start=performance.now();function move(now){img.style.transform='translateX('+12*Math.sin((now-start)/400)+'px)';globalThis.bleMotionFrames++;requestAnimationFrame(move)}requestAnimationFrame(move)}await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return Date.now()})()`)
   },{data:media?'data:video/webm;base64,'+media.toString('base64'):'data:image/png;base64,'+selected.bytes.toString('base64'),motion,range})
   let paintedAt:number
@@ -104,7 +132,7 @@ try {
     report.negativeControl='Live neutral frame allowed without a cover.'
     phase='paint-positive';paintedAt=await paintPositive()
   }
-  if(motion==='video'){
+  if(playsVideo){
     phase='verify-decoded-playback'
     await expect.poll(async()=>(await playback())?.time,{timeout:3000}).toBeGreaterThan(range.start+0.1)
     report.playbackAtStart=await playback()
@@ -130,6 +158,19 @@ try {
     expect(final.status.mode).toBe('watching')
     expect(desktop.windows().filter(p=>p.url().endsWith('#block'))).toHaveLength(0)
     report.staleControl={discarded:true,neutralRechecked:true,blocks:final.status.blocks,checks:final.status.checks,cloudRequests:final.status.cloudRequests}
+    await page.evaluate(()=>window.desktop!.stop())
+    await expect.poll(async()=>(await snapshot()).status.mode).toBe('idle')
+    report.passed=true
+  }else if(motion==='video-safe'){
+    phase='safe-video-checks'
+    await expect.poll(async()=>(await snapshot()).status.checks,{timeout:20_000}).toBe(negativeChecks+2)
+    const final=await snapshot()
+    expect(final.status.mode).toBe('watching');expect(final.status.blocks).toBe(0)
+    expect(desktop.windows().filter(p=>p.url().endsWith('#block'))).toHaveLength(0)
+    report.playbackAtEnd=await playback()
+    expect(report.playbackAtEnd).toMatchObject({paused:false})
+    expect((report.playbackAtEnd as {decodedFrames:number}).decodedFrames).toBeGreaterThan((report.playbackAtStart as {decodedFrames:number}).decodedFrames)
+    report.safeControl={videoChecks:2,blocks:0,cloudRequests:final.status.cloudRequests}
     await page.evaluate(()=>window.desktop!.stop())
     await expect.poll(async()=>(await snapshot()).status.mode).toBe('idle')
     report.passed=true
@@ -174,6 +215,17 @@ try {
   report.failure='Live validation failed; inspect native state/accounting. No sensitive screenshot, provider response body or credentials retained.'
   process.exitCode=1
 } finally {
+  if(values.audit && desktop && profileConfirmed){
+    try{
+      const rows=await desktop.evaluate(()=>(globalThis as any).bleRequestAudit??[])
+      const files:Record<string,Buffer>={}
+      report.requestAudit=rows.map((row:any,index:number)=>{
+        const bytes=Buffer.from(row.frame,'base64'),name='request-'+index+'.png';files[name]=bytes
+        return {index,sha256:createHash('sha256').update(bytes).digest('hex'),scores:row.scores,auditError:row.auditError}
+      })
+      if(rows.length)await writeFile(output+'.audit.enc.json',encryptCaptures(files,process.env.BLE_CAPTURE_PUBLIC_KEY!),{flag:'wx',mode:0o600})
+    }catch{report.auditError='Encrypted diagnostic capture failed; no plaintext frame written.'}
+  }
   // Preserve the primary outcome even if native cleanup/accounting later fails.
   if(reportReady)await atomic(output,report).catch(()=>{report.reportWriteError='Could not save pre-cleanup outcome.';report.passed=false;process.exitCode=1})
   // Stop before reading accounting. Preserve the profile for crash/budget recovery.
