@@ -22,11 +22,13 @@ describe('live native cleanup and explicit protocol accounting',()=>{
  it('rejects unsupported motion and mixing motion with startup-only evidence',()=>{
   expect(nativeMotion(undefined,false)).toBe('none')
   expect(nativeMotion('pan',false)).toBe('pan')
+  expect(nativeMotion('pan-wide',false)).toBe('pan-wide')
   expect(nativeMotion('switch-away',false)).toBe('switch-away')
   expect(nativeMotion('video',false)).toBe('video')
   expect(nativeMotion('video-safe',false)).toBe('video-safe')
   expect(()=>nativeMotion('unknown',false)).toThrow()
   expect(()=>nativeMotion('pan',true)).toThrow()
+  expect(()=>nativeMotion('pan-wide',true)).toThrow()
   expect(()=>nativeMotion('switch-away',true)).toThrow()
   expect(()=>nativeMotion('video',true)).toThrow()
   expect(()=>nativeMotion('video-safe',true)).toThrow()

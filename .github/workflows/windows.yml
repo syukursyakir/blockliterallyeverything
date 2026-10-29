@@ -45,7 +45,7 @@ on:
       live_motion:
         description: Controlled motion or stale-result test; full active-session protocol only
         type: choice
-        options: [none, pan, switch-away, video, video-safe]
+        options: [none, pan, pan-wide, switch-away, video, video-safe]
         default: none
       live_audit:
         description: Encrypt actual submitted frames to capture_public_key and retain numeric scores for failure diagnosis
