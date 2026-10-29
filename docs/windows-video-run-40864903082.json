@@ -1,0 +1,127 @@
+{
+  "scope": "Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.",
+  "passed": true,
+  "caseId": "native-explicit-video",
+  "preparedSha256": "f00aab479e9d6cc0efa7c63d3a3991e63e9312b118c42877a745f58d8f5f9c9e",
+  "manifestSha256": "7701bc5c574ad94581bcdd6e785c96cc59a83d5435fea7736b604be2ccc1393a",
+  "rule": {
+    "id": "explicit",
+    "name": "Explicit content",
+    "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+    "enabled": true
+  },
+  "caseProvenance": {
+    "origin": "actual decoded licensed source-declared adult educational video, pinned hash",
+    "source": "https://commons.wikimedia.org/wiki/File:A_44_years_old_male_masturbating.webm",
+    "source_sha256": "99b5597fc13b0fc03b31b734e7bf1849b3032d15b2371fc94643d758d4a3984e",
+    "adult_provenance": "Source describes self-taken educational demonstration by a44-year-old adult.",
+    "rights": {
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution": "Richiex"
+    }
+  },
+  "protocol": "neutral-to-positive-during-session",
+  "startedAt": "2026-10-29T11:23:47.965Z",
+  "timingMethod": "Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.",
+  "motion": "video",
+  "maximumRequests": 3,
+  "budgetBefore": {
+    "requests": 163,
+    "reservedUsd": 1.7946378239999976,
+    "inputTokens": 542374
+  },
+  "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\report.json.profile",
+  "runtime": {
+    "os": "10.0.26100",
+    "electron": "45.1.0",
+    "appVersion": "0.1.0",
+    "displays": [
+      {
+        "id": 2168212270,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768
+        },
+        "scaleFactor": 1
+      }
+    ]
+  },
+  "capturePreflight": "Actual display capture varied before session start; pixels discarded without provider call or file.",
+  "settings": {
+    "backend": "jev",
+    "cloudConsent": true,
+    "cloudBudgetUsd": 1.8276679679999974,
+    "rules": [
+      {
+        "id": "explicit",
+        "name": "Explicit content",
+        "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+        "enabled": true
+      },
+      {
+        "id": "video",
+        "name": "YouTube",
+        "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+        "enabled": false
+      },
+      {
+        "id": "social",
+        "name": "Social feeds",
+        "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+        "enabled": false
+      }
+    ],
+    "threshold": 0.4,
+    "intervalSeconds": 3,
+    "sessionMinutes": 25,
+    "detectionOnly": false
+  },
+  "negativeControl": "Live neutral frame allowed without a cover.",
+  "playbackAtStart": {
+    "time": 10.117183,
+    "paused": false,
+    "readyState": 4,
+    "decodedFrames": 37
+  },
+  "videoSha256": "99b5597fc13b0fc03b31b734e7bf1849b3032d15b2371fc94643d758d4a3984e",
+  "videoRangeSeconds": [
+    10,
+    25
+  ],
+  "contentToObservedCoverMs": 3429,
+  "playbackAtCover": {
+    "time": 13.422945,
+    "paused": false,
+    "readyState": 4,
+    "decodedFrames": 136
+  },
+  "motionLimits": "Actual decoded licensed adult video, reviewed10\u201325s range, source repeat, one trial; not representative video recall.",
+  "blockInfo": {
+    "rule": "Explicit content",
+    "probability": 0.98
+  },
+  "cover": {
+    "bounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 768
+    },
+    "visible": true,
+    "topmost": true,
+    "focused": true,
+    "fullScreen": true
+  },
+  "blockedRule": "Blocked: Explicit content",
+  "recovery": "Button released cover and paused session.",
+  "budgetAfter": {
+    "requests": 165,
+    "reservedUsd": 1.8166579199999975,
+    "inputTokens": 549523
+  },
+  "workflowRun": 40864903082,
+  "workflowConclusion": "success"
+}

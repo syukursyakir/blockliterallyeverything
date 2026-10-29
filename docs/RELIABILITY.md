@@ -5,49 +5,41 @@ existing results were inspected, not rerun. Current provider: hosted TypeSafe Je
 1.14.0 experimental images. User prioritizes missed violations over false blocks.
 The next milestone is measured reliability, ahead of UI polish or publishing.
 
-## Latest update — supersedes historical audit below
+## Latest evidence — supersedes historical audit below
 
-PR #3 merged independent source-split evaluation and real Windows full transitions.
-Read [BROADER-EVALUATION.md](BROADER-EVALUATION.md) and
-[LIVE-WINDOWS-RESULT.md](LIVE-WINDOWS-RESULT.md), including their numerical reports.
+Read [ADULT-VIDEO-RESULTS.md](ADULT-VIDEO-RESULTS.md),
+[BROADER-EVALUATION.md](BROADER-EVALUATION.md) and saved raw reports.
 
-Held-out 24 source-family cases: explicit 6/6, YouTube 3/3 and social 4/4 positives
-caught, zero false blocks. Twelve correlated stress variants also passed. Small
-positive denominators and no independent second labeler mean **95% reliability is
-not established**. Two covered-body development explicit false positives remain.
-Clarified platform starter wording passed frozen held-out checks and was adopted;
-explicit rule, threshold and provider stay unchanged. Custom instructions preserved.
+More adult-source data:13/13 positive variants caught and two safe visible-part
+crops allowed, settings frozen before calls. Five files, four new author groups,
+three new activity videos; related frames/sizes are NOT independent subjects.
+Earlier held-out24 caught explicit6/6, YouTube3/3, social4/4 with zero false blocks.
+A later21-case platform extension caught YouTube9/9 and Instagram7/7, with a
+retained MoMA nude-art annotation caveat. Two earlier covered-body false blocks
+remain. Current provider/rules/threshold unchanged; no95% guarantee.
 
-Full already-active Windows neutral->positive->native cover->button recovery passed
-for real public YouTube, a pinned reviewed licensed adult reference and synthetic
-social control. All actual capture and hosted Jev, no provider substitutions.
-Full focused/topmost covers and recovery passed on one 1024x768 hosted display;
-observed 3902–4264 ms, one trial per case. Controlled static scenes reuse sources;
-not independent recall samples, moving-video or hardware certification.
+Actual decoded video, actual native capture/provider, complete cover and recovery
+were exercised on four licensed adult-source clips. First cohort3/4 passed; the
+fourth initially missed within its bounded protocol. Its exact first-run frames/
+scores were not retained, so cause is UNKNOWN. An audited repeat, six audited and
+six uninstrumented replications subsequently passed. Those thirteen later passes
+do not erase the miss or prove a causal fix. Seventeen positive native trials in
+all:16 passes/one failure, strongly correlated and protocol-dependent, not a
+representative reliability estimate. A CC0 flower moving-video negative control
+also passed two fresh checks without a block. No actual-video proof is still
+missing; large/fast-motion, representative coverage and hardware limits remain.
 
-Cumulative $3 conservative reservation ceiling explicitly approved. Current ledger:
-135 attempts, $1.48635648 reservations, 442937 tokens (~$0.018603354 estimated API
-cost). Prior history preserved. Secret works; no repeated setup/budget questions
-within the authorized cap. No release authorized or published; installed alpha unchanged.
+New controlled diagnostic modes use exact pinned media/ranges and optional encrypted
+actual-input audit, with fixed six-trial series and strict cumulative accounting.
+Production screenshot behavior, explicit wording, threshold.4 and provider did
+not change. No speculative fix for the nonreproduced miss; no release.
 
-Latest extension:21 frozen-settings new public cases caught YouTube9/9 and
-Instagram7/7 positives with zero platform false matches. Explicit has no new
-positives and1/21 match against original negative labels; MoMA has a nude-art
-detail overlooked in annotation. Original label/result retained with caveat; see
-[CONFIRMATORY-RESULTS.md](CONFIRMATORY-RESULTS.md), not a clean negative claim.
-Controlled +/-12px adult-screenshot motion passed cover/recovery in4214ms, and a
-switch to a different neutral screen during actual inference passed discard/fresh
-check/no-cover/stop. These are limited controls, not actual moving-video proof.
-See [MOTION-RESULTS.md](MOTION-RESULTS.md), including failed attempts and corrections.
-Current accounting supersedes above:163 attempts,$1.794637824 reserved of3,
-542374 tokens (~$0.022779708 estimated usage), no lock/paid job. Prior history kept.
+Authority223 attempts,$2.455240704 reserved of cumulative3,756421 reported tokens
+(~$0.031769682 observed-usage estimate). Prior history retained, no remote paid
+job/lock.49 further maximum reservations fit. Secret works; no setup/key prompt
+needed. See HANDOFF.md for current merge/CI state and next useful work.
 
-Next: larger representative independently sourced positives and safe lookalikes,
-especially explicit activity; freeze labels/source splits/settings before calls.
-Keep misses/unknowns/false blocks and confidence intervals. Then dynamic-screen
-stale-result handling and broader display/hardware trials. Do not replay old
-batches and call them new independent evidence. Historical audit below is retained
-for traceability; its missing-proof and setup statements are not current state.
+Historical audit below remains for traceability, not current missing prerequisites.
 
 ## What the evidence actually establishes
 

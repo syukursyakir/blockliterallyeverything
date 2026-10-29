@@ -53,6 +53,32 @@ frame-accurate timing. One trial does not establish median or tail latency.
   and clean stop. This is a stale-result negative control, NOT a positive-blocking
   pass. The discarded verdict is not observable; do not assert its model score.
 
+- `--motion video`: plays pinned decoded WebM in its reviewed segment; verify
+  media time and decoded-frame count advance, then full cover/recovery checks.
+- `--motion video-safe`: labeled nonhuman negative playback, two fresh video
+  checks with zero blocks/covers and clean stop. This is not positive-block proof.
+
+Reviewed sources/ranges/hashes are in lab/reviewed-videos.json. Preparation verifies
+source bytes; native preflight checks WebM basename/container/hash/12MB bound and
+finite reviewed range of at most30s. Missing/changed media fails before inference.
+No frozen image or provider substitution. One controlled clip does not establish
+representative real-video recall, rapid cuts, large motion or DRM/protected capture.
+
+Explicit `--audit` requires a public RSA review key. It installs only a test-runner
+pass-through fetch observer; original request/response remain intact. Actual
+submitted frames are encrypted in memory before artifact output; report contains
+only hashes/numeric scores, not credentials/headers/error bodies. The private key
+stays local. Normal app runtime has no audit behavior. Compare uninstrumented
+trials when timing could be affected; do not erase an original miss after a pass.
+
+scripts/test-live-series.mjs supports one trial or SIX preplanned replications.
+The whole18-request maximum is preflighted against retained cumulative authority;
+each fresh native profile still gets at most3. Every outcome stays visible and any
+miss makes the overall series fail. Only fully reconciled bounded detection misses
+can proceed to the next planned trial; provider/capture/auth/accounting errors stop
+remaining work. It never retries transport calls or runs until success. Series
+summary/report/profile budget chains must agree before restoring local authority.
+
 Motion modes require full protocol and reject mixing with positive-at-start. All
 full modes retain a three-request maximum sub-budget; failures are outcomes, not
 permission to retry with reset counters. Never count budget/provider errors as safe.

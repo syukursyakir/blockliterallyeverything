@@ -5,12 +5,16 @@ import { validateEvaluationBudget } from './evaluation-budget.ts'
 import { validateSettings, presets } from '../src/shared.ts'
 import { cloudQuestions, requestJev, reserveCloud, JEV_MODEL, RESERVED_PER_REQUEST } from '../electron/jev.ts'
 import { evaluationSettings, preflight, predictions, summarize, sha256, type ScoredRow } from './app-evaluation.ts'
-const {values} = parseArgs({ options: { corpus:{type:'string'}, settings:{type:'string'}, output:{type:'string'}, ledger:{type:'string'}, 'allow-cloud':{type:'boolean'} } })
+const {values} = parseArgs({ options: { corpus:{type:'string'}, settings:{type:'string'}, output:{type:'string'}, ledger:{type:'string'}, 'single-policy':{type:'string'}, 'allow-cloud':{type:'boolean'} } })
 if (!values.corpus || !values.output) throw new Error('Use --corpus manifest.json --output new-report.json [--allow-cloud --ledger existing-ledger.json]. Dry-run is the default.')
-const settings = values.settings ? validateSettings(JSON.parse(await readFile(values.settings, 'utf8'))) : evaluationSettings
-if (settings.backend !== 'jev' || settings.rules.length !== presets.length || settings.rules.some(r => !r.enabled || !presets.some(p => p.id === r.id))) throw new Error('This evaluator requires all three Jev starter-policy IDs enabled; custom instructions may be supplied in --settings.')
+const settings = structuredClone(values.settings ? validateSettings(JSON.parse(await readFile(values.settings, 'utf8'))) : evaluationSettings)
+const single=values['single-policy']
+if(single && !presets.some(p=>p.id===single))throw new Error('Single-policy diagnostic requires an existing starter ID.')
+if (settings.backend !== 'jev' || settings.rules.length !== presets.length || settings.rules.some(r => (!single && !r.enabled) || !presets.some(p => p.id === r.id))) throw new Error('This evaluator requires all three Jev starter-policy IDs enabled; custom instructions may be supplied in --settings, or explicitly select --single-policy for diagnostics.')
+if(single)settings.rules=settings.rules.map(r=>({...r,enabled:r.id===single}))
+const active=settings.rules.filter(r=>r.enabled)
 const prepared = await preflight(values.corpus)
-const plan = { cases:prepared.cases.length, manifestSha256:prepared.manifestSha256, model:JEV_MODEL, settings, questions:cloudQuestions(settings.rules), maximumNewReservationUsd:prepared.cases.length*RESERVED_PER_REQUEST }
+const plan = { cases:prepared.cases.length, manifestSha256:prepared.manifestSha256, model:JEV_MODEL, settings, queriedRuleIds:active.map(r=>r.id), questions:cloudQuestions(active), maximumNewReservationUsd:prepared.cases.length*RESERVED_PER_REQUEST }
 if (!values['allow-cloud']) { console.log(JSON.stringify({dryRun:true,...plan},null,2)); process.exit(0) }
 if (!values.ledger || !process.env.TYPESAFE_API_KEY) throw new Error('Live evaluation requires a ledger and configured TYPESAFE_API_KEY.')
 const lock = await open(values.ledger+'.lock','wx',0o600)
@@ -30,13 +34,13 @@ try {
     await atomic(values.ledger,ledger) // Persist before network; failures keep reservations.
     const row: ScoredRow & Record<string,unknown>={caseId:item.id,labels:item.labels,preparedSha256:sha256(bytes),width,height}
     try {
-      const result=await requestJev(bytes,settings.rules,process.env.TYPESAFE_API_KEY!,AbortSignal.timeout(10_000))
+      const result=await requestJev(bytes,active,process.env.TYPESAFE_API_KEY!,AbortSignal.timeout(10_000))
       ledger.current.inputTokens+=result.inputTokens
       await atomic(values.ledger,ledger)
       const decision=predictions(result,settings)
-      Object.assign(row,{predicted:decision.perRule,matchedRule:decision.matchedRule,scores:result.verdicts,requestMs:result.elapsedMs,inputTokens:result.inputTokens})
+      Object.assign(row,{predicted:single?{[single]:decision.perRule[single]}:decision.perRule,matchedRule:decision.matchedRule,scores:result.verdicts,requestMs:result.elapsedMs,inputTokens:result.inputTokens})
     } catch { row.error='Request, parsing or persistence failed; reservation retained. Stopped without retries. Check provider/account and ledger before continuing.' }
-    rows.push(row); report.metrics=summarize(rows); await atomic(values.output,report)
+    rows.push(row); report.metrics=Object.fromEntries(Object.entries(summarize(rows)).filter(([id])=>!single || id===single)); await atomic(values.output,report)
     console.log(JSON.stringify({caseId:item.id,predicted:row.predicted,error:row.error}))
     if (row.error) throw new Error('Evaluation stopped. Partial report saved; no automatic retry.')
   }

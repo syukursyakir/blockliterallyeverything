@@ -1,0 +1,805 @@
+{
+  "scope": "Six preplanned diagnostic replications of one known intermittent miss. Correlated trials, not independent accuracy. Continue only reconciled bounded detection misses; stop on capture/provider/accounting errors.",
+  "budgetBefore": {
+    "requests": 211,
+    "reservedUsd": 2.323120128000001,
+    "inputTokens": 713510
+  },
+  "budgetAfter": {
+    "requests": 223,
+    "reservedUsd": 2.455240704000003,
+    "inputTokens": 756421
+  },
+  "trials": [
+    {
+      "trial": 1,
+      "passed": true,
+      "cloudRequests": 213,
+      "report": "series\\trial-1\\report.json"
+    },
+    {
+      "trial": 2,
+      "passed": true,
+      "cloudRequests": 215,
+      "report": "series\\trial-2\\report.json"
+    },
+    {
+      "trial": 3,
+      "passed": true,
+      "cloudRequests": 217,
+      "report": "series\\trial-3\\report.json"
+    },
+    {
+      "trial": 4,
+      "passed": true,
+      "cloudRequests": 219,
+      "report": "series\\trial-4\\report.json"
+    },
+    {
+      "trial": 5,
+      "passed": true,
+      "cloudRequests": 221,
+      "report": "series\\trial-5\\report.json"
+    },
+    {
+      "trial": 6,
+      "passed": true,
+      "cloudRequests": 223,
+      "report": "series\\trial-6\\report.json"
+    }
+  ],
+  "workflowRun": 40870218075,
+  "workflowConclusion": "success",
+  "reports": [
+    {
+      "scope": "Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.",
+      "passed": true,
+      "caseId": "native-activity27-video",
+      "preparedSha256": "fb8c43dba7309cb41eb037a69ec493d18b293ef456448b2c963d8a0326bee52c",
+      "manifestSha256": "87e4f9675bae6e784979e04415c88cb1aa6f93fe14fc68d965cf70461b2a53e2",
+      "rule": {
+        "id": "explicit",
+        "name": "Explicit content",
+        "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+        "enabled": true
+      },
+      "caseProvenance": {
+        "origin": "actual decoded licensed source-declared adult educational video, pinned hash",
+        "source": "https://commons.wikimedia.org/wiki/File:Male_masturbation_top_view.ogv",
+        "source_sha256": "dd211049b9af6cd1b1a1deeb4f8e4f434148844c3ded3c733122e1c5b6f4d61a",
+        "adult_provenance": "Source explicitly declares subject adult age27 at capture; own-work educational demonstration.",
+        "rights": {
+          "license": "Public domain",
+          "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+          "attribution": "Smoothies"
+        }
+      },
+      "protocol": "neutral-to-positive-during-session",
+      "startedAt": "2026-10-29T12:04:49.565Z",
+      "timingMethod": "Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.",
+      "motion": "video",
+      "maximumRequests": 3,
+      "budgetBefore": {
+        "requests": 211,
+        "reservedUsd": 2.323120128000001,
+        "inputTokens": 713510
+      },
+      "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\series\\trial-1\\report.json.profile",
+      "runtime": {
+        "os": "10.0.26100",
+        "electron": "45.1.0",
+        "appVersion": "0.1.0",
+        "displays": [
+          {
+            "id": 424230736,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1024,
+              "height": 768
+            },
+            "scaleFactor": 1
+          }
+        ]
+      },
+      "capturePreflight": "Actual display capture varied before session start; pixels discarded without provider call or file.",
+      "settings": {
+        "backend": "jev",
+        "cloudConsent": true,
+        "cloudBudgetUsd": 2.3561502720000016,
+        "rules": [
+          {
+            "id": "explicit",
+            "name": "Explicit content",
+            "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+            "enabled": true
+          },
+          {
+            "id": "video",
+            "name": "YouTube",
+            "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+            "enabled": false
+          },
+          {
+            "id": "social",
+            "name": "Social feeds",
+            "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+            "enabled": false
+          }
+        ],
+        "threshold": 0.4,
+        "intervalSeconds": 3,
+        "sessionMinutes": 25,
+        "detectionOnly": false
+      },
+      "negativeControl": "Live neutral frame allowed without a cover.",
+      "playbackAtStart": {
+        "time": 2.1225,
+        "paused": false,
+        "readyState": 4,
+        "decodedFrames": 68
+      },
+      "videoSha256": "dd211049b9af6cd1b1a1deeb4f8e4f434148844c3ded3c733122e1c5b6f4d61a",
+      "videoRangeSeconds": [
+        2,
+        10
+      ],
+      "contentToObservedCoverMs": 4140,
+      "playbackAtCover": {
+        "time": 6.1714,
+        "paused": false,
+        "readyState": 4,
+        "decodedFrames": 189
+      },
+      "motionLimits": "Actual decoded licensed adult video in reviewed range, source correlation retained, one trial; not representative video recall.",
+      "blockInfo": {
+        "rule": "Explicit content",
+        "probability": 0.94
+      },
+      "cover": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768
+        },
+        "visible": true,
+        "topmost": true,
+        "focused": true,
+        "fullScreen": true
+      },
+      "blockedRule": "Blocked: Explicit content",
+      "recovery": "Button released cover and paused session.",
+      "budgetAfter": {
+        "requests": 213,
+        "reservedUsd": 2.3451402240000014,
+        "inputTokens": 720663
+      }
+    },
+    {
+      "scope": "Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.",
+      "passed": true,
+      "caseId": "native-activity27-video",
+      "preparedSha256": "fb8c43dba7309cb41eb037a69ec493d18b293ef456448b2c963d8a0326bee52c",
+      "manifestSha256": "87e4f9675bae6e784979e04415c88cb1aa6f93fe14fc68d965cf70461b2a53e2",
+      "rule": {
+        "id": "explicit",
+        "name": "Explicit content",
+        "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+        "enabled": true
+      },
+      "caseProvenance": {
+        "origin": "actual decoded licensed source-declared adult educational video, pinned hash",
+        "source": "https://commons.wikimedia.org/wiki/File:Male_masturbation_top_view.ogv",
+        "source_sha256": "dd211049b9af6cd1b1a1deeb4f8e4f434148844c3ded3c733122e1c5b6f4d61a",
+        "adult_provenance": "Source explicitly declares subject adult age27 at capture; own-work educational demonstration.",
+        "rights": {
+          "license": "Public domain",
+          "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+          "attribution": "Smoothies"
+        }
+      },
+      "protocol": "neutral-to-positive-during-session",
+      "startedAt": "2026-10-29T12:04:58.034Z",
+      "timingMethod": "Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.",
+      "motion": "video",
+      "maximumRequests": 3,
+      "budgetBefore": {
+        "requests": 213,
+        "reservedUsd": 2.3451402240000014,
+        "inputTokens": 720663
+      },
+      "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\series\\trial-2\\report.json.profile",
+      "runtime": {
+        "os": "10.0.26100",
+        "electron": "45.1.0",
+        "appVersion": "0.1.0",
+        "displays": [
+          {
+            "id": 424230736,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1024,
+              "height": 768
+            },
+            "scaleFactor": 1
+          }
+        ]
+      },
+      "capturePreflight": "Actual display capture varied before session start; pixels discarded without provider call or file.",
+      "settings": {
+        "backend": "jev",
+        "cloudConsent": true,
+        "cloudBudgetUsd": 2.378170368000002,
+        "rules": [
+          {
+            "id": "explicit",
+            "name": "Explicit content",
+            "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+            "enabled": true
+          },
+          {
+            "id": "video",
+            "name": "YouTube",
+            "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+            "enabled": false
+          },
+          {
+            "id": "social",
+            "name": "Social feeds",
+            "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+            "enabled": false
+          }
+        ],
+        "threshold": 0.4,
+        "intervalSeconds": 3,
+        "sessionMinutes": 25,
+        "detectionOnly": false
+      },
+      "negativeControl": "Live neutral frame allowed without a cover.",
+      "playbackAtStart": {
+        "time": 2.1343,
+        "paused": false,
+        "readyState": 4,
+        "decodedFrames": 68
+      },
+      "videoSha256": "dd211049b9af6cd1b1a1deeb4f8e4f434148844c3ded3c733122e1c5b6f4d61a",
+      "videoRangeSeconds": [
+        2,
+        10
+      ],
+      "contentToObservedCoverMs": 4139,
+      "playbackAtCover": {
+        "time": 6.1691,
+        "paused": false,
+        "readyState": 4,
+        "decodedFrames": 189
+      },
+      "motionLimits": "Actual decoded licensed adult video in reviewed range, source correlation retained, one trial; not representative video recall.",
+      "blockInfo": {
+        "rule": "Explicit content",
+        "probability": 0.95
+      },
+      "cover": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768
+        },
+        "visible": true,
+        "topmost": true,
+        "focused": true,
+        "fullScreen": true
+      },
+      "blockedRule": "Blocked: Explicit content",
+      "recovery": "Button released cover and paused session.",
+      "budgetAfter": {
+        "requests": 215,
+        "reservedUsd": 2.3671603200000018,
+        "inputTokens": 727816
+      }
+    },
+    {
+      "scope": "Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.",
+      "passed": true,
+      "caseId": "native-activity27-video",
+      "preparedSha256": "fb8c43dba7309cb41eb037a69ec493d18b293ef456448b2c963d8a0326bee52c",
+      "manifestSha256": "87e4f9675bae6e784979e04415c88cb1aa6f93fe14fc68d965cf70461b2a53e2",
+      "rule": {
+        "id": "explicit",
+        "name": "Explicit content",
+        "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+        "enabled": true
+      },
+      "caseProvenance": {
+        "origin": "actual decoded licensed source-declared adult educational video, pinned hash",
+        "source": "https://commons.wikimedia.org/wiki/File:Male_masturbation_top_view.ogv",
+        "source_sha256": "dd211049b9af6cd1b1a1deeb4f8e4f434148844c3ded3c733122e1c5b6f4d61a",
+        "adult_provenance": "Source explicitly declares subject adult age27 at capture; own-work educational demonstration.",
+        "rights": {
+          "license": "Public domain",
+          "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+          "attribution": "Smoothies"
+        }
+      },
+      "protocol": "neutral-to-positive-during-session",
+      "startedAt": "2026-10-29T12:05:03.614Z",
+      "timingMethod": "Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.",
+      "motion": "video",
+      "maximumRequests": 3,
+      "budgetBefore": {
+        "requests": 215,
+        "reservedUsd": 2.3671603200000018,
+        "inputTokens": 727816
+      },
+      "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\series\\trial-3\\report.json.profile",
+      "runtime": {
+        "os": "10.0.26100",
+        "electron": "45.1.0",
+        "appVersion": "0.1.0",
+        "displays": [
+          {
+            "id": 424230736,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1024,
+              "height": 768
+            },
+            "scaleFactor": 1
+          }
+        ]
+      },
+      "capturePreflight": "Actual display capture varied before session start; pixels discarded without provider call or file.",
+      "settings": {
+        "backend": "jev",
+        "cloudConsent": true,
+        "cloudBudgetUsd": 2.4001904640000022,
+        "rules": [
+          {
+            "id": "explicit",
+            "name": "Explicit content",
+            "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+            "enabled": true
+          },
+          {
+            "id": "video",
+            "name": "YouTube",
+            "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+            "enabled": false
+          },
+          {
+            "id": "social",
+            "name": "Social feeds",
+            "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+            "enabled": false
+          }
+        ],
+        "threshold": 0.4,
+        "intervalSeconds": 3,
+        "sessionMinutes": 25,
+        "detectionOnly": false
+      },
+      "negativeControl": "Live neutral frame allowed without a cover.",
+      "playbackAtStart": {
+        "time": 2.1316,
+        "paused": false,
+        "readyState": 4,
+        "decodedFrames": 68
+      },
+      "videoSha256": "dd211049b9af6cd1b1a1deeb4f8e4f434148844c3ded3c733122e1c5b6f4d61a",
+      "videoRangeSeconds": [
+        2,
+        10
+      ],
+      "contentToObservedCoverMs": 4003,
+      "playbackAtCover": {
+        "time": 6.031,
+        "paused": false,
+        "readyState": 4,
+        "decodedFrames": 185
+      },
+      "motionLimits": "Actual decoded licensed adult video in reviewed range, source correlation retained, one trial; not representative video recall.",
+      "blockInfo": {
+        "rule": "Explicit content",
+        "probability": 0.95
+      },
+      "cover": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768
+        },
+        "visible": true,
+        "topmost": true,
+        "focused": true,
+        "fullScreen": true
+      },
+      "blockedRule": "Blocked: Explicit content",
+      "recovery": "Button released cover and paused session.",
+      "budgetAfter": {
+        "requests": 217,
+        "reservedUsd": 2.389180416000002,
+        "inputTokens": 734968
+      }
+    },
+    {
+      "scope": "Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.",
+      "passed": true,
+      "caseId": "native-activity27-video",
+      "preparedSha256": "fb8c43dba7309cb41eb037a69ec493d18b293ef456448b2c963d8a0326bee52c",
+      "manifestSha256": "87e4f9675bae6e784979e04415c88cb1aa6f93fe14fc68d965cf70461b2a53e2",
+      "rule": {
+        "id": "explicit",
+        "name": "Explicit content",
+        "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+        "enabled": true
+      },
+      "caseProvenance": {
+        "origin": "actual decoded licensed source-declared adult educational video, pinned hash",
+        "source": "https://commons.wikimedia.org/wiki/File:Male_masturbation_top_view.ogv",
+        "source_sha256": "dd211049b9af6cd1b1a1deeb4f8e4f434148844c3ded3c733122e1c5b6f4d61a",
+        "adult_provenance": "Source explicitly declares subject adult age27 at capture; own-work educational demonstration.",
+        "rights": {
+          "license": "Public domain",
+          "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+          "attribution": "Smoothies"
+        }
+      },
+      "protocol": "neutral-to-positive-during-session",
+      "startedAt": "2026-10-29T12:05:09.586Z",
+      "timingMethod": "Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.",
+      "motion": "video",
+      "maximumRequests": 3,
+      "budgetBefore": {
+        "requests": 217,
+        "reservedUsd": 2.389180416000002,
+        "inputTokens": 734968
+      },
+      "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\series\\trial-4\\report.json.profile",
+      "runtime": {
+        "os": "10.0.26100",
+        "electron": "45.1.0",
+        "appVersion": "0.1.0",
+        "displays": [
+          {
+            "id": 424230736,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1024,
+              "height": 768
+            },
+            "scaleFactor": 1
+          }
+        ]
+      },
+      "capturePreflight": "Actual display capture varied before session start; pixels discarded without provider call or file.",
+      "settings": {
+        "backend": "jev",
+        "cloudConsent": true,
+        "cloudBudgetUsd": 2.4222105600000026,
+        "rules": [
+          {
+            "id": "explicit",
+            "name": "Explicit content",
+            "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+            "enabled": true
+          },
+          {
+            "id": "video",
+            "name": "YouTube",
+            "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+            "enabled": false
+          },
+          {
+            "id": "social",
+            "name": "Social feeds",
+            "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+            "enabled": false
+          }
+        ],
+        "threshold": 0.4,
+        "intervalSeconds": 3,
+        "sessionMinutes": 25,
+        "detectionOnly": false
+      },
+      "negativeControl": "Live neutral frame allowed without a cover.",
+      "playbackAtStart": {
+        "time": 2.1437,
+        "paused": false,
+        "readyState": 4,
+        "decodedFrames": 68
+      },
+      "videoSha256": "dd211049b9af6cd1b1a1deeb4f8e4f434148844c3ded3c733122e1c5b6f4d61a",
+      "videoRangeSeconds": [
+        2,
+        10
+      ],
+      "contentToObservedCoverMs": 4114,
+      "playbackAtCover": {
+        "time": 6.1422,
+        "paused": false,
+        "readyState": 4,
+        "decodedFrames": 188
+      },
+      "motionLimits": "Actual decoded licensed adult video in reviewed range, source correlation retained, one trial; not representative video recall.",
+      "blockInfo": {
+        "rule": "Explicit content",
+        "probability": 0.95
+      },
+      "cover": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768
+        },
+        "visible": true,
+        "topmost": true,
+        "focused": true,
+        "fullScreen": true
+      },
+      "blockedRule": "Blocked: Explicit content",
+      "recovery": "Button released cover and paused session.",
+      "budgetAfter": {
+        "requests": 219,
+        "reservedUsd": 2.4112005120000024,
+        "inputTokens": 742122
+      }
+    },
+    {
+      "scope": "Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.",
+      "passed": true,
+      "caseId": "native-activity27-video",
+      "preparedSha256": "fb8c43dba7309cb41eb037a69ec493d18b293ef456448b2c963d8a0326bee52c",
+      "manifestSha256": "87e4f9675bae6e784979e04415c88cb1aa6f93fe14fc68d965cf70461b2a53e2",
+      "rule": {
+        "id": "explicit",
+        "name": "Explicit content",
+        "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+        "enabled": true
+      },
+      "caseProvenance": {
+        "origin": "actual decoded licensed source-declared adult educational video, pinned hash",
+        "source": "https://commons.wikimedia.org/wiki/File:Male_masturbation_top_view.ogv",
+        "source_sha256": "dd211049b9af6cd1b1a1deeb4f8e4f434148844c3ded3c733122e1c5b6f4d61a",
+        "adult_provenance": "Source explicitly declares subject adult age27 at capture; own-work educational demonstration.",
+        "rights": {
+          "license": "Public domain",
+          "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+          "attribution": "Smoothies"
+        }
+      },
+      "protocol": "neutral-to-positive-during-session",
+      "startedAt": "2026-10-29T12:05:15.162Z",
+      "timingMethod": "Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.",
+      "motion": "video",
+      "maximumRequests": 3,
+      "budgetBefore": {
+        "requests": 219,
+        "reservedUsd": 2.4112005120000024,
+        "inputTokens": 742122
+      },
+      "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\series\\trial-5\\report.json.profile",
+      "runtime": {
+        "os": "10.0.26100",
+        "electron": "45.1.0",
+        "appVersion": "0.1.0",
+        "displays": [
+          {
+            "id": 424230736,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1024,
+              "height": 768
+            },
+            "scaleFactor": 1
+          }
+        ]
+      },
+      "capturePreflight": "Actual display capture varied before session start; pixels discarded without provider call or file.",
+      "settings": {
+        "backend": "jev",
+        "cloudConsent": true,
+        "cloudBudgetUsd": 2.444230656000003,
+        "rules": [
+          {
+            "id": "explicit",
+            "name": "Explicit content",
+            "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+            "enabled": true
+          },
+          {
+            "id": "video",
+            "name": "YouTube",
+            "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+            "enabled": false
+          },
+          {
+            "id": "social",
+            "name": "Social feeds",
+            "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+            "enabled": false
+          }
+        ],
+        "threshold": 0.4,
+        "intervalSeconds": 3,
+        "sessionMinutes": 25,
+        "detectionOnly": false
+      },
+      "negativeControl": "Live neutral frame allowed without a cover.",
+      "playbackAtStart": {
+        "time": 2.1236,
+        "paused": false,
+        "readyState": 4,
+        "decodedFrames": 68
+      },
+      "videoSha256": "dd211049b9af6cd1b1a1deeb4f8e4f434148844c3ded3c733122e1c5b6f4d61a",
+      "videoRangeSeconds": [
+        2,
+        10
+      ],
+      "contentToObservedCoverMs": 4161,
+      "playbackAtCover": {
+        "time": 6.1797,
+        "paused": false,
+        "readyState": 4,
+        "decodedFrames": 189
+      },
+      "motionLimits": "Actual decoded licensed adult video in reviewed range, source correlation retained, one trial; not representative video recall.",
+      "blockInfo": {
+        "rule": "Explicit content",
+        "probability": 0.94
+      },
+      "cover": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768
+        },
+        "visible": true,
+        "topmost": true,
+        "focused": true,
+        "fullScreen": true
+      },
+      "blockedRule": "Blocked: Explicit content",
+      "recovery": "Button released cover and paused session.",
+      "budgetAfter": {
+        "requests": 221,
+        "reservedUsd": 2.4332206080000027,
+        "inputTokens": 749269
+      }
+    },
+    {
+      "scope": "Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.",
+      "passed": true,
+      "caseId": "native-activity27-video",
+      "preparedSha256": "fb8c43dba7309cb41eb037a69ec493d18b293ef456448b2c963d8a0326bee52c",
+      "manifestSha256": "87e4f9675bae6e784979e04415c88cb1aa6f93fe14fc68d965cf70461b2a53e2",
+      "rule": {
+        "id": "explicit",
+        "name": "Explicit content",
+        "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+        "enabled": true
+      },
+      "caseProvenance": {
+        "origin": "actual decoded licensed source-declared adult educational video, pinned hash",
+        "source": "https://commons.wikimedia.org/wiki/File:Male_masturbation_top_view.ogv",
+        "source_sha256": "dd211049b9af6cd1b1a1deeb4f8e4f434148844c3ded3c733122e1c5b6f4d61a",
+        "adult_provenance": "Source explicitly declares subject adult age27 at capture; own-work educational demonstration.",
+        "rights": {
+          "license": "Public domain",
+          "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+          "attribution": "Smoothies"
+        }
+      },
+      "protocol": "neutral-to-positive-during-session",
+      "startedAt": "2026-10-29T12:05:20.801Z",
+      "timingMethod": "Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.",
+      "motion": "video",
+      "maximumRequests": 3,
+      "budgetBefore": {
+        "requests": 221,
+        "reservedUsd": 2.4332206080000027,
+        "inputTokens": 749269
+      },
+      "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\series\\trial-6\\report.json.profile",
+      "runtime": {
+        "os": "10.0.26100",
+        "electron": "45.1.0",
+        "appVersion": "0.1.0",
+        "displays": [
+          {
+            "id": 424230736,
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1024,
+              "height": 768
+            },
+            "scaleFactor": 1
+          }
+        ]
+      },
+      "capturePreflight": "Actual display capture varied before session start; pixels discarded without provider call or file.",
+      "settings": {
+        "backend": "jev",
+        "cloudConsent": true,
+        "cloudBudgetUsd": 2.466250752000003,
+        "rules": [
+          {
+            "id": "explicit",
+            "name": "Explicit content",
+            "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+            "enabled": true
+          },
+          {
+            "id": "video",
+            "name": "YouTube",
+            "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+            "enabled": false
+          },
+          {
+            "id": "social",
+            "name": "Social feeds",
+            "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+            "enabled": false
+          }
+        ],
+        "threshold": 0.4,
+        "intervalSeconds": 3,
+        "sessionMinutes": 25,
+        "detectionOnly": false
+      },
+      "negativeControl": "Live neutral frame allowed without a cover.",
+      "playbackAtStart": {
+        "time": 2.1344,
+        "paused": false,
+        "readyState": 4,
+        "decodedFrames": 68
+      },
+      "videoSha256": "dd211049b9af6cd1b1a1deeb4f8e4f434148844c3ded3c733122e1c5b6f4d61a",
+      "videoRangeSeconds": [
+        2,
+        10
+      ],
+      "contentToObservedCoverMs": 4161,
+      "playbackAtCover": {
+        "time": 6.1921,
+        "paused": false,
+        "readyState": 4,
+        "decodedFrames": 190
+      },
+      "motionLimits": "Actual decoded licensed adult video in reviewed range, source correlation retained, one trial; not representative video recall.",
+      "blockInfo": {
+        "rule": "Explicit content",
+        "probability": 0.95
+      },
+      "cover": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768
+        },
+        "visible": true,
+        "topmost": true,
+        "focused": true,
+        "fullScreen": true
+      },
+      "blockedRule": "Blocked: Explicit content",
+      "recovery": "Button released cover and paused session.",
+      "budgetAfter": {
+        "requests": 223,
+        "reservedUsd": 2.455240704000003,
+        "inputTokens": 756421
+      }
+    }
+  ]
+}

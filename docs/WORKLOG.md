@@ -485,3 +485,58 @@ eight UI, desktop smoke, installer build/install and11 fixture-provider scenario
 Release step skipped. Consolidated HANDOFF.md so current stage/authority/remaining
 gaps appear without obsolete permission/key blockers. No paid job/lock; counters163
 unchanged. Final follow-up only continuity docs and numeric CI summary, no app change.
+
+
+### Actual decoded video and new adult-source extension in progress
+
+User explicitly requested actual playback and adult-positive expansion. Frozen
+ADULT-VIDEO-PLAN before calls. Diagnosed prior Wikimedias403 body: requests require
+an identifying User-Agent and robot-policy compliance. Honest project bot identifier
+with pacing resolved API and downloads; no auth/network bypass. New licensed,
+source-declared40/23 photos and30/24/27 activity videos obtained.40 photo correlates
+with an earlier author/possibly subject, not independent. Three new activity authors
+and one anatomical author, all own-work declarations and explicit adult ages.
+Reviewed full prepared pixels BEFORE freeze/calls.15 cases:13 positives caught,
+two safe face/limb crops allowed, no platform false matches. Three sexual-activity
+files/9 frame-size variants, two anatomy files/4 variants, not13 independent samples.
+Frozen settings unchanged, original labels retained; raw report+freeze hashes saved.
+
+Added real muted WebM decoding in native scene, exact source SHA256 and reviewed
+range; verifies currentTime and decoded-frame advancement, actual capture/Jev then
+native cover/recovery. First source44 run40864903082 PASSED,3429ms,.98; source30
+run40865647116 PASSED,3266ms,.98, two calls each. Pinned media catalog adds shorter
+reviewed2–10s sources24/27, source24 now owns authority. Local actual preparation/
+decoding smoke passed without model calls; six focused helper tests/strict tsc passed.
+All remote accounting copies agreed so far. Cumulative182,$2.003828736,609811 tokens;
+lock held while next source24 active. No runtime/prompt/threshold change or release.
+
+
+### Completed adult-source/video evidence and preserved miss
+
+All15 frozen image inputs completed:13 positive variants caught, two visible-part
+negative crops allowed, no platform false matches. Five files/four new author groups;
+related sizes/frames not independent. More actual playback: source24 run40866001135
+passed4151ms/.88. Source27 first40866332567 MISSED within three-request bound:
+checks3/blocks0, then budget pause. No original frames/scores, cause UNKNOWN.
+No threshold/prompt/provider/runtime change made to hide it.
+
+Added explicit pass-through diagnostics, real submitted frames encrypted to local
+RSA public key before artifact write; only scores/hashes public. Audited repeat
+40867576811 passed4242ms/.94, actual positive input privately reviewed. Single-policy
+CLI diagnostic (no metrics for unqueried policies) seven phase/replay frames all
+.94–.96, development only. Frozen SIX audited trials40869174152 passed4205–4248ms;
+only two distinct positive-frame hashes, not independent samples. Separately frozen
+SIX unaudited trials40870218075 passed4003–4161ms, checking observer confounding.
+Source27 one miss then13 passes; original unresolved, no claimed causal fix.
+Across4 source clips16/17 positive trials passed, strongly correlated, not95% proof.
+
+CC0 flower actual safe-video control40868363977 passed two fresh checks/no blocks/
+clean stop,3 total calls. Series preflights18 maximum reservations, fresh profiles
+and3 per trial, retains every outcome and stops capture/provider/accounting errors.
+All per-trial profile/report/summary/wrapper counters validated and reconciled, even
+Windows path separator normalization on download; authority lock released only after
+comparison. Final223 attempts,$2.455240704 reserved of cumulative3,756421 tokens,
+~$0.031769682 reported-usage estimate;49 maximum further requests fit, prior history
+retained. No paid job/lock or release. Source CI40870225339 PASSED74 unit +1 intended
+skip,8 UI, native smoke, installer build/install and11 fixture-provider scenarios.
+See ADULT-VIDEO-RESULTS.md; final work is report-only commit, merge and main CI.
