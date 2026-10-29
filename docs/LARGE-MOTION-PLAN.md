@@ -64,3 +64,10 @@ Unit tests cover translation, resampling/alpha, disappearance, replacement, crop
 content, newly exposed pixels, changed background and malformed dimensions. A local
 actual-scene browser check also caught playbackRate resetting on resource load;
 set4x AFTER seek and assert it before any fast-video claim. No paid fast run yet.
+
+First corrected YouTube trial40886053424 PASSED3937ms/.93, two requests. It did
+not record whether the translation-specific branch was needed, so this single pass
+alone does not prove that branch caused the outcome. Add a numeric activity count
+for recognized whole-view movement (no pixels retained), and freeze ONE further
+YouTube pan-wide regression at this observable build before switch-away/4x controls.
+Keep its outcome even if translation is not exercised; no until-success repetition.

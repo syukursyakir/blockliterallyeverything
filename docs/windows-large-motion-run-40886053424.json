@@ -1,0 +1,134 @@
+{
+  "scope": "Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.",
+  "passed": true,
+  "caseId": "native-youtube-public",
+  "preparedSha256": "ee8ed3ebe3e5aba7c717d98e3bdfb2a0a83bbccca3722f6794c3cbc35e24bacb",
+  "manifestSha256": "9e62ce6f1527fed88cb7868769b1301aebb5484187896dc3fcb775dccaeedc1b",
+  "rule": {
+    "id": "video",
+    "name": "YouTube",
+    "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+    "enabled": true
+  },
+  "caseProvenance": {
+    "origin": "real public YouTube search-page screenshot, reviewed source URL with DOM loading guard",
+    "source": "https://www.youtube.com/results?search_query=nasa+space"
+  },
+  "protocol": "neutral-to-positive-during-session",
+  "startedAt": "2026-10-29T13:54:19.662Z",
+  "timingMethod": "Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.",
+  "motion": "pan-wide",
+  "maximumRequests": 3,
+  "budgetBefore": {
+    "requests": 228,
+    "reservedUsd": 2.510290944000004,
+    "inputTokens": 774352
+  },
+  "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\report.json.profile",
+  "instrumentation": "Pass-through net.fetch audit, unchanged request/response and real capture/provider. Only encrypted submitted frames and numeric score metadata retained; no headers/credentials/error bodies.",
+  "runtime": {
+    "os": "10.0.26100",
+    "electron": "45.1.0",
+    "appVersion": "0.1.0",
+    "displays": [
+      {
+        "id": 2652034412,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768
+        },
+        "scaleFactor": 1
+      }
+    ]
+  },
+  "capturePreflight": "Actual display capture varied before session start; pixels discarded without provider call or file.",
+  "settings": {
+    "backend": "jev",
+    "cloudConsent": true,
+    "cloudBudgetUsd": 2.5433210880000043,
+    "rules": [
+      {
+        "id": "explicit",
+        "name": "Explicit content",
+        "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+        "enabled": false
+      },
+      {
+        "id": "video",
+        "name": "YouTube",
+        "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+        "enabled": true
+      },
+      {
+        "id": "social",
+        "name": "Social feeds",
+        "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+        "enabled": false
+      }
+    ],
+    "threshold": 0.4,
+    "intervalSeconds": 3,
+    "sessionMinutes": 25,
+    "detectionOnly": false
+  },
+  "negativeControl": "Live neutral frame allowed without a cover.",
+  "contentToObservedCoverMs": 3937,
+  "motionFrames": 253,
+  "motionLimits": "Reviewed screenshot pans +/-16vw at1131ms period, sized at most65vw/90vh to remain fully visible. Large-motion stress, not actual video or new independent accuracy.",
+  "blockInfo": {
+    "rule": "YouTube",
+    "probability": 0.93
+  },
+  "cover": {
+    "bounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 768
+    },
+    "visible": true,
+    "topmost": true,
+    "focused": true,
+    "fullScreen": true
+  },
+  "blockedRule": "Blocked: YouTube",
+  "recovery": "Button released cover and paused session.",
+  "activityCounts": {
+    "changedDuringAnalysis": 0,
+    "allowed": 1,
+    "blocked": 1,
+    "checks": 2
+  },
+  "wideMotion": {
+    "animationCallbacks": 259,
+    "imageWidth": 666,
+    "imageHeight": 468,
+    "viewportWidth": 1024,
+    "viewportHeight": 768,
+    "amplitudeFraction": 0.16,
+    "periodMs": 1130.9733552923256
+  },
+  "requestAudit": [
+    {
+      "index": 0,
+      "sha256": "4e610577733f6debe51ecdd5b03a75acf1e6b0ecc5cba4b6b2c282e227717415",
+      "scores": {
+        "video": 0.02
+      }
+    },
+    {
+      "index": 1,
+      "sha256": "f73472b241bf73b2736ca88370fb1200556933b9b342839267c1222cd9b463f5",
+      "scores": {
+        "video": 0.93
+      }
+    }
+  ],
+  "budgetAfter": {
+    "requests": 230,
+    "reservedUsd": 2.532311040000004,
+    "inputTokens": 781538
+  }
+}

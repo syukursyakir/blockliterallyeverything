@@ -24,7 +24,9 @@ Branch validation/large-motion-20261029, PR #6 draft. Read LARGE-MOTION-PLAN.md.
 Photo pan-wide40884733211 PASSED4144ms/.98; YouTube pan-wide40885047863 FAILED:
 Jev .97/.96, both discarded due screen movement, no cover. Confirmed freshness
 translation failure, not old source27 miss. All228 attempts/$2.510290944 reconciled,
-no authority lock at this checkpoint. Next source adds bounded uniform-background
+first corrected run40886053424 PASSED3937ms/.93, two calls; reconciled230/
+$2.532311040/781538tokens, no lock. It did not record translation branch use;
+one further preplanned observable regression will count recognized movement. Source adds bounded uniform-background
 whole-frame translation recognition (see plan/tests), preserving original8% guard
 otherwise. Before merge, require failed-condition native regression + real switch-away
 negative control, then frozen4x adult30/safe flower playback. Each max3 sequential.

@@ -220,7 +220,7 @@ try {
   process.exitCode=1
 } finally {
   if(desktop && profileConfirmed && mainPage){
-    report.activityCounts=await mainPage.evaluate(async()=>{const {status}=await window.desktop!.snapshot();return {changedDuringAnalysis:status.activity.filter(a=>a.message==='Screen changed during analysis; checking the new view next.').length,allowed:status.activity.filter(a=>a.kind==='allowed').length,blocked:status.blocks,checks:status.checks}}).catch(()=>null)
+    report.activityCounts=await mainPage.evaluate(async()=>{const {status}=await window.desktop!.snapshot();return {changedDuringAnalysis:status.activity.filter(a=>a.message==='Screen changed during analysis; checking the new view next.').length,translatedView:status.activity.filter(a=>a.message==='Screen moved; the full analyzed view is still visible.').length,allowed:status.activity.filter(a=>a.kind==='allowed').length,blocked:status.blocks,checks:status.checks}}).catch(()=>null)
     if(motion==='pan-wide')report.wideMotion=await desktop.evaluate(async()=>await (globalThis as any).bleLiveScene.webContents.executeJavaScript(`(()=>{const img=document.querySelector('img');return {animationCallbacks:globalThis.bleMotionFrames,imageWidth:img?.width,imageHeight:img?.height,viewportWidth:innerWidth,viewportHeight:innerHeight,amplitudeFraction:0.16,periodMs:2*Math.PI*180}})()`)).catch(()=>null)
   }
   if(values.audit && desktop && profileConfirmed){

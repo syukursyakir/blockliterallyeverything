@@ -149,8 +149,11 @@ async function checkLoop(token: number) {
         if (!fresh || fresh.thumbnail.isEmpty() || isBlankCapture(fresh.thumbnail.toBitmap())) throw new Error('Screen capture became unavailable. Protection is paused.')
         const before = source.thumbnail.resize({width:64,height:64}).toBitmap()
         const after = fresh.thumbnail.resize({width:64,height:64}).toBitmap()
-        if (changedSubstantially(before, after) && !sameTranslatedFrame(before, after, 64)) {
-          activity('info', 'Screen changed during analysis; checking the new view next.'); continue
+        if (changedSubstantially(before, after)) {
+          if (!sameTranslatedFrame(before, after, 64)) {
+            activity('info', 'Screen changed during analysis; checking the new view next.'); continue
+          }
+          activity('info', 'Screen moved; the full analyzed view is still visible.')
         }
         screenCache.mark(String(display.id), hash, Date.now())
       }
