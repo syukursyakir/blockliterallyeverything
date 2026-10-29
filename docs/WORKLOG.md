@@ -585,3 +585,17 @@ build pass. Freeze failed-condition regression and switch-away before paid calls
 Also froze4x adult30/safe flower conditions. Free actual-scene browser test caught
 resource load resetting playbackRate to1; set4x afterseek and assert before evidence.
 No paid accelerated trial yet; no provider/prompt/threshold changes or release.
+
+
+First corrected YouTube native40886053424 PASSED3937ms/.93 (two requests), but no
+translation branch count yet, so not causal-path proof alone. Frozen ONE observable
+regression after adding safe activity message/count.40886564146 PASSED3991ms/.93
+with translatedView1 proving >8% comparison fired and translation exception accepted
+full-view movement. Full cover/recovery. Private old positive-pair translation match
+and neutral-to-positive rejection also passed in free browser-resampling diagnostic.
+Installed Windows fixture suite adds forced translated capture block/recovery and
+replacement/cropped discard controls; initial assertion used zero instead of retained
+block count, corrected at297683f before final CI. These are synthetic capture/provider
+regressions, NOT live accuracy.80 local units/build/strict runner tsc passed.
+All232/$2.554331136/788729tokens reconciled. Native switch-away40886917348 owns
+authority lock before232;4x adult30 and safe flower still pending. No release.

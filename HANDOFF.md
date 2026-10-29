@@ -20,19 +20,22 @@ v0.1.0-alpha.1, third-party messages or laptop remote access authorized.
 
 ## Active large-motion continuation (PR #6)
 
-Branch validation/large-motion-20261029, PR #6 draft. Read LARGE-MOTION-PLAN.md.
-Photo pan-wide40884733211 PASSED4144ms/.98; YouTube pan-wide40885047863 FAILED:
+Branch validation/large-motion-20261029, PR #6 draft. Read LARGE-MOTION-PLAN/RESULTS.
+Photo pan-wide40884733211 PASSED4144ms/.98. YouTube pan-wide40885047863 FAILED:
 Jev .97/.96, both discarded due screen movement, no cover. Confirmed freshness
-translation failure, not old source27 miss. All228 attempts/$2.510290944 reconciled,
-first corrected run40886053424 PASSED3937ms/.93, two calls; reconciled230/
-$2.532311040/781538tokens, no lock. It did not record translation branch use;
-one further preplanned observable regression will count recognized movement. Source adds bounded uniform-background
-whole-frame translation recognition (see plan/tests), preserving original8% guard
-otherwise. Before merge, require failed-condition native regression + real switch-away
-negative control, then frozen4x adult30/safe flower playback. Each max3 sequential.
-24 focused unit tests/build pass. Accelerated playback source load reset found in
-free local browser smoke, corrected by setting rate AFTER seek; assert actual4x.
-No fast-video paid calls yet. Original failures retained. No release.
+translation failure, NOT old source27 miss. Added bounded whole-frame axis translation
+recognition over uniform padding; original8% guard otherwise unchanged,2% aligned
+comparison and clean exposed/vacated strips. Cropped/vanished/new content rejected.
+Native regression40886053424 PASSED3937ms/.93; observable40886564146 PASSED3991ms/
+.93 with translatedView1 proving corrective branch was needed. Full cover/recovery.
+All232 attempts/$2.554331136/788729tokens reconciled. Authority lock NOW owned by
+switch-away40886917348 at297683f, before232. No other paid work until reconciled.
+Then frozen4x adult30/safe flower controls max3 each sequentially. No fast paid yet.
+80 local unit tests/build/strict runner tsc pass.13 installed fixture scenarios now
+include forced translation/replacement/cropped capture regressions (NOT AI accuracy).
+Current final-source CI40886736737 running. Local actual-scene browser smoke verifies
+4x decoding; rate must be set AFTER seek because resource load resets it.
+Original misses retained. No model/preset/threshold/poll interval change or release.
 
 ## Current adult/video continuation
 
