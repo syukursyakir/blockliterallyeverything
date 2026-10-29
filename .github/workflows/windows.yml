@@ -33,6 +33,7 @@ on:
           - youtube-public
           - explicit-public
           - explicit-video
+          - activity30-video
         default: social-synthetic
       positive_at_start:
         description: Explicit single-request positive-at-session-start protocol (no active-session transition claim)
