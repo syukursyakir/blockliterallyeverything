@@ -668,3 +668,17 @@ publicGET diagnosed transport: Node env proxy disabled, defaultfetchTimeoutError
 Frozen plan amended BEFORE paid calls to one controlled4-case rerun withflag, max5
 attempts total including firstfailure withinexisting3cap. Same labels/settings/images;
 not a clean first-attempt4/4. Updated evaluator runtime docs to prevent recurrence.
+
+
+Corrected proxy-routed fresh-family run completed:4/4 positive variants caught
+(.74,.80,.96,.96),0/4 platform false matches each. TWO new author/source files,
+no new negatives/activity context/native proof. Source/manifest/settings unchanged,
+original labels preserved. This is not a clean first-attempt cohort: originalfailed
+reservation retained,4 scored later,5 total. The EXISTING supported evaluator wrapper
+already forwards --use-env-proxy; failure was my ad-hoc raw bundle bypassing it.
+Documented USE WRAPPER to prevent repeat; no app/source/transportwrapper code change.
+Before/report/authority exactmatch,245/$2.697461760/831497tokens,27 max reservations
+remain, no paidjob/lock. New5 reservations,14167tokens; prior history intact.
+FRESH-FAMILY-RESULTS/PLAN/freeze/raw initialerror+corrected reports saved.
+Merged-app fullCI already passed at902565c; follow-up only evidence/docs, no repeated
+manual tests or release. Source27 and generalfast-video limitations remain open.

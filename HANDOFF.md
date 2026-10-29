@@ -18,22 +18,27 @@ all prior counters/history. Continue useful bounded testing without per-batch
 permission questions within this cap. No release publication, overwriting
 v0.1.0-alpha.1, third-party messages or laptop remote access authorized.
 
-## Active fresh-family fixed-image extension
+## Latest completed fresh-family evidence
 
-Read docs/FRESH-FAMILY-PLAN.md and fresh-family-freeze-2026-10-29.json. Two NEW
-source/author files, source-declared adult35/37 (Corte ubemo/Marc.zuhause), own-work
-CC BY-SA metadata verified before binary. Deduplicated source hashes against prior
-reports; old Jade result excluded. All four full/small prepared variants inspected
-before labels/settings/hash freeze. TWO families, not four independent subjects.
-No new activity-video or negative coverage. Original settings hash46eb2974 unchanged.
-Initial local request FAILED without score, stopped;241/$2.653421568 retained.
-No other input attempted. Free GET diagnosed omitted Node env-proxy flag (normal
-fetch timeout, --use-env-proxy200). See plan amendment BEFORE controlled four-case
-rerun: max5 attempts including first error, same frozen inputs/settings, no resets.
-Use node --use-env-proxy; no remote paid job or lock.
-Local evaluator acquires authority lock automatically, preserves reservations/errors;
-no new budget or retries. Raw pixels private /workspace/work/ble-fresh-families-2026-10-29.
-Do not rerun after results or call these Windows enforcement/95% proof.
+Read docs/FRESH-FAMILY-RESULTS.md and its frozen plan/raw reports FIRST. Two NEW
+own-work, CC BY-SA source/author files, declared adult35/37, full/small prepared
+variants pixel-reviewed and labeled BEFORE inference. Four variants caught(.74,
+.80,.96,.96), zero platform false matches. TWO author/source groups, not four
+independent subjects. No new explicit negatives/activity context/Windows accuracy.
+Original settings hash46eb2974 unchanged; no tuning, app/provider change or release.
+
+Initial attempt241 FAILED without a score; three cases unattempted. Retained original
+partial report and reservation. Cause: ad-hoc direct bundle bypassed the EXISTING
+proxy-aware scripts/evaluate-app.mjs wrapper. USE THAT WRAPPER; it already passes
+--use-env-proxy. Free GET confirmed default Node timeout versus proxied200. Plan
+amended BEFORE one controlled four-case run; all four then passed. Not a pristine
+first-attempt4/4 cohort or five independent samples. No retry loop/key extraction.
+
+Current authority245/$2.697461760/831497tokens;27 further maximum reservations fit.
+All before/report/authority counters matched, prior history preserved, NO paid job/
+lock. Raw pixels private /workspace/work/ble-fresh-families-2026-10-29. Do not replay
+these four cases as new independent evidence. Latest code remains merged PR #6,
+validated at902565c; subsequent follow-ups are evidence/docs only.
 
 ## Completed large-motion correction (PR #6)
 
@@ -56,7 +61,8 @@ scores.02; one discarded/one accepted, zero blocks, then3-call bound paused. Not
 false positive or safe-control pass. End/failure media state absent in original
 report; future runner now records it. Do not retry to obtain green. General fast
 video freshness remains limited; translated full-view fix does not solve it.
-All240 attempts/$2.642411520/817330tokens reconciled;32 more max reservations fit.
+At PR #6 completion240/$2.642411520/817330tokens reconciled;32 max reservations fit THEN.
+Use latest245 authority above; do not revert to240.
 NO paid job/authority lock.80 local units/build/strict runner tsc pass.13 installed
 fixture scenarios include forced translation/replacement/cropped capture regressions
 (NOT AI accuracy). CI40887372936 at995ce3c PASSED79unit+oneintendedskip,8UI,native
@@ -221,11 +227,11 @@ Installed fixture tests/emitted OS signals do not certify these conditions.
 ## Authoritative accounting — never reset
 
 /workspace/work/ble-real-2026-10-29/app-budget.json
-Current240 reservations,$2.642411520 of approved cumulative3,817330 input tokens,
-~$0.03432786 estimated usage at.042/million. Reservations are not bills; old missing
-62/64 history remains separately preserved, not zero.32 more maximum reservations
-fit (272 total). The migration from.50 to3 retained45 attempts/137877 tokens and
-has explicit authorizationHistory. No remote paid job or authority lock remains.
+Current245 reservations,$2.697461760 of approved cumulative3,831497 input tokens,
+~$0.034922874 estimated usage at.042/million. Reservations are not bills; old missing
+62/64 history remains separately preserved, not zero.27 more maximum reservations
+fit (272 total). Migration from.50 to3 retained45 attempts/137877 tokens and explicit
+authorizationHistory. No remote paid job or authority lock remains.
 
 Before a remote paid run: freeze local paid work, create durable authority `.lock`
 with before state/run identity, pass EXACT current retained JSON, run sequentially.
@@ -248,7 +254,9 @@ Read LARGE-MOTION-RESULTS first: confirmed whole-view translation failure is fix
 and directly exercised; real switch-away preserved. Safe4x control still failed
 freshness bound (not classification). Do not repeat these seven native runs as new
 accuracy evidence. Original source27 miss remains unknown, not fixed by translation.
-For a95% target, next useful coverage is genuinely new representative source/author
+Two more photo-source groups are now tested in FRESH-FAMILY-RESULTS; do not redo
+that acquisition or count size variants as independent subjects. For a95% target,
+next useful coverage is genuinely new representative source/author
 families (including other adult activity contexts), prospective labels, hard safe
 lookalikes and clearer annotation/second review, plus large/fast video motion and
 real hardware/display conditions. Three targeted adult-declared couple/context metadata queries yielded no NEW

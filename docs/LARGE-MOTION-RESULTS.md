@@ -94,10 +94,11 @@ Normal application runtime adds no intentional frame retention.
 ## Accounting, regression CI and remaining limits
 
 This continuation used17 reservations,223->240, all report/wrapper/profile chains
-reconciled sequentially. Current cumulative$2.642411520 of approved3,817330tokens
+reconciled sequentially. AT THIS PHASE completion:$2.642411520 of approved3,817330tokens
 (~$0.03432786 observed-token estimate, not billing or missing old usage).32 further
 maximum reservations fit; prior62/64 missing-ledger history preserved separately.
-No active paid job or authority lock.
+No active paid job or authority lock at phase completion. Later fresh-family
+accounting supersedes this snapshot; see HANDOFF.md, never restore old counters.
 
 Local80 unit tests/build/strict runner tsc passed. Windows79 unit+one intendedskip,
 eight UI, native smoke, installer and13 fixture scenarios passed at995ce3c in
