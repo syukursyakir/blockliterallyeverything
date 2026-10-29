@@ -18,9 +18,12 @@ all prior counters/history. Continue useful bounded testing without per-batch
 permission questions within this cap. No release publication, overwriting
 v0.1.0-alpha.1, third-party messages or laptop remote access authorized.
 
-## Active large-motion continuation (PR #6)
+## Completed large-motion correction (PR #6)
 
-Branch validation/large-motion-20261029, PR #6 draft. Read LARGE-MOTION-PLAN/RESULTS.
+PR #6 MERGED at902565c1d86ca743a89ab5cf020268f12736fd9b:
+https://github.com/syukursyakir/blockliterallyeverything/pull/6
+Source branch validation/large-motion-20261029 completed; final source47d7e40.
+Read docs/LARGE-MOTION-PLAN.md and docs/LARGE-MOTION-RESULTS.md FIRST.
 Photo pan-wide40884733211 PASSED4144ms/.98. YouTube pan-wide40885047863 FAILED:
 Jev .97/.96, both discarded due screen movement, no cover. Confirmed freshness
 translation failure, NOT old source27 miss. Added bounded whole-frame axis translation
@@ -40,13 +43,17 @@ All240 attempts/$2.642411520/817330tokens reconciled;32 more max reservations fi
 NO paid job/authority lock.80 local units/build/strict runner tsc pass.13 installed
 fixture scenarios include forced translation/replacement/cropped capture regressions
 (NOT AI accuracy). CI40887372936 at995ce3c PASSED79unit+oneintendedskip,8UI,native
-smoke,installer/install,13scenarios. Final production source CI40887734346 atd594f8c
-awaits final verification; no release. Earlier40886736737/40886699772 failed new
+smoke,installer/install,13scenarios. Final source CI40888553162 at47d7e40 PASSED
+same full sequence (logs verified), earlier40887734346 also passed. Release skipped.
+Post-merge main CI40889272599 at902565c is running manually, live_detection=false,
+publish_alpha=false: squash default commit body inherited historical [skip ci]
+markers so automatic push CI was skipped. FUTURE SQUASH MERGES: supply an explicit
+clean commit_message to avoid inheriting skip markers; do not rewrite main history. Earlier40886736737/40886699772 failed new
 fixture window lookup race, corrected using existing painted-cover helper.
 Local free4x multi-loop smoke verified playback; future failure media snapshot added.
 Original misses retained. No model/preset/threshold/poll interval change or release.
 
-## Current adult/video continuation
+## Prior completed adult/video continuation (PR #5)
 
 PR #5 MERGED atdf6bf402dc572d01dfbfa68d5c6ef8f39151d8d6:
 https://github.com/syukursyakir/blockliterallyeverything/pull/5
@@ -85,10 +92,9 @@ max3 each; preserves every failure, stops unexpected capture/provider/accounting
 errors, never an until-success/network-retry loop. Reconcile every profile/summary.
 
 At PR #5 completion authority was223 attempts,$2.455240704 reserved of cumulative3,
-756421 tokens (~$0.031769682 estimated usage).49 further maximum reservations fit.
+756421 tokens (~$0.031769682 estimated usage);49 further max reservations fit THEN.
 Those budgets reconciled sequentially. Use PR #6 current authority above, not these
-historical223 or stale182 snapshots
-from chronological logs. Final source CI40872034255 PASSED:74 unit +one intended
+historical223 or stale182 snapshots from chronological logs. Final source CI40872034255 PASSED:74 unit +one intended
 skip,8 UI, native smoke, installer build/install and11 fixture scenarios; no release.
 Local18 focused tests and strict runner/evaluator tsc passed. Main post-merge
 CI40872805425 PASSED the same full pipeline, release skipped; saved numeric summary

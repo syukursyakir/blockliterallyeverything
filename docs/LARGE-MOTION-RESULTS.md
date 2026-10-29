@@ -101,8 +101,11 @@ No active paid job or authority lock.
 
 Local80 unit tests/build/strict runner tsc passed. Windows79 unit+one intendedskip,
 eight UI, native smoke, installer and13 fixture scenarios passed at995ce3c in
-40887372936. The final-production-source CI40887734346 atd594f8c is being verified;
-release step skipped. Intermediate40886699772/40886736737 failed a NEW test's
+40887372936. Final source CI[40888553162](https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40888553162)
+at47d7e40 PASSED the same sequence, logs verified; release skipped. Earlier final
+production source40887734346 also passed. PR #6 merged at902565c. Post-merge main
+CI40889272599 manually dispatched with live_detection/publish_alpha FALSE: squash
+body inherited historical CI-skip markers, so automatic push CI did not start. Intermediate40886699772/40886736737 failed a NEW test's
 window lookup race after blockedstatus but before coverpage ready; corrected by
 reusing the existing painted-cover wait helper. These were not model failures.
 

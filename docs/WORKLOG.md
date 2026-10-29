@@ -626,3 +626,14 @@ remain, prior history preserved, no paidjob/lock. This continuation17reservation
 WindowsCI40887372936 PASSED79unit+1intendedskip,8UI,native smoke,installer/install
 and13fixture scenarios including forced translated/replacement/cropped paths.
 Finalproduction-source40887734346 atd594f8c pending final verification; no release.
+
+
+Final-source40888553162 at47d7e40 PASSED (conclusion/head/steps/log verified):
+79unit+1intendedskip,8UI,native smoke,installer build/install,13fixture scenarios,
+release SKIPPED. Earlier40887734346 also passed. PR #6 MERGED at902565c1d86ca743
+a89ab5cf020268f12736fd9b; checkout main. Squash default message inherited older
+documentation [skip ci] markers, so automatic push CI did not start. Dispatched
+post-merge main40889272599 manually, publish_alpha=false/live_detection=false,
+no paid API use. Future squash merges should pass an explicit clean commit_message;
+do not amend main history merely for this.240/$2.642411520 authority unchanged,
+no paidjob/lock, prior failures preserved, no release.
