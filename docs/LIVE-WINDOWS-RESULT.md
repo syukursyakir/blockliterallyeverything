@@ -1,5 +1,8 @@
 # Live Windows result — 2026-10-29
 
+Later actual decoded-video outcomes, the retained initial miss and current accounting:
+[ADULT-VIDEO-RESULTS.md](ADULT-VIDEO-RESULTS.md).
+
 Subsequent controlled-motion/stale-result outcomes and later accounting are in
 [MOTION-RESULTS.md](MOTION-RESULTS.md); HANDOFF.md is the current authority summary.
 

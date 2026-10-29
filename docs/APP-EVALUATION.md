@@ -1,5 +1,8 @@
 # Actual app detection evaluation — 2026-10-29
 
+The counts below are historical. Later frozen adult-source and actual-video results
+are in [ADULT-VIDEO-RESULTS.md](ADULT-VIDEO-RESULTS.md); HANDOFF.md is current.
+
 26 live hosted requests completed through the actual app's cloudQuestions(),
 requestJev()/parseJev() and matchingRule(). All three starter rules were enabled,
 threshold stayed 0.4, Jev stayed jev-1.14.0. No prompt/threshold/provider changes

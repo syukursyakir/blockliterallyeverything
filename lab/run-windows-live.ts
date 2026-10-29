@@ -82,7 +82,7 @@ try {
           }catch{/* Audit must not alter the real request. */}
         }
         const response=await original(input,init)
-        if(row && response.ok)void response.clone().json().then((body:any)=>{row.scores=Object.fromEntries(Object.entries(body.answers??{}).filter(([,v]:any)=>typeof v?.noul==='number').map(([k,v]:any)=>[k,v.noul]))}).catch(()=>{row.auditError=true})
+        if(row && response.ok)void response.clone().json().then((body:any)=>{row.scores=Object.fromEntries(Object.entries(body.answers??{}).filter(([k,v]:any)=>['explicit','video','social'].includes(k) && typeof v?.noul==='number' && Number.isFinite(v.noul) && v.noul>=0 && v.noul<=1).map(([k,v]:any)=>[k,v.noul]))}).catch(()=>{row.auditError=true})
         return response
       }
     })
