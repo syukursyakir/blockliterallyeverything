@@ -1,0 +1,141 @@
+{
+  "scope": "Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.",
+  "passed": true,
+  "caseId": "native-explicit-public",
+  "preparedSha256": "e5f7d46d60213e2ead2b1f0c9f04dba17cc23ffa85e0b8f714722c5671ad51ad",
+  "manifestSha256": "7b4ae7bfcd0b860b5c3ecc91c5bacbf47b0969edd4b622db2bd3e5ea8d3e69d3",
+  "rule": {
+    "id": "explicit",
+    "name": "Explicit content",
+    "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+    "enabled": true
+  },
+  "caseProvenance": {
+    "origin": "real licensed source-declared adult photograph, exact source hash verified",
+    "source": "https://commons.wikimedia.org/wiki/File:ERA110_Erika_Kole_nude_R_4_030.jpg",
+    "source_sha256": "9304d80530f8d9fa8c8405d911f5f8850335df417a8269a0566523e0c0af0b12",
+    "adult_provenance": "Source declares model adult age 22 at capture.",
+    "rights": {
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution": "Carol Ash"
+    }
+  },
+  "protocol": "neutral-to-positive-during-session",
+  "startedAt": "2026-10-29T13:45:51.200Z",
+  "timingMethod": "Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.",
+  "motion": "pan-wide",
+  "maximumRequests": 3,
+  "budgetBefore": {
+    "requests": 223,
+    "reservedUsd": 2.455240704000003,
+    "inputTokens": 756421
+  },
+  "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\report.json.profile",
+  "instrumentation": "Pass-through net.fetch audit, unchanged request/response and real capture/provider. Only encrypted submitted frames and numeric score metadata retained; no headers/credentials/error bodies.",
+  "runtime": {
+    "os": "10.0.26100",
+    "electron": "45.1.0",
+    "appVersion": "0.1.0",
+    "displays": [
+      {
+        "id": 2511368286,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768
+        },
+        "scaleFactor": 1
+      }
+    ]
+  },
+  "capturePreflight": "Actual display capture varied before session start; pixels discarded without provider call or file.",
+  "settings": {
+    "backend": "jev",
+    "cloudConsent": true,
+    "cloudBudgetUsd": 2.4882708480000035,
+    "rules": [
+      {
+        "id": "explicit",
+        "name": "Explicit content",
+        "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+        "enabled": true
+      },
+      {
+        "id": "video",
+        "name": "YouTube",
+        "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+        "enabled": false
+      },
+      {
+        "id": "social",
+        "name": "Social feeds",
+        "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+        "enabled": false
+      }
+    ],
+    "threshold": 0.4,
+    "intervalSeconds": 3,
+    "sessionMinutes": 25,
+    "detectionOnly": false
+  },
+  "negativeControl": "Live neutral frame allowed without a cover.",
+  "contentToObservedCoverMs": 4144,
+  "motionFrames": 267,
+  "motionLimits": "Reviewed screenshot pans +/-16vw at1131ms period, sized at most65vw/90vh to remain fully visible. Large-motion stress, not actual video or new independent accuracy.",
+  "blockInfo": {
+    "rule": "Explicit content",
+    "probability": 0.98
+  },
+  "cover": {
+    "bounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 768
+    },
+    "visible": true,
+    "topmost": true,
+    "focused": true,
+    "fullScreen": true
+  },
+  "blockedRule": "Blocked: Explicit content",
+  "recovery": "Button released cover and paused session.",
+  "activityCounts": {
+    "changedDuringAnalysis": 0,
+    "allowed": 1,
+    "blocked": 1,
+    "checks": 2
+  },
+  "wideMotion": {
+    "animationCallbacks": 276,
+    "imageWidth": 666,
+    "imageHeight": 468,
+    "viewportWidth": 1024,
+    "viewportHeight": 768,
+    "amplitudeFraction": 0.16,
+    "periodMs": 1130.9733552923256
+  },
+  "requestAudit": [
+    {
+      "index": 0,
+      "sha256": "4e610577733f6debe51ecdd5b03a75acf1e6b0ecc5cba4b6b2c282e227717415",
+      "scores": {
+        "explicit": 0.01
+      }
+    },
+    {
+      "index": 1,
+      "sha256": "cdf42be2f2fb68f8c9066481816e85067ce09709a3b495b0a99df115d78f3d30",
+      "scores": {
+        "explicit": 0.98
+      }
+    }
+  ],
+  "budgetAfter": {
+    "requests": 225,
+    "reservedUsd": 2.4772608000000034,
+    "inputTokens": 763574
+  }
+}

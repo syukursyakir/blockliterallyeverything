@@ -1,0 +1,130 @@
+{
+  "scope": "Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.",
+  "passed": false,
+  "caseId": "native-youtube-public",
+  "preparedSha256": "ec6cf2447ea2882cc73919db7b4d6f62929713f6ab58560c0d35807809f244a3",
+  "manifestSha256": "7cbe805e01cfcf4f6ec956c36097638495e3e731672a4e6694314e81aa3c1787",
+  "rule": {
+    "id": "video",
+    "name": "YouTube",
+    "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+    "enabled": true
+  },
+  "caseProvenance": {
+    "origin": "real public YouTube search-page screenshot, reviewed source URL with DOM loading guard",
+    "source": "https://www.youtube.com/results?search_query=nasa+space"
+  },
+  "protocol": "neutral-to-positive-during-session",
+  "startedAt": "2026-10-29T13:47:46.229Z",
+  "timingMethod": "Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.",
+  "motion": "pan-wide",
+  "maximumRequests": 3,
+  "budgetBefore": {
+    "requests": 225,
+    "reservedUsd": 2.4772608000000034,
+    "inputTokens": 763574
+  },
+  "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\report.json.profile",
+  "instrumentation": "Pass-through net.fetch audit, unchanged request/response and real capture/provider. Only encrypted submitted frames and numeric score metadata retained; no headers/credentials/error bodies.",
+  "runtime": {
+    "os": "10.0.26100",
+    "electron": "45.1.0",
+    "appVersion": "0.1.0",
+    "displays": [
+      {
+        "id": 162047518,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768
+        },
+        "scaleFactor": 1
+      }
+    ]
+  },
+  "capturePreflight": "Actual display capture varied before session start; pixels discarded without provider call or file.",
+  "settings": {
+    "backend": "jev",
+    "cloudConsent": true,
+    "cloudBudgetUsd": 2.510290944000004,
+    "rules": [
+      {
+        "id": "explicit",
+        "name": "Explicit content",
+        "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+        "enabled": false
+      },
+      {
+        "id": "video",
+        "name": "YouTube",
+        "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+        "enabled": true
+      },
+      {
+        "id": "social",
+        "name": "Social feeds",
+        "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+        "enabled": false
+      }
+    ],
+    "threshold": 0.4,
+    "intervalSeconds": 3,
+    "sessionMinutes": 25,
+    "detectionOnly": false
+  },
+  "negativeControl": "Live neutral frame allowed without a cover.",
+  "failedPhase": "wait-for-cover",
+  "errorType": "Error",
+  "lastStatus": {
+    "mode": "error",
+    "error": "Jev budget limit reached. Review Model & settings; protection is paused.",
+    "checks": 1,
+    "blocks": 0,
+    "cloudRequests": 228
+  },
+  "failure": "Live validation failed; inspect native state/accounting. No sensitive screenshot, provider response body or credentials retained.",
+  "activityCounts": {
+    "changedDuringAnalysis": 2,
+    "allowed": 1,
+    "blocked": 0,
+    "checks": 1
+  },
+  "wideMotion": {
+    "animationCallbacks": 1223,
+    "imageWidth": 666,
+    "imageHeight": 468,
+    "viewportWidth": 1024,
+    "viewportHeight": 767,
+    "amplitudeFraction": 0.16,
+    "periodMs": 1130.9733552923256
+  },
+  "requestAudit": [
+    {
+      "index": 0,
+      "sha256": "4e610577733f6debe51ecdd5b03a75acf1e6b0ecc5cba4b6b2c282e227717415",
+      "scores": {
+        "video": 0.02
+      }
+    },
+    {
+      "index": 1,
+      "sha256": "ba314f8a3325c0a0a869781f6c6f7690a8abaefcb24c08e2e5e3bdd410d79111",
+      "scores": {
+        "video": 0.97
+      }
+    },
+    {
+      "index": 2,
+      "sha256": "262cfc29ccca1d3d2ccde7e1c0585a4b1c1a5e70dcbdf734ba3b51aa4421dacc",
+      "scores": {
+        "video": 0.96
+      }
+    }
+  ],
+  "budgetAfter": {
+    "requests": 228,
+    "reservedUsd": 2.510290944000004,
+    "inputTokens": 774352
+  }
+}

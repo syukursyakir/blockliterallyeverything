@@ -557,3 +557,72 @@ only, no further charged calls or new code. Current authority223/no lock unchang
 Both requested adult-positive and actual-video evidence complete; original one-off
 miss remains OPEN/unexplained, thirteen subsequent passes do not erase it. No95%
 certification or release. Do not restart these completed experiments.
+
+
+### Large sustained-motion protocol started
+
+User requested continuing reliability work. Reviewed current completed evidence,
+kept source27 miss open; no replay of completed17 trials. Added pan-wide test-only
+mode (+/-16vw,1131ms period; max65vw/90vh fully onscreen) and safe numeric activity/
+animation geometry diagnostics; encrypted request audit reused. Frozen two conditions
+BEFORE inference in LARGE-MOTION-PLAN: retained adult photo then loaded YouTube page,
+max3 each sequentially.19 focused unit tests and strict runner tsc passed.
+Native run40884733211 at8d977ca owns authority lock before223/$2.455240704.
+PR #6 draft, ordinary fixture CI40884747224 also running (no provider charges).
+No production/provider/prompt/threshold/freshness changes or release.
+
+
+Large-motion photo40884733211 PASSED4144ms/.98, cover/recovery, two calls.
+YouTube40885047863 FAILED within3-call bound: neutral.02, actualpositive.97/.96;
+both positives discarded as screen changed, checks1/blocks0 then budget pause.
+Confirmed motion/freshness failure; encrypted input frames privately decrypted and
+reviewed (fully visible real page). Originalfailure retained, not old source27.
+All wrapper/report/profile ledgers reconciled228/$2.510290944/774352tokens, no lock.
+Added bounded whole-frame axis translation comparison only over uniform padding,
+stricter2% aligned overlap and8-level clean strips; never accept offscreen/cropped
+content or new exposed regions. Five meaningful unit tests (24 focused total) and
+build pass. Freeze failed-condition regression and switch-away before paid calls.
+Also froze4x adult30/safe flower conditions. Free actual-scene browser test caught
+resource load resetting playbackRate to1; set4x afterseek and assert before evidence.
+No paid accelerated trial yet; no provider/prompt/threshold changes or release.
+
+
+First corrected YouTube native40886053424 PASSED3937ms/.93 (two requests), but no
+translation branch count yet, so not causal-path proof alone. Frozen ONE observable
+regression after adding safe activity message/count.40886564146 PASSED3991ms/.93
+with translatedView1 proving >8% comparison fired and translation exception accepted
+full-view movement. Full cover/recovery. Private old positive-pair translation match
+and neutral-to-positive rejection also passed in free browser-resampling diagnostic.
+Installed Windows fixture suite adds forced translated capture block/recovery and
+replacement/cropped discard controls; initial assertion used zero instead of retained
+block count, corrected at297683f before final CI. These are synthetic capture/provider
+regressions, NOT live accuracy.80 local units/build/strict runner tsc passed.
+All232/$2.554331136/788729tokens reconciled. Native switch-away40886917348 owns
+authority lock before232;4x adult30 and safe flower still pending. No release.
+
+
+Live switch-away40886917348 PASSED: auditneutral.01/positive.98/newneutral.01;
+positive discarded (changed1/translated0), fresh neutral allowed, zero blocks/covers,
+cleanstop,3calls.4x adult30 run40887260295 PASSED4017ms/.95, realrate4, decoded
+counter314->1038, cover/recovery,2calls.237/$2.609381376/806606tokens reconciled.
+FREE longer4x flower smoke caught media-end pause after seek (not a production
+miss and no paid safe attempt). Resume test-scene playback on seek; four samples
+across multiple loops advancing/playing at4x pass. Strict runner tsc pass.
+4x safe run40887744347 atd594f8c ownsauthoritylock before237. CI40886736737
+and40886699772 failed newfixture race: blockedstatus precedes readycoverpage;
+fixed fixture using existing startCover painted-window helper at995ce3c.
+Finalsource fullCI40887734346 running; no release or threshold/provider change.
+
+
+Safe4x40887744347 FAILED planned two-fresh-video-check bound: correct .02/.02,
+one discarded and one accepted video check, zero blocks/covers then3-requestbudget
+pause. Not a classifier false positive or a safe-control pass. No rerun to green.
+Initialrate4/decoding verified; end/failure media metadata absent in original run;
+runner now retains numeric media snapshot in finally for future failures, no frames
+or keys added. Failuretext clarifies optional encrypted audit, no plaintext output.
+General nonrigid/fast-video freshness remains limited; narrow translation correction
+does not solve it. All240/$2.642411520/817330tokens reconciled,32 max reservations
+remain, prior history preserved, no paidjob/lock. This continuation17reservations.
+WindowsCI40887372936 PASSED79unit+1intendedskip,8UI,native smoke,installer/install
+and13fixture scenarios including forced translated/replacement/cropped paths.
+Finalproduction-source40887734346 atd594f8c pending final verification; no release.

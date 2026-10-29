@@ -16,13 +16,13 @@ await mkdir(evidence, { recursive: true })
 const executable = process.env.BLE_SMOKE_APP_EXE || electron
 const args = [...(process.env.BLE_SMOKE_APP_EXE ? [] : [path.resolve('.')]), '--user-data-dir=' + profile]
 const env = { ...process.env, TYPESAFE_API_KEY: '', BLE_DEV_URL: '' }
-const report = { scope: 'Real Windows installed-app checks with fixture provider replies, injected blank/missing captures, and emitted lock/suspend signals. No real AI inference or paid calls.', cases: [], displays: null }
+const report = { scope: 'Real Windows installed-app checks with fixture provider replies, injected blank/missing/translation/replacement captures, and emitted lock/suspend signals. No real AI inference or paid calls.', cases: [], displays: null }
 const testKey = 'ble-ci-fixture-not-a-provider-key'
 let desktop, page
 const snapshot = () => page.evaluate(() => window.desktop.snapshot())
 const api = (method, value) => page.evaluate(({ method, value }) => window.desktop[method](value), { method, value })
 const fixture = (mode, capture = 'real') => desktop.evaluate((_, { mode, capture }) => {
-  globalThis.bleTestFixture.mode = mode; globalThis.bleTestFixture.capture = capture
+  globalThis.bleTestFixture.mode = mode; globalThis.bleTestFixture.capture = capture; globalThis.bleTestFixture.captureCalls = 0
 }, { mode, capture })
 const counts = () => desktop.evaluate(() => ({ calls: globalThis.bleTestFixture.calls, aborted: globalThis.bleTestFixture.aborted }))
 const waitMode = mode => expect.poll(async () => (await snapshot()).status.mode, { timeout: 20_000 }).toBe(mode)
@@ -59,6 +59,17 @@ async function launch() {
         const bitmap = Buffer.alloc(320 * 320 * 4, 255)
         return sources.map(source => ({ ...source, thumbnail: nativeImage.createFromBitmap(bitmap, { width: 320, height: 320 }) }))
       }
+      if (['translated', 'replacement', 'cropped'].includes(state.capture)) {
+        const after = state.captureCalls++ > 0
+        const bitmap = Buffer.alloc(64 * 64 * 4, 240)
+        const shift = after && state.capture !== 'replacement' ? (state.capture === 'cropped' ? 30 : 16) : 0
+        for (let y = 20; y < 44; y++) for (let x = 20; x < 44 && x + shift < 64; x++) {
+          const i = (y * 64 + x + shift) * 4
+          const color = after && state.capture === 'replacement' ? [230, 190, 180] : [10, 30, 50]
+          for (let c = 0; c < 3; c++) bitmap[i + c] = color[c]
+        }
+        return sources.map(source => ({ ...source, thumbnail: nativeImage.createFromBitmap(bitmap, { width: 64, height: 64 }) }))
+      }
       return sources
     }
   })
@@ -83,8 +94,8 @@ async function run(name, action) {
   } finally { await writeFile(path.join(evidence, 'report.json'), JSON.stringify(report, null, 2) + '\n') }
 }
 async function save(patch) { return api('save', { ...(await snapshot()).settings, ...patch }) }
-async function startCover() {
-  await fixture('match')
+async function startCover(capture = 'real') {
+  await fixture('match', capture)
   await save({ detectionOnly: false, intervalSeconds: 1 })
   const created = desktop.waitForEvent('window', { timeout: 20_000 })
   await api('start')
@@ -170,6 +181,23 @@ try {
     await cover.screenshot({ path: path.join(evidence, 'fullscreen-cover.png') })
     await cover.getByRole('button', { name: 'Pause & return to app' }).click(); await expectPaused()
     await desktop.evaluate(() => globalThis.bleFullscreenFixture.destroy())
+  })
+  await run('fixture translated capture blocks through the new freshness path and recovers', async () => {
+    const cover = await startCover('translated')
+    expect((await snapshot()).status.activity.some(a => a.message === 'Screen moved; the full analyzed view is still visible.')).toBe(true)
+    await cover.getByRole('button', { name: 'Pause & return to app' }).click(); await expectPaused()
+  })
+  await run('fixture replacement and cropped movement discard stale matches without covers', async () => {
+    for (const capture of ['replacement', 'cropped']) {
+      await fixture('match', capture)
+      const before = (await snapshot()).status
+      const previous = before.activity.filter(a => a.message === 'Screen changed during analysis; checking the new view next.').length
+      await api('start')
+      await expect.poll(async () => (await snapshot()).status.activity.filter(a => a.message === 'Screen changed during analysis; checking the new view next.').length).toBeGreaterThan(previous)
+      expect((await snapshot()).status.blocks).toBe(before.blocks); await waitNoCovers()
+      await api('stop'); await expectPaused()
+    }
+    await fixture('allow')
   })
   await run('native close dismisses covers and pauses rather than trapping the desktop', async () => {
     const cover = await startCover(); const window = await desktop.browserWindow(cover)
