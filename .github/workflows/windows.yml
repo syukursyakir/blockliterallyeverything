@@ -8,6 +8,8 @@ permissions:
   contents: read
 jobs:
   windows:
+    permissions:
+      contents: write
     runs-on: windows-latest
     timeout-minutes: 30
     steps:
@@ -41,3 +43,16 @@ jobs:
           name: windows-jev-installer-unsigned
           path: release/*setup.exe
           if-no-files-found: error
+      - name: Publish verified alpha download
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $installer = Get-ChildItem release/*setup.exe | Select-Object -First 1
+          $digest = (Get-FileHash $installer.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+          "$digest  $($installer.Name)" | Set-Content -Encoding ascii "$($installer.FullName).sha256"
+          gh release upload v0.1.0-alpha.1 $installer.FullName "$($installer.FullName).sha256" --clobber --repo $env:GITHUB_REPOSITORY
+          if ($LASTEXITCODE -ne 0) { throw 'Release asset upload failed' }
+          gh release edit v0.1.0-alpha.1 --draft=false --prerelease --repo $env:GITHUB_REPOSITORY
+          if ($LASTEXITCODE -ne 0) { throw 'Release publication failed' }

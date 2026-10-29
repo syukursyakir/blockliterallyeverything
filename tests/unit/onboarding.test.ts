@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import path from 'node:path'
 import { defaultSettings, type Settings } from '../../src/shared'
 
 const mock = vi.hoisted(() => ({
@@ -69,7 +70,7 @@ vi.mock('electron', () => {
   }
 })
 
-const file = (name: string) => '/tmp/ble-onboarding-test/' + name
+const file = (name: string) => path.join('/tmp/ble-onboarding-test', name)
 const preferences = (): Settings => structuredClone({ ...defaultSettings, cloudConsent: true })
 const success = () => new Response(JSON.stringify({ model: 'jev-1.14.0', usage: { input_tokens: 120 }, answers: { connection: { noul: 0.02 } } }))
 const flush = async () => { for (let i = 0; i < 50; i++) await Promise.resolve() }
