@@ -7,6 +7,7 @@ import { validateEvaluationBudget, type EvaluationBudget } from './evaluation-bu
 import { nativeExitGuard, nativeBudget, nativeMotion } from './native-process.ts'
 import { preflight, evaluationSettings } from './app-evaluation.ts'
 import { validateLedger } from '../electron/jev.ts'
+import { isBlankCapture } from '../electron/screen-cache.ts'
 
 if (process.platform !== 'win32') throw new Error('Live native validation requires an interactive Windows desktop; no test ran.')
 const { values } = parseArgs({ options: { corpus:{type:'string'}, case:{type:'string'}, ledger:{type:'string'}, output:{type:'string'}, motion:{type:'string'}, 'allow-cloud':{type:'boolean'}, 'positive-at-start':{type:'boolean'} } })
@@ -67,6 +68,17 @@ try {
     await scene.loadURL('data:text/html,'+encodeURIComponent('<html><head><meta http-equiv="Content-Security-Policy" content="default-src \'none\'; img-src data:; style-src \'unsafe-inline\'"></head><body style="margin:0;background:#ececec;display:grid;place-items:center;height:100vh;font:30px sans-serif"><p>Neutral work notes</p></body></html>'))
     scene.setFullScreen(true);scene.show();scene.focus()
   })
+  // Showing a native window does not guarantee its compositor frame is ready.
+  // Wait on real capture pixels, without uploading or retaining a screenshot.
+  phase='scene-paint-preflight'
+  await expect.poll(async()=>{
+    const pixels=await desktop!.evaluate(async({desktopCapturer})=>{
+      const sources=await desktopCapturer.getSources({types:['screen'],thumbnailSize:{width:64,height:64},fetchWindowIcons:false})
+      return sources.length===1 && !sources[0].thumbnail.isEmpty()?Array.from(sources[0].thumbnail.toBitmap()):[]
+    })
+    return !isBlankCapture(Uint8Array.from(pixels))
+  },{timeout:10_000}).toBe(true)
+  report.capturePreflight='Actual display capture varied before session start; pixels discarded without provider call or file.'
   const snapshot=()=>page.evaluate(()=>window.desktop!.snapshot())
   const paintPositive=async()=>desktop!.evaluate(async(_,{data,motion})=>{
     const scene=(globalThis as any).bleLiveScene
