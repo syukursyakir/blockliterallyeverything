@@ -1,0 +1,142 @@
+{
+  "scope": "Real decoded safe-video control: actual capture/provider, neutral then plant-only playback, two fresh video checks with zero blocks/covers and clean stop. Not positive-blocking proof.",
+  "passed": false,
+  "caseId": "native-safe-video",
+  "preparedSha256": "b75ca5afce25640890053a6f1b8e362a0dba0eda68d092cffad85ed7602bb8f1",
+  "manifestSha256": "eb02a626b383b9a93945a2261c05cab53a930604c60dcbc2e8d938f677057e7b",
+  "rule": {
+    "id": "explicit",
+    "name": "Explicit content",
+    "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+    "enabled": true
+  },
+  "caseProvenance": {
+    "origin": "actual decoded CC0 nonhuman safe-video control",
+    "source": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm",
+    "source_sha256": "c6f8a348953395598a9a73b9bab1676436410797bce9f398f4be1531d6e76dda",
+    "adult_provenance": "Nonhuman plant-only sample, not an adult-content source.",
+    "rights": {
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution": "MDN interactive-examples CC0 video sample"
+    }
+  },
+  "protocol": "negative-video-during-session",
+  "startedAt": "2026-10-29T14:04:52.083Z",
+  "timingMethod": "Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.",
+  "motion": "video-safe-fast",
+  "maximumRequests": 3,
+  "budgetBefore": {
+    "requests": 237,
+    "reservedUsd": 2.6093813760000053,
+    "inputTokens": 806606
+  },
+  "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\report.json.profile",
+  "instrumentation": "Pass-through net.fetch audit, unchanged request/response and real capture/provider. Only encrypted submitted frames and numeric score metadata retained; no headers/credentials/error bodies.",
+  "runtime": {
+    "os": "10.0.26100",
+    "electron": "45.1.0",
+    "appVersion": "0.1.0",
+    "displays": [
+      {
+        "id": 287669140,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768
+        },
+        "scaleFactor": 1
+      }
+    ]
+  },
+  "capturePreflight": "Actual display capture varied before session start; pixels discarded without provider call or file.",
+  "settings": {
+    "backend": "jev",
+    "cloudConsent": true,
+    "cloudBudgetUsd": 2.642411520000006,
+    "rules": [
+      {
+        "id": "explicit",
+        "name": "Explicit content",
+        "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+        "enabled": true
+      },
+      {
+        "id": "video",
+        "name": "YouTube",
+        "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+        "enabled": false
+      },
+      {
+        "id": "social",
+        "name": "Social feeds",
+        "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+        "enabled": false
+      }
+    ],
+    "threshold": 0.4,
+    "intervalSeconds": 3,
+    "sessionMinutes": 25,
+    "detectionOnly": false
+  },
+  "negativeControl": "Live neutral frame allowed without a cover.",
+  "playbackAtStart": {
+    "time": 0.477466,
+    "paused": false,
+    "readyState": 4,
+    "decodedFrames": 20,
+    "playbackRate": 4
+  },
+  "videoSha256": "c6f8a348953395598a9a73b9bab1676436410797bce9f398f4be1531d6e76dda",
+  "videoRangeSeconds": [
+    0.2,
+    4.5
+  ],
+  "playbackRate": 4,
+  "failedPhase": "safe-video-checks",
+  "errorType": "Error",
+  "lastStatus": {
+    "mode": "error",
+    "error": "Jev budget limit reached. Review Model & settings; protection is paused.",
+    "checks": 2,
+    "blocks": 0,
+    "cloudRequests": 240
+  },
+  "failure": "Live validation failed; inspect native state/accounting. No sensitive screenshot, provider response body or credentials retained.",
+  "activityCounts": {
+    "changedDuringAnalysis": 1,
+    "translatedView": 0,
+    "allowed": 2,
+    "blocked": 0,
+    "checks": 2
+  },
+  "requestAudit": [
+    {
+      "index": 0,
+      "sha256": "4e610577733f6debe51ecdd5b03a75acf1e6b0ecc5cba4b6b2c282e227717415",
+      "scores": {
+        "explicit": 0.01
+      }
+    },
+    {
+      "index": 1,
+      "sha256": "40111e842f43dce1fa6fd12f38e443a2ee59e43fcdf8f314a0b784cb89158985",
+      "scores": {
+        "explicit": 0.02
+      }
+    },
+    {
+      "index": 2,
+      "sha256": "7fa6c647064486ba39f3b601c2fcfb46e86bb01bf07af761e149a3a54b1e2479",
+      "scores": {
+        "explicit": 0.02
+      }
+    }
+  ],
+  "budgetAfter": {
+    "requests": 240,
+    "reservedUsd": 2.642411520000006,
+    "inputTokens": 817330
+  }
+}

@@ -28,13 +28,22 @@ recognition over uniform padding; original8% guard otherwise unchanged,2% aligne
 comparison and clean exposed/vacated strips. Cropped/vanished/new content rejected.
 Native regression40886053424 PASSED3937ms/.93; observable40886564146 PASSED3991ms/
 .93 with translatedView1 proving corrective branch was needed. Full cover/recovery.
-All232 attempts/$2.554331136/788729tokens reconciled. Authority lock NOW owned by
-switch-away40886917348 at297683f, before232. No other paid work until reconciled.
-Then frozen4x adult30/safe flower controls max3 each sequentially. No fast paid yet.
-80 local unit tests/build/strict runner tsc pass.13 installed fixture scenarios now
-include forced translation/replacement/cropped capture regressions (NOT AI accuracy).
-Current final-source CI40886736737 running. Local actual-scene browser smoke verifies
-4x decoding; rate must be set AFTER seek because resource load resets it.
+Switch-away40886917348 PASSED: positive.98 discarded after neutral replacement,
+newneutral.01 allowed, zero covers, three calls.4x adult30 run40887260295 PASSED
+4017ms/.95, actualrate4/decoded counters advanced, cover/recovery; two calls.
+Safe4x40887744347 FAILED predefined two-fresh-video-check requirement: two video
+scores.02; one discarded/one accepted, zero blocks, then3-call bound paused. Not
+false positive or safe-control pass. End/failure media state absent in original
+report; future runner now records it. Do not retry to obtain green. General fast
+video freshness remains limited; translated full-view fix does not solve it.
+All240 attempts/$2.642411520/817330tokens reconciled;32 more max reservations fit.
+NO paid job/authority lock.80 local units/build/strict runner tsc pass.13 installed
+fixture scenarios include forced translation/replacement/cropped capture regressions
+(NOT AI accuracy). CI40887372936 at995ce3c PASSED79unit+oneintendedskip,8UI,native
+smoke,installer/install,13scenarios. Final production source CI40887734346 atd594f8c
+awaits final verification; no release. Earlier40886736737/40886699772 failed new
+fixture window lookup race, corrected using existing painted-cover helper.
+Local free4x multi-loop smoke verified playback; future failure media snapshot added.
 Original misses retained. No model/preset/threshold/poll interval change or release.
 
 ## Current adult/video continuation
@@ -75,9 +84,10 @@ Series supports one or SIX fixed trials, full18-request worst-case preflight and
 max3 each; preserves every failure, stops unexpected capture/provider/accounting
 errors, never an until-success/network-retry loop. Reconcile every profile/summary.
 
-Current authority223 attempts,$2.455240704 reserved of approved cumulative3,
+At PR #5 completion authority was223 attempts,$2.455240704 reserved of cumulative3,
 756421 tokens (~$0.031769682 estimated usage).49 further maximum reservations fit.
-All budgets reconciled sequentially; no paid job/lock. Do not use stale182 snapshots
+Those budgets reconciled sequentially. Use PR #6 current authority above, not these
+historical223 or stale182 snapshots
 from chronological logs. Final source CI40872034255 PASSED:74 unit +one intended
 skip,8 UI, native smoke, installer build/install and11 fixture scenarios; no release.
 Local18 focused tests and strict runner/evaluator tsc passed. Main post-merge
@@ -186,9 +196,9 @@ Installed fixture tests/emitted OS signals do not certify these conditions.
 ## Authoritative accounting — never reset
 
 /workspace/work/ble-real-2026-10-29/app-budget.json
-Current223 reservations,$2.455240704 of approved cumulative3,756421 input tokens,
-~$0.031769682 estimated usage at.042/million. Reservations are not bills; old missing
-62/64 history remains separately preserved, not zero.49 more maximum reservations
+Current240 reservations,$2.642411520 of approved cumulative3,817330 input tokens,
+~$0.03432786 estimated usage at.042/million. Reservations are not bills; old missing
+62/64 history remains separately preserved, not zero.32 more maximum reservations
 fit (272 total). The migration from.50 to3 retained45 attempts/137877 tokens and
 has explicit authorizationHistory. No remote paid job or authority lock remains.
 
@@ -209,6 +219,10 @@ do not invent a cause/fix or burn the budget repeating the same successful clip.
 Future new misses should use explicit controlled diagnostics. Do not ask for a new
 key: successful real calls and completed audit already rule out the old setup issue.
 
+Read LARGE-MOTION-RESULTS first: confirmed whole-view translation failure is fixed
+and directly exercised; real switch-away preserved. Safe4x control still failed
+freshness bound (not classification). Do not repeat these seven native runs as new
+accuracy evidence. Original source27 miss remains unknown, not fixed by translation.
 For a95% target, next useful coverage is genuinely new representative source/author
 families (including other adult activity contexts), prospective labels, hard safe
 lookalikes and clearer annotation/second review, plus large/fast video motion and

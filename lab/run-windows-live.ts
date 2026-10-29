@@ -48,6 +48,7 @@ if(safeVideo){
   report.scope='Real decoded safe-video control: actual capture/provider, neutral then plant-only playback, two fresh video checks with zero blocks/covers and clean stop. Not positive-blocking proof.'
   report.protocol='negative-video-during-session'
 }
+const playback=()=>desktop!.evaluate(async()=>await (globalThis as any).bleLiveScene.webContents.executeJavaScript(`(()=>{const v=document.querySelector('video');return v?{time:v.currentTime,paused:v.paused,readyState:v.readyState,decodedFrames:v.getVideoPlaybackQuality().totalVideoFrames,playbackRate:v.playbackRate}:null})()`))
 const atomic=async(file:string,value:unknown)=>{await writeFile(file+'.tmp',JSON.stringify(value,null,2)+'\n',{mode:0o600});await rename(file+'.tmp',file)}
 try {
   ledger=validateEvaluationBudget(JSON.parse(await readFile(file,'utf8')))
@@ -113,7 +114,6 @@ try {
   },{timeout:10_000}).toBe(true)
   report.capturePreflight='Actual display capture varied before session start; pixels discarded without provider call or file.'
   const snapshot=()=>page.evaluate(()=>window.desktop!.snapshot())
-  const playback=()=>desktop!.evaluate(async()=>await (globalThis as any).bleLiveScene.webContents.executeJavaScript(`(()=>{const v=document.querySelector('video');return v?{time:v.currentTime,paused:v.paused,readyState:v.readyState,decodedFrames:v.getVideoPlaybackQuality().totalVideoFrames,playbackRate:v.playbackRate}:null})()`))
   const paintPositive=async()=>desktop!.evaluate(async(_,{data,motion,range,playbackRate})=>{
     const scene=(globalThis as any).bleLiveScene
     if(motion.startsWith('video'))return await scene.webContents.executeJavaScript(`(async()=>{const v=document.createElement('video');v.muted=true;v.style='width:96vw;max-height:96vh;object-fit:contain';v.src=${JSON.stringify(data)};document.body.replaceChildren(v);await new Promise((r,j)=>{v.onloadedmetadata=r;v.onerror=()=>j(new Error('Reviewed video decoding failed'));setTimeout(()=>j(new Error('Video metadata timeout')),8000)});if(v.duration<${range.end})throw new Error('Reviewed video too short');v.currentTime=${range.start};await new Promise((r,j)=>{v.onseeked=r;setTimeout(()=>j(new Error('Video seek timeout')),8000)});v.ontimeupdate=()=>{if(v.currentTime>=${range.end})v.currentTime=${range.start}};v.onseeked=()=>{void v.play()};v.playbackRate=${playbackRate};await v.play();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return Date.now()})()`)
@@ -216,9 +216,10 @@ try {
   report.failedPhase=phase
   report.errorType=error instanceof Error ? error.name : 'UnknownError'
   if(mainPage)report.lastStatus=await mainPage.evaluate(async()=>{const {status}=await window.desktop!.snapshot();return {mode:status.mode,error:status.error,checks:status.checks,blocks:status.blocks,cloudRequests:status.cloudRequests}}).catch(()=>null)
-  report.failure='Live validation failed; inspect native state/accounting. No sensitive screenshot, provider response body or credentials retained.'
+  report.failure='Live validation failed; inspect numeric state/accounting and optional encrypted audit. No plaintext screenshot, provider error body or credentials retained.'
   process.exitCode=1
 } finally {
+  if(desktop && profileConfirmed && playsVideo && !report.playbackAtEnd)report.playbackAtEnd=await playback().catch(()=>null)
   if(desktop && profileConfirmed && mainPage){
     report.activityCounts=await mainPage.evaluate(async()=>{const {status}=await window.desktop!.snapshot();return {changedDuringAnalysis:status.activity.filter(a=>a.message==='Screen changed during analysis; checking the new view next.').length,translatedView:status.activity.filter(a=>a.message==='Screen moved; the full analyzed view is still visible.').length,allowed:status.activity.filter(a=>a.kind==='allowed').length,blocked:status.blocks,checks:status.checks}}).catch(()=>null)
     if(motion==='pan-wide')report.wideMotion=await desktop.evaluate(async()=>await (globalThis as any).bleLiveScene.webContents.executeJavaScript(`(()=>{const img=document.querySelector('img');return {animationCallbacks:globalThis.bleMotionFrames,imageWidth:img?.width,imageHeight:img?.height,viewportWidth:innerWidth,viewportHeight:innerHeight,amplitudeFraction:0.16,periodMs:2*Math.PI*180}})()`)).catch(()=>null)

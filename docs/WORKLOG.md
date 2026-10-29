@@ -599,3 +599,30 @@ block count, corrected at297683f before final CI. These are synthetic capture/pr
 regressions, NOT live accuracy.80 local units/build/strict runner tsc passed.
 All232/$2.554331136/788729tokens reconciled. Native switch-away40886917348 owns
 authority lock before232;4x adult30 and safe flower still pending. No release.
+
+
+Live switch-away40886917348 PASSED: auditneutral.01/positive.98/newneutral.01;
+positive discarded (changed1/translated0), fresh neutral allowed, zero blocks/covers,
+cleanstop,3calls.4x adult30 run40887260295 PASSED4017ms/.95, realrate4, decoded
+counter314->1038, cover/recovery,2calls.237/$2.609381376/806606tokens reconciled.
+FREE longer4x flower smoke caught media-end pause after seek (not a production
+miss and no paid safe attempt). Resume test-scene playback on seek; four samples
+across multiple loops advancing/playing at4x pass. Strict runner tsc pass.
+4x safe run40887744347 atd594f8c ownsauthoritylock before237. CI40886736737
+and40886699772 failed newfixture race: blockedstatus precedes readycoverpage;
+fixed fixture using existing startCover painted-window helper at995ce3c.
+Finalsource fullCI40887734346 running; no release or threshold/provider change.
+
+
+Safe4x40887744347 FAILED planned two-fresh-video-check bound: correct .02/.02,
+one discarded and one accepted video check, zero blocks/covers then3-requestbudget
+pause. Not a classifier false positive or a safe-control pass. No rerun to green.
+Initialrate4/decoding verified; end/failure media metadata absent in original run;
+runner now retains numeric media snapshot in finally for future failures, no frames
+or keys added. Failuretext clarifies optional encrypted audit, no plaintext output.
+General nonrigid/fast-video freshness remains limited; narrow translation correction
+does not solve it. All240/$2.642411520/817330tokens reconciled,32 max reservations
+remain, prior history preserved, no paidjob/lock. This continuation17reservations.
+WindowsCI40887372936 PASSED79unit+1intendedskip,8UI,native smoke,installer/install
+and13fixture scenarios including forced translated/replacement/cropped paths.
+Finalproduction-source40887734346 atd594f8c pending final verification; no release.

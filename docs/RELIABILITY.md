@@ -7,6 +7,20 @@ The next milestone is measured reliability, ahead of UI polish or publishing.
 
 ## Latest evidence — supersedes historical audit below
 
+Read [LARGE-MOTION-RESULTS.md](LARGE-MOTION-RESULTS.md) first. Large-pan actual
+YouTube inputs were recognized(.97/.96) but discarded before blocking. Added bounded
+whole-view translation recognition over uniform padding; actual corrected run
+40886564146 PASSED3991ms/.93 with translatedView1 proving the new branch was used.
+Real switch-away40886917348 preserved stale-positive discard/neutral allowance.
+4x adult30 decoded playback40887260295 PASSED4017ms/.95, cover/recovery. Safe4x
+flower40887744347 FAILED two-fresh-check bound: correct .02/.02, one discard/one
+accepted video check, zero blocks; not a false positive or a safe-control pass.
+General fast-video motion remains limited. No threshold/model/preset change.
+
+Current authority240/$2.642411520/817330tokens,32 maximum reservations remain,
+no paid job/lock. Original source27 miss stays OPEN;95% is not established.
+Historical PR #5 evidence and its then-current accounting follow.
+
 Read [ADULT-VIDEO-RESULTS.md](ADULT-VIDEO-RESULTS.md),
 [BROADER-EVALUATION.md](BROADER-EVALUATION.md) and saved raw reports.
 
@@ -34,7 +48,7 @@ actual-input audit, with fixed six-trial series and strict cumulative accounting
 Production screenshot behavior, explicit wording, threshold.4 and provider did
 not change. No speculative fix for the nonreproduced miss; no release.
 
-Authority223 attempts,$2.455240704 reserved of cumulative3,756421 reported tokens
+At PR #5 completion:223 attempts,$2.455240704 reserved of cumulative3,756421 reported tokens
 (~$0.031769682 observed-usage estimate). Prior history retained, no remote paid
 job/lock.49 further maximum reservations fit. Secret works; no setup/key prompt
 needed. See HANDOFF.md for current merge/CI state and next useful work.
