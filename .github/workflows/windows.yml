@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       recover_run:
-        description: Recover numeric accounting from a completed live run without inference
+        description: Recover numeric accounting from a completed single-trial live run without inference
         type: string
         required: false
       publish_alpha:
@@ -168,6 +168,7 @@ jobs:
           TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
           BLE_CAPTURE_PUBLIC_KEY: ${{ inputs.capture_public_key }}
       - name: Verify and emit numeric accounting only
+        if: always() && inputs.live_trials != '6'
         shell: python
         run: |
           import json
