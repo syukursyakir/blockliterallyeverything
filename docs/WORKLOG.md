@@ -700,3 +700,54 @@ vision; NOT accepted extensionbuild/providerchange. No code/test/spend or instal
 accounts/messages/releases. Ledgerstill245/$2.697461760/831497tokens,27maxremaining,
 no paidjob/lock. HANDOFF top now includes research, next scoped decision, completed
 cohorts not to repeat, productionCI/source and approvals. Ready for freshchat.
+
+
+### Browser-context scope assessment after resumed handoff
+
+Local snapshot was seven commits behind main; clean checkout fast-forwarded to
+61160dc before selecting work. Read current instructions, research, reliability,
+worklog and completed motion/fresh-family reports; no completed tests repeated.
+Inspected cloud checkLoop/freshness, Jev image request, editable starter rules and
+renderer bridge boundaries. Saved BROWSER-CONTEXT-ASSESSMENT.md: recommend local
+opt-in observation first, with verified Windows foreground/tab/document binding,
+minimal route categories, stale-message rejection and prospective failure checks.
+No visual-guard override, metadata-to-model shortcut or accepted extension build.
+Native window mapping/occlusion remain feasibility gaps; unchanged metadata is
+not visual freshness. Next: present scoped observation approach before architecture
+changes, as current handoff requests. Documentation only; no tests/model calls/
+installs/releases, authority245/$2.697461760/831497tokens unchanged.
+
+
+### Independent review and screenshot-only user direction
+
+User declined extension direction and requested a fresh progress/code assessment.
+Reviewed native checkLoop/enforcement/settings/key/ledger paths, pixel freshness/cache,
+matching, current UI status, unit coverage and saved final Windows CI summary.
+Concrete finding: repeated changed-frame discards continue to watching with only
+activity messages; no sustained-freshness warning or accepted-decision age in overview.
+This can obscure lack of accepted checks during motion. Whole-screen mean difference
+also has an inherent small-region dilution limit (existing unit explicitly documents
+individual outliers); region-focused switch-away tests are appropriate before any
+replacement algorithm. Neither observation establishes a new native failure rate.
+Recommendation: visible degraded coverage and fresh screenshot-only temporal tests
+first, preserve guard/recovery/provider/threshold. Browser-context proposal now historical.
+No runtime edits, completed tests repeated, paid requests, release or new95% claim.
+
+
+### Periodic screenshot goal and delayed-check warning
+
+User accepted coverage warning and clarified stopping sustained distraction is the
+goal; brief appearances between sampled checks are acceptable. No frame-perfect
+requirement or extension. Implemented per-display unresolved movement timestamps
+in cloud loop/status, cleared on accepted result/exact valid cache hit and session
+stop/error/start. After15s UI shows movement-delay warning across pages and changes
+status text; overview separates last accepted check age from analysis duration.
+Existing one-second UI clock reused; new sessions clear old decision timestamps.
+No visual guard/provider/rules/threshold/cadence changes or automatic extra requests.
+Build and tsc passed. Extended desktop fixture passed per-display persistence and
+recovery; new focused Playwright test passed delay threshold/other-display decisions/
+recovery/pause. First UI attempt failed against stale built dist; build fixed test
+setup, original failure retained in session. Reviewed semantic Alert/icon/clock
+changes using pinned web guidelines snapshot. git diff --check passed. No completed
+full suites repeated, Windows/native live run or paid calls; authority245 unchanged.
+No release. Local uncommitted changes; hardware reliability unchanged.

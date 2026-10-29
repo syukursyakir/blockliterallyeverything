@@ -141,3 +141,42 @@ test('fixture Jev setup requires consent, clears saved key input, and keeps loca
   await page.getByRole('button', { name: 'Overview', exact: true }).click()
   await expect(page.getByRole('button', { name: 'Start focus session' })).toBeDisabled()
 })
+
+test('movement delays warn per display, recover on fresh results, and reset on pause', async ({ page }) => {
+  await page.clock.install()
+  await page.addInitScript(({ settings, status }) => {
+    const state = { settings, status, desktop: true }
+    const listeners = new Set<(value: unknown) => void>()
+    Object.assign(window, { coverageUpdate: (patch: Partial<typeof status>) => {
+      Object.assign(state.status, patch)
+      listeners.forEach(listener => listener(structuredClone(state)))
+    }, desktop: {
+      snapshot: async () => structuredClone(state),
+      onUpdate: (listener: (value: unknown) => void) => { listeners.add(listener); return () => listeners.delete(listener) },
+      onBlock: () => () => {},
+    } })
+  }, { settings: defaultSettings, status: { ...initialStatus, mode: 'watching' as const, lastCheck: null } })
+  const update = (patch: Record<string, unknown>) => page.evaluate(patch => {
+    (window as unknown as { coverageUpdate(patch: unknown): void }).coverageUpdate(patch)
+  }, patch)
+  await page.goto('/')
+  await expect(page.getByText('Not checked this session')).toBeVisible()
+  const since = await page.evaluate(() => Date.now())
+  await update({ delayedDisplays: { first: since } })
+  await page.clock.fastForward(14_000)
+  await expect(page.getByRole('alert').filter({ hasText: 'Checks delayed by movement' })).toHaveCount(0)
+  await page.clock.fastForward(2_000)
+  const warning = page.getByRole('alert').filter({ hasText: 'Checks delayed by movement' })
+  await expect(warning).toBeVisible()
+  // A fresh decision on the other display must not hide the delayed first screen.
+  await update({ lastCheck: since + 16_000, lastLatency: 500, delayedDisplays: { first: since } })
+  await expect(warning).toBeVisible()
+  await expect(page.getByText('0s ago', { exact: true })).toBeVisible()
+  await update({ delayedDisplays: {} })
+  await expect(warning).toHaveCount(0)
+  await expect(page.getByText('Watching with Jev', { exact: true }).first()).toBeVisible()
+  await update({ delayedDisplays: { first: since }, mode: 'checking' })
+  await expect(warning).toBeVisible()
+  await update({ delayedDisplays: {}, mode: 'idle' })
+  await expect(warning).toHaveCount(0)
+})

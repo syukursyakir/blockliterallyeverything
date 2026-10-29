@@ -95,12 +95,12 @@ function browserOptions() { return { preload: path.join(__dirname, 'preload.js')
 function closeCovers() { for (const cover of covers) { cover.removeAllListeners('close'); cover.destroy() }; covers.clear(); coverInfo.clear() }
 function stop(message = 'Session paused.') {
   generation++; cloudAbort?.abort(); screenCache.clear(); clearTimeout(timer); clearTimeout(sessionTimer); closeCovers()
-  status.mode = 'idle'; status.endsAt = null; status.error = null
+  status.delayedDisplays = {}; status.mode = 'idle'; status.endsAt = null; status.error = null
   activity('info', message)
 }
 function fail(error: unknown) {
   generation++; cloudAbort?.abort(); screenCache.clear(); clearTimeout(timer); clearTimeout(sessionTimer); closeCovers()
-  status.mode = 'error'; status.endsAt = null
+  status.delayedDisplays = {}; status.mode = 'error'; status.endsAt = null
   status.error = error instanceof Error ? error.message : 'Something went wrong. Protection is paused.'
   activity('error', status.error)
   mainWindow?.show()
@@ -138,7 +138,7 @@ async function checkLoop(token: number) {
       if (settings.backend === 'jev' && isBlankCapture(source.thumbnail.toBitmap())) throw new Error('Screen capture is blank or protected. Protection is paused.')
       const bytes = source.thumbnail.toPNG()
       const hash = createHash('sha256').update(bytes).digest('hex')
-      if (settings.backend === 'jev' && !screenCache.shouldCheck(String(display.id), hash, Date.now())) continue
+      if (settings.backend === 'jev' && !screenCache.shouldCheck(String(display.id), hash, Date.now())) { delete status.delayedDisplays[String(display.id)]; continue }
       const result = settings.backend === 'jev'
         ? await inferCloud(bytes)
         : await worker.request<CheckResult & { foregroundChanged?: boolean }>('infer', { image: bytes.toString('base64'), rules: settings.rules.filter(r => r.enabled), foreground: context!.foreground })
@@ -151,6 +151,7 @@ async function checkLoop(token: number) {
         const after = fresh.thumbnail.resize({width:64,height:64}).toBitmap()
         if (changedSubstantially(before, after)) {
           if (!sameTranslatedFrame(before, after, 64)) {
+            status.delayedDisplays[String(display.id)] ??= Date.now()
             activity('info', 'Screen changed during analysis; checking the new view next.'); continue
           }
           activity('info', 'Screen moved; the full analyzed view is still visible.')
@@ -161,6 +162,7 @@ async function checkLoop(token: number) {
       if ('foregroundChanged' in result && result.foregroundChanged) { activity('info', 'Screen changed during analysis; checking the new view next.'); continue }
       if (Date.now() - capturedAt > 15_000) throw new Error('AI analysis took over 15 seconds. Protection is paused; try fewer rules. This device may not meet the response target.')
       const rule = matchingRule(result, settings)
+      delete status.delayedDisplays[String(display.id)]
       status.lastCheck = Date.now(); status.lastLatency = result.elapsedMs; status.checks++
       if (rule) {
         const probability = result.verdicts.find(v => v.ruleId === rule.id)!.probability
@@ -187,7 +189,7 @@ async function start() {
       if (settings.backend === 'local') { status.model = 'ready'; status.modelMessage = 'OmniJev · running locally'; publish() }
     }
     if (token !== generation) return
-    screenCache.clear(); publish()
+    screenCache.clear(); status.delayedDisplays = {}; status.lastCheck = null; status.lastLatency = null; publish()
     status.endsAt = Date.now() + settings.sessionMinutes * 60_000
     sessionTimer = setTimeout(() => stop('Focus session complete.'), settings.sessionMinutes * 60_000)
     activity('info', settings.detectionOnly ? 'Detection-only session started. No screen covers.' : 'Blocking session started. Emergency pause: Ctrl+Shift+F12.')
