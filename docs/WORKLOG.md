@@ -388,3 +388,37 @@ artifacts or keys during prep. Actual adult-scene prep smoke passed with no call
 Accounting after batches: 129 attempts, $1.420296192 reserved of 3, 421419 tokens,
 ~$0.017699598 estimated. Prior calls and authorization history retained. Next native
 runs own authority sequentially; no parallel local paid work while remote is active.
+
+
+### Full Windows live transitions with actual sources
+
+Normal PR run40857750402 PASSED:70 unit +1 intentional Linux-only skip,8 UI,
+native smoke, installer build/install and11 fixture-provider scenarios; no release.
+YouTube full run40857749164 failed in preparation: insufficient loaded thumbnails
+after a fixed2.5s wait; no inference step ran, downloaded budget artifact exactly
+matched129. Replaced fixed delay with <=30s visible-loaded-thumbnail wait, retaining
+HTTP/host/DOM guards. Node syntax check passed; real Windows retry passed.
+
+Adult full run40858303368 PASSED: neutral allowed, actual reviewed exact-hash
+licensed adult source painted during protection -> explicit score.98 -> complete
+1024x768 focused/topmost/fullscreen cover -> button pause/recovery,4264ms observed.
+YouTube retry40858537258 PASSED: real loaded public search page during protection,
+score.93, same native cover/recovery assertions,3938ms observed. Each two calls.
+No capture/provider substitution; isolated onboarding seeded; source repeats, not
+new accuracy samples or hardware/latency-distribution certification. Raw screenshots
+not uploaded; source/hash/provenance in saved numerical reports.
+
+After these:133 attempts,$1.464336384 reserved of cumulative3,435752 tokens;
+all three remote accounting copies matched and sequential authority reconciled.
+Social synthetic full transition now owns authority; no parallel local paid calls.
+
+Social full control40858809731 PASSED, workflow green: neutral allowed -> synthetic
+feed score.95 -> full focused/topmost cover -> button recovery,3902ms observed.
+Two calls, all accounting copies agreed. All3 full transitions now passed, each
+one trial on one display; not a95% claim or dynamic/hardware certification.
+Normal latest PR CI40858351838 PASSED:70 unit +1 intentional skip,8 UI, native
+smoke, installer build/install and11 fixture scenarios; release skipped.
+Final cumulative authority:135 attempts,$1.48635648 reserved of3,442937 tokens,
+~$0.018603354 estimated actual charge. Prior history retained, no remote job/lock.
+137 further maximum reservations fit; no reset. Next larger independent positive
+coverage plus dynamic-screen/hardware conditions. No release publication.

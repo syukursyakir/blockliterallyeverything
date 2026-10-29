@@ -81,7 +81,10 @@ The first candidate retest is not an extra independent sample. Do not aggregate
 its counts with baseline or held-out recall. If these held-out results guide any
 further prompt changes, future acceptance needs new held-out sources.
 
-Next integration work: full active-session neutral->positive transitions with
-real YouTube and a previously reviewed, exact-hash adult reference, plus the
-existing synthetic social control. Those are source repeats for integration,
-not extra independent model-accuracy samples. No release publishing.
+Full active-session neutral->positive transitions now PASSED for actual public
+YouTube, reviewed exact-hash licensed adult reference and synthetic social control.
+See [LIVE-WINDOWS-RESULT.md](LIVE-WINDOWS-RESULT.md) and numeric reports. These are
+integration source repeats, not new independent model-accuracy samples. Observed
+cover times 3902–4264 ms, one trial per input, all recovery assertions passed.
+Next: larger representative independent positive coverage and dynamic/hardware
+conditions, keeping source families and frozen settings separate. No release.
