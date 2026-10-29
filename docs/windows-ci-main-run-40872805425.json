@@ -1,0 +1,15 @@
+{
+  "conclusion": "success",
+  "headSha": "df6bf402dc572d01dfbfa68d5c6ef8f39151d8d6",
+  "status": "completed",
+  "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40872805425",
+  "scope": "Post-PR5 Windows CI with fixture-provider installed scenarios; not model accuracy or resolution of the recorded native miss.",
+  "unitPassed": 74,
+  "unitSkipped": 1,
+  "uiPassed": 8,
+  "installedFixtureScenariosPassed": 11,
+  "buildPassed": true,
+  "desktopSmokePassed": true,
+  "installerBuildInstallPassed": true,
+  "releasePublished": false
+}

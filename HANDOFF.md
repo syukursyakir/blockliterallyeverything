@@ -20,9 +20,9 @@ v0.1.0-alpha.1, third-party messages or laptop remote access authorized.
 
 ## Current adult/video continuation
 
-PR #5: https://github.com/syukursyakir/blockliterallyeverything/pull/5
-Branch validation/adult-video-20261029, validation source headabcb0be before final
-report-only commit. Read docs/ADULT-VIDEO-RESULTS.md and raw linked JSON FIRST.
+PR #5 MERGED atdf6bf402dc572d01dfbfa68d5c6ef8f39151d8d6:
+https://github.com/syukursyakir/blockliterallyeverything/pull/5
+Branch validation/adult-video-20261029 is completed. Validation source59ec29c. Read docs/ADULT-VIDEO-RESULTS.md and raw linked JSON FIRST.
 Both requested gaps have evidence; do NOT restart acquisition or replay these trials.
 
 New15-image frozen extension:13 explicit positive variants caught, two safe
@@ -59,12 +59,13 @@ errors, never an until-success/network-retry loop. Reconcile every profile/summa
 Current authority223 attempts,$2.455240704 reserved of approved cumulative3,
 756421 tokens (~$0.031769682 estimated usage).49 further maximum reservations fit.
 All budgets reconciled sequentially; no paid job/lock. Do not use stale182 snapshots
-from chronological logs. Source head CI40870225339 PASSED:74 unit +one intended
+from chronological logs. Final source CI40872034255 PASSED:74 unit +one intended
 skip,8 UI, native smoke, installer build/install and11 fixture scenarios; no release.
-Local9 helper/crypto tests plus8 evaluator tests and strict runner/evaluator tsc
-passed. Finish final report-only commit/merge and main CI, then update this stage.
+Local18 focused tests and strict runner/evaluator tsc passed. Main post-merge
+CI40872805425 PASSED the same full pipeline, release skipped; saved numeric summary
+is docs/windows-ci-main-run-40872805425.json. PR #5 validation work is completed.
 
-## Repository stage
+## Prior completed repository stage (PR #4)
 
 PR #4 MERGED into main at10a7ea4627ee578b6ae7d8486c97639950f88287:
 https://github.com/syukursyakir/blockliterallyeverything/pull/4
@@ -180,7 +181,7 @@ keep lock/recover isolated profile after process exit. A file lock cannot lock a
 second machine's copy. Never use ignored work copies as fresh authority or blindly
 retry failed runs. docs/WINDOWS-LIVE-VALIDATION.md is the current protocol.
 
-## Next useful work after completing PR #5
+## Next useful work
 
 Actual adult-positive extension and decoded-video work are DONE with limits in
 ADULT-VIDEO-RESULTS.md. Keep the unresolved FIRST source27 miss open. Thirteen later
@@ -192,7 +193,10 @@ key: successful real calls and completed audit already rule out the old setup is
 For a95% target, next useful coverage is genuinely new representative source/author
 families (including other adult activity contexts), prospective labels, hard safe
 lookalikes and clearer annotation/second review, plus large/fast video motion and
-real hardware/display conditions. Do NOT inflate counts with related frames or
+real hardware/display conditions. Three targeted adult-declared couple/context metadata queries yielded no NEW
+usable source beyond the retained44 clip; cache is other-activity-metadata.json
+in the private adult-video work directory. No extra images or calls from that probe.
+Do NOT inflate counts with related frames or
 replay the15-case extension, seven diagnostics or either six-trial series as new
 acceptance evidence. No UI redesign, release or threshold/provider change without
 a demonstrated cause and meaningful fresh validation. Current evidence does not

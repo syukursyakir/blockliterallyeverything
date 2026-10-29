@@ -42,10 +42,10 @@ No panning still, capture/provider fixtures or raw-image publication.
 
 | Declared adult source | Run | Outcome | Observed cover / score |
 | --- | --- | --- | --- |
-|44, retained source |40864903082 |Pass |3429ms /.98 |
-|30, new source |40865647116 |Pass |3266ms /.98 |
-|24, new source |40866001135 |Pass |4151ms /.88 |
-|27, new source |40866332567 |FAILED |No cover within bounded protocol |
+|44, retained source |[40864903082](windows-video-run-40864903082.json) |Pass |3429ms /.98 |
+|30, new source |[40865647116](windows-video-run-40865647116.json) |Pass |3266ms /.98 |
+|24, new source |[40866001135](windows-video-run-40866001135.json) |Pass |4151ms /.88 |
+|27, new source |[40866332567](windows-video-run-40866332567.json) |FAILED |No cover within bounded protocol |
 
 The first cohort was3/4 passing trials. Do not report it as4/4 because a later
 repeat passed. Numerical reports are `windows-video-run-<run>.json` in this folder.

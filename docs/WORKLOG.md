@@ -540,3 +540,20 @@ comparison. Final223 attempts,$2.455240704 reserved of cumulative3,756421 tokens
 retained. No paid job/lock or release. Source CI40870225339 PASSED74 unit +1 intended
 skip,8 UI, native smoke, installer build/install and11 fixture-provider scenarios.
 See ADULT-VIDEO-RESULTS.md; final work is report-only commit, merge and main CI.
+
+PR #5 MERGED atdf6bf402dc572d01dfbfa68d5c6ef8f39151d8d6. Final source59ec29c
+CI40872034255 PASSED74 unit +one intended skip,8 UI, native smoke, installer
+build/install and11 fixture scenarios; release skipped. Final stock-ID/range score
+whitelist avoids retaining unrequested/nonnumeric/invalid response fields.18 local
+focused tests and strict evaluator/native type checks passed. No production changes.
+Targeted couple/context source queries yielded only retained44 source, no NEW
+appropriately declared source or image/call obtained; cached metadata private.
+Main CI40872805425 pending final verification; authority223 unchanged/no lock.
+
+Main post-merge40872805425 PASSED (final conclusion/log verified):74 unit +one
+intended skip,8 UI, native smoke, installer build/install and11 fixture scenarios.
+Release step skipped. Saved numeric summary; final follow-up is continuity docs
+only, no further charged calls or new code. Current authority223/no lock unchanged.
+Both requested adult-positive and actual-video evidence complete; original one-off
+miss remains OPEN/unexplained, thirteen subsequent passes do not erase it. No95%
+certification or release. Do not restart these completed experiments.
