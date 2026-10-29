@@ -8,6 +8,7 @@ export type Status = {
   model: 'missing' | 'downloading' | 'installed' | 'loading' | 'ready' | 'error';
   modelMessage: string; lastCheck: number | null; lastLatency: number | null;
   cloudKeyConfigured: boolean; cloudSpentUsd: number; cloudEstimatedUsd: number; cloudRequests: number;
+  delayedDisplays: Record<string, number>;
   checks: number; blocks: number; endsAt: number | null; error: string | null; activity: Activity[];
 }
 export type Snapshot = { settings: Settings; status: Status; desktop: boolean; onboardingComplete?: boolean; localAvailable?: boolean; block?: BlockInfo }
@@ -52,7 +53,7 @@ export function upgradeStarterRuleWording(settings: Settings): Settings {
   return changed ? { ...settings, rules } : settings
 }
 export const defaultSettings: Settings = { backend: 'jev', cloudConsent: false, cloudBudgetUsd: 3, rules: presets, threshold: 0.4, intervalSeconds: 3, sessionMinutes: 25, detectionOnly: true }
-export const initialStatus: Status = { cloudKeyConfigured: false, cloudSpentUsd: 0, cloudEstimatedUsd: 0, cloudRequests: 0, mode: 'idle', model: 'missing', modelMessage: 'Download the local model to get started.', lastCheck: null, lastLatency: null, checks: 0, blocks: 0, endsAt: null, error: null, activity: [] }
+export const initialStatus: Status = { cloudKeyConfigured: false, cloudSpentUsd: 0, cloudEstimatedUsd: 0, cloudRequests: 0, mode: 'idle', model: 'missing', modelMessage: 'Download the local model to get started.', lastCheck: null, lastLatency: null, delayedDisplays: {}, checks: 0, blocks: 0, endsAt: null, error: null, activity: [] }
 
 export function validateSettings(value: unknown): Settings {
   if (!value || typeof value !== 'object') throw new Error('Settings must be an object.')

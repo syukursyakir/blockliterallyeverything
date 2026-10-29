@@ -4,37 +4,57 @@ Read AGENTS.md, DESIGN.md, docs/WORKLOG.md, docs/RELIABILITY.md and this file fi
 WORKLOG.md and saved reports retain history; this file supersedes old missing-key,
 permission and budget blockers. Do not repeat completed experiments as new evidence.
 
-## Session checkpoint — research complete, ready for a fresh chat
+## Current continuation — warning validation, then sustained-video checks
 
-Latest user requested TimeSlicer research, then asked whether to hand off because
-this chat is long. Research is COMPLETE in docs/TIMESLICER-RESEARCH.md, with dated
-first-party/archived sources and explicit unknowns. No code changes, model calls,
-new key requests, installs, accounts, third-party messages or release during research.
+User approved finishing/merging the movement warning with Windows CI, followed by
+bounded sustained-video and switch-away tests. No release. Screenshot-only approach;
+brief appearances between periodic checks are acceptable, sustained distraction is
+the target. TimeSlicer research is complete and browser-context proposal historical.
+Production source902565c passed CI40889272599 before this change. The current local
+warning implementation and its completed focused checks are described below.
+Budget authority remains245/$2.697461760/831497tokens;27 max reservations fit.
+Private ledger was absent on resume; recover exact retained budget including prior
+history from committed evaluation-fresh-family-corrected-2026-10-29.json, not empty
+counters. No paid job dispatched yet. Do not rerun prior motion cohorts as new evidence.
 
-Key finding: ORIGINAL2025 design had browser visible-text classification AND desktop
-screenshots in RAM sent to OpenAI, then overlay/goal-based blocking. Current2026
-pivot emphasizes team work tracking, but blocking persists. Current policy describes
-text/metadata to OpenAI(task labels)/Gemini(focus), optional Mac LOCAL snapshot OCR;
-raw images stay local for that current feature. Do not conflate old/new architecture
-or old zero-retention marketing with current provider30-day retention policy.
-No reproducible95%/fast-motion benchmark or reason for pivot established.
+## Periodic-check goal and movement-warning implementation
 
-Next decision/work: assess a SMALL opt-in browser-context signal experiment (URL,
-title/visible text with actual foreground/tab identity) to complement visual detection
-on moving YouTube/social pages. This is a research suggestion, NOT an accepted
-extension build or provider change. Present the scoped approach before changing
-architecture; maintain Jev and screenshot consent. Visual explicit-content detection
-and nonrigid fast-motion still need their own prospective tests. Do not weaken
-switch-away protection or repeat completed seven-motion/four-fresh-image cohorts
-until green. No UI redesign/release. User prefers autonomous work within scope and
-only questions for truly blocking input; do not repeat permissions/key/budget asks.
+User clarified goal is interrupting sustained time-wasting: brief content appearing
+between periodic screenshots is acceptable; frame-perfect video detection is not
+required. User accepted clearer coverage reporting. Keep screenshot-only approach.
+Working changes add per-display unresolved movement timestamps, a warning after15s,
+and last-accepted-check age separately from request latency. New sessions reset
+last-check timestamps; stop/error clear movement state. Accepted results or exact
+valid cache hits clear only the relevant display. No guard/threshold/provider/
+polling change; warning threshold is a UI choice, not a response guarantee.
+Build/tsc passed; newly extended desktop lifecycle fixture and new focused Playwright
+movement-warning test passed. Initial UI attempt used stale dist and failed; rebuilt
+then passed. No full old suite rerun or Windows/live/provider test; no release/spend.
+Changes are being prepared for a validation PR. Review scope is warning only; actual fast-motion
+coverage and old source27 miss remain open. Native fixture is not Windows proof.
 
-Handoff state: main, latest changes evidence/docs only; production source902565c
-passed full WindowsCI40889272599 (79unit+1intendedskip,8UI,native smoke,installer/
-install,13fixture scenarios; release skipped). Authority245/$2.697461760/831497tokens,
-27 max requests left under approved3, no paidjob/lock. Prior missing62/64 retained.
-Use existing scripts/evaluate-app.mjs wrapper; raw Node bundles need --use-env-proxy.
-Read the detailed current evidence below before selecting any new experiment.
+## Current user direction — screenshot-only
+
+User declined the browser-extension direction after discussing TimeSlicer. Keep
+screenshot-only detection; the assessment below is historical, not the active build
+plan. Current request is an independent progress/code review and recommendations.
+Review found cloud checkLoop can repeatedly discard moving frames and return to
+watching without a sustained-freshness warning; activity records individual discards
+but the overview lacks accepted-decision age. Coverage warning is now implemented locally as described above; prioritize
+prospective motion/switch-away evaluation before changing freshness.
+Do not simply loosen the whole-screen difference threshold. Model reliability and
+physical display limits remain open.
+
+## Browser-context assessment checkpoint
+
+Read docs/BROWSER-CONTEXT-ASSESSMENT.md for the scoped continuation assessment.
+Recommended first experiment is local-only, opt-in observation with verified native
+foreground/window/tab/document binding, minimal route categories and fresh stale-
+message/switch-away checks. Current Jev interface is image-only; do not inject page
+metadata into rules or bypass visual freshness. No extension or runtime change was
+implemented. Present this concrete scope before architecture changes; collection,
+Windows mapping/occlusion and eventual decision semantics remain unvalidated.
+No completed tests repeated, no model calls or release; current245 authority unchanged.
 
 ## Goal and authorization
 

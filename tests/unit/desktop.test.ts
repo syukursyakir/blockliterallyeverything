@@ -162,6 +162,28 @@ it('desktop lifecycle: cancelled loads remain usable, all displays are covered, 
   expect(mock.fetch.mock.calls.length - callsBeforeRestart).toBe(2)
   expect((await call('snapshot')).status.checks - checksBeforeRestart).toBe(2)
   expect((await call('snapshot')).status.mode).toBe('watching')
+  call('stop')
+  // Movement on display 1 stays unresolved even while display 2 accepts a result.
+  captureCalls = 0
+  mock.capture = async () => {
+    captureCalls++
+    const sources = captures()
+    if (captureCalls % 3 === 2) sources[0].thumbnail.resize = () => ({ toBitmap: () => Buffer.alloc(64*64*4, 255) })
+    return sources
+  }
+  await call('start'); await flush()
+  const firstDelay = (await call('snapshot')).status.delayedDisplays['1']
+  expect(firstDelay).toBeTypeOf('number')
+  expect((await call('snapshot')).status.delayedDisplays['2']).toBeUndefined()
+  await vi.advanceTimersByTimeAsync(3000); await flush()
+  expect((await call('snapshot')).status.delayedDisplays['1']).toBe(firstDelay)
+  mock.capture = async () => captures()
+  await vi.advanceTimersByTimeAsync(3000); await flush()
+  expect((await call('snapshot')).status.delayedDisplays).toEqual({})
+  call('stop')
+  expect((await call('snapshot')).status.delayedDisplays).toEqual({})
+  await call('start'); await flush()
+  expect((await call('snapshot')).status.lastCheck).not.toBeNull()
   call('stop'); mock.capture = null
   await call('save', { ...(await call('snapshot')).settings, backend: 'local' })
   let finishOldLocal!: (value: unknown) => void
