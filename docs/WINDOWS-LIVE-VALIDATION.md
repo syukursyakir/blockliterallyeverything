@@ -1,6 +1,8 @@
 # Live Windows validation protocol
 
-Current results: [LIVE-WINDOWS-RESULT.md](LIVE-WINDOWS-RESULT.md).
+Current results: [LARGE-MOTION-RESULTS.md](LARGE-MOTION-RESULTS.md),
+[ADULT-VIDEO-RESULTS.md](ADULT-VIDEO-RESULTS.md) and historical
+[LIVE-WINDOWS-RESULT.md](LIVE-WINDOWS-RESULT.md).
 Current authority/counters: HANDOFF.md and the retained ledger. This protocol
 supersedes earlier missing-key, exhausted-$0.50 and unexecuted-plan statements;
 chronological outcomes remain in WORKLOG.md and saved run reports.
@@ -46,15 +48,23 @@ frame-accurate timing. One trial does not establish median or tail latency.
   more than10 animation callbacks when sampled after cover observation, then
   normal cover/recovery checks. This counter is not a visible-frame measurement.
   This is limited screenshot motion, not actual playback or large-motion proof.
+- `--motion pan-wide`: maximum65vw/90vh prepared image moves horizontally +/-16vw
+  with1131ms period, staying completely onscreen. Large translation stress of a
+  known source; not actual video/live-page scrolling or independent accuracy.
+  Reports geometry and animation callbacks, plus numeric change/translation counts.
 - `--motion switch-away`: after neutral is allowed and the positive stimulus starts
   a real request, replace it with a DIFFERENT neutral document while status is checking (restoring
   the identical previously checked frame can legitimately reuse its cache). Require
   changed-frame discard activity, a subsequent neutral check, zero blocks/covers
   and clean stop. This is a stale-result negative control, NOT a positive-blocking
-  pass. The discarded verdict is not observable; do not assert its model score.
+  pass. Without the optional audit, the discarded verdict is not observable;
+  do not infer its score from the positive stimulus label.
 
 - `--motion video`: plays pinned decoded WebM in its reviewed segment; verify
   media time and decoded-frame count advance, then full cover/recovery checks.
+- `--motion video-fast` / `video-safe-fast`: corresponding positive/negative
+  protocol at actual playbackRate4, set after seek and verified with advancing
+  media time/decoded frames. Accelerated known clips are not rapid-cut coverage.
 - `--motion video-safe`: labeled nonhuman negative playback, two fresh video
   checks with zero blocks/covers and clean stop. This is not positive-block proof.
 
@@ -82,7 +92,7 @@ summary/report/profile budget chains must agree before restoring local authority
 Motion modes require full protocol and reject mixing with positive-at-start. All
 full modes retain a three-request maximum sub-budget; failures are outcomes, not
 permission to retry with reset counters. Never count budget/provider errors as safe.
-Other modes of recovery, live moving-video, physical sleep/lock, mixed-DPI,
+Other modes of recovery, representative video/fast cuts, physical sleep/lock, mixed-DPI,
 multi-monitor and exclusive-fullscreen tests remain separate work.
 
 ## Exclusive accounting across machines

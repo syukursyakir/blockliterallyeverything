@@ -71,3 +71,12 @@ alone does not prove that branch caused the outcome. Add a numeric activity coun
 for recognized whole-view movement (no pixels retained), and freeze ONE further
 YouTube pan-wide regression at this observable build before switch-away/4x controls.
 Keep its outcome even if translation is not exercised; no until-success repetition.
+
+Before the safe4x dispatch, a longer FREE actual-scene smoke found that reaching
+media-file end during a coarse timeupdate loop could leave the short flower clip
+paused after seeking. The test scene now resumes playback on seek completion.
+Four sampled checks across multiple4x loops confirmed progressing decoded frames,
+rate4 and paused:false. No paid flower run was attempted with the broken loop.
+The adult30 accelerated native run40887260295 already PASSED4017ms/.95, actual
+rate4 and advancing decoded counters; its longer source did not reach media-file
+end. This scene-only loop repair changes neither production inference nor budgets.
