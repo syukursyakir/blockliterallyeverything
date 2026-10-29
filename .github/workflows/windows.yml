@@ -5,6 +5,10 @@ on:
   pull_request:
   workflow_dispatch:
     inputs:
+      recover_run:
+        description: Recover numeric accounting from a completed live run without inference
+        type: string
+        required: false
       publish_alpha:
         description: Publish or replace the alpha installer after all Windows checks pass
         type: boolean
@@ -66,7 +70,7 @@ permissions:
   contents: read
 jobs:
   windows:
-    if: github.event_name != 'workflow_dispatch' || (!inputs.live_detection && !inputs.capture_only)
+    if: github.event_name != 'workflow_dispatch' || (!inputs.live_detection && !inputs.capture_only && !inputs.recover_run)
     permissions:
       contents: write
     runs-on: windows-latest
@@ -127,7 +131,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'Release publication failed' }
 
   live-detection:
-    if: github.event_name == 'workflow_dispatch' && inputs.live_detection && !inputs.capture_only
+    if: github.event_name == 'workflow_dispatch' && inputs.live_detection && !inputs.capture_only && !inputs.recover_run
     runs-on: windows-latest
     timeout-minutes: 15
     permissions:
@@ -181,7 +185,7 @@ jobs:
           retention-days: 7
 
   capture-public:
-    if: github.event_name == 'workflow_dispatch' && inputs.capture_only
+    if: github.event_name == 'workflow_dispatch' && inputs.capture_only && !inputs.recover_run
     runs-on: windows-latest
     timeout-minutes: 12
     permissions:
@@ -214,3 +218,41 @@ jobs:
             private-captures/status.json
           if-no-files-found: error
           retention-days: 2
+
+  reconcile:
+    if: github.event_name == 'workflow_dispatch' && inputs.recover_run && !inputs.live_detection && !inputs.capture_only && !inputs.publish_alpha
+    permissions:
+      actions: read
+      contents: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Validate run ID
+        env:
+          RUN_ID: ${{ inputs.recover_run }}
+        run: '[[ "$RUN_ID" =~ ^[0-9]+$ ]]'
+      - uses: actions/download-artifact@v4
+        with:
+          name: windows-live-detection-${{ inputs.recover_run }}-1
+          path: recovered
+          run-id: ${{ inputs.recover_run }}
+          github-token: ${{ github.token }}
+      - name: Verify and emit numeric accounting only
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          root = Path('recovered')
+          reports = list(root.rglob('report.json'))
+          profiles = [p for p in root.rglob('*') if p.is_file() and p.name.endswith('jev-budget.json')]
+          assert len(reports) == len(profiles) == 1
+          report = json.loads(reports[0].read_text())
+          wrapper = json.loads((root / 'budget.json').read_text())
+          profile = json.loads(profiles[0].read_text())
+          assert not report.get('accountingError')
+          assert report['budgetAfter'] == wrapper['current'] == profile
+          assert 0 <= profile['requests'] - report['budgetBefore']['requests'] <= 3
+          assert profile['reservedUsd'] <= wrapper['capUsd'] <= 3
+          assert profile['inputTokens'] >= report['budgetBefore']['inputTokens']
+          assert abs(profile['reservedUsd'] - profile['requests'] * 262144 * .042 / 1000000) < 1e-6
+          print('VERIFIED_ACCOUNTING=' + json.dumps({'wrapper': wrapper, 'profile': profile, 'report': report}, separators=(',', ':')))
