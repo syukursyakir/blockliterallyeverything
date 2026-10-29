@@ -7,7 +7,8 @@ import { tmpdir } from 'node:os'
 import path from 'node:path'
 
 // Runs real Windows/Electron/UI/storage/capture/overlay code. Only the provider
-// replies are fixtures: no real keys, API calls, charges or accuracy claims.
+// replies and explicitly labeled capture faults are fixtures; lock/suspend signals
+// are emitted in-process. No real keys, API calls, charges or accuracy claims.
 if (process.platform !== 'win32') throw new Error('This suite requires a Windows desktop.')
 const profile = await mkdtemp(path.join(tmpdir(), 'ble-installed-tests-'))
 const evidence = path.resolve('desktop-test-results')
@@ -15,7 +16,7 @@ await mkdir(evidence, { recursive: true })
 const executable = process.env.BLE_SMOKE_APP_EXE || electron
 const args = [...(process.env.BLE_SMOKE_APP_EXE ? [] : [path.resolve('.')]), '--user-data-dir=' + profile]
 const env = { ...process.env, TYPESAFE_API_KEY: '', BLE_DEV_URL: '' }
-const report = { scope: 'Real Windows installed-app checks with fixture provider replies. No real AI inference or paid calls.', cases: [], displays: null }
+const report = { scope: 'Real Windows installed-app checks with fixture provider replies, injected blank/missing captures, and emitted lock/suspend signals. No real AI inference or paid calls.', cases: [], displays: null }
 const testKey = 'ble-ci-fixture-not-a-provider-key'
 let desktop, page
 const snapshot = () => page.evaluate(() => window.desktop.snapshot())
@@ -130,18 +131,24 @@ try {
     const cover = await startCover()
     const displayBounds = await desktop.evaluate(({ screen }) => screen.getAllDisplays().map(d => d.bounds))
     report.displays = displayBounds.length
+    await expect.poll(() => desktop.windows().filter(p => p.url().endsWith('#block')).length).toBe(displayBounds.length)
     const covers = desktop.windows().filter(p => p.url().endsWith('#block'))
-    expect(covers).toHaveLength(displayBounds.length)
     const bounds = []
     for (const overlay of covers) {
+      await expect(overlay.getByRole('heading', { name: 'This content is blocked.' })).toBeVisible()
       const window = await desktop.browserWindow(overlay)
       const details = await window.evaluate(win => ({ bounds: win.getBounds(), topmost: win.isAlwaysOnTop() }))
       expect(details.topmost).toBe(true); bounds.push(details.bounds)
       expect(await overlay.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
     }
     expect(bounds).toEqual(expect.arrayContaining(displayBounds))
-    const nativeCover = await desktop.browserWindow(cover)
-    await expect.poll(() => nativeCover.evaluate(win => win.isFocused())).toBe(true)
+    await expect.poll(async () => {
+      for (const overlay of covers) {
+        const window = await desktop.browserWindow(overlay)
+        if (await window.evaluate(win => win.isFocused())) return true
+      }
+      return false
+    }).toBe(true)
     await cover.screenshot({ path: path.join(evidence, 'fullscreen-cover.png') })
     await cover.getByRole('button', { name: 'Pause & return to app' }).click(); await expectPaused()
     await desktop.evaluate(() => globalThis.bleFullscreenFixture.destroy())
@@ -217,5 +224,5 @@ try {
   console.log(`PASS: ${report.cases.length} real Windows scenarios; provider decisions were fixtures, no live AI inference.`)
 } finally {
   await desktop?.close()
-  await rm(profile, { recursive: true, force: true })
+  await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 })
 }
