@@ -104,8 +104,8 @@ Authoritative ledger: /workspace/work/ble-real-2026-10-29/app-budget.json
 Approved cumulative allowance: $3 conservative reservations; prior 62/64 history is
 preserved separately and the old lab ledger is missing, not zero.
 At migration: 45 reservations, $0.49545216 reserved, 137877 input tokens.
-Current:135 reservations,$1.48635648 reserved of3,442937 tokens
-(~$0.018603354 estimated charge). 137 further maximum-size attempts fit. Prior exhausted .50 cap
+Current:163 reservations,$1.794637824 reserved of3,542374 tokens
+(~$0.022779708 estimated charge).109 further maximum-size attempts fit. Prior exhausted .50 cap
 is historical, not the current limit.
 
 The missing-secret run preserved 42. The cleanup-failed authenticated run added
@@ -121,36 +121,53 @@ before releasing authority. If interrupted, preserve lock and recover from the
 isolated app ledger; never blindly retry or reset. File locks cannot lock a second
 copy on another machine. The user-authorized extension is cumulative to $3, never $3 per run or per machine.
 
-## In-progress continuation after PR #3
+## Current continuation — source extension and controlled motion
 
-Branch validation/motion-coverage-20261029. Frozen plan docs/MOTION-COVERAGE-PLAN.md.
-Read docs/CONFIRMATORY-RESULTS.md and evaluation-confirmatory-2026-10-29.json.
-New21 public cases, frozen labels/hash/settings before calls: YouTube9/9 positives,
-social7/7 (Instagram), zero platform false matches. Explicit0 positive samples,
-1/21 false matches against original labels. MoMA full-resolution follow-up shows
-small nude painted figures missed at initial labeling; retain frozen result and
-annotation/scope caveat, do not quietly relabel or call it clean ordinary clothing.
-Four TikTok skeleton captures and one empty/private IG profile excluded pre-inference.
-New adult-source downloads/API searches returned403; no new adult image/positive.
-No source-access workaround or provider change. Raw captures/RSA key stay private.
+Branch validation/motion-coverage-20261029, PR #4:
+https://github.com/syukursyakir/blockliterallyeverything/pull/4
+Read docs/CONFIRMATORY-RESULTS.md, docs/MOTION-RESULTS.md and raw reports.
+New21 public cases, labels/hash/settings frozen before calls: YouTube9/9 positives,
+social7/7 (Instagram), zero platform false matches. No new explicit positives;
+1/21 explicit false matches against frozen negatives. MoMA full-resolution follow-up
+shows small nude painted figures missed at initial annotation. Keep original result
+with annotation/scope caveat, not a clean ordinary-clothing false-positive claim.
+No prompt/threshold/provider/product changes. Four TikTok skeletons and one empty/
+private IG profile excluded before inference. New adult-source acquisition403;
+no image/positive obtained, no source-access bypass or broader explicit proof.
 
-Current pre-motion ledger156 attempts,$1.717567488 reserved,517346 tokens.
-Windows pan run40860770322 currently owns authority with durable lock. NO local
-paid calls until remote report/profile/wrapper downloaded and reconciled. Next
-switch-away-during-inference control sequentially. New live_motion choices none/pan/
-switch-away; pan is only +/-12px controlled screenshot motion, not actual video.
-Switch-away must prove discarded changed frame, rechecked neutral and no block;
-discarded model verdict is not observable, so do not claim its value. Native runner
-helpers unit tests and strict tsc passed; no product code changed in this branch.
+Windows pan40861132261 PASSED: pinned reviewed adult photo with +/-12px continuous
+motion, explicit.98, observed4214ms, full focused/topmost/fullscreen cover, button
+recovery.271 animation callbacks sampled after cover (not frame-accurate visible
+frames). Not actual playback, large motion or an independent accuracy sample.
+First pan40860770322 failed at blank initial capture BEFORE any call; counters156
+unchanged. Runner now waits for real varied capture pixels before starting, without
+relaxing app blank-check/provider substitution;16 focused unit/strict tsc passed.
+
+Switch-away40861748575 PASSED: positive stimulus request observed, different neutral
+painted5ms later, changed-frame discard and fresh neutral check observed, no covers/
+blocks, clean stop, three calls. Discarded model verdict not exposed; no score claim.
+First switch40861359039 FAILED its fresh-check assertion: it restored exact cached
+neutral and waited less than30s cache lifetime, so no new request. Two calls retained;
+changed replacement to different neutral, not app cache/runtime. Failed reports kept.
+
+Current ledger163 attempts,$1.794637824 reserved of cumulative3,542374 tokens
+(~$0.022779708 estimated usage).109 further maximum reservations fit. All three
+accounting copies agreed sequentially; lock released, no paid remote job active.
+Ordinary PR CI40861757089 PASSED:71 unit +one intended skip,8 UI,
+native smoke, installer build/install and11 fixture-provider scenarios. No release.
+Updated WINDOWS-LIVE-VALIDATION.md to current protocol/authority, removing obsolete
+missing-key/approval/budget blockers that caused repeated setup questions.
 
 ## Current next work within the authorized $3 ceiling
 
 Main post-merge CI40859115538 PASSED:70 unit +1 intended skip,8 UI,
 native smoke, installer build/install and11 fixture scenarios; release skipped.
 Saved numeric summary: docs/windows-ci-main-run-40859115538.json.
-Next expand independent
-positive-source coverage and realistic safe lookalikes, especially explicit activity
-and motion during analysis; design/freeze before calls. Do not retune against the
+Next expand independently sourced adult-positive coverage (especially activity)
+when declared-adult/appropriately licensed sources are available. Current new batch
+adds only platform positives. Large/continuous video motion, hardware and multiple
+displays remain unproved; +/-12px and one stale-result switch are limited controls.
+Design/freeze future cases before calls; do not redo these source batches. Do not retune against the
 used held-out set and call it untouched.
 
 No repeated secret prompt. Broader independent source-separated development and
@@ -205,7 +222,7 @@ Source declarations/licenses, hashes, labels and exact questions are in reports.
 Adult image bytes and keys are excluded from Git/public artifacts.
 
 Local 71 unit tests/build and runner type/bundle checks passed. Latest PR Windows
-log verified 70 passes plus one intended Linux-only skip, eight UI and 11 native
+log verified 71 passes plus one intended Linux-only skip, eight UI and 11 native
 fixture scenarios. Use Ponytail full and relevant skills; smallest complete change, actual failure checks, no speculative rewrite.
 Append actual outcomes to WORKLOG.md and update this current state after work.
 Do not reconfigure/republish the managed environment or repeat old setup work.

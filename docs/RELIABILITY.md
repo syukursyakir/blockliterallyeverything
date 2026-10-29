@@ -30,6 +30,18 @@ Cumulative $3 conservative reservation ceiling explicitly approved. Current ledg
 cost). Prior history preserved. Secret works; no repeated setup/budget questions
 within the authorized cap. No release authorized or published; installed alpha unchanged.
 
+Latest extension:21 frozen-settings new public cases caught YouTube9/9 and
+Instagram7/7 positives with zero platform false matches. Explicit has no new
+positives and1/21 match against original negative labels; MoMA has a nude-art
+detail overlooked in annotation. Original label/result retained with caveat; see
+[CONFIRMATORY-RESULTS.md](CONFIRMATORY-RESULTS.md), not a clean negative claim.
+Controlled +/-12px adult-screenshot motion passed cover/recovery in4214ms, and a
+switch to a different neutral screen during actual inference passed discard/fresh
+check/no-cover/stop. These are limited controls, not actual moving-video proof.
+See [MOTION-RESULTS.md](MOTION-RESULTS.md), including failed attempts and corrections.
+Current accounting supersedes above:163 attempts,$1.794637824 reserved of3,
+542374 tokens (~$0.022779708 estimated usage), no lock/paid job. Prior history kept.
+
 Next: larger representative independently sourced positives and safe lookalikes,
 especially explicit activity; freeze labels/source splits/settings before calls.
 Keep misses/unknowns/false blocks and confidence intervals. Then dynamic-screen
