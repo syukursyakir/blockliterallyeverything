@@ -682,3 +682,21 @@ remain, no paidjob/lock. New5 reservations,14167tokens; prior history intact.
 FRESH-FAMILY-RESULTS/PLAN/freeze/raw initialerror+corrected reports saved.
 Merged-app fullCI already passed at902565c; follow-up only evidence/docs, no repeated
 manual tests or release. Source27 and generalfast-video limitations remain open.
+
+
+### TimeSlicer research and session handoff
+
+User paused implementation to research TimeSlicer and asked about fresh-session
+handoff. Read original Product Hunt founder discussion, archived8Sep2025 homepage/
+privacy policy, currentOct2026 privacy/data-use/blog/release docs. Originalblocker
+had TWO paths: browser visible text + LLM/goals/overlay; desktop screenshotRAM->
+OpenAI. Currentpivot is task/teamtracking but blocking stillpresent; currentdocs
+say text/metadata OpenAI tasklabels/Gemini focus and optionalMac localOCR, no raw
+snapshotupload. OldZDRclaim must not supersede current30-dayproviderpolicy.
+No published reproducible95%/fast-motion evidence or pivotreason established in
+reviewedsources. Datedsource links, confirmedfacts/unknowns/designhypothesis saved
+in TIMESLICER-RESEARCH.md. Proposedsmall opt-in browsercontextsignal complements
+vision; NOT accepted extensionbuild/providerchange. No code/test/spend or installs/
+accounts/messages/releases. Ledgerstill245/$2.697461760/831497tokens,27maxremaining,
+no paidjob/lock. HANDOFF top now includes research, next scoped decision, completed
+cohorts not to repeat, productionCI/source and approvals. Ready for freshchat.

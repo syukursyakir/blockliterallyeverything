@@ -4,6 +4,38 @@ Read AGENTS.md, DESIGN.md, docs/WORKLOG.md, docs/RELIABILITY.md and this file fi
 WORKLOG.md and saved reports retain history; this file supersedes old missing-key,
 permission and budget blockers. Do not repeat completed experiments as new evidence.
 
+## Session checkpoint — research complete, ready for a fresh chat
+
+Latest user requested TimeSlicer research, then asked whether to hand off because
+this chat is long. Research is COMPLETE in docs/TIMESLICER-RESEARCH.md, with dated
+first-party/archived sources and explicit unknowns. No code changes, model calls,
+new key requests, installs, accounts, third-party messages or release during research.
+
+Key finding: ORIGINAL2025 design had browser visible-text classification AND desktop
+screenshots in RAM sent to OpenAI, then overlay/goal-based blocking. Current2026
+pivot emphasizes team work tracking, but blocking persists. Current policy describes
+text/metadata to OpenAI(task labels)/Gemini(focus), optional Mac LOCAL snapshot OCR;
+raw images stay local for that current feature. Do not conflate old/new architecture
+or old zero-retention marketing with current provider30-day retention policy.
+No reproducible95%/fast-motion benchmark or reason for pivot established.
+
+Next decision/work: assess a SMALL opt-in browser-context signal experiment (URL,
+title/visible text with actual foreground/tab identity) to complement visual detection
+on moving YouTube/social pages. This is a research suggestion, NOT an accepted
+extension build or provider change. Present the scoped approach before changing
+architecture; maintain Jev and screenshot consent. Visual explicit-content detection
+and nonrigid fast-motion still need their own prospective tests. Do not weaken
+switch-away protection or repeat completed seven-motion/four-fresh-image cohorts
+until green. No UI redesign/release. User prefers autonomous work within scope and
+only questions for truly blocking input; do not repeat permissions/key/budget asks.
+
+Handoff state: main, latest changes evidence/docs only; production source902565c
+passed full WindowsCI40889272599 (79unit+1intendedskip,8UI,native smoke,installer/
+install,13fixture scenarios; release skipped). Authority245/$2.697461760/831497tokens,
+27 max requests left under approved3, no paidjob/lock. Prior missing62/64 retained.
+Use existing scripts/evaluate-app.mjs wrapper; raw Node bundles need --use-env-proxy.
+Read the detailed current evidence below before selecting any new experiment.
+
 ## Goal and authorization
 
 Detection and native blocking reliability come before UI polish or release.
