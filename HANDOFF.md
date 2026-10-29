@@ -18,6 +18,20 @@ all prior counters/history. Continue useful bounded testing without per-batch
 permission questions within this cap. No release publication, overwriting
 v0.1.0-alpha.1, third-party messages or laptop remote access authorized.
 
+## Active fresh-family fixed-image extension
+
+Read docs/FRESH-FAMILY-PLAN.md and fresh-family-freeze-2026-10-29.json. Two NEW
+source/author files, source-declared adult35/37 (Corte ubemo/Marc.zuhause), own-work
+CC BY-SA metadata verified before binary. Deduplicated source hashes against prior
+reports; old Jade result excluded. All four full/small prepared variants inspected
+before labels/settings/hash freeze. TWO families, not four independent subjects.
+No new activity-video or negative coverage. Original settings hash46eb2974 unchanged.
+Dry-run existing evaluator passed. Next: at most FOUR sequential local provider calls
+against EXACT retained authority, current240/$2.642411520; no remote paidjob/lock.
+Local evaluator acquires authority lock automatically, preserves reservations/errors;
+no new budget or retries. Raw pixels private /workspace/work/ble-fresh-families-2026-10-29.
+Do not rerun after results or call these Windows enforcement/95% proof.
+
 ## Completed large-motion correction (PR #6)
 
 PR #6 MERGED at902565c1d86ca743a89ab5cf020268f12736fd9b:

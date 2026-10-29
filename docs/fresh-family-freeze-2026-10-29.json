@@ -1,0 +1,11 @@
+{
+  "frozenAt": "2026-10-29T14:21:47.886526+00:00",
+  "manifestSha256": "1e33fa9669991115a96a365feac521d9dd1ce65108cab00f92d5c84e4a9e5f8b",
+  "settingsSha256": "46eb297437d81a4553c8e10d27a632232a562a8c641f73fef287b847842f7fc2",
+  "cases": 4,
+  "positiveVariants": 4,
+  "sourceFiles": 2,
+  "newAuthorGroups": 2,
+  "negatives": 0,
+  "note": "All four prepared images visually reviewed BEFORE labels and predictions. Jade old-family duplicates excluded. No independence/ID-verification guarantee."
+}

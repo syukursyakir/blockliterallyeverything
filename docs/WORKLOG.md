@@ -648,3 +648,13 @@ clear CC BY-SA metadata. Jade result already used in broader development and is
 EXCLUDED as newfamily. No images/calls from this scout yet; cache metadata-probe.json
 at /workspace/work/ble-fresh-families-2026-10-29. May extend genuinely new families
 under retained32-request remainder; do not replay PR6 tests as newmodelaccuracy.
+
+
+Fresh-family continuation: two metadata queries found source-declared adult35/37
+own-work photos (Corte ubemo/Marc.zuhause), both CC BY-SA. Reviewed age/rights before
+download; honestUA/pacing, byte/hash dedup against published prior reports, Jade old
+source excluded. Four1280x900 full/small panels privately inspected before labels
+and freeze; two author/source groups, no activity/negative coverage. Settings hash
+46eb2974 identical to prior frozen evaluator defaults, manifest1e33fa96 frozen before
+paid requests. Existing evaluator dry-run passed. Plan max4 local requests against
+exact240 authority; no remote paidjob, no reset. Pixels outsideGit, no release.
