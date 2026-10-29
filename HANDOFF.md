@@ -18,6 +18,18 @@ all prior counters/history. Continue useful bounded testing without per-batch
 permission questions within this cap. No release publication, overwriting
 v0.1.0-alpha.1, third-party messages or laptop remote access authorized.
 
+## Active large-motion continuation (PR #6)
+
+User authorized continuing remaining gaps. Branch validation/large-motion-20261029,
+PR https://github.com/syukursyakir/blockliterallyeverything/pull/6. Read frozen
+`docs/LARGE-MOTION-PLAN.md`: two new native stress CONDITIONS using existing sources,
+not new independent accuracy. Pan-wide keeps full image within screen, max65vw/90vh,
++/-16vw,1131ms period. Production unchanged.19 focused tests/strict runner tsc pass.
+Run40884733211 owns authoritative budget lock, before223. Do NOT start paid local
+or remote work until completed artifacts/report/profile are reconciled into authority.
+Second planned condition real loaded YouTube is NOT yet dispatched. Numeric discard
+counts and encrypted submitted frames retained for future failures. No release.
+
 ## Current adult/video continuation
 
 PR #5 MERGED atdf6bf402dc572d01dfbfa68d5c6ef8f39151d8d6:

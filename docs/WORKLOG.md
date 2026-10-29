@@ -557,3 +557,16 @@ only, no further charged calls or new code. Current authority223/no lock unchang
 Both requested adult-positive and actual-video evidence complete; original one-off
 miss remains OPEN/unexplained, thirteen subsequent passes do not erase it. No95%
 certification or release. Do not restart these completed experiments.
+
+
+### Large sustained-motion protocol started
+
+User requested continuing reliability work. Reviewed current completed evidence,
+kept source27 miss open; no replay of completed17 trials. Added pan-wide test-only
+mode (+/-16vw,1131ms period; max65vw/90vh fully onscreen) and safe numeric activity/
+animation geometry diagnostics; encrypted request audit reused. Frozen two conditions
+BEFORE inference in LARGE-MOTION-PLAN: retained adult photo then loaded YouTube page,
+max3 each sequentially.19 focused unit tests and strict runner tsc passed.
+Native run40884733211 at8d977ca owns authority lock before223/$2.455240704.
+PR #6 draft, ordinary fixture CI40884747224 also running (no provider charges).
+No production/provider/prompt/threshold/freshness changes or release.
