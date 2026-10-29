@@ -1,0 +1,15 @@
+{
+  "conclusion": "success",
+  "headSha": "902565c1d86ca743a89ab5cf020268f12736fd9b",
+  "status": "completed",
+  "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40889272599",
+  "scope": "Post-PR6 merged-source Windows fixture CI, manually dispatched because squash inherited historical CI-skip markers. Not model accuracy or resolution of general fast-video/old source27 misses.",
+  "unitPassed": 79,
+  "unitSkipped": 1,
+  "uiPassed": 8,
+  "installedFixtureScenariosPassed": 13,
+  "buildPassed": true,
+  "desktopSmokePassed": true,
+  "installerBuildInstallPassed": true,
+  "releasePublished": false
+}

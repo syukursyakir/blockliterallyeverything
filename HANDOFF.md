@@ -45,8 +45,10 @@ fixture scenarios include forced translation/replacement/cropped capture regress
 (NOT AI accuracy). CI40887372936 at995ce3c PASSED79unit+oneintendedskip,8UI,native
 smoke,installer/install,13scenarios. Final source CI40888553162 at47d7e40 PASSED
 same full sequence (logs verified), earlier40887734346 also passed. Release skipped.
-Post-merge main CI40889272599 at902565c is running manually, live_detection=false,
-publish_alpha=false: squash default commit body inherited historical [skip ci]
+Post-merge main CI40889272599 at902565c PASSED same full pipeline (logs verified),
+live_detection=false,
+publish_alpha=false/release skipped. Numeric summary docs/windows-ci-main-run-40889272599.json.
+Manual dispatch: squash default commit body inherited historical [skip ci]
 markers so automatic push CI was skipped. FUTURE SQUASH MERGES: supply an explicit
 clean commit_message to avoid inheriting skip markers; do not rewrite main history. Earlier40886736737/40886699772 failed new
 fixture window lookup race, corrected using existing painted-cover helper.

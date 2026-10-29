@@ -637,3 +637,14 @@ post-merge main40889272599 manually, publish_alpha=false/live_detection=false,
 no paid API use. Future squash merges should pass an explicit clean commit_message;
 do not amend main history merely for this.240/$2.642411520 authority unchanged,
 no paidjob/lock, prior failures preserved, no release.
+
+
+Post-merge main40889272599 at902565c PASSED:79unit+oneintendedskip,8UI,native
+smoke,installerbuild/install,13fixture scenarios; releaseSKIPPED. Conclusion/head/
+steps/log counts verified, numeric summary saved. PR #6 correction completed.
+No paidjob/lock,240 attempts unchanged. Free source-family metadata scout found two
+previously untested own-work adult35/37 photo authors (Corte ubemo/Marc.zuhause),
+clear CC BY-SA metadata. Jade result already used in broader development and is
+EXCLUDED as newfamily. No images/calls from this scout yet; cache metadata-probe.json
+at /workspace/work/ble-fresh-families-2026-10-29. May extend genuinely new families
+under retained32-request remainder; do not replay PR6 tests as newmodelaccuracy.
