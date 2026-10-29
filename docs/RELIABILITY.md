@@ -13,8 +13,9 @@ New synthetic YouTube-like moving-player layouts blocked in4261/3277ms (.94/.95)
 full native cover/recovery. Known CC0 media, correlated new compositions, not real
 YouTube/new-source accuracy. Compact switch-away FAILED with stale positive block;
 one fixed diagnostic reproduced it and measured actual whole-screen difference5.53%
-below8% guard after neutral replacement. Local-change dilution is demonstrated in
-that controlled diagnostic; original exact capture absent. Detector unchanged; no
+below8% guard after neutral replacement. The numeric acceptance path supports localized-change dilution; post-response
+pixels were not retained for semantic review, so compositor lag is not fully
+excluded. Original exact capture absent. Detector unchanged; no
 speculative threshold change, no claim that old source27 miss is explained.
 Warning PR7 merged with full Windows CI (79unit+skip,9UI,13fixtures plus installer/
 native smoke). Final authority253/$2.785542144/860235tokens,19 max remaining, no paid

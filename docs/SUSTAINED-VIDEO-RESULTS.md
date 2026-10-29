@@ -54,10 +54,13 @@ returned82ms after replacement, and post-response capture was recorded121ms afte
 replacement. Its measured64px whole-screen mean RGB difference from the positive
 capture was0.055251416973 (5.53%), below the production8% guard. Therefore the guard
 accepted this captured pair without consulting translation, matching the zero-discard
-activity and stale block. This directly demonstrates global-mean dilution in the
-controlled diagnostic. Original run's exact capture pair remains absent; do not
+activity and stale block. This establishes the numeric acceptance path in the
+controlled diagnostic and supports the localized-change dilution explanation. Original run's exact capture pair remains absent; do not
 pretend its numeric difference was measured too. Native compositor timestamps are
-observational; no independent physical-display recording was taken.
+observational. The post-response bitmap was not retained for semantic review, so
+these numbers do not independently prove that its pixels contained the neutral
+document; compositor lag is not fully excluded. No physical-display recording was
+taken.
 
 The delayed capture was not simply recorded before the documented replacement.
 The diagnostic adds observation overhead; it reproduces the failure and identifies
@@ -94,6 +97,12 @@ release skipped. Source follow-ups40898845707 and40900022596 passed that sequenc
 These CI fixture decisions are not model accuracy or proof that the stale-block
 failure is fixed. Final diagnostic-sourceCI40900898602 atf4b644f PASSED80unit+oneintendedskip,9UI,
 native smoke,installer/install and13fixture scenarios; release step verified skipped.
+
+PR #8 merged at9f2639695891ea7cff46fa6dbca0c08e81b6372d. Post-merge main
+[40901874144](https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40901874144)
+PASSED80unit+oneintendedskip,9UI,native smoke,installer/install and13fixture scenarios;
+release skipped ([numeric summary](windows-ci-run-40901874144.json)). This does not
+resolve the recorded stale-block limitation. Final follow-up is continuity docs only.
 
 No release, extension or laptop access. Older source27 unexplained miss, general
 fast-motion freshness, representative accuracy, physical display/hardware limits

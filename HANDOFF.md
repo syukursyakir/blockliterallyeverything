@@ -12,7 +12,8 @@ main40898675905 PASSED79unit+oneintendedskip,9UI,native smoke,installer/install,
 no extension/provider/threshold change. Periodic checks target sustained distraction;
 brief appearances between checks are acceptable per user.
 
-PR #8 https://github.com/syukursyakir/blockliterallyeverything/pull/8 is test-only
+PR #8 MERGED at9f2639695891ea7cff46fa6dbca0c08e81b6372d:
+https://github.com/syukursyakir/blockliterallyeverything/pull/8. It is test-only
 sustained-player tooling/evidence. Read SUSTAINED-VIDEO-RESULTS.md and raw linked JSON.
 Original frozen three-trial cohort uses synthetic YouTube-like UI with actual1x
 CC0 flower video, not real-service/new-source/independent accuracy evidence:
@@ -22,8 +23,9 @@ CC0 flower video, not real-service/new-source/independent accuracy evidence:
   zero changed-screen discards, one stale block,2calls. Preserve failure.
 ONE separately frozen diagnostic40900883106 reproduced staleblock/.94,2calls.
 Actual captured64px pair mean difference5.53% below8% global guard; postcapture
-recorded121ms after replacement, response82ms after. This demonstrates local-change
-dilution in the controlled diagnostic. Original pair absent; its exact measurement
+recorded121ms after replacement, response82ms after. This establishes the numeric acceptance path and supports localized-change
+dilution; post-response pixels were not retained for semantic review, so native
+compositor lag is not fully excluded. Original pair absent; its exact measurement
 unknown. No production fix, threshold relaxation or older source27 causal claim.
 No further paid trials planned. Next: prospectively assess localized-change handling
 without starving ongoing video; do not rerun these cases as new independent evidence.
@@ -40,7 +42,11 @@ Test-only observer unit and strict runner tsc pass; original8 focused helpers pa
 SourceCI40900898602 atf4b644f PASSED80unit+oneintendedskip,9UI,native smoke,
 installer/install,13fixtures; release skipped (adds observer unit).
 Earlier source40898845707/40900022596 passed79unit+skip/9UI/13fixtures, same build/
-installer/native smoke, release skipped. Update this checkpoint after merge/CI.
+installer/native smoke, release skipped. Main post-mergeCI40901874144 at9f26396
+PASSED80unit+oneintendedskip,9UI,native smoke,installer/install,13fixtures; release
+step verified skipped. Numeric summary docs/windows-ci-run-40901874144.json.
+Warning merge and bounded video work COMPLETE with preserved stale-block limitation.
+No further paid jobs or authority lock. Final follow-up changes continuity docs only.
 
 ## Periodic-check goal and movement-warning implementation
 
@@ -79,7 +85,8 @@ message/switch-away checks. Current Jev interface is image-only; do not inject p
 metadata into rules or bypass visual freshness. No extension or runtime change was
 implemented. Present this concrete scope before architecture changes; collection,
 Windows mapping/occlusion and eventual decision semantics remain unvalidated.
-No completed tests repeated, no model calls or release; current245 authority unchanged.
+At that research stage no tests/model calls/release occurred; authority was245 THEN.
+Use the current continuation/authoritative accounting above and below.
 
 ## Goal and authorization
 
@@ -139,7 +146,7 @@ false positive or safe-control pass. End/failure media state absent in original
 report; future runner now records it. Do not retry to obtain green. General fast
 video freshness remains limited; translated full-view fix does not solve it.
 At PR #6 completion240/$2.642411520/817330tokens reconciled;32 max reservations fit THEN.
-Use latest245 authority above; do not revert to240.
+Use current authoritative accounting at the top; do not revert to240/245.
 NO paid job/authority lock.80 local units/build/strict runner tsc pass.13 installed
 fixture scenarios include forced translation/replacement/cropped capture regressions
 (NOT AI accuracy). CI40887372936 at995ce3c PASSED79unit+oneintendedskip,8UI,native
@@ -195,7 +202,7 @@ errors, never an until-success/network-retry loop. Reconcile every profile/summa
 
 At PR #5 completion authority was223 attempts,$2.455240704 reserved of cumulative3,
 756421 tokens (~$0.031769682 estimated usage);49 further max reservations fit THEN.
-Those budgets reconciled sequentially. Use PR #6 current authority above, not these
+Those budgets reconciled sequentially. Use current authoritative accounting at the top, not these
 historical223 or stale182 snapshots from chronological logs. Final source CI40872034255 PASSED:74 unit +one intended
 skip,8 UI, native smoke, installer build/install and11 fixture scenarios; no release.
 Local18 focused tests and strict runner/evaluator tsc passed. Main post-merge

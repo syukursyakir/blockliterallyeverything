@@ -811,3 +811,20 @@ Final diagnostic-sourceCI40900898602 atf4b644f PASSED80unit+oneintendedskip,9UI,
 native smoke,installer build/install and13fixture scenarios; conclusion/head/steps/
 log counts verified, release skipped. Saved numeric summary. Follow-up now evidence/
 continuity docs only; no repeated paid trials or production detector changes.
+
+
+PR8 MERGED9f2639695891ea7cff46fa6dbca0c08e81b6372d; mainCI40901874144 running.
+Clarified diagnostic limit:5.53% establishes numeric guard acceptance and supports
+localized-change dilution, but post-response pixels were not retained for semantic
+review; native compositor lag cannot be fully excluded from timestamps alone.
+No definitive original-frame diagnosis, production fix or extra paid run.253/no lock
+unchanged. Final follow-up is continuity/CI evidence only, no release.
+
+
+Post-merge main40901874144 at9f26396 PASSED80unit+oneintendedskip,9UI,native smoke,
+installer build/install and13fixture scenarios. Conclusion/head/steps/log counts
+verified; release skipped, numeric summary saved. Warning and bounded video work
+complete with both stale-control failures preserved, no claimed detector fix.
+Final authority253/$2.785542144/860235 verified against final raw report, retained
+62-history and approval history intact, no authority lock or active paid job.
+No more experiments; final continuity-only follow-up, no release.
