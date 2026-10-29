@@ -1,0 +1,10 @@
+{
+  "selected_at": "2026-10-29T10:11:27.301656+00:00",
+  "settings_sha256": "46eb297437d81a4553c8e10d27a632232a562a8c641f73fef287b847842f7fc2",
+  "reason": "Platform-specific candidate retains all labeled development positives, removes the YouTube-on-Instagram false match; explicit rule/threshold unchanged. Held-out predictions have not been made.",
+  "development_baseline": "docs/evaluation-broader-development-baseline-2026-10-29.json",
+  "development_candidate": "docs/evaluation-broader-development-candidate-2026-10-29.json",
+  "heldout_manifest_sha256": "0a4bda9f8daa9bdfe56d7df5a3c9668fa93ce7c2d097aca79c5e74f314ae2191",
+  "label_policy_sha256": "a5e2e734f4fc25bb9a9e54f0d69c684a0e48dff27753744ffa4fcc78ade25365",
+  "adoption": "Not yet product defaults; held-out results pending."
+}

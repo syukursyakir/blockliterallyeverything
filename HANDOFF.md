@@ -40,12 +40,29 @@ Existing ledger migrated from .50 to 3 with authorizationHistory; all 45 attempt
 Up to 227 additional attempts fit (272 total). No new/reset allowance. No repeated
 per-batch approval or key prompts within this cap. No release authorization.
 
-Current work: validation/independent-corpus-20261029. Shared cap validation now
-supports the approved ceiling in static/native runners. Removed --init-budget:
-missing ledgers cannot silently create a fresh allowance. 65 unit tests/build and
-strict runner type checks passed. Gathering new public source cases and distinct
-adult-source metadata; development vs untouched held-out sets must remain separate.
-Baseline/defaults/provider/threshold stay unchanged until evidence supports a fix.
+Current work: validation/independent-corpus-20261029. Read docs/BROADER-EVALUATION.md.
+48 fresh source-family cases, split BEFORE inference into development 24/held-out
+24. Selected platform wording frozen before held-out. Held-out: explicit 6/6,
+YouTube 3/3, social 4/4, no false blocks; sample too small for 95% claim. Twelve
+correlated small-panel/injection/mixed-rule stress cases also passed. Two covered
+body/swimwear development false positives remain; explicit rule unchanged.
+
+Platform-only clarification now supported by new evidence: adopt starter text and
+upgrade ONLY exact old stock strings on saved-preference load. Preserve custom
+instructions, names, enabled flags and all other settings; no automatic capture.
+Validator/user saves stay literal. 71 local tests/build and strict runner checks
+passed. Reports/policy/frozen-selection hashes preserve the actual sequence.
+
+Current ledger after static batches: 129 reservations, $1.420296192 of $3,
+421419 reported tokens (~$0.017699598 estimated). No remote model job active.
+Encrypted-only Windows capture run 40853592968 made NO model calls; decrypted
+pixels/private RSA key stay under private local corpus, never Git/public images.
+
+Next: full Windows neutral-to-positive transitions for real YouTube/real adult
+reference plus social control. New live_scene choice keeps default synthetic
+control, pins reviewed adult source hash and guards real YouTube loaded UI. No
+new accuracy samples from these integration repeats. Freeze local paid work and
+reconcile global ledger around EACH remote job. Do not overlap remote ownership.
 
 ## Verified Windows evidence
 
@@ -80,10 +97,9 @@ Explicit positives span FOUR source families (three source-declared adult anatom
 photos plus one adult educational activity-video frame), with related size variants.
 No broad sexual-content recall estimate or 95% reliability claim is supported.
 
-The platform-only wording candidate corrected two targeted false matches but
-reduced TikTok score .78 -> .50 (still above .4). Candidate is NOT adopted.
-Product default rules, provider, threshold and existing saved rules are unchanged.
-Need broader independent development/held-out evaluation before adopting changes.
+Earlier four-case candidate reduced one TikTok score .78 -> .50. Later broader
+development/held-out and stress evidence is in BROADER-EVALUATION.md; only platform
+stock wording is clarified, custom rules and explicit threshold/provider unchanged.
 
 ## Retained accounting — do not reset
 

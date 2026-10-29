@@ -354,3 +354,37 @@ no credentials/ports; isolated browser does not inherit TypeSafe key.
 explicit adult declarations/free licenses; reject age-ambiguous sources and AI/
 art-only images for real-photo coverage. Professional/source families kept together;
 source labels are pending visual review, never inferred from filename alone.
+
+
+### Broader frozen corpus and observed results
+
+Windows capture-only run 40853592968 succeeded with 12 screenshots encrypted to
+local RSA key; no API secret/model calls. Decrypted only locally. Real YouTube
+search/channel/home/watch UI finally obtained; watch had bot sign-in overlay but
+recommendations/chrome visible, no playback claim. Instagram rate-limit captures
+excluded. Local public pages and eight actual IG grids (visible Close icons
+clicked normally) plus thirteen reviewed adult-photo cases formed 48 cases.
+Adult sources declared >=21 at capture; files with 18/19 age declarations or
+uncertain provenance were not downloaded for this cohort. Source/photo families
+assigned dev/held-out before inference; labels and hashes frozen before predictions.
+
+Development 24 baseline caught 5/5 explicit, 3/3 YouTube, 5/5 social; false blocks
+were two covered-body/suggestive photos and a YouTube match on Instagram. Candidate
+platform clarification retained all positives and removed the platform false match.
+Frozen settings/hash chosen using ONLY dev, then held-out 24: explicit6/6, video3/3,
+social4/4 and zero false blocks. Confidence denominators remain far too small for
+95% certification. Twelve later correlated development stress variants (small real
+panels, screenshot instructions, mixed rules, benign mentions) all correct, not
+extra independent subjects. Preserved raw reports and EVALUATION-POLICIES.md.
+
+Adopting ONLY clarified platform starter text; explicit/threshold/provider unchanged.
+Exact untouched old stock strings upgrade on preference load, with activity notice;
+custom text/name/enabled/settings preserved. Validator/user edits remain literal.
+Added meaningful migration regressions. 71 unit tests/build/strict runner type
+checks passed. Added reviewed real source options to native preparation: guarded
+public YouTube page and exact-hash age/licensed adult reference, with no raw image
+artifacts or keys during prep. Actual adult-scene prep smoke passed with no calls.
+
+Accounting after batches: 129 attempts, $1.420296192 reserved of 3, 421419 tokens,
+~$0.017699598 estimated. Prior calls and authorization history retained. Next native
+runs own authority sequentially; no parallel local paid work while remote is active.
