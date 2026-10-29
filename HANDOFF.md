@@ -18,6 +18,31 @@ all prior counters/history. Continue useful bounded testing without per-batch
 permission questions within this cap. No release publication, overwriting
 v0.1.0-alpha.1, third-party messages or laptop remote access authorized.
 
+## Active adult/video continuation (supersedes stage below while in flight)
+
+User authorized broader adult-positive and ACTUAL moving-video tests without repeated
+input questions. Branch validation/adult-video-20261029. Frozen plan ADULT-VIDEO-PLAN.md.
+Wikimedia403 diagnosed as robot/User-Agent requirement, not an auth/key issue.
+Honest identifying project User-Agent with pacing resolved it, no policy bypass.
+New licensed adult-only files: declared40 torso (old author correlated),23 anatomy,
+three declared30/24/27 activity videos from three new authors. Actual source/rights,
+final prepared labels and settings/hash frozen BEFORE calls.15 new cases:13 explicit
+positive variants all caught; two safe visible-part crops allowed; no platform false
+matches. Only5 files/4 new author groups, not13 independent subjects/95% proof.
+Full/small/extra-frame variants share families; author/identity verification limited.
+
+Actual Windows decoded playback PASSED for retained44 source40864903082 (3429ms)
+and new30 source40865647116 (3266ms), both.98 with full native cover+recovery,
+two requests each, media time and decoded frames advanced. Source repeats for
+integration, not new accuracy. Input video bytes pinned; no still substitution.
+Current accounting after these and15-image batch:182,$2.003828736 reserved,
+609811 tokens. Native source24 run currently owns authority; lock retained, NO
+local paid calls. Next source27 playback sequentially, reconcile each actual artifact.
+Short reviewed2–10s ranges supported alongside10–25s; helper validates finite/bounded
+ranges and local WebM basename/hash/container/size before native launch. Six focused
+helper tests, strict tsc, actual local prepare/decode smoke passed. App runtime,
+threshold/provider/rules unchanged; no release. Need finalize reports, CI and merge.
+
 ## Repository stage
 
 PR #4 MERGED into main at10a7ea4627ee578b6ae7d8486c97639950f88287:

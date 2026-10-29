@@ -485,3 +485,27 @@ eight UI, desktop smoke, installer build/install and11 fixture-provider scenario
 Release step skipped. Consolidated HANDOFF.md so current stage/authority/remaining
 gaps appear without obsolete permission/key blockers. No paid job/lock; counters163
 unchanged. Final follow-up only continuity docs and numeric CI summary, no app change.
+
+
+### Actual decoded video and new adult-source extension in progress
+
+User explicitly requested actual playback and adult-positive expansion. Frozen
+ADULT-VIDEO-PLAN before calls. Diagnosed prior Wikimedias403 body: requests require
+an identifying User-Agent and robot-policy compliance. Honest project bot identifier
+with pacing resolved API and downloads; no auth/network bypass. New licensed,
+source-declared40/23 photos and30/24/27 activity videos obtained.40 photo correlates
+with an earlier author/possibly subject, not independent. Three new activity authors
+and one anatomical author, all own-work declarations and explicit adult ages.
+Reviewed full prepared pixels BEFORE freeze/calls.15 cases:13 positives caught,
+two safe face/limb crops allowed, no platform false matches. Three sexual-activity
+files/9 frame-size variants, two anatomy files/4 variants, not13 independent samples.
+Frozen settings unchanged, original labels retained; raw report+freeze hashes saved.
+
+Added real muted WebM decoding in native scene, exact source SHA256 and reviewed
+range; verifies currentTime and decoded-frame advancement, actual capture/Jev then
+native cover/recovery. First source44 run40864903082 PASSED,3429ms,.98; source30
+run40865647116 PASSED,3266ms,.98, two calls each. Pinned media catalog adds shorter
+reviewed2–10s sources24/27, source24 now owns authority. Local actual preparation/
+decoding smoke passed without model calls; six focused helper tests/strict tsc passed.
+All remote accounting copies agreed so far. Cumulative182,$2.003828736,609811 tokens;
+lock held while next source24 active. No runtime/prompt/threshold change or release.
