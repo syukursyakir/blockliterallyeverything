@@ -167,6 +167,26 @@ jobs:
         env:
           TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
           BLE_CAPTURE_PUBLIC_KEY: ${{ inputs.capture_public_key }}
+      - name: Verify and emit numeric accounting only
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          root = Path('native-live')
+          reports = list(root.rglob('report.json'))
+          profiles = [p for p in root.rglob('*') if p.is_file() and p.name.endswith('jev-budget.json')]
+          assert len(reports) == len(profiles) == 1
+          report = json.loads(reports[0].read_text())
+          wrapper = json.loads((root / 'budget.json').read_text())
+          profile = json.loads(profiles[0].read_text())
+          assert not report.get('accountingError')
+          assert report['budgetAfter'] == wrapper['current'] == profile
+          assert 0 <= profile['requests'] - report['budgetBefore']['requests'] <= 3
+          assert profile['reservedUsd'] <= wrapper['capUsd'] <= 3
+          assert profile['inputTokens'] >= report['budgetBefore']['inputTokens']
+          assert abs(profile['reservedUsd'] - profile['requests'] * 262144 * .042 / 1000000) < 1e-6
+          print('VERIFIED_ACCOUNTING=' + json.dumps({'wrapper': wrapper, 'profile': profile, 'report': report}, separators=(',', ':')))
+
       - name: Preserve numerical evidence and accounting only
         if: always()
         uses: actions/upload-artifact@v4
