@@ -4,7 +4,7 @@ import { open, mkdir, readFile, writeFile, rename, unlink } from 'node:fs/promis
 import path from 'node:path'
 import { parseArgs } from 'node:util'
 import { validateEvaluationBudget, type EvaluationBudget } from './evaluation-budget.ts'
-import { nativeExitGuard, nativeBudget, nativeMotion } from './native-process.ts'
+import { nativeExitGuard, nativeBudget, nativeMotion, nativeVideo } from './native-process.ts'
 import { preflight, evaluationSettings } from './app-evaluation.ts'
 import { validateLedger } from '../electron/jev.ts'
 import { isBlankCapture } from '../electron/screen-cache.ts'
@@ -16,6 +16,8 @@ if (!values['allow-cloud'] || !values.corpus || !values.case || !values.ledger |
 const prepared=await preflight(values.corpus)
 const selected=prepared.cases.find(c=>c.item.id===values.case)
 if (!selected) throw new Error('Case not found.')
+if(Boolean(selected.item.video_file)!==(motion==='video'))throw new Error('A video case requires explicit video motion mode; still cases cannot claim playback.')
+const media=motion==='video'?await nativeVideo(path.dirname(path.resolve(values.corpus)),selected.item.video_file,selected.item.video_sha256):undefined
 const positive=evaluationSettings.rules.find(rule=>selected.item.labels[rule.id]===true)
 if (!positive) throw new Error('Select a reviewed positive case.')
 const file=path.resolve(values.ledger), output=path.resolve(values.output), profile=output+'.profile'
@@ -65,7 +67,7 @@ try {
     main.hide()
     const scene=new BrowserWindow({...screen.getPrimaryDisplay().bounds,frame:false,show:false,resizable:true,fullscreenable:true,webPreferences:{sandbox:true,contextIsolation:true,nodeIntegration:false}})
     ;(globalThis as any).bleLiveScene=scene
-    await scene.loadURL('data:text/html,'+encodeURIComponent('<html><head><meta http-equiv="Content-Security-Policy" content="default-src \'none\'; img-src data:; style-src \'unsafe-inline\'"></head><body style="margin:0;background:#ececec;display:grid;place-items:center;height:100vh;font:30px sans-serif"><p>Neutral work notes</p></body></html>'))
+    await scene.loadURL('data:text/html,'+encodeURIComponent('<html><head><meta http-equiv="Content-Security-Policy" content="default-src \'none\'; img-src data:; media-src data:; style-src \'unsafe-inline\'"></head><body style="margin:0;background:#ececec;display:grid;place-items:center;height:100vh;font:30px sans-serif"><p>Neutral work notes</p></body></html>'))
     scene.setFullScreen(true);scene.show();scene.focus()
   })
   // Showing a native window does not guarantee its compositor frame is ready.
@@ -80,10 +82,12 @@ try {
   },{timeout:10_000}).toBe(true)
   report.capturePreflight='Actual display capture varied before session start; pixels discarded without provider call or file.'
   const snapshot=()=>page.evaluate(()=>window.desktop!.snapshot())
+  const playback=()=>desktop!.evaluate(async()=>await (globalThis as any).bleLiveScene.webContents.executeJavaScript(`(()=>{const v=document.querySelector('video');return v?{time:v.currentTime,paused:v.paused,readyState:v.readyState,decodedFrames:v.getVideoPlaybackQuality().totalVideoFrames}:null})()`))
   const paintPositive=async()=>desktop!.evaluate(async(_,{data,motion})=>{
     const scene=(globalThis as any).bleLiveScene
+    if(motion==='video')return await scene.webContents.executeJavaScript(`(async()=>{const v=document.createElement('video');v.muted=true;v.style='width:96vw;max-height:96vh;object-fit:contain';v.src=${JSON.stringify(data)};document.body.replaceChildren(v);await new Promise((r,j)=>{v.onloadedmetadata=r;v.onerror=()=>j(new Error('Reviewed video decoding failed'))});if(v.duration<25)throw new Error('Reviewed video too short');v.currentTime=10;await new Promise(r=>v.onseeked=r);v.ontimeupdate=()=>{if(v.currentTime>=25)v.currentTime=10};await v.play();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return Date.now()})()`)
     return await scene.webContents.executeJavaScript(`(async()=>{ const img=new Image();img.src=${JSON.stringify(data)};await img.decode();img.style=${JSON.stringify(motion==='pan'?'max-width:96vw;max-height:96vh;object-fit:contain':'max-width:100vw;max-height:100vh;object-fit:contain')};document.body.replaceChildren(img);if(${JSON.stringify(motion)}==='pan'){globalThis.bleMotionFrames=0;const start=performance.now();function move(now){img.style.transform='translateX('+12*Math.sin((now-start)/400)+'px)';globalThis.bleMotionFrames++;requestAnimationFrame(move)}requestAnimationFrame(move)}await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return Date.now()})()`)
-  },{data:'data:image/png;base64,'+selected.bytes.toString('base64'),motion})
+  },{data:media?'data:video/webm;base64,'+media.toString('base64'):'data:image/png;base64,'+selected.bytes.toString('base64'),motion})
   let paintedAt:number
   report.settings=(await snapshot()).settings
   let negativeChecks=0, negativeRequests=0
@@ -98,6 +102,13 @@ try {
     negativeChecks=negative.status.checks;negativeRequests=negative.status.cloudRequests
     report.negativeControl='Live neutral frame allowed without a cover.'
     phase='paint-positive';paintedAt=await paintPositive()
+  }
+  if(motion==='video'){
+    phase='verify-decoded-playback'
+    await expect.poll(async()=>(await playback())?.time,{timeout:3000}).toBeGreaterThan(10.1)
+    report.playbackAtStart=await playback()
+    report.videoSha256=selected.item.video_sha256
+    report.videoRangeSeconds=[10,25]
   }
   if(motion==='switch-away'){
     phase='await-positive-request'
@@ -128,6 +139,12 @@ try {
   if(!cover)throw new Error('No native cover window found.')
   await expect(cover.getByRole('heading',{name:'This content is blocked.'})).toBeVisible()
   report.contentToObservedCoverMs=Date.now()-paintedAt
+  if(motion==='video'){
+    report.playbackAtCover=await playback()
+    expect(report.playbackAtCover).toMatchObject({paused:false})
+    expect((report.playbackAtCover as {decodedFrames:number}).decodedFrames).toBeGreaterThan((report.playbackAtStart as {decodedFrames:number}).decodedFrames)
+    report.motionLimits='Actual decoded licensed adult video, reviewed10–25s range, source repeat, one trial; not representative video recall.'
+  }
   if(motion==='pan'){
     report.motionFrames=await desktop.evaluate(async()=>await (globalThis as any).bleLiveScene.webContents.executeJavaScript('globalThis.bleMotionFrames'))
     expect(report.motionFrames).toBeGreaterThan(10)

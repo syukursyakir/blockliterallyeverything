@@ -32,6 +32,7 @@ on:
           - social-synthetic
           - youtube-public
           - explicit-public
+          - explicit-video
         default: social-synthetic
       positive_at_start:
         description: Explicit single-request positive-at-session-start protocol (no active-session transition claim)
@@ -40,7 +41,7 @@ on:
       live_motion:
         description: Controlled motion or stale-result test; full active-session protocol only
         type: choice
-        options: [none, pan, switch-away]
+        options: [none, pan, switch-away, video]
         default: none
       retained_budget:
         description: Exact retained evaluation budget JSON; coordinate exclusive ownership before dispatch
