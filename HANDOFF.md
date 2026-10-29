@@ -3,6 +3,15 @@
 Read this, AGENTS.md, DESIGN.md, docs/WORKLOG.md and docs/RELIABILITY.md before continuing.
 Consult docs/VALIDATION.md for historical checks; later entries supersede earlier ones.
 
+## Authorization update — 2026-10-29
+
+User explicitly authorized pushing and merging as needed, enabling/running the
+prepared Windows validation, and confirmed the Actions secret. Proceed on the
+validation branch; release publishing remains disabled as proposed. Earlier
+notes saying push/Actions need permission are historical and superseded. Do not
+extract or copy the cloud key. Check the real run result and reconcile accounting
+before further calls; no new spending allowance was granted.
+
 ## Latest work — actual app evaluation (2026-10-29)
 
 Read docs/APP-EVALUATION.md and docs/WINDOWS-LIVE-VALIDATION.md first. Paid

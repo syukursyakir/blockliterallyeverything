@@ -202,3 +202,13 @@ execution remains unrun. Need input only for that concrete next gate.
 
 Prepared local branch validation/live-windows-20261029 to preserve the concrete
 reviewable changes. Local commit only; no remote push or Actions dispatch.
+
+
+## 2026-10-29 — authorized push/merge and Windows execution
+
+User explicitly approved pushing/merging and enabling the prepared Windows test,
+and confirmed the Actions secret. No release publication is proposed. Proceeding
+on validation/live-windows-20261029. Added safe failure-phase/status diagnostics
+to native runner before first execution; no provider bodies, key or screenshots.
+Freeze local paid requests while remote ledger authority is active. Reconcile
+actual numeric evidence before retrying, merging or releasing that authority.

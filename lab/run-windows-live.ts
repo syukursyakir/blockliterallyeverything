@@ -1,5 +1,5 @@
 // Opt-in live Windows integration. No provider or capture substitutions.
-import { _electron, expect } from '@playwright/test'
+import { _electron, expect, type Page } from '@playwright/test'
 import { open, mkdir, readFile, writeFile, rename, unlink } from 'node:fs/promises'
 import path from 'node:path'
 import { parseArgs } from 'node:util'
@@ -18,6 +18,8 @@ const file=path.resolve(values.ledger), output=path.resolve(values.output), prof
 // A retained lock after interruption prevents a new process from using stale accounting.
 const lock=await open(file+'.lock','wx',0o600)
 let desktop: Awaited<ReturnType<typeof _electron.launch>> | undefined
+let mainPage: Page | undefined
+let phase = 'preflight'
 let reconcile=false, profileSeeded=false, reportReady=false, profileConfirmed=false, nativeStopped=true
 let ledger: {capUsd:number;priorUsage:unknown;current:ReturnType<typeof validateLedger>}
 const report: Record<string,unknown>={scope:'Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.',passed:false,caseId:selected.item.id,preparedSha256:selected.item.sha256,manifestSha256:prepared.manifestSha256,rule:positive,startedAt:new Date().toISOString(),timingMethod:'Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.'}
@@ -35,9 +37,11 @@ try {
   await writeFile(path.join(profile,'jev-budget.json'),JSON.stringify(ledger.current),{mode:0o600});profileSeeded=true
   const handle=await open(output,'wx',0o600);await handle.close();reportReady=true
   report.budgetBefore=ledger.current;report.recoveryProfile=profile
+  phase='launch'
   desktop=await _electron.launch({executablePath:process.env.BLE_SMOKE_APP_EXE || undefined,args:[...(process.env.BLE_SMOKE_APP_EXE?[]:[path.resolve('.')]),'--user-data-dir='+profile],env:{...process.env,BLE_DEV_URL:''},timeout:60_000})
   nativeStopped=false
-  const page=await desktop.firstWindow();await page.waitForFunction(()=>Boolean(window.desktop))
+  const page=mainPage=await desktop.firstWindow();await page.waitForFunction(()=>Boolean(window.desktop))
+  phase='profile-and-display-check'
   const actual=await desktop.evaluate(({app})=>app.getPath('userData'))
   if(path.resolve(actual).toLowerCase()!==profile.toLowerCase())throw new Error('Profile isolation failed; no session started.')
   profileConfirmed=true
@@ -54,14 +58,17 @@ try {
     scene.setFullScreen(true);scene.show();scene.focus()
   })
   const snapshot=()=>page.evaluate(()=>window.desktop!.snapshot())
+  phase='neutral-control'
   await page.evaluate(()=>window.desktop!.start())
   await expect.poll(async()=>(await snapshot()).status.mode,{timeout:20_000}).toBe('watching')
   const negative=await snapshot();report.settings=negative.settings
   if(negative.status.blocks!==0)throw new Error('Negative control matched; stopped before showing positive.')
+  phase='paint-positive'
   const paintedAt=await desktop.evaluate(async(_,{data})=>{
     const scene=(globalThis as any).bleLiveScene
     return await scene.webContents.executeJavaScript(`(async()=>{ const img=new Image();img.src=${JSON.stringify(data)};await img.decode();img.style='max-width:100vw;max-height:100vh;object-fit:contain';document.body.replaceChildren(img);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return Date.now()})()`)
   },{data:'data:image/png;base64,'+selected.bytes.toString('base64')})
+  phase='wait-for-cover'
   await expect.poll(async()=>(await snapshot()).status.mode,{timeout:20_000}).toBe('blocked')
   const cover=desktop.windows().find(p=>p.url().endsWith('#block'))
   if(!cover)throw new Error('No native cover window found.')
@@ -71,15 +78,20 @@ try {
     const w=BrowserWindow.getAllWindows().find(w=>w.webContents.getURL().endsWith('#block'))!
     return {bounds:w.getBounds(),visible:w.isVisible(),topmost:w.isAlwaysOnTop(),focused:w.isFocused(),fullScreen:w.isFullScreen()}
   })
+  phase='native-cover-assertions'
   const bounds=(report.cover as {bounds:unknown}).bounds
   expect(bounds).toEqual(displays.displays[0].bounds)
   expect(report.cover).toMatchObject({visible:true,topmost:true,focused:true,fullScreen:true})
   const blocked=await snapshot();report.blockedRule=blocked.status.activity.find(a=>a.kind==='blocked')?.message
+  phase='recovery'
   await cover.getByRole('button',{name:'Pause & return to app'}).click()
   await expect.poll(async()=>(await snapshot()).status.mode).toBe('idle')
   await expect.poll(()=>desktop!.windows().filter(p=>p.url().endsWith('#block')).length).toBe(0)
   report.recovery='Button released cover and paused session.';report.passed=true
-} catch {
+} catch (error) {
+  report.failedPhase=phase
+  report.errorType=error instanceof Error ? error.name : 'UnknownError'
+  if(mainPage)report.lastStatus=await mainPage.evaluate(async()=>{const {status}=await window.desktop!.snapshot();return {mode:status.mode,error:status.error,checks:status.checks,blocks:status.blocks,cloudRequests:status.cloudRequests}}).catch(()=>null)
   report.failure='Live validation failed; inspect native state/accounting. No sensitive screenshot, provider response body or credentials retained.'
   process.exitCode=1
 } finally {
