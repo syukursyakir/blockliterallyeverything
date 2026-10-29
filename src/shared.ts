@@ -31,9 +31,26 @@ declare global { interface Window { desktop?: DesktopAPI } }
 
 export const presets: Rule[] = [
   { id: 'explicit', name: 'Explicit content', instruction: 'Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.', enabled: true },
-  { id: 'video', name: 'YouTube', instruction: 'Block visible YouTube browsing, video playback, Shorts, and the YouTube home feed.', enabled: false },
-  { id: 'social', name: 'Social feeds', instruction: 'Block visible Instagram and TikTok feeds, including short-form video scrolling.', enabled: false },
+  { id: 'video', name: 'YouTube', instruction: 'Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.', enabled: false },
+  { id: 'social', name: 'Social feeds', instruction: 'Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.', enabled: false },
 ]
+// Upgrade only untouched historical starter text when loading saved preferences.
+// Validation and user edits remain literal; custom instructions are never replaced.
+export function upgradeStarterRuleWording(settings: Settings): Settings {
+  const legacy: Record<string,string> = {
+    video: 'Block visible YouTube browsing, video playback, Shorts, and the YouTube home feed.',
+    social: 'Block visible Instagram and TikTok feeds, including short-form video scrolling.',
+  }
+  let changed = false
+  const rules = settings.rules.map(rule => {
+    if (legacy[rule.id] !== rule.instruction) return rule
+    const replacement = presets.find(preset => preset.id === rule.id)
+    if (!replacement) return rule
+    changed = true
+    return { ...rule, instruction: replacement.instruction }
+  })
+  return changed ? { ...settings, rules } : settings
+}
 export const defaultSettings: Settings = { backend: 'jev', cloudConsent: false, cloudBudgetUsd: 3, rules: presets, threshold: 0.4, intervalSeconds: 3, sessionMinutes: 25, detectionOnly: true }
 export const initialStatus: Status = { cloudKeyConfigured: false, cloudSpentUsd: 0, cloudEstimatedUsd: 0, cloudRequests: 0, mode: 'idle', model: 'missing', modelMessage: 'Download the local model to get started.', lastCheck: null, lastLatency: null, checks: 0, blocks: 0, endsAt: null, error: null, activity: [] }
 

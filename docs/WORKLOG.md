@@ -315,3 +315,110 @@ All code/runner fixes merged; this final report/handoff commit is documentation
 only and skips a redundant CI rerun. Key availability is resolved permanently for
 this workflow unless credentials later change. Current allowance remains exhausted
 at 45; user budget question is pending, no new cap assumed or paid work started.
+
+
+## 2026-10-29 — standing $3 cumulative allowance approved
+
+User explicitly answered Yes, use a $3 cumulative reservation cap. Migrated the
+AUTHORITATIVE existing ledger from .50 to 3 under exclusive lock; preserved all
+45 attempts/$0.49545216/137877 tokens and prior 62/64 metadata. Added dated
+actual authorizationHistory; no reset, per-run allowance or hidden parallel cap.
+Up to 227 additional attempts fit. Key already works; no repeated setup requests.
+
+Added shared evaluation-budget validator with hard approved $3 upper bound,
+updated static/native/preparation callers, and removed obsolete --init-budget
+CLI path so absent files cannot initialize a fresh allowance. Added trust-boundary
+cap/history tests. 65 unit tests/build and strict runner type checks passed.
+
+Continuing source inventory and real public captures on local branch
+validation/independent-corpus-20261029. New development/held-out split is by source
+family before inference; don't call repeated frames/size variants independent.
+No release, provider/default rule or threshold change. Collect labels/provenance
+and freeze manifests BEFORE any new paid predictions.
+
+
+### Public source acquisition and private capture transport
+
+Cloud Chromium failed YouTube with ERR_TUNNEL_CONNECTION_FAILED (including mobile
+and search URLs); no direct/proxy bypass attempted. Preparing capture-only Windows
+job as an authorized platform fallback, with no Jev key or model calls. Screenshots
+are encrypted (random AES-GCM key wrapped with local RSA public key); private RSA
+key stays 0600 outside Git in /workspace/work/ble-broader-2026-10-29. Only encrypted
+package and non-sensitive status artifact upload, never plaintext images. This
+permits local pixel review before labeling/inference without public redistribution.
+Round-trip/wrong-key/tamper/path tests and an actual public capture->encrypt->local
+decrypt smoke passed. Capture targets restricted to explicit public HTTPS hosts,
+no credentials/ports; isolated browser does not inherit TypeSafe key.
+
+68 local unit tests and production build passed. Candidate new adult sources have
+explicit adult declarations/free licenses; reject age-ambiguous sources and AI/
+art-only images for real-photo coverage. Professional/source families kept together;
+source labels are pending visual review, never inferred from filename alone.
+
+
+### Broader frozen corpus and observed results
+
+Windows capture-only run 40853592968 succeeded with 12 screenshots encrypted to
+local RSA key; no API secret/model calls. Decrypted only locally. Real YouTube
+search/channel/home/watch UI finally obtained; watch had bot sign-in overlay but
+recommendations/chrome visible, no playback claim. Instagram rate-limit captures
+excluded. Local public pages and eight actual IG grids (visible Close icons
+clicked normally) plus thirteen reviewed adult-photo cases formed 48 cases.
+Adult sources declared >=21 at capture; files with 18/19 age declarations or
+uncertain provenance were not downloaded for this cohort. Source/photo families
+assigned dev/held-out before inference; labels and hashes frozen before predictions.
+
+Development 24 baseline caught 5/5 explicit, 3/3 YouTube, 5/5 social; false blocks
+were two covered-body/suggestive photos and a YouTube match on Instagram. Candidate
+platform clarification retained all positives and removed the platform false match.
+Frozen settings/hash chosen using ONLY dev, then held-out 24: explicit6/6, video3/3,
+social4/4 and zero false blocks. Confidence denominators remain far too small for
+95% certification. Twelve later correlated development stress variants (small real
+panels, screenshot instructions, mixed rules, benign mentions) all correct, not
+extra independent subjects. Preserved raw reports and EVALUATION-POLICIES.md.
+
+Adopting ONLY clarified platform starter text; explicit/threshold/provider unchanged.
+Exact untouched old stock strings upgrade on preference load, with activity notice;
+custom text/name/enabled/settings preserved. Validator/user edits remain literal.
+Added meaningful migration regressions. 71 unit tests/build/strict runner type
+checks passed. Added reviewed real source options to native preparation: guarded
+public YouTube page and exact-hash age/licensed adult reference, with no raw image
+artifacts or keys during prep. Actual adult-scene prep smoke passed with no calls.
+
+Accounting after batches: 129 attempts, $1.420296192 reserved of 3, 421419 tokens,
+~$0.017699598 estimated. Prior calls and authorization history retained. Next native
+runs own authority sequentially; no parallel local paid work while remote is active.
+
+
+### Full Windows live transitions with actual sources
+
+Normal PR run40857750402 PASSED:70 unit +1 intentional Linux-only skip,8 UI,
+native smoke, installer build/install and11 fixture-provider scenarios; no release.
+YouTube full run40857749164 failed in preparation: insufficient loaded thumbnails
+after a fixed2.5s wait; no inference step ran, downloaded budget artifact exactly
+matched129. Replaced fixed delay with <=30s visible-loaded-thumbnail wait, retaining
+HTTP/host/DOM guards. Node syntax check passed; real Windows retry passed.
+
+Adult full run40858303368 PASSED: neutral allowed, actual reviewed exact-hash
+licensed adult source painted during protection -> explicit score.98 -> complete
+1024x768 focused/topmost/fullscreen cover -> button pause/recovery,4264ms observed.
+YouTube retry40858537258 PASSED: real loaded public search page during protection,
+score.93, same native cover/recovery assertions,3938ms observed. Each two calls.
+No capture/provider substitution; isolated onboarding seeded; source repeats, not
+new accuracy samples or hardware/latency-distribution certification. Raw screenshots
+not uploaded; source/hash/provenance in saved numerical reports.
+
+After these:133 attempts,$1.464336384 reserved of cumulative3,435752 tokens;
+all three remote accounting copies matched and sequential authority reconciled.
+Social synthetic full transition now owns authority; no parallel local paid calls.
+
+Social full control40858809731 PASSED, workflow green: neutral allowed -> synthetic
+feed score.95 -> full focused/topmost cover -> button recovery,3902ms observed.
+Two calls, all accounting copies agreed. All3 full transitions now passed, each
+one trial on one display; not a95% claim or dynamic/hardware certification.
+Normal latest PR CI40858351838 PASSED:70 unit +1 intentional skip,8 UI, native
+smoke, installer build/install and11 fixture scenarios; release skipped.
+Final cumulative authority:135 attempts,$1.48635648 reserved of3,442937 tokens,
+~$0.018603354 estimated actual charge. Prior history retained, no remote job/lock.
+137 further maximum reservations fit; no reset. Next larger independent positive
+coverage plus dynamic-screen/hardware conditions. No release publication.

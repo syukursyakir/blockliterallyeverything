@@ -52,7 +52,7 @@ describe('evaluation CLI refuses unsafe budget state before network',()=>{
   await writeFile(ledger,'corrupt');expect(run().status).not.toBe(0);expect(await readFile(ledger,'utf8')).toBe('corrupt')
   const state=JSON.stringify({capUsd:0.5,priorUsage:{retainedReservations:62},current:{requests:45,reservedUsd:45*262144*0.042/1e6,inputTokens:0}})
   await writeFile(ledger,state);expect(run().stderr).toContain('exceed');expect(await readFile(ledger,'utf8')).toBe(state)
-  expect(run('--init-budget').stderr).toContain('EEXIST');expect(await readFile(ledger,'utf8')).toBe(state)
+  expect(run('--init-budget').stderr).toContain('Unknown option');expect(await readFile(ledger,'utf8')).toBe(state)
   await writeFile(ledger+'.lock','held');expect(run().stderr).toContain('EEXIST');await expect(readFile(report)).rejects.toThrow()
  })
 })

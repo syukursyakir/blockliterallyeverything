@@ -3,6 +3,7 @@ import { _electron, expect, type Page } from '@playwright/test'
 import { open, mkdir, readFile, writeFile, rename, unlink } from 'node:fs/promises'
 import path from 'node:path'
 import { parseArgs } from 'node:util'
+import { validateEvaluationBudget, type EvaluationBudget } from './evaluation-budget.ts'
 import { nativeExitGuard, nativeBudget } from './native-process.ts'
 import { preflight, evaluationSettings } from './app-evaluation.ts'
 import { validateLedger } from '../electron/jev.ts'
@@ -24,13 +25,11 @@ let phase = 'preflight'
 let processExited = () => true
 const positiveAtStart = values['positive-at-start'] === true
 let reconcile=false, profileSeeded=false, reportReady=false, profileConfirmed=false, nativeStopped=true
-let ledger: {capUsd:number;priorUsage:unknown;current:ReturnType<typeof validateLedger>}
-const report: Record<string,unknown>={scope:'Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.',passed:false,caseId:selected.item.id,preparedSha256:selected.item.sha256,manifestSha256:prepared.manifestSha256,rule:positive,protocol:positiveAtStart?'positive-at-session-start':'neutral-to-positive-during-session',startedAt:new Date().toISOString(),timingMethod:'Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.'}
+let ledger: EvaluationBudget
+const report: Record<string,unknown>={scope:'Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.',passed:false,caseId:selected.item.id,preparedSha256:selected.item.sha256,manifestSha256:prepared.manifestSha256,rule:positive,caseProvenance:{origin:selected.item.origin,source:selected.item.source,source_sha256:selected.item.source_sha256,adult_provenance:selected.item.adult_provenance,rights:selected.item.rights},protocol:positiveAtStart?'positive-at-session-start':'neutral-to-positive-during-session',startedAt:new Date().toISOString(),timingMethod:'Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.'}
 const atomic=async(file:string,value:unknown)=>{await writeFile(file+'.tmp',JSON.stringify(value,null,2)+'\n',{mode:0o600});await rename(file+'.tmp',file)}
 try {
-  ledger=JSON.parse(await readFile(file,'utf8'))
-  if(ledger.capUsd!==0.5 || !ledger.priorUsage) throw new Error('Unexpected retained budget metadata.')
-  ledger.current=validateLedger(ledger.current)
+  ledger=validateEvaluationBudget(JSON.parse(await readFile(file,'utf8')))
   const planned=nativeBudget(ledger.current,ledger.capUsd,positiveAtStart)
   const runBudget=planned.limitUsd
   report.maximumRequests=planned.maximumRequests

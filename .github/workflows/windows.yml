@@ -13,6 +13,26 @@ on:
         description: Run opt-in real capture and Jev detection without building or publishing an installer
         type: boolean
         default: false
+      capture_only:
+        description: Capture public pages for encrypted local review, with no model calls
+        type: boolean
+        default: false
+      capture_targets:
+        description: Explicit public URL targets JSON (1 to 24)
+        type: string
+        required: false
+      capture_public_key:
+        description: Public RSA key for encrypted screenshot transport (never a private key)
+        type: string
+        required: false
+      live_scene:
+        description: Controlled integration scene; public sources are reviewed repeats, not new accuracy samples
+        type: choice
+        options:
+          - social-synthetic
+          - youtube-public
+          - explicit-public
+        default: social-synthetic
       positive_at_start:
         description: Explicit single-request positive-at-session-start protocol (no active-session transition claim)
         type: boolean
@@ -25,7 +45,7 @@ permissions:
   contents: read
 jobs:
   windows:
-    if: github.event_name != 'workflow_dispatch' || !inputs.live_detection
+    if: github.event_name != 'workflow_dispatch' || (!inputs.live_detection && !inputs.capture_only)
     permissions:
       contents: write
     runs-on: windows-latest
@@ -86,7 +106,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'Release publication failed' }
 
   live-detection:
-    if: github.event_name == 'workflow_dispatch' && inputs.live_detection
+    if: github.event_name == 'workflow_dispatch' && inputs.live_detection && !inputs.capture_only
     runs-on: windows-latest
     timeout-minutes: 15
     permissions:
@@ -116,8 +136,9 @@ jobs:
         env:
           BLE_RETAINED_BUDGET: ${{ inputs.retained_budget }}
           BLE_LIVE_POSITIVE_AT_START: ${{ inputs.positive_at_start }}
+          BLE_LIVE_SCENE: ${{ inputs.live_scene }}
       - name: Real capture, live Jev, native cover and recovery
-        run: node scripts/test-live-windows.mjs --allow-cloud --corpus native-live/manifest.json --case native-social-fixture --ledger native-live/budget.json --output native-live/report.json ${{ inputs.positive_at_start && '--positive-at-start' || '' }}
+        run: node scripts/test-live-windows.mjs --allow-cloud --corpus native-live/manifest.json --case native-${{ inputs.live_scene || 'social-synthetic' }} --ledger native-live/budget.json --output native-live/report.json ${{ inputs.positive_at_start && '--positive-at-start' || '' }}
         env:
           TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
       - name: Preserve numerical evidence and accounting only
@@ -131,3 +152,38 @@ jobs:
             native-live/report.json.profile/jev-budget.json
           if-no-files-found: warn
           retention-days: 7
+
+  capture-public:
+    if: github.event_name == 'workflow_dispatch' && inputs.capture_only
+    runs-on: windows-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - name: Refuse release or mixed capture/inference mode
+        shell: pwsh
+        env:
+          PUBLISH_REQUESTED: ${{ inputs.publish_alpha }}
+          LIVE_REQUESTED: ${{ inputs.live_detection }}
+        run: |
+          if ($env:PUBLISH_REQUESTED -eq 'true' -or $env:LIVE_REQUESTED -eq 'true') { throw 'Capture-only mode never runs inference or publishes.' }
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install chromium
+      - name: Capture public pages and encrypt pixels for local review
+        run: node scripts/capture-public-private.mjs private-captures
+        env:
+          BLE_CAPTURE_PUBLIC_KEY: ${{ inputs.capture_public_key }}
+          BLE_CAPTURE_TARGETS: ${{ inputs.capture_targets }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: private-public-captures-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            private-captures/captures.enc.json
+            private-captures/status.json
+          if-no-files-found: error
+          retention-days: 2

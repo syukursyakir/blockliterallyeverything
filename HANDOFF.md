@@ -15,30 +15,51 @@ No further permission is needed to continue that validation after its key is ava
 Release publication remains disabled; do not overwrite v0.1.0-alpha.1.
 Do not send third-party messages or start laptop remote access. Neither is authorized.
 
-## Current live proof — key works; one controlled pipeline check passed
+## Current evidence and authorization
 
-GitHub Actions secret is AVAILABLE and authenticates. User fixed it; DO NOT ask
-for it again unless a real new auth failure occurs. No key values were extracted.
-PR #2 merged the runner correction at 35fb5f71e92cbe582e6abf06f68e562dc0b6195e.
-Read docs/LIVE-WINDOWS-RESULT.md and windows-live-run-40850770758.json.
+Actions secret works; do not ask again absent an actual new authentication failure.
+User explicitly approved a $3 CUMULATIVE conservative reservation ceiling. Existing
+45 attempts and prior missing-ledger 62/64 history were preserved, not reset.
+No per-batch approval needed within this cap. No release authorized.
 
-Real Windows capture -> real Jev match .95 -> focused/topmost/fullscreen
-1024x768 cover -> button recovery/paused session PASSED for ONE synthetic social
-scene, positive already visible at session start. Observed 951 ms includes startup/
-IPC/capture/poll overhead. Not an active-session transition or broad accuracy claim.
+Current branch validation/independent-corpus-20261029, PR #3:
+https://github.com/syukursyakir/blockliterallyeverything/pull/3
+Read docs/BROADER-EVALUATION.md and docs/LIVE-WINDOWS-RESULT.md.
 
-Overall run 40850770758 is CANCELLED: a cancellation request during review arrived
-AFTER native step and artifact upload succeeded. Saved report passed=true and
-all three budgets agree; preserve both facts, never relabel workflow green.
-Earlier authenticated run 40849807420 made two calls then cleanup crashed because
-application.process() was read after close; primary report was lost, not a pass.
-Fix caches the process handle and saves outcome before cleanup. Regression covered.
+48 fresh source-family cases, development24/held-out24 split before inference.
+Platform clarification selected using development only, frozen before held-out.
+Held-out: explicit6/6, YouTube3/3, social4/4; zero false blocks. Twelve correlated
+small-panel/injection/mixed-rule stress cases passed. Too few independent positives
+for a95% claim. Two covered-body/swimwear development false positives remain;
+explicit rule/threshold/provider unchanged. No convenient relabeling.
 
-Budget now EXHAUSTED: 45 attempts, $0.49545216 reserved, 137877 reported tokens,
-~$0.005790834 estimated. No next whole call fits the approved $0.50. A question
-about a $3 cumulative conservative cap is pending; not authorized until answered.
-No further paid calls meanwhile. Secret setup, push/merge and CI authority remain
-valid. No release publication. Product runtime/presets/provider/threshold unchanged.
+Clarified platform starter wording adopted; ONLY exact old canonical stock strings
+upgrade on saved-preference load. Custom instructions, names, enabled flags and all
+other settings preserved. Validator/user edits literal; no automatic capture.
+71 local tests/build/strict runner checks passed. Windows run40857750402 passed:
+70 unit +one intentional skip,8 UI, installer/smoke and11 fixture scenarios.
+
+Full already-active Windows neutral->positive->native cover->button recovery:
+-40858303368 adult: actual reviewed licensed source, exact pinned hash, score.98,
+  observed4264ms, two requests, PASSED and workflow green.
+-40858537258 YouTube: loaded actual public search page, score.93, observed3938ms,
+  two requests, PASSED and workflow green.
+Both full1024x768 visible/focused/topmost/fullscreen. These reuse development
+sources; not new independent accuracy samples or latency-distribution/hardware proof.
+YouTube preparation run40857749164 failed before calls; unchanged129 reconciled.
+Fixed2.5s wait replaced by bounded loaded-thumbnail wait; retry above passed.
+Social full control40858809731 PASSED, workflow green: score.95, observed3902ms,
+two calls, same cover and recovery assertions. All three full checks passed.
+Authoritative ledger reconciled after each run; lock released, no paid job active.
+Latest ordinary PR CI40858351838 also passed the full Windows pipeline.
+
+Historical startup-only synthetic social pass40850770758:951ms, score.95.
+Native/report passed but overall workflow CANCELLED after artifact upload; preserve
+both facts. Earlier40849807420 lost primary report after cleanup process getter
+error; counters recovered, not a claimed pass. PR #2 fixed runner cleanup.
+
+Encrypted-only Windows capture40853592968 made NO model calls. Decrypted pixels
+and private RSA key remain outside Git/public artifacts. No raw screenshots uploaded.
 
 ## Verified Windows evidence
 
@@ -73,24 +94,24 @@ Explicit positives span FOUR source families (three source-declared adult anatom
 photos plus one adult educational activity-video frame), with related size variants.
 No broad sexual-content recall estimate or 95% reliability claim is supported.
 
-The platform-only wording candidate corrected two targeted false matches but
-reduced TikTok score .78 -> .50 (still above .4). Candidate is NOT adopted.
-Product default rules, provider, threshold and existing saved rules are unchanged.
-Need broader independent development/held-out evaluation before adopting changes.
+Earlier four-case candidate reduced one TikTok score .78 -> .50. Later broader
+development/held-out and stress evidence is in BROADER-EVALUATION.md; only platform
+stock wording is clarified, custom rules and explicit threshold/provider unchanged.
 
 ## Retained accounting — do not reset
 
 Authoritative ledger: /workspace/work/ble-real-2026-10-29/app-budget.json
-Approved NEW allowance: $0.50 conservative reservations; prior 62/64 history is
+Approved cumulative allowance: $3 conservative reservations; prior 62/64 history is
 preserved separately and the old lab ledger is missing, not zero.
-Current: 45 reservations, $0.49545216 reserved, 137877 input tokens,
-~$0.005790834 estimated charge. ZERO further attempts fit the current cap.
-Earlier 42 figures below describe historical runs only.
+At migration: 45 reservations, $0.49545216 reserved, 137877 input tokens.
+Current:135 reservations,$1.48635648 reserved of3,442937 tokens
+(~$0.018603354 estimated charge). 137 further maximum-size attempts fit. Prior exhausted .50 cap
+is historical, not the current limit.
 
 The missing-secret run preserved 42. The cleanup-failed authenticated run added
 two reservations (44), recovered from its isolated profile. The successful bounded
 live test added one (45); all wrapper/profile/report counters matched. Local
-authority is now restored, no lock remains and no further whole request fits.
+authority was restored; migration to $3 preserved those counters and history.
 Copies under ignored work/windows-live-preflight and work/windows-live-run-* are
 NON-AUTHORITATIVE. Never use one as a fresh allowance.
 
@@ -98,18 +119,24 @@ Before any remote dispatch: freeze local paid work, hold a durable authority loc
 pass the exact retained ledger JSON, then reconcile downloaded numeric artifacts
 before releasing authority. If interrupted, preserve lock and recover from the
 isolated app ledger; never blindly retry or reset. File locks cannot lock a second
-copy on another machine. No new spending allowance has been granted.
+copy on another machine. The user-authorized extension is cumulative to $3, never $3 per run or per machine.
 
-## Next work, after any necessary budget authorization
+## Current next work within the authorized $3 ceiling
+
+Finish PR #3 merge and verify main CI (no release). Then expand independent
+positive-source coverage and realistic safe lookalikes, especially explicit activity
+and motion during analysis; design/freeze before calls. Do not retune against the
+used held-out set and call it untouched.
 
 No repeated secret prompt. Broader independent source-separated development and
-untouched held-out coverage is still required for a 95% detection target. Candidate
-wording is unadopted; do not hide misses/false blocks by moving thresholds.
+untouched held-out coverage is still required for a 95% detection target. Platform candidate wording passed frozen held-out checks and was adopted on this
+branch; explicit wording and threshold stay unchanged.
 
 Full live protocol remains neutral-to-positive while already active, maximum three
 attempts. Explicit positive_at_start mode uses one request and reports startup/
 transition limits. Docs/WINDOWS-LIVE-VALIDATION.md explains execution and authority.
-There is one controlled live pass; no repeated-trial, hardware or latency guarantee.
+Three full transitions (two real sources) plus historical synthetic startup passed;
+no repeated-trial, hardware or latency guarantee.
 
 Do not rerun completed image batches, old local-model comparisons or fixture tests
 and relabel them as new accuracy evidence. Do not reset/recreate the budget.
@@ -152,8 +179,8 @@ ble-followup-2026-10-29, ble-activity-2026-10-29 and ble-candidate-2026-10-29.
 Source declarations/licenses, hashes, labels and exact questions are in reports.
 Adult image bytes and keys are excluded from Git/public artifacts.
 
-Local 57 unit tests/build and runner type/bundle checks passed. Latest PR Windows
-log verified 56 passes plus one intended Linux-only skip, eight UI and 11 native
+Local 71 unit tests/build and runner type/bundle checks passed. Latest PR Windows
+log verified 70 passes plus one intended Linux-only skip, eight UI and 11 native
 fixture scenarios. Use Ponytail full and relevant skills; smallest complete change, actual failure checks, no speculative rewrite.
 Append actual outcomes to WORKLOG.md and update this current state after work.
 Do not reconfigure/republish the managed environment or repeat old setup work.

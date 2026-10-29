@@ -1,0 +1,99 @@
+{
+  "scope": "Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.",
+  "passed": true,
+  "caseId": "native-social-synthetic",
+  "preparedSha256": "eb9f54e832a5d96a860dfcbc00f5c01335102ad430e8230c1da94636d269d639",
+  "manifestSha256": "eb4cc753f3e0e93bacc198f3bb022a038893e25068cdcaa1f3f4be9c6b22c3fa",
+  "rule": {
+    "id": "social",
+    "name": "Social feeds",
+    "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+    "enabled": true
+  },
+  "caseProvenance": {
+    "origin": "self-authored synthetic browser screenshot"
+  },
+  "protocol": "neutral-to-positive-during-session",
+  "startedAt": "2026-10-29T10:36:58.650Z",
+  "timingMethod": "Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.",
+  "maximumRequests": 3,
+  "budgetBefore": {
+    "requests": 133,
+    "reservedUsd": 1.4643363839999994,
+    "inputTokens": 435752
+  },
+  "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\report.json.profile",
+  "runtime": {
+    "os": "10.0.26100",
+    "electron": "45.1.0",
+    "appVersion": "0.1.0",
+    "displays": [
+      {
+        "id": 2753098503,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768
+        },
+        "scaleFactor": 1
+      }
+    ]
+  },
+  "settings": {
+    "backend": "jev",
+    "cloudConsent": true,
+    "cloudBudgetUsd": 1.4973665279999993,
+    "rules": [
+      {
+        "id": "explicit",
+        "name": "Explicit content",
+        "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+        "enabled": false
+      },
+      {
+        "id": "video",
+        "name": "YouTube",
+        "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+        "enabled": false
+      },
+      {
+        "id": "social",
+        "name": "Social feeds",
+        "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+        "enabled": true
+      }
+    ],
+    "threshold": 0.4,
+    "intervalSeconds": 3,
+    "sessionMinutes": 25,
+    "detectionOnly": false
+  },
+  "negativeControl": "Live neutral frame allowed without a cover.",
+  "contentToObservedCoverMs": 3902,
+  "blockInfo": {
+    "rule": "Social feeds",
+    "probability": 0.95
+  },
+  "cover": {
+    "bounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 768
+    },
+    "visible": true,
+    "topmost": true,
+    "focused": true,
+    "fullScreen": true
+  },
+  "blockedRule": "Blocked: Social feeds",
+  "recovery": "Button released cover and paused session.",
+  "budgetAfter": {
+    "requests": 135,
+    "reservedUsd": 1.4863564799999993,
+    "inputTokens": 442937
+  },
+  "workflowRun": 40858809731,
+  "workflowConclusion": "success"
+}

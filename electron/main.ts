@@ -6,7 +6,7 @@ import { createHash, randomUUID } from 'node:crypto'
 import { ModelWorker } from './worker'
 import { emptyLedger, validateLedger, reserveCloud, requestJev, type CloudLedger } from './jev'
 import { ScreenCache, changedSubstantially, isBlankCapture } from './screen-cache'
-import { defaultSettings, initialStatus, validateSettings, matchingRule, type Settings, type Status, type Snapshot, type CheckResult, type BlockInfo } from '../src/shared'
+import { defaultSettings, initialStatus, validateSettings, upgradeStarterRuleWording, matchingRule, type Settings, type Status, type Snapshot, type CheckResult, type BlockInfo } from '../src/shared'
 
 let mainWindow: BrowserWindow
 let tray: Tray
@@ -219,7 +219,11 @@ else {
     }
     cloudStatus()
     let existingPreferences = false
-    try { settings = validateSettings(JSON.parse(await readFile(settingsPath, 'utf8'))); existingPreferences = true }
+    try {
+      const saved = validateSettings(JSON.parse(await readFile(settingsPath, 'utf8')))
+      settings = upgradeStarterRuleWording(saved); existingPreferences = true
+      if (settings !== saved) activity('info', 'Starter rule wording was clarified. Review your rules before starting a session.')
+    }
     catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') { status.error = 'Saved settings could not be read. Defaults restored; review your rules.'; activity('error', status.error) } }
     const onboardingPath = path.join(dataDir, 'onboarding.json')
     try {
