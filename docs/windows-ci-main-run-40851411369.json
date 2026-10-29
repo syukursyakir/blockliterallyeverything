@@ -1,0 +1,13 @@
+{
+  "scope": "Post-merge Windows checks for cleanup fix; fixture-provider native scenarios separate from real live result.",
+  "run_url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40851411369",
+  "tested_commit": "35fb5f71e92cbe582e6abf06f68e562dc0b6195e",
+  "conclusion": "success",
+  "unit_tests_passed": 56,
+  "unit_tests_skipped": 1,
+  "browser_tests_passed": 8,
+  "installed_fixture_scenarios_passed": 11,
+  "native_desktop_smoke": true,
+  "installer_build_and_install": true,
+  "release_published": false
+}

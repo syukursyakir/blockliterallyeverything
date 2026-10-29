@@ -279,3 +279,39 @@ No change to product runtime, defaults, model, thresholds or privacy behavior.
 57 unit tests and build passed locally; native runner strict type check passed.
 Next: push correction, opt-in one-call live Windows run, reconcile actual artifacts,
 then merge after checks. No additional allowance, retries or release publication.
+
+
+### Controlled live Windows pass and exhausted allowance
+
+Run 40850770758 at 821b888 completed real capture/provider/cover/recovery and
+artifact upload SUCCESSFULLY. Saved primary report passed=true: actual social
+score .95, full 1024x768 visible/focused/topmost/fullscreen cover, button recovery
+paused and removed cover, 951ms presentation-to-observed-cover including startup.
+One synthetic positive-at-start scene; not general reliability or active-session
+change timing. No capture/provider substitutions. Onboarding/profile was seeded.
+
+A cancellation request during review arrived after those steps and marked the
+OVERALL workflow cancelled. This status is retained in saved raw report, alongside
+native step success; not represented as a green workflow. No further API calls to
+recreate an otherwise passing report. Verified all native assertions and downloaded
+report/wrapper/profile accounting. Reconciled local ledger to 45/$0.49545216/
+137877 tokens, ~$0.005790834 estimated; restored local authority. ZERO additional
+whole requests fit the $0.50 allowance. Asked user about a standing $3 cumulative
+conservative allowance; question is not approval. No more paid work until answer.
+
+PR #2 merged at 35fb5f71e92cbe582e6abf06f68e562dc0b6195e after regular Windows
+run 40850774234 passed. Post-merge run 40851411369 is running. Added
+windows-live-run-40850770758.json and LIVE-WINDOWS-RESULT.md with exact limits and
+workflow-status caveat. Key now works: don't ask user to set it up again.
+Product runtime/defaults/provider/threshold unchanged; no release published.
+
+
+### Final post-merge verification
+
+Main run 40851411369 at 35fb5f7 PASSED: 56 unit tests plus one intended Linux-only
+skip, eight UI tests, real desktop smoke, installer build/install and all 11
+fixture-provider installed scenarios. Release step skipped. Saved per-run summary.
+All code/runner fixes merged; this final report/handoff commit is documentation
+only and skips a redundant CI rerun. Key availability is resolved permanently for
+this workflow unless credentials later change. Current allowance remains exhausted
+at 45; user budget question is pending, no new cap assumed or paid work started.

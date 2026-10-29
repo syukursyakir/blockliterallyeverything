@@ -228,3 +228,18 @@ TYPESAFE_API_KEY; [blocked outcome](windows-live-blocked-run-40847626764.json).
 No provider call or extra reservation occurred. Retained accounting is still
 42 requests, with THREE available. Need the exact repository Actions secret
 configured securely; there is no live Windows timing result yet. No release.
+
+
+## First retained live native evidence
+
+The Actions secret now works. [Live result](LIVE-WINDOWS-RESULT.md) verifies real
+Windows capture -> real Jev social match -> full display cover -> button recovery
+for one synthetic positive-at-session-start case. Observed 951ms includes startup
+and observation; not a representative latency or accuracy claim. Overall workflow
+cancelled during final housekeeping after successful native step/upload; report
+passed=true and all accounting was independently reconciled. No fake green run.
+
+Two real requests from the earlier cleanup-failed run plus this one-request pass
+bring accounting to 45 reservations/$0.49545216/137877 tokens (~$0.005790834
+estimated). These native attempts are NOT additional fixed-corpus accuracy samples.
+Current allowance exhausted. Do not reset or spend again until new cap authorized.

@@ -191,3 +191,21 @@ PR #1 is now merged (2884b48). Latest PR run 40848323490 and post-merge main run
 no release was published. The live secret blocker is unchanged. New main workflow
 references the exact repository/organization secret; no GitHub environments exist.
 Only the user can supply the secret with the currently available permissions.
+
+
+## Current result: secret available and a bounded live pass
+
+Read [LIVE-WINDOWS-RESULT.md](LIVE-WINDOWS-RESULT.md). Secret availability is FIXED.
+The first authenticated run exposed a cleanup bug, now corrected and regression
+covered. PR #2 is merged. Explicit positive_at_start=true mode performs one real
+request rather than the default three-attempt full protocol; the prepared image
+is visible BEFORE session start, so it does not prove active-session change timing.
+
+Run 40850770758 native step and artifact upload succeeded, saved passed=true and
+all reconciled budgets. A late cancellation request after those steps made the
+overall workflow cancelled; JSON preserves that caveat. Full cover/recovery were
+verified. No need to rerun merely for a green overall status. No 95% claim.
+
+The allowance is EXHAUSTED at 45/$0.49545216. Do not start another live or image
+request until a new cap is authorized. A $3 cumulative conservative allowance
+question is pending, NOT approved. No further secret entry is needed.

@@ -1,0 +1,106 @@
+{
+  "scope": "Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.",
+  "passed": true,
+  "caseId": "native-social-fixture",
+  "preparedSha256": "eb9f54e832a5d96a860dfcbc00f5c01335102ad430e8230c1da94636d269d639",
+  "manifestSha256": "242df79c0794a53a3b0da815ed16a34086a6031b2114355a77d5b42a65f52f9e",
+  "rule": {
+    "id": "social",
+    "name": "Social feeds",
+    "instruction": "Block visible Instagram and TikTok feeds, including short-form video scrolling.",
+    "enabled": true
+  },
+  "protocol": "positive-at-session-start",
+  "startedAt": "2026-10-29T09:36:13.358Z",
+  "timingMethod": "Positive image painted before session starts; presentation to automation-observed complete cover includes session-start/IPC/capture overhead. NOT an already-active-session transition or frame-accurate latency.",
+  "maximumRequests": 1,
+  "budgetBefore": {
+    "requests": 44,
+    "reservedUsd": 0.4844421119999998,
+    "inputTokens": 134310
+  },
+  "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\report.json.profile",
+  "runtime": {
+    "os": "10.0.26100",
+    "electron": "45.1.0",
+    "appVersion": "0.1.0",
+    "displays": [
+      {
+        "id": 3105088064,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 768
+        },
+        "scaleFactor": 1
+      }
+    ]
+  },
+  "settings": {
+    "backend": "jev",
+    "cloudConsent": true,
+    "cloudBudgetUsd": 0.4954521599999998,
+    "rules": [
+      {
+        "id": "explicit",
+        "name": "Explicit content",
+        "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+        "enabled": false
+      },
+      {
+        "id": "video",
+        "name": "YouTube",
+        "instruction": "Block visible YouTube browsing, video playback, Shorts, and the YouTube home feed.",
+        "enabled": false
+      },
+      {
+        "id": "social",
+        "name": "Social feeds",
+        "instruction": "Block visible Instagram and TikTok feeds, including short-form video scrolling.",
+        "enabled": true
+      }
+    ],
+    "threshold": 0.4,
+    "intervalSeconds": 3,
+    "sessionMinutes": 25,
+    "detectionOnly": false
+  },
+  "contentToObservedCoverMs": 951,
+  "blockInfo": {
+    "rule": "Social feeds",
+    "probability": 0.95
+  },
+  "cover": {
+    "bounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 768
+    },
+    "visible": true,
+    "topmost": true,
+    "focused": true,
+    "fullScreen": true
+  },
+  "blockedRule": "Blocked: Social feeds",
+  "recovery": "Button released cover and paused session.",
+  "budgetAfter": {
+    "requests": 45,
+    "reservedUsd": 0.4954521599999998,
+    "inputTokens": 137877
+  },
+  "run_url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40850770758",
+  "tested_commit": "821b88849e1e0f20edff12cdac7505e6c2aafc5f",
+  "workflow_conclusion": "cancelled",
+  "native_step_conclusion": "success",
+  "artifact_upload_conclusion": "success",
+  "workflow_cancellation_note": "Cancellation requested during review arrived after native test and artifact upload had completed. Passing primary outcome and reconciled budgets were verified from artifacts.",
+  "artifact_id": 12886747960,
+  "limitations": [
+    "Single synthetic social-interface scene on one 1024x768 display at scale 1.",
+    "Positive present when session starts; not a negative-to-positive transition during an already active session.",
+    "No broad accuracy, 95% reliability, multi-monitor/DPI, exclusive-fullscreen or physical sleep/lock claim.",
+    "One automation-observed timing includes startup/IPC/capture and poll overhead; not frame-accurate or median/tail timing."
+  ]
+}

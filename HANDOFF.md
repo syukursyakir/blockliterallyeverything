@@ -15,31 +15,30 @@ No further permission is needed to continue that validation after its key is ava
 Release publication remains disabled; do not overwrite v0.1.0-alpha.1.
 Do not send third-party messages or start laptop remote access. Neither is authorized.
 
-## Current live work — secret fixed; native runner cleanup correction
+## Current live proof — key works; one controlled pipeline check passed
 
-User added Actions secret. Run 40849807420 passed secret preflight and made TWO
-real requests (7138 reported tokens). Secret setup/authentication now WORKS;
-do not ask again or copy key values. Native runner then crashed in cleanup:
-application.process() getter was called AFTER application.close() disposed the
-Playwright dispatcher. Primary report stayed empty, so no live pass is claimed.
+GitHub Actions secret is AVAILABLE and authenticates. User fixed it; DO NOT ask
+for it again unless a real new auth failure occurs. No key values were extracted.
+PR #2 merged the runner correction at 35fb5f71e92cbe582e6abf06f68e562dc0b6195e.
+Read docs/LIVE-WINDOWS-RESULT.md and windows-live-run-40850770758.json.
 
-Recovered authoritative accounting from isolated profile artifact: 44 requests,
-$0.484442112 reserved, 134310 tokens. ONE further attempt fits the approved cap.
-Local lock was released only after recovery from the completed job. See
-windows-live-cleanup-run-40849807420.json. Parent remote budget wrapper was stale
-at 42; always prefer/reconcile the validated isolated profile when cleanup fails.
+Real Windows capture -> real Jev match .95 -> focused/topmost/fullscreen
+1024x768 cover -> button recovery/paused session PASSED for ONE synthetic social
+scene, positive already visible at session start. Observed 951 ms includes startup/
+IPC/capture/poll overhead. Not an active-session transition or broad accuracy claim.
 
-Fix: cache process handle before close and persist primary result before cleanup.
-Regression tests cover disposed getter and signal exit. Add EXPLICIT
-positive_at_start single-call mode to use the last slot without changing the
-remaining budget. It validates positive-at-session-start capture->real provider->
-cover->recovery, NOT a neutral-to-positive transition in an already-active session.
-Default full protocol remains three-request maximum; no silent fallback.
+Overall run 40850770758 is CANCELLED: a cancellation request during review arrived
+AFTER native step and artifact upload succeeded. Saved report passed=true and
+all three budgets agree; preserve both facts, never relabel workflow green.
+Earlier authenticated run 40849807420 made two calls then cleanup crashed because
+application.process() was read after close; primary report was lost, not a pass.
+Fix caches the process handle and saves outcome before cleanup. Regression covered.
 
-Proceed on validation/native-cleanup-20261029. User already authorized push/merge/
-Windows runs; no more input required unless the cap prevents necessary testing.
-No release publication. Do not rerun image batches or spend beyond one remaining
-attempt; freeze/reconcile authority around the planned single-call native run.
+Budget now EXHAUSTED: 45 attempts, $0.49545216 reserved, 137877 reported tokens,
+~$0.005790834 estimated. No next whole call fits the approved $0.50. A question
+about a $3 cumulative conservative cap is pending; not authorized until answered.
+No further paid calls meanwhile. Secret setup, push/merge and CI authority remain
+valid. No release publication. Product runtime/presets/provider/threshold unchanged.
 
 ## Verified Windows evidence
 
@@ -50,8 +49,11 @@ attempt; freeze/reconcile authority around the planned single-call native run.
   secret guard update. Release publication was skipped.
 - Post-merge push run 40848861167: PASSED the same full Windows pipeline.
   Numeric summary: docs/windows-ci-main-run-40848861167.json.
+- PR #2 run 40850774234 passed after cleanup correction; local 57 tests/build passed.
+- Main post-PR #2 run 40851411369 PASSED: 56 unit + one intentional skip,
+  eight UI, desktop smoke, installer build/install and 11 fixture-provider scenarios.
 - Live run 40847626764 FAILED at missing-key preflight. Numeric outcome is
-  docs/windows-live-blocked-run-40847626764.json. No live inference-to-cover result.
+  docs/windows-live-blocked-run-40847626764.json. Historical result; successful controlled live result is described above.
 
 The 11 installed scenarios use fixture provider replies. They are real Windows
 capture/storage/cover/recovery checks, NOT model-accuracy or live-provider proof.
@@ -81,12 +83,14 @@ Need broader independent development/held-out evaluation before adopting changes
 Authoritative ledger: /workspace/work/ble-real-2026-10-29/app-budget.json
 Approved NEW allowance: $0.50 conservative reservations; prior 62/64 history is
 preserved separately and the old lab ledger is missing, not zero.
-Current: 44 reservations, $0.484442112 reserved, 134310 input tokens,
-~$0.00564102 estimated charge. ONE more attempt fits. Keep it for the corrected
-single-call Windows protocol; earlier 42 figures below are historical.
+Current: 45 reservations, $0.49545216 reserved, 137877 input tokens,
+~$0.005790834 estimated charge. ZERO further attempts fit the current cap.
+Earlier 42 figures below describe historical runs only.
 
-Live run's downloaded budget exactly matched local (42); local authority lock was
-released after reconciliation. No extra call/reservation/charge occurred on Windows.
+The missing-secret run preserved 42. The cleanup-failed authenticated run added
+two reservations (44), recovered from its isolated profile. The successful bounded
+live test added one (45); all wrapper/profile/report counters matched. Local
+authority is now restored, no lock remains and no further whole request fits.
 Copies under ignored work/windows-live-preflight and work/windows-live-run-* are
 NON-AUTHORITATIVE. Never use one as a fresh allowance.
 
@@ -96,22 +100,19 @@ before releasing authority. If interrupted, preserve lock and recover from the
 isolated app ledger; never blindly retry or reset. File locks cannot lock a second
 copy on another machine. No new spending allowance has been granted.
 
-## Next action once the Actions secret is available
+## Next work, after any necessary budget authorization
 
-Follow docs/WINDOWS-LIVE-VALIDATION.md. Dispatch existing windows.yml on main with
-live_detection=true, publish_alpha=false and exact retained_budget JSON. It skips
-installer/release jobs, uses a self-authored non-sensitive scene on one Windows
-display and real capture/provider calls; no provider/capture substitutions. The
-initial profile is seeded, so onboarding is not part of this live test.
+No repeated secret prompt. Broader independent source-separated development and
+untouched held-out coverage is still required for a 95% detection target. Candidate
+wording is unadopted; do not hide misses/false blocks by moving thresholds.
 
-Runner caps at three attempts, starts on a neutral screen, paints a reviewed
-positive during an active session, verifies complete native cover and button
-recovery, then reconciles accounting after confirmed process exit. No sensitive
-screenshots or whole profiles are uploaded, only report/budget and recovery ledger.
-Timing is automation-observed, not external frame-accurate or a median/tail claim.
+Full live protocol remains neutral-to-positive while already active, maximum three
+attempts. Explicit positive_at_start mode uses one request and reports startup/
+transition limits. Docs/WINDOWS-LIVE-VALIDATION.md explains execution and authority.
+There is one controlled live pass; no repeated-trial, hardware or latency guarantee.
 
 Do not rerun completed image batches, old local-model comparisons or fixture tests
-and relabel them as new accuracy evidence. No Windows live pass is available yet.
+and relabel them as new accuracy evidence. Do not reset/recreate the budget.
 
 ## Product and implementation context
 
@@ -151,8 +152,8 @@ ble-followup-2026-10-29, ble-activity-2026-10-29 and ble-candidate-2026-10-29.
 Source declarations/licenses, hashes, labels and exact questions are in reports.
 Adult image bytes and keys are excluded from Git/public artifacts.
 
-Local 54 unit tests/build and runner type/bundle checks passed; Windows has 53
-unit passes plus one intended Linux-only skip. Use Ponytail full and relevant
-skills; smallest complete change, actual failure checks, no speculative rewrite.
+Local 57 unit tests/build and runner type/bundle checks passed. Latest PR Windows
+log verified 56 passes plus one intended Linux-only skip, eight UI and 11 native
+fixture scenarios. Use Ponytail full and relevant skills; smallest complete change, actual failure checks, no speculative rewrite.
 Append actual outcomes to WORKLOG.md and update this current state after work.
 Do not reconfigure/republish the managed environment or repeat old setup work.

@@ -1,0 +1,13 @@
+{
+  "scope": "Full Windows PR checks; installed-provider answers are fixtures, separate from the real live report.",
+  "run_url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40850774234",
+  "tested_commit": "821b88849e1e0f20edff12cdac7505e6c2aafc5f",
+  "conclusion": "success",
+  "unit_tests_passed": 56,
+  "unit_tests_skipped": 1,
+  "browser_tests_passed": 8,
+  "installed_fixture_scenarios_passed": 11,
+  "native_desktop_smoke": true,
+  "installer_build_and_install": true,
+  "release_published": false
+}
