@@ -3,13 +3,14 @@ import { chromium } from '@playwright/test'
 import { mkdir, writeFile, readFile, readdir } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
 import path from 'node:path'
-import { validateLedger, RESERVED_PER_REQUEST } from '../electron/jev.ts'
+import { validateLedger } from '../electron/jev.ts'
+import { nativeBudget } from '../lab/native-process.ts'
 const destination=path.resolve(process.argv[2] || 'native-live')
 if(!process.env.BLE_RETAINED_BUDGET)throw new Error('Provide the authoritative retained budget metadata in BLE_RETAINED_BUDGET. No empty allowance is created.')
 const budget=JSON.parse(process.env.BLE_RETAINED_BUDGET)
 if(budget.capUsd!==0.5 || !budget.priorUsage)throw new Error('Unexpected retained allowance.')
 validateLedger(budget.current)
-if(budget.current.reservedUsd+3*RESERVED_PER_REQUEST>budget.capUsd)throw new Error('Three requests must fit the retained allowance.')
+nativeBudget(budget.current,budget.capUsd,process.env.BLE_LIVE_POSITIVE_AT_START==='true')
 await mkdir(destination,{recursive:true})
 if((await readdir(destination)).length)throw new Error('Destination must be empty.')
 await writeFile(path.join(destination,'budget.json'),JSON.stringify(budget,null,2)+'\n',{flag:'wx',mode:0o600})

@@ -1,0 +1,16 @@
+{
+  "scope": "Actions secret available; two real provider calls completed, but native runner cleanup crashed before primary outcome/report persistence. Not a passing live integration result.",
+  "run_url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40849807420",
+  "tested_commit": "a66d48d48b88f3b4340468ed732e35e5b1ce763f",
+  "conclusion": "failure",
+  "secret_availability": "passed",
+  "failure": "Playwright application.process() getter used after application.close() disposed its dispatcher.",
+  "primary_outcome": "unavailable: report file empty due cleanup exception",
+  "provider_attempts_added": 2,
+  "reported_input_tokens_added": 7138,
+  "authoritative_budget_recovered_from": "isolated profile/jev-budget.json after completed job",
+  "retained_requests": 44,
+  "retained_reserved_usd": 0.484442112,
+  "retained_input_tokens": 134310,
+  "release_published": false
+}

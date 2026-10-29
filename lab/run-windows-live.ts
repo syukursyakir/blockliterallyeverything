@@ -3,11 +3,12 @@ import { _electron, expect, type Page } from '@playwright/test'
 import { open, mkdir, readFile, writeFile, rename, unlink } from 'node:fs/promises'
 import path from 'node:path'
 import { parseArgs } from 'node:util'
+import { nativeExitGuard, nativeBudget } from './native-process.ts'
 import { preflight, evaluationSettings } from './app-evaluation.ts'
-import { validateLedger, RESERVED_PER_REQUEST } from '../electron/jev.ts'
+import { validateLedger } from '../electron/jev.ts'
 
 if (process.platform !== 'win32') throw new Error('Live native validation requires an interactive Windows desktop; no test ran.')
-const { values } = parseArgs({ options: { corpus:{type:'string'}, case:{type:'string'}, ledger:{type:'string'}, output:{type:'string'}, 'allow-cloud':{type:'boolean'} } })
+const { values } = parseArgs({ options: { corpus:{type:'string'}, case:{type:'string'}, ledger:{type:'string'}, output:{type:'string'}, 'allow-cloud':{type:'boolean'}, 'positive-at-start':{type:'boolean'} } })
 if (!values['allow-cloud'] || !values.corpus || !values.case || !values.ledger || !values.output || !process.env.TYPESAFE_API_KEY) throw new Error('Requires --allow-cloud --corpus MANIFEST --case ID --ledger RETAINED --output NEW_REPORT and a securely configured TYPESAFE_API_KEY. All visible displays may be uploaded.')
 const prepared=await preflight(values.corpus)
 const selected=prepared.cases.find(c=>c.item.id===values.case)
@@ -20,17 +21,20 @@ const lock=await open(file+'.lock','wx',0o600)
 let desktop: Awaited<ReturnType<typeof _electron.launch>> | undefined
 let mainPage: Page | undefined
 let phase = 'preflight'
+let processExited = () => true
+const positiveAtStart = values['positive-at-start'] === true
 let reconcile=false, profileSeeded=false, reportReady=false, profileConfirmed=false, nativeStopped=true
 let ledger: {capUsd:number;priorUsage:unknown;current:ReturnType<typeof validateLedger>}
-const report: Record<string,unknown>={scope:'Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.',passed:false,caseId:selected.item.id,preparedSha256:selected.item.sha256,manifestSha256:prepared.manifestSha256,rule:positive,startedAt:new Date().toISOString(),timingMethod:'Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.'}
+const report: Record<string,unknown>={scope:'Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.',passed:false,caseId:selected.item.id,preparedSha256:selected.item.sha256,manifestSha256:prepared.manifestSha256,rule:positive,protocol:positiveAtStart?'positive-at-session-start':'neutral-to-positive-during-session',startedAt:new Date().toISOString(),timingMethod:'Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.'}
 const atomic=async(file:string,value:unknown)=>{await writeFile(file+'.tmp',JSON.stringify(value,null,2)+'\n',{mode:0o600});await rename(file+'.tmp',file)}
 try {
   ledger=JSON.parse(await readFile(file,'utf8'))
   if(ledger.capUsd!==0.5 || !ledger.priorUsage) throw new Error('Unexpected retained budget metadata.')
   ledger.current=validateLedger(ledger.current)
-  // At most three real attempts: initial negative, target, and one additional check.
-  const runBudget=ledger.current.reservedUsd+3*RESERVED_PER_REQUEST
-  if(runBudget>ledger.capUsd) throw new Error('Fewer than three reservations remain. No native test started.')
+  const planned=nativeBudget(ledger.current,ledger.capUsd,positiveAtStart)
+  const runBudget=planned.limitUsd
+  report.maximumRequests=planned.maximumRequests
+  if(positiveAtStart)report.timingMethod='Positive image painted before session starts; presentation to automation-observed complete cover includes session-start/IPC/capture overhead. NOT an already-active-session transition or frame-accurate latency.'
   await mkdir(profile) // Never reuse a personal or previous test profile.
   await writeFile(path.join(profile,'settings.json'),JSON.stringify({...evaluationSettings,cloudConsent:true,cloudBudgetUsd:runBudget,detectionOnly:false,rules:evaluationSettings.rules.map(r=>({...r,enabled:r.id===positive.id}))}),{mode:0o600})
   await writeFile(path.join(profile,'onboarding.json'),'{"complete":true}',{mode:0o600})
@@ -39,6 +43,7 @@ try {
   report.budgetBefore=ledger.current;report.recoveryProfile=profile
   phase='launch'
   desktop=await _electron.launch({executablePath:process.env.BLE_SMOKE_APP_EXE || undefined,args:[...(process.env.BLE_SMOKE_APP_EXE?[]:[path.resolve('.')]),'--user-data-dir='+profile],env:{...process.env,BLE_DEV_URL:''},timeout:60_000})
+  processExited=nativeExitGuard(desktop)
   nativeStopped=false
   const page=mainPage=await desktop.firstWindow();await page.waitForFunction(()=>Boolean(window.desktop))
   phase='profile-and-display-check'
@@ -58,22 +63,30 @@ try {
     scene.setFullScreen(true);scene.show();scene.focus()
   })
   const snapshot=()=>page.evaluate(()=>window.desktop!.snapshot())
-  phase='neutral-control'
-  await page.evaluate(()=>window.desktop!.start())
-  await expect.poll(async()=>(await snapshot()).status.mode,{timeout:20_000}).toBe('watching')
-  const negative=await snapshot();report.settings=negative.settings
-  if(negative.status.blocks!==0)throw new Error('Negative control matched; stopped before showing positive.')
-  phase='paint-positive'
-  const paintedAt=await desktop.evaluate(async(_,{data})=>{
+  const paintPositive=async()=>desktop!.evaluate(async(_,{data})=>{
     const scene=(globalThis as any).bleLiveScene
     return await scene.webContents.executeJavaScript(`(async()=>{ const img=new Image();img.src=${JSON.stringify(data)};await img.decode();img.style='max-width:100vw;max-height:100vh;object-fit:contain';document.body.replaceChildren(img);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));return Date.now()})()`)
   },{data:'data:image/png;base64,'+selected.bytes.toString('base64')})
+  let paintedAt:number
+  report.settings=(await snapshot()).settings
+  if(positiveAtStart){
+    phase='paint-positive';paintedAt=await paintPositive()
+    phase='start-positive-session';await page.evaluate(()=>window.desktop!.start())
+  }else{
+    phase='neutral-control';await page.evaluate(()=>window.desktop!.start())
+    await expect.poll(async()=>(await snapshot()).status.mode,{timeout:20_000}).toBe('watching')
+    const negative=await snapshot()
+    if(negative.status.blocks!==0)throw new Error('Negative control matched; stopped before showing positive.')
+    report.negativeControl='Live neutral frame allowed without a cover.'
+    phase='paint-positive';paintedAt=await paintPositive()
+  }
   phase='wait-for-cover'
   await expect.poll(async()=>(await snapshot()).status.mode,{timeout:20_000}).toBe('blocked')
   const cover=desktop.windows().find(p=>p.url().endsWith('#block'))
   if(!cover)throw new Error('No native cover window found.')
   await expect(cover.getByRole('heading',{name:'This content is blocked.'})).toBeVisible()
   report.contentToObservedCoverMs=Date.now()-paintedAt
+  report.blockInfo=await cover.evaluate(async()=>(await window.desktop!.snapshot()).block)
   report.cover=await desktop.evaluate(({BrowserWindow})=>{
     const w=BrowserWindow.getAllWindows().find(w=>w.webContents.getURL().endsWith('#block'))!
     return {bounds:w.getBounds(),visible:w.isVisible(),topmost:w.isAlwaysOnTop(),focused:w.isFocused(),fullScreen:w.isFullScreen()}
@@ -95,12 +108,14 @@ try {
   report.failure='Live validation failed; inspect native state/accounting. No sensitive screenshot, provider response body or credentials retained.'
   process.exitCode=1
 } finally {
+  // Preserve the primary outcome even if native cleanup/accounting later fails.
+  if(reportReady)await atomic(output,report).catch(()=>{report.reportWriteError='Could not save pre-cleanup outcome.';report.passed=false;process.exitCode=1})
   // Stop before reading accounting. Preserve the profile for crash/budget recovery.
   if(desktop && profileConfirmed) {
     await desktop.firstWindow().then(p=>p.evaluate(()=>window.desktop!.stop())).catch(()=>{})
     await desktop.close().catch(()=>{})
   } else if(desktop) await desktop.close().catch(()=>{})
-  if(desktop)nativeStopped=desktop.process().exitCode!==null || desktop.process().signalCode!==null
+  if(desktop)nativeStopped=processExited()
   try {
     if(!nativeStopped)throw new Error('Native process may still hold the ledger')
     if(profileSeeded){

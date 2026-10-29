@@ -13,6 +13,10 @@ on:
         description: Run opt-in real capture and Jev detection without building or publishing an installer
         type: boolean
         default: false
+      positive_at_start:
+        description: Explicit single-request positive-at-session-start protocol (no active-session transition claim)
+        type: boolean
+        default: false
       retained_budget:
         description: Exact retained evaluation budget JSON; coordinate exclusive ownership before dispatch
         type: string
@@ -111,8 +115,9 @@ jobs:
         run: node scripts/prepare-windows-live.mjs native-live
         env:
           BLE_RETAINED_BUDGET: ${{ inputs.retained_budget }}
+          BLE_LIVE_POSITIVE_AT_START: ${{ inputs.positive_at_start }}
       - name: Real capture, live Jev, native cover and recovery
-        run: node scripts/test-live-windows.mjs --allow-cloud --corpus native-live/manifest.json --case native-social-fixture --ledger native-live/budget.json --output native-live/report.json
+        run: node scripts/test-live-windows.mjs --allow-cloud --corpus native-live/manifest.json --case native-social-fixture --ledger native-live/budget.json --output native-live/report.json ${{ inputs.positive_at_start && '--positive-at-start' || '' }}
         env:
           TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
       - name: Preserve numerical evidence and accounting only

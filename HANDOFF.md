@@ -15,18 +15,31 @@ No further permission is needed to continue that validation after its key is ava
 Release publication remains disabled; do not overwrite v0.1.0-alpha.1.
 Do not send third-party messages or start laptop remote access. Neither is authorized.
 
-## Immediate blocker: GitHub Actions key availability
+## Current live work — secret fixed; native runner cleanup correction
 
-Live run 40847626764 received an EMPTY TYPESAFE_API_KEY and stopped before native
-launch or any provider request. User had confirmed setup, but the observed Actions
-result supersedes that assumption. Managed-cloud secret readiness is separate.
+User added Actions secret. Run 40849807420 passed secret preflight and made TWO
+real requests (7138 reported tokens). Secret setup/authentication now WORKS;
+do not ask again or copy key values. Native runner then crashed in cleanup:
+application.process() getter was called AFTER application.close() disposed the
+Playwright dispatcher. Primary report stayed empty, so no live pass is claimed.
 
-User needs to add the exact repository ACTIONS SECRET securely here:
-https://github.com/syukursyakir/blockliterallyeverything/settings/secrets/actions
-Do not ask for a key in chat, copy/extract the cloud key, or use dispatch inputs.
-Secret-name read is denied (403). Environment-name read returned no environments.
-An earlier workflow gate now checks key availability before setup/build.
-No automatic paid retry until configuration changes. Waiting for repository Actions secret availability.
+Recovered authoritative accounting from isolated profile artifact: 44 requests,
+$0.484442112 reserved, 134310 tokens. ONE further attempt fits the approved cap.
+Local lock was released only after recovery from the completed job. See
+windows-live-cleanup-run-40849807420.json. Parent remote budget wrapper was stale
+at 42; always prefer/reconcile the validated isolated profile when cleanup fails.
+
+Fix: cache process handle before close and persist primary result before cleanup.
+Regression tests cover disposed getter and signal exit. Add EXPLICIT
+positive_at_start single-call mode to use the last slot without changing the
+remaining budget. It validates positive-at-session-start capture->real provider->
+cover->recovery, NOT a neutral-to-positive transition in an already-active session.
+Default full protocol remains three-request maximum; no silent fallback.
+
+Proceed on validation/native-cleanup-20261029. User already authorized push/merge/
+Windows runs; no more input required unless the cap prevents necessary testing.
+No release publication. Do not rerun image batches or spend beyond one remaining
+attempt; freeze/reconcile authority around the planned single-call native run.
 
 ## Verified Windows evidence
 
@@ -68,8 +81,9 @@ Need broader independent development/held-out evaluation before adopting changes
 Authoritative ledger: /workspace/work/ble-real-2026-10-29/app-budget.json
 Approved NEW allowance: $0.50 conservative reservations; prior 62/64 history is
 preserved separately and the old lab ledger is missing, not zero.
-Current: 42 reservations, $0.462422016 reserved, 127172 input tokens,
-~$0.005341224 estimated charge. THREE more attempts fit. Keep them for Windows.
+Current: 44 reservations, $0.484442112 reserved, 134310 input tokens,
+~$0.00564102 estimated charge. ONE more attempt fits. Keep it for the corrected
+single-call Windows protocol; earlier 42 figures below are historical.
 
 Live run's downloaded budget exactly matched local (42); local authority lock was
 released after reconciliation. No extra call/reservation/charge occurred on Windows.

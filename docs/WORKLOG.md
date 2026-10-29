@@ -257,3 +257,25 @@ reconciliation; three attempts still fit. Handoff rewritten as current state to
 remove stale permission/provider instructions and preserve next-action clarity.
 This final evidence/handoff update is documentation only; use [skip ci] to avoid
 another identical native build, with already-completed main checks recorded above.
+
+
+## 2026-10-29 — Actions secret working; actual native cleanup bug
+
+User added repository secret and asked to check. Dispatched main live run
+40849807420 under retained authority lock. Secret preflight passed, two REAL
+requests completed (7138 input tokens), then native runner crashed during cleanup:
+Playwright application.process() getter called after close disposed dispatcher.
+Primary report empty, so no fabricated native pass. Retrieved artifacts, recovered
+profile ledger 44/$0.484442112/134310 and reconciled authoritative local ledger;
+parent artifact wrapper was stale at 42. Completed job had ended its native process.
+
+Fix caches the ChildProcess handle BEFORE close, writes primary outcome BEFORE
+cleanup, and preserves existing conservative reconciliation. Regression tests
+cover disposed process getter and signal termination. Added explicit one-request
+positive_at_start protocol to use the LAST remaining approved reservation. This
+checks positive present when session starts, not active-session content transition;
+report states timing/protocol limits. Original full protocol still caps three.
+No change to product runtime, defaults, model, thresholds or privacy behavior.
+57 unit tests and build passed locally; native runner strict type check passed.
+Next: push correction, opt-in one-call live Windows run, reconcile actual artifacts,
+then merge after checks. No additional allowance, retries or release publication.
