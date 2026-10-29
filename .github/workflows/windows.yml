@@ -9,10 +9,19 @@ on:
         description: Publish or replace the alpha installer after all Windows checks pass
         type: boolean
         default: false
+      live_detection:
+        description: Run opt-in real capture and Jev detection without building or publishing an installer
+        type: boolean
+        default: false
+      retained_budget:
+        description: Exact retained evaluation budget JSON; coordinate exclusive ownership before dispatch
+        type: string
+        required: false
 permissions:
   contents: read
 jobs:
   windows:
+    if: github.event_name != 'workflow_dispatch' || !inputs.live_detection
     permissions:
       contents: write
     runs-on: windows-latest
@@ -71,3 +80,49 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'Release asset upload failed' }
           gh release edit v0.1.0-alpha.1 --draft=false --prerelease --repo $env:GITHUB_REPOSITORY
           if ($LASTEXITCODE -ne 0) { throw 'Release publication failed' }
+
+  live-detection:
+    if: github.event_name == 'workflow_dispatch' && inputs.live_detection
+    runs-on: windows-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Refuse publishing, missing accounting or missing provider secret
+        shell: pwsh
+        env:
+          PUBLISH_REQUESTED: ${{ inputs.publish_alpha }}
+          RETAINED_BUDGET: ${{ inputs.retained_budget }}
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: |
+          if ($env:PUBLISH_REQUESTED -eq 'true') { throw 'Live detection never publishes a release.' }
+          if (-not $env:RETAINED_BUDGET) { throw 'Retained accounting is required; no new allowance.' }
+          if ([string]::IsNullOrWhiteSpace($env:TYPESAFE_API_KEY)) { throw 'Repository Actions secret TYPESAFE_API_KEY is unavailable. Add it under repository Settings > Secrets and variables > Actions.' }
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - run: npx playwright install chromium
+      - name: Prepare controlled scene and retained ledger copy
+        run: node scripts/prepare-windows-live.mjs native-live
+        env:
+          BLE_RETAINED_BUDGET: ${{ inputs.retained_budget }}
+      - name: Real capture, live Jev, native cover and recovery
+        run: node scripts/test-live-windows.mjs --allow-cloud --corpus native-live/manifest.json --case native-social-fixture --ledger native-live/budget.json --output native-live/report.json
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+      - name: Preserve numerical evidence and accounting only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-live-detection-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            native-live/report.json
+            native-live/budget.json
+            native-live/report.json.profile/jev-budget.json
+          if-no-files-found: warn
+          retention-days: 7

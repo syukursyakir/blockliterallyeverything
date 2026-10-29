@@ -35,6 +35,8 @@ Both formats matched all non-ambiguous labels. This is a small exploratory set; 
 
 This 30-call follow-up estimate: $0.004304. All successful experiments total 182,089 reported input tokens, estimated $0.007648. The ledger has 60/64 retained reservations (including one sandbox-blocked attempt); reservations are not billed charges.
 
-Times are cloud HTTP round trips, excluding screenshot capture and preparation, not Windows capture-to-cover latency. The app still uses the local backend. Jev image support remains experimental.
+Times are cloud HTTP round trips, excluding screenshot capture and preparation, not Windows capture-to-cover latency. At the time of this lab run the app still used the local backend. The app now
+offers the user-selected Jev backend; see [current audit](RELIABILITY.md).
+Jev image support remains experimental.
 
 Next evidence needed: real active service feeds in a Windows browser, video/fullscreen and multiple-monitor capture-to-cover timing, and a properly labeled explicit-positive evaluation. The current four-question suite does not validate arbitrary English rules.

@@ -1,0 +1,119 @@
+# Detection and blocking reliability
+
+Audited 2026-10-29 against source commit 952a9f0. Documentation-only audit;
+existing results were inspected, not rerun. Current provider: hosted TypeSafe Jev
+1.14.0 experimental images. User prioritizes missed violations over false blocks.
+The next milestone is measured reliability, ahead of UI polish or publishing.
+
+## Latest update
+
+The audit below is historical. Subsequent user-approved work completed a new
+36-request actual-app evaluation (including a later ten-case follow-up); read [APP-EVALUATION.md](APP-EVALUATION.md)
+for results, retained budget, runner commands and remaining gaps. Three real live
+social positives and one archived real YouTube positive were detected. One social
+false match was found. The follow-up caught six nudity inputs from THREE source photographs; sexual-activity
+recall and live Windows intervention remain unmeasured. The original missing ledger was NOT reset.
+
+## What the evidence actually establishes
+
+Counts below were recomputed from saved JSON rows. Ambiguous labels are excluded.
+Noul and Choice used the same images; they are not independent extra samples.
+
+| Evidence | Video caught / positives; false blocks / negatives | Social caught / positives; false blocks / negatives | Explicit caught / positives; false blocks / negatives |
+| --- | --- | --- | --- |
+| Initial Jev suite, each format, 14 images | 3/3; 0/10 | 2/2; 0/11 | unmeasured (0 positives); 0/14 |
+| Harder Jev suite, each format, 15 images | 1/1; 0/12 | 1/1; 0/12 | unmeasured (0 positives); 0/15 |
+
+Sources: [initial raw report](evaluation-jev-2026-10-29.json),
+[harder raw report](evaluation-jev-hard-2026-10-29.json),
+[harder case descriptions](evaluation-jev-hard-summary-2026-10-29.md).
+The harder suite includes six real public captures, eight synthetic cases and a
+previously used cat photo. Real active YouTube/Instagram/TikTok feed positives
+were not obtained. Login, blank and failed captures do not establish feed detection.
+No explicit-positive recall, arbitrary-rule accuracy or 95% reliability is proved.
+These small, already inspected suites are development evidence, not a held-out gate.
+
+The lab uses short fixed questions in lab/evaluate.py. The application uses
+cloudQuestions() in electron/jev.ts with editable rules and an untrusted-text
+instruction. The lab's app-noul option calls the optional local worker's question
+builder, not the hosted app's cloudQuestions(). Do not describe it as app parity.
+The actual hosted TypeScript request/prompt/parser has only a two-image live smoke
+(synthetic YouTube and ordinary notes), recorded in
+[desktop request smoke](desktop-jev-request-smoke-2026-10-29.json).
+
+[Windows evidence](windows-extended-2026-10-29.json) records 11 installed-app
+scenarios at 2c1eec2, plus 45 unit and eight UI tests in the linked run. These
+verify cover bounds, recovery, DPAPI, cancellation, timeout and budget/error paths.
+Provider replies are fixtures. One display, ordinary Electron fullscreen;
+lock/suspend signals are emitted. No live inference-to-cover accuracy, physical
+sleep/lock, mixed DPI, multi-monitor or exclusive-fullscreen game certification.
+Scenario durations are not content-appearance-to-cover measurements.
+
+## Current app behavior relevant to evaluation
+
+- Defaults: explicit preset enabled, video/social disabled; detection-only;
+  threshold 0.4; three-second interval. The threshold is not a calibrated guarantee.
+- Captures displays at requested 1280 x 1280 thumbnail bounds, checks serially;
+  exact unchanged frames may skip inference for up to 30 seconds.
+- Re-captures after cloud inference and rejects substantial visual changes;
+  stale frames/results over 15 seconds fail. Requests time out after 10 seconds.
+- A match in blocking mode covers ALL connected monitors. Recovery pauses;
+  inference/capture errors pause rather than count as safe classifications.
+- status.lastLatency is request latency, not visible-change-to-cover latency.
+- Public alpha does not contain the tested fullscreen sizing fix. No update was
+  published during this audit.
+
+Code: electron/main.ts checkLoop(), electron/jev.ts, electron/screen-cache.ts,
+src/shared.ts presets/defaultSettings/matchingRule().
+
+## Next work, in order
+
+1. Inventory reusable images/manifests and their hashes/licenses. Define each
+   rule's observable scope and ambiguous boundaries before labeling. Obtain real
+   active-feed/player positives and realistic negatives. Explicit-policy recall
+   requires lawful, adult-only, appropriately licensed positive data with secure
+   handling; the current corpus contains none. Do not collect private browsing.
+2. Build a bounded evaluator around the actual app's cloudQuestions(),
+   requestJev(), parseJev() and matchingRule(), reusing existing code. Record exact
+   rule text, enabled rules, model, threshold, image preparation, source/session,
+   source/prepared hashes, raw scores, errors, timings and usage. Preserve budget
+   reservations, no automatic retries. Confirm the budget prerequisite below
+   before running paid requests.
+3. Split by source/session into development and untouched held-out sets. Label
+   before inference, separately record ambiguous cases. Include small content,
+   browser variants, video, ordinary human photos and relevant safe lookalikes,
+   missing evidence and hostile screenshot text. Freeze settings before held-out
+   evaluation; after tuning, use new held-out data rather than reuse its score.
+4. Report per-rule recall (caught/positives), misses, false-block rate, precision,
+   errors/unknowns and confidence intervals with denominators and case evidence.
+   Proposed target is at least 95% recall per supported rule, reflecting the
+   user's discussion; false-block tolerance and timing acceptance are not yet
+   agreed. Do not turn this into an overall accuracy claim. Even 59/59 independent
+   representative positives only gives a one-sided exact 95% lower recall bound
+   just above 95%; this is a statistical illustration, not a sufficient corpus
+   design or agreed acceptance rule. Correlated screenshots do not add independent
+   evidence. Report uncertainty honestly if a target is not established.
+5. Run a real Windows visible-content -> live Jev -> native cover -> recovery
+   check, with known images and explicit cloud consent. Measure appearance to
+   complete cover (median/tail), misses and failures, including interval effects,
+   motion/stale-screen rejection and cache behavior. Then extend hardware/display
+   coverage. Keep live charged tests separate from deterministic fixture CI.
+6. Preserve misses and failure cases, fix specific demonstrated causes, retest
+   affected paths, and publish the validation report before proposing a release.
+   Do not change providers, tune thresholds to hide misses, or redesign UI first.
+
+## Runtime prerequisites and continuity
+
+This resumed workspace has /workspace/.cache/ble-evaluation/corpus/manifest.json
+and the original corpus archive. The default lab ledger
+/workspace/.cache/ble-evaluation/jev-budget.json is MISSING; the default harder
+manifest path was not present at audit. Prior handoff records 62/64 retained
+reservations. Missing ledger does not mean zero spend: lab/jev.py would create a
+fresh one, so DO NOT run it until retained accounting is recovered or a new budget
+is explicitly authorized. Keep the provider-side $3 safeguard. No paid calls were
+made in this audit; secret readiness was not checked because no call was needed.
+Existing app userData accounting is separate and must not be reset.
+
+Do not rerun local OmniJev/SigLIP comparisons merely to rediscover their documented
+failures. Reuse the Windows fullscreen fix and existing fixture coverage. Record
+new evidence and its limits in WORKLOG.md, and keep HANDOFF.md current.

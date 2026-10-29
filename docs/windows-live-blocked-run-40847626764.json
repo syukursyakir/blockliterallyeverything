@@ -1,0 +1,17 @@
+{
+  "scope": "Real Windows live workflow attempted; BLOCKED before native launch/provider request because the Actions secret was empty. Not a passing live integration test.",
+  "run_url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40847626764",
+  "tested_commit": "f17aa9a46b7740e20651857ca3a5b92c881c3fa8",
+  "conclusion": "failure",
+  "blocked_reason": "TYPESAFE_API_KEY Actions secret unavailable/empty",
+  "provider_calls": 0,
+  "native_session_started": false,
+  "budget_artifact_id": 12885756435,
+  "budget_artifact_digest": "sha256:118fb0d1eefd7deb33542662d7025534790cc5b588663f6fc52483986d6d9ef8",
+  "budget_reconciled": true,
+  "retained_requests": 42,
+  "retained_reserved_usd": 0.462422016,
+  "retained_reported_input_tokens": 127172,
+  "release_published": false,
+  "next_action": "User must provision repository Actions secret TYPESAFE_API_KEY securely. Do not retry automatically before availability changes."
+}
