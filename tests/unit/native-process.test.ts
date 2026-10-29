@@ -26,6 +26,7 @@ describe('live native cleanup and explicit protocol accounting',()=>{
   expect(nativeMotion('switch-away',false)).toBe('switch-away')
   expect(nativeMotion('video',false)).toBe('video')
   expect(nativeMotion('video-safe',false)).toBe('video-safe')
+  for(const mode of ['video-fast','video-safe-fast']){expect(nativeMotion(mode,false)).toBe(mode);expect(()=>nativeMotion(mode,true)).toThrow()}
   expect(()=>nativeMotion('unknown',false)).toThrow()
   expect(()=>nativeMotion('pan',true)).toThrow()
   expect(()=>nativeMotion('pan-wide',true)).toThrow()
