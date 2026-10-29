@@ -1,0 +1,54 @@
+{
+  "frozenAt": "2026-10-29T15:08:51.791472+00:00",
+  "authorityBefore": {
+    "capUsd": 3,
+    "priorUsage": {
+      "retainedReservations": 62,
+      "cap": 64,
+      "ledgerMissing": true,
+      "source": "HANDOFF.md; not reset or included in new allowance"
+    },
+    "current": {
+      "requests": 245,
+      "reservedUsd": 2.6974617600000066,
+      "inputTokens": 831497
+    },
+    "authorizationHistory": [
+      {
+        "approved_at": "2026-10-29T09:46:06.126178+00:00",
+        "fromCapUsd": 0.5,
+        "toCapUsd": 3,
+        "atRequests": 45,
+        "source": "Explicit user approval: Yes, use a $3 cumulative reservation cap. Not a new/reset allowance."
+      }
+    ]
+  },
+  "maximumNewReservations": 9,
+  "trials": [
+    {
+      "scene": "youtube-video",
+      "motion": "video",
+      "expected": "native cover and recovery"
+    },
+    {
+      "scene": "youtube-compact-video",
+      "motion": "video",
+      "expected": "native cover and recovery"
+    },
+    {
+      "scene": "youtube-compact-video",
+      "motion": "video-switch-away",
+      "expected": "discard old request, fresh neutral, zero covers"
+    }
+  ],
+  "labels": {
+    "explicit": false,
+    "video": true,
+    "social": false
+  },
+  "localReviewedManifestSha256": {
+    "wide": "ae85a376cd07adac805069c8b7b4e8712e3abc107a1cbb320687244d5f09979e",
+    "compact": "931a856e27a9f5c9bc09bd54b0c9b36ba165a52ef8194a7e8fbb7ae87d9340d4"
+  },
+  "note": "Synthetic UI, reused CC0 flower media; new integration conditions, not new sources/independent accuracy. Remote poster/frame hashes differ with runtime; pinned scene code and media define condition."
+}
