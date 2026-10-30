@@ -1,0 +1,46 @@
+{
+  "status": "completed",
+  "conclusion": "success",
+  "headSha": "2adfef5871b7ff88acb7d349a1deea82c7fe5f9d",
+  "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41017630086",
+  "retryFixtureProof": {
+    "scope": "Injected main clock/captures/provider replies; actual scheduled poll callback and native cover, not real media/cadence.",
+    "scheduled": [
+      {
+        "id": 0,
+        "delay": 1250,
+        "at": 1793343933714
+      }
+    ],
+    "fired": [
+      {
+        "id": 0,
+        "at": 1793343934966
+      }
+    ],
+    "requests": [
+      {
+        "call": 9,
+        "at": 1793343932567
+      },
+      {
+        "call": 10,
+        "at": 1793343933665
+      },
+      {
+        "call": 11,
+        "at": 1793343935009
+      }
+    ],
+    "captureCalls": 6
+  },
+  "scope": "Windows fixture CI; not model accuracy. Release step verified skipped.",
+  "unitPassed": 98,
+  "unitSkipped": 1,
+  "uiPassed": 9,
+  "installedFixtureScenariosPassed": 14,
+  "buildPassed": true,
+  "desktopSmokePassed": true,
+  "installerBuildInstallPassed": true,
+  "releasePublished": false
+}

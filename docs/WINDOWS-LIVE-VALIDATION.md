@@ -153,3 +153,17 @@ Update HANDOFF.md and WORKLOG.md after meaningful outcomes. Static source repeat
 in native tests are integration evidence, not new independent accuracy samples.
 Use new representative source families and prospective labels to expand recall
 coverage. No arbitrary-rule, 95%-reliability or hardware guarantee is established.
+
+
+## Free native capture timing mode
+
+`windows.yml` input `capture_timing=true` selects a separate read-only Windows job
+with no provider-secret binding or retained-budget input. It rejects mixing live
+inference, other capture/recovery or publishing. `scripts/prepare-timing-media.mjs`
+verifies the pinned public Sintel bytes; `scripts/test-capture-timing.mjs` launches
+an isolated idle app, continuously captures native pixels into RAM, and saves only
+numeric reception-gap/media-clock metadata. It never starts a protection session.
+Scope/results: CAPTURE-TIMING-PLAN/RESULTS.md and run41016095774. Do not repeat that
+completed cohort to inflate evidence; future diagnostics require a new useful scope.
+Pair comparisons are not provider latency, scheduler/fallback or accuracy evidence.
+Final CI installer/operator handoff is PHYSICAL-WINDOWS-VALIDATION.md.

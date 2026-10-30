@@ -4,7 +4,7 @@ Read AGENTS.md, DESIGN.md, docs/WORKLOG.md, docs/RELIABILITY.md and this file fi
 WORKLOG.md and saved reports retain history; this file supersedes old missing-key,
 permission and budget blockers. Do not repeat completed experiments as new evidence.
 
-## Active milestone — FREE native capture/media timing
+## Latest completed milestone — FREE native capture/media timing
 
 User asks whole milestone in ONE prompt without routine goaheads; preserve second-
 agent review after meaningful steps. Branch validation/native-capture-timing-20261030.
@@ -26,11 +26,19 @@ productionbug/tuning. See CAPTURE-TIMING-RESULTS/REVIEWS and savedraw/summary.
 CollectorLF/CRLFsourcehash mismatch exactlyexplained/reviewed, rawdatahashverified;
 future metadata normalizedLF hash added, no recapture. Final sourceCI41016981357 at3521899 PASSED98unit+1skip/9UI/14installedfixtures/
 native smoke/build/installer, release skipped. Reviewer approved finalclaims/CI/
-compact examples/physicalguide. Merge/postmergeCI/finalhandoff remain inthisprompt;
+compact examples/physicalguide. PR12 MERGED2adfef5871b7ff88acb7d349a1deea82c7fe5f9d. MainCI41017630086
+PASSED98unit+1skip/9UI/14installedfixtures/native smoke/build/installer; release
+skipped. Second reviewer independently verified mainCI/proof, emptyproductiondiff
+and exactoriginal267authority bytehash/fullhistory/no lock. Entire automated
+milestone COMPLETE inoneprompt, finaldocs-onlypush;
 do not replay old paid trials. Physicaloperator procedure prepared in
 docs/PHYSICAL-WINDOWS-VALIDATION.md, not executed on a physicalPC here. Authority267/$2.939682816/910488 original3cap/history bytehash frozen,
 no lock;5max reservations remain and must stayunused during thisFREE milestone.
-Continue autonomously through results/review/supportedfixes/CI/merge/handoff.
+Results/review/observabilityfix/CI/merge/handoff complete; no further capture/model
+checks justified on this consumed cohort. NEXT needs actual physicalWindows
+operator: docs/PHYSICAL-WINDOWS-VALIDATION.md, matching installer from main
+Actions41017630086 (windows-jev-installer-unsigned), no realkey/paidcalls. This
+workspace cannot execute the device-specific step; no remotePC access assumed.
 
 ## Latest completed stage — natural-cut media cohort
 

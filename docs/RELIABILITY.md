@@ -18,7 +18,10 @@ calls, authority267/$2.939682816/910488 filebyte-identical/fullhistory/no lock.
 SourceCI41016981357 at3521899 passed98unit+1skip,9UI,14installedfixtures/native
 smoke/installer, release skipped. Reviewer checked scope/source/rawdata/CRLFhash
 validation/analysis/finalclaims. Physicalprocedure prepared, actualPC unavailable
-inthisworkspace. Nextmerge/postmergeCI/finalhandoff, then physicaloperator check.
+inthisworkspace. PR12 merged2adfef5; mainCI41017630086 passed the same full
+sequence/release skipped. Reviewer independently verified mainevidence and exact
+authoritybytehash; automatedmilestone complete. Next actualphysicaloperator check
+withmatchingCIinstaller/existingno-paidfixture procedure.
 
 
 Read [NATURAL-CUTS-RESULTS.md](NATURAL-CUTS-RESULTS.md): NEW pinned Sintel

@@ -135,3 +135,17 @@ physical Windows testing; hosted results cannot certify the user's machine.
 The physical handoff is prepared in PHYSICAL-WINDOWS-VALIDATION.md using the existing
 no-paid-call fixture suite and a matching CI installer. Executing it requires an
 operator at the physical machine; this workspace has only hosted Windows access.
+
+## Final merge and main verification
+
+[PR12](https://github.com/syukursyakir/blockliterallyeverything/pull/12) merged at
+2adfef5871b7ff88acb7d349a1deea82c7fe5f9d.
+[Main Windows CI41017630086](https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41017630086)
+PASSED98unit+1intendedskip,9UI,14installedfixtures, native smoke and installer
+build/install. Release skipped; summary windows-ci-run-41017630086.json. The
+`windows-jev-installer-unsigned` artifact in that run is the matching physical-test
+build, not the old published alpha. Second agent independently verified finalmain
+logs/proof, empty productionelectron/srcdiff and exact unchanged authority file.
+This automated milestone is complete, including diagnostic implementation, source
+review, one free cohort, analysis, metadata fix, CI, merge and operator handoff.
+No further capture/model checks on these consumed conditions are justified here.
