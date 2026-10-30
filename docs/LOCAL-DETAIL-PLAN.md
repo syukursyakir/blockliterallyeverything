@@ -24,7 +24,7 @@ passes; malformed input remains conservative. Production capture retention uncha
 Free development scan: two existing synthetic YouTube-like layouts, known decoded
 CC0 flower clip at20 phases each;106 within-layout motion pairs at.2/.4/.8s gaps.
 Local-loss found20/20 compact removals which global mean missed, no extra motion
-rejections in106. Large removals already caught20/20 globally. New three units plus
+rejections in106. Large removals already caught20/20 globally. Three new units; all
 21 affected unit tests (including real app-loop fixture) and build/strict runner
 types pass after correcting translation. Development only, browser resampling is
 not Electron/native proof. Raw numeric scan local-detail-development-2026-10-30.json.

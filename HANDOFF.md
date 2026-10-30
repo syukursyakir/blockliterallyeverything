@@ -4,20 +4,37 @@ Read AGENTS.md, DESIGN.md, docs/WORKLOG.md, docs/RELIABILITY.md and this file fi
 WORKLOG.md and saved reports retain history; this file supersedes old missing-key,
 permission and budget blockers. Do not repeat completed experiments as new evidence.
 
-## Active30 October continuation — local detail-loss correction
+## Current30 October continuation — localized disappearance correction validated
 
-User authorized next step: test/fix small-player switch-away while preserving ongoing
-video. Branch validation/local-detail-20261030. Read LOCAL-DETAIL-PLAN.md and frozen
-local-detail-freeze-2026-10-30.json before paid work. New narrow detail-to-flat patch
-check preserves global8%; aligned translation now also verifies local detail so tiny
-vanished content cannot slip through aligned2% mean. No provider/rule/threshold/
-cadence change. Free scan20compact removals caught,0extra rejections in106knownclip
-motion pairs; development only. Initial app-loop fixture exposed translation gap;
-corrected helper now21affected tests/build/strict runner tsc pass. New three-trial
-native plan frozen: compact switch (requires localDetailLoss branch),compact and
-wide sustained players. Max9 under exact253/$2.785542144/860235 authority, prior
-history intact. No paid job dispatched yet; no release. Keep older failures below.
-Normal cuts can lose detail; heuristic does not certify semantic identity or95%.
+PR #9 https://github.com/syukursyakir/blockliterallyeverything/pull/9 at795faf1.
+Read LOCAL-DETAIL-RESULTS.md/PLAN and raw numeric reports. Narrow8px detail-to-flat
+check supplements global8%; translation exception also verifies aligned local detail
+so tiny disappeared content cannot pass its2% mean. Provider/model/rules/threshold/
+polling unchanged; screenshot-only, brief appearances between checks acceptable.
+
+Frozen corrective regressions all passed; not new independent accuracy samples:
+- Compact switch40985539094: .94 discarded, freshneutral.02,0covers/blocks,3calls.
+  localDetailLoss1 proves new branch; actual global pair mean5.476% below8%.
+- Compact sustained40985739418:3341ms/.95, full cover/recovery, decoded21->110,
+  localDetailLoss0/changed0,2calls.
+- Wide sustained40985950475:4287ms/.96, full cover/recovery, decoded20->138,
+  localDetailLoss0/changed0,2calls.
+Older two switch failures remain preserved, no original-pair/compositor certainty
+or old adult source27 causal claim. Post-response pixels not retained for review.
+
+Current260/$2.862612480/885390tokens,12max reservations left under original cumulative3.
+All7 new reservations/report/wrapper/profile chains reconciled; prior history intact,
+no paidjob/lock. Do not restore older253/258/freeze snapshots as authority. Private
+ledger /workspace/work/ble-real-2026-10-29/app-budget.json; local work ble-local-detail-
+2026-10-30, private review key remains in ble-sustained-2026-10-29 outside Git.
+SourceCI40985540342 at795faf1 PASSED83unit+oneintendedskip,9UI,native smoke,
+installer/install,13fixtures; release skipped.21affected local tests/build/strict
+runner tsc passed. Initial new app-loop test exposed translation dilution gap;
+fixed shared comparator, not a hidden test change. Free scan20compact removals
+caught/0extra discards in106knownclip pairs is development evidence only.
+Next: finish PR9 merge/post-merge CI, then free flat-cut/safe-lookalike checks. Flat
+video cuts can trigger detail loss; similarly detailed replacements remain limited.
+No95% claim, release, extension or user hardware certification.
 
 ## Current continuation — warning merged, video evidence complete
 
@@ -326,9 +343,9 @@ Installed fixture tests/emitted OS signals do not certify these conditions.
 ## Authoritative accounting — never reset
 
 /workspace/work/ble-real-2026-10-29/app-budget.json
-Current253 reservations,$2.785542144 of approved cumulative3,860235 input tokens,
-~$0.036129870 estimated usage at.042/million. Reservations are not bills; old missing
-62/64 history remains separately preserved, not zero.19 more maximum reservations
+Current260 reservations,$2.862612480 of approved cumulative3,885390 input tokens,
+~$0.037186380 estimated usage at.042/million. Reservations are not bills; old missing
+62/64 history remains separately preserved, not zero.12 more maximum reservations
 fit (272 total). Migration from.50 to3 retained45 attempts/137877 tokens and explicit
 authorizationHistory. No remote paid job or authority lock remains.
 
