@@ -184,6 +184,30 @@ it('desktop lifecycle: cancelled loads remain usable, all displays are covered, 
   expect((await call('snapshot')).status.delayedDisplays).toEqual({})
   await call('start'); await flush()
   expect((await call('snapshot')).status.lastCheck).not.toBeNull()
+  call('stop')
+  // A small detailed region vanishes below the global mean threshold: stale positive must not cover.
+  const detail=Buffer.alloc(64*64*4,15),flat=Buffer.alloc(detail.length,15)
+  for(let y=16;y<28;y++)for(let x=12;x<24;x++)for(let c=0;c<3;c++)detail[(y*64+x)*4+c]=(x+y)%2?180:60
+  let detailCaptures=0,detailRequests=0
+  mock.capture=async()=>{
+    detailCaptures++
+    const first=detailCaptures===1
+    return ['1','2'].map(display_id=>({display_id,thumbnail:{
+      isEmpty:()=>false,toBitmap:()=>Buffer.from([0,0,0,255,255,255,255,255]),
+      toPNG:()=>Buffer.from(display_id==='1' && first?'small-player':'neutral-'+display_id),
+      resize:()=>({toBitmap:()=>display_id==='1' && first?detail:flat}),
+    }}))
+  }
+  mock.fetch.mockImplementation(async()=>new Response(JSON.stringify({model:'jev-1.14.0',usage:{input_tokens:100},answers:{explicit:{noul:++detailRequests===1?0.95:0.02}}})))
+  await call('save',{...(await call('snapshot')).settings,detectionOnly:false})
+  const blocksBeforeDetail=(await call('snapshot')).status.blocks
+  await call('start');await flush()
+  expect((await call('snapshot')).status.mode).toBe('watching')
+  expect((await call('snapshot')).status.blocks).toBe(blocksBeforeDetail)
+  expect((await call('snapshot')).status.activity.some((a:any)=>a.message==='A detailed screen region disappeared during analysis.')).toBe(true)
+  await vi.advanceTimersByTimeAsync(3000);await flush()
+  expect((await call('snapshot')).status.delayedDisplays).toEqual({})
+  expect((await call('snapshot')).status.blocks).toBe(blocksBeforeDetail)
   call('stop'); mock.capture = null
   await call('save', { ...(await call('snapshot')).settings, backend: 'local' })
   let finishOldLocal!: (value: unknown) => void

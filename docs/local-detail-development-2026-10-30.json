@@ -1,0 +1,963 @@
+{
+  "scope": "Free development scan, actual decoded known CC0 media; browser resampling differs from Electron. Not model/native accuracy.",
+  "reports": [
+    {
+      "context": "youtube",
+      "removed": [
+        {
+          "phase": 0.2,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 0.4,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 0.6000000000000001,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 0.8,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 1,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 1.2,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 1.4000000000000001,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 1.6,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 1.8,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 2,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 2.2,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 2.4000000000000004,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 2.6000000000000005,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 2.8000000000000003,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 3.0000000000000004,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 3.2,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 3.4000000000000004,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 3.6000000000000005,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 3.8000000000000003,
+          "old": true,
+          "local": true
+        },
+        {
+          "phase": 4,
+          "old": true,
+          "local": true
+        }
+      ],
+      "motion": [
+        {
+          "phase": 0.2,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 0.4,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 0.6000000000000001,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 0.8,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 1,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 1.2,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 1.4000000000000001,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 1.6,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 1.8,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 2,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 2.2,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 2.4000000000000004,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 2.6000000000000005,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 2.8000000000000003,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 3.0000000000000004,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 3.2,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 3.4000000000000004,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 3.6000000000000005,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 3.8000000000000003,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 0.2,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 0.4,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 0.6000000000000001,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 0.8,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 1,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 1.2,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 1.4000000000000001,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 1.6,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 1.8,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 2,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 2.2,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 2.4000000000000004,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 2.6000000000000005,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 2.8000000000000003,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 3.0000000000000004,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 3.2,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 3.4000000000000004,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 3.6000000000000005,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 0.2,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 0.4,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 0.6000000000000001,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 0.8,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 1,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 1.2,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 1.4000000000000001,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 1.6,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 1.8,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 2,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 2.2,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 2.4000000000000004,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 2.6000000000000005,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 2.8000000000000003,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 3.0000000000000004,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 3.2,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        }
+      ]
+    },
+    {
+      "context": "youtube-compact",
+      "removed": [
+        {
+          "phase": 0.2,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 0.4,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 0.6000000000000001,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 0.8,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 1,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 1.2,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 1.4000000000000001,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 1.6,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 1.8,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 2,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 2.2,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 2.4000000000000004,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 2.6000000000000005,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 2.8000000000000003,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 3.0000000000000004,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 3.2,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 3.4000000000000004,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 3.6000000000000005,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 3.8000000000000003,
+          "old": false,
+          "local": true
+        },
+        {
+          "phase": 4,
+          "old": false,
+          "local": true
+        }
+      ],
+      "motion": [
+        {
+          "phase": 0.2,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 0.4,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 0.6000000000000001,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 0.8,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 1,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 1.2,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 1.4000000000000001,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 1.6,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 1.8,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 2,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 2.2,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 2.4000000000000004,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 2.6000000000000005,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 2.8000000000000003,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 3.0000000000000004,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 3.2,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 3.4000000000000004,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 3.6000000000000005,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 3.8000000000000003,
+          "lagSeconds": 0.2,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 0.2,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 0.4,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 0.6000000000000001,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 0.8,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 1,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 1.2,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 1.4000000000000001,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 1.6,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 1.8,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 2,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 2.2,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 2.4000000000000004,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 2.6000000000000005,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 2.8000000000000003,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 3.0000000000000004,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 3.2,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 3.4000000000000004,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 3.6000000000000005,
+          "lagSeconds": 0.4,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 0.2,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 0.4,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 0.6000000000000001,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 0.8,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 1,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 1.2,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 1.4000000000000001,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 1.6,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 1.8,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 2,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 2.2,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 2.4000000000000004,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 2.6000000000000005,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 2.8000000000000003,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": true
+        },
+        {
+          "phase": 3.0000000000000004,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        },
+        {
+          "phase": 3.2,
+          "lagSeconds": 0.8,
+          "old": false,
+          "local": false,
+          "translated": false
+        }
+      ]
+    }
+  ],
+  "compiledScanSha256": "8123dc1a0b43fc921eaa25ad7c147d408a31efab504957c3659d83ae2491c67b",
+  "note": "Development-only phase scan. lostLocalDetail unchanged since scan; subsequent translation exception now checks aligned local detail. Browser image resampling differs from Electron."
+}

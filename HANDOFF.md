@@ -4,6 +4,21 @@ Read AGENTS.md, DESIGN.md, docs/WORKLOG.md, docs/RELIABILITY.md and this file fi
 WORKLOG.md and saved reports retain history; this file supersedes old missing-key,
 permission and budget blockers. Do not repeat completed experiments as new evidence.
 
+## Active30 October continuation — local detail-loss correction
+
+User authorized next step: test/fix small-player switch-away while preserving ongoing
+video. Branch validation/local-detail-20261030. Read LOCAL-DETAIL-PLAN.md and frozen
+local-detail-freeze-2026-10-30.json before paid work. New narrow detail-to-flat patch
+check preserves global8%; aligned translation now also verifies local detail so tiny
+vanished content cannot slip through aligned2% mean. No provider/rule/threshold/
+cadence change. Free scan20compact removals caught,0extra rejections in106knownclip
+motion pairs; development only. Initial app-loop fixture exposed translation gap;
+corrected helper now21affected tests/build/strict runner tsc pass. New three-trial
+native plan frozen: compact switch (requires localDetailLoss branch),compact and
+wide sustained players. Max9 under exact253/$2.785542144/860235 authority, prior
+history intact. No paid job dispatched yet; no release. Keep older failures below.
+Normal cuts can lose detail; heuristic does not certify semantic identity or95%.
+
 ## Current continuation — warning merged, video evidence complete
 
 PR #7 MERGED at3c2a80b931943164158683fd254df80514236455. SourceCI40898018412 and

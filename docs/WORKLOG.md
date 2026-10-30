@@ -828,3 +828,20 @@ complete with both stale-control failures preserved, no claimed detector fix.
 Final authority253/$2.785542144/860235 verified against final raw report, retained
 62-history and approval history intact, no authority lock or active paid job.
 No more experiments; final continuity-only follow-up, no release.
+
+
+### Local detail-loss candidate and frozen correction regression (30 October)
+
+User said next: authorized work on small-player switch-away while preserving ongoing
+video. Read instructions/reliability/handoff/evidence/callers; Ponytail workflow.
+Narrow patch contrast-collapse helper (8px/stride4, prevar>=400/postvar<=4/diff>=.1)
+keeps original8% guard. Free known CC0 decoded scan20phases/layout:20compact
+removals caught despite globalmean false,0extra discards among106motion pairs;
+development only, browser resampling not native. Initial new app-loop test FAILED
+because translation2% aligned mean also diluted tiny vanished patch. Fixed shared
+translation exception by checking aligned local detail; exact retained translations
+still pass. Three new units/21affected tests, build and strict runner tsc passed.
+No provider/rule/threshold/cadence change. Flat video cuts can also lose detail;
+similarly detailed replacements unaddressed. Freeze plan before3native regressions
+(switch/newbranch,compact sustained,wide sustained), max9 retainedcap3, authority
+253/$2.785542144/860235. No paid job dispatched yet, no release.

@@ -1,0 +1,48 @@
+{
+  "frozenAt": "2026-10-30T01:22:33.323833+00:00",
+  "authorityBefore": {
+    "capUsd": 3,
+    "priorUsage": {
+      "retainedReservations": 62,
+      "cap": 64,
+      "ledgerMissing": true,
+      "source": "HANDOFF.md; not reset or included in new allowance"
+    },
+    "current": {
+      "requests": 253,
+      "reservedUsd": 2.785542144000008,
+      "inputTokens": 860235
+    },
+    "authorizationHistory": [
+      {
+        "approved_at": "2026-10-29T09:46:06.126178+00:00",
+        "fromCapUsd": 0.5,
+        "toCapUsd": 3,
+        "atRequests": 45,
+        "source": "Explicit user approval: Yes, use a $3 cumulative reservation cap. Not a new/reset allowance."
+      }
+    ]
+  },
+  "maximumRequests": 9,
+  "trials": [
+    {
+      "scene": "youtube-compact-video",
+      "motion": "video-switch-away",
+      "requiresLocalDetailLoss": true
+    },
+    {
+      "scene": "youtube-compact-video",
+      "motion": "video"
+    },
+    {
+      "scene": "youtube-video",
+      "motion": "video"
+    }
+  ],
+  "codeSha256": {
+    "electron/main.ts": "f74192717be98bbd899b684889d401565c250dd427cfa4ea99bc8e1ea40051a6",
+    "electron/screen-cache.ts": "68ecea1e7c96ce746e3ed4bcfae247b98bdd4e16c5244f2262cc2e043d3ae3ba",
+    "lab/run-windows-live.ts": "db4396c001675a41ce6fe36a0f32f797a4de94bb81f8510b2a22ba74462676e5"
+  },
+  "note": "Frozen correction regression, repeated known sources not independent accuracy; keep prior failures."
+}
