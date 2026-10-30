@@ -1005,3 +1005,28 @@ translation/lateadjustment. Exact262->264/$2.906652672/899760 reconciled, histor
 intact/no lock. Second reviewer independentlyverified/approved safeonly. Final
 safetrial41013029918 bound frozenebadcd7 with durableauthoritylock from264; no
 production change/release. Source/sharedsettings/range/audit unchanged.
+
+
+Safe41013029918 FAILED twofreshcheckbound: neutral.01, firstvideo.05accepted,
+secondvideo.03discarded;0blocks, checks2 includesneutral, changedpair22.7618%,
+no local/translation/lateadjustment. Threecall trialsubcap causedvisibleerror/pause
+beforefourthprovider call; cumulative3cap NOTexhausted. Decoded22->515 acrossloop
+without per-capture mediaalignment, so specificcutcause unknown. Full264->267/
+$2.93968281600001/910488 reconciled, originalprior/history intact/no lock. Reviewer
+independentlyverified and approved preservefailure/closecohort, no paidretry/tuning.
+SEVENtotalnewcalls,5maxremain. New NATURAL-CUTS-RESULTS distinguishes earlypositive
+blocks from latercut/fallbackproof and failedcontrol fromfalseblock. SourceCI
+41013150612 running; finalreportreview beforemerge, no release. Nextfree native
+capturesequence acrosswholecutsegment withtimestampalignment, no paidrepeat.
+
+SourceCI41013150612 at0cc5c3a PASSED95unit+1intendedskip,9UI,14installedfixtures,
+native desktop smoke/installer build/install; release skipped. Numeric summary
+saved. Final report/continuity and CI sent reviewer beforemerge. No more provider
+calls; originalauthority267/$2.939682816/910488/no lock. This evidence/testtooling
+change does not alter production detection or claim fewseconds/95% reliability.
+
+Second reviewer independentlychecked finalreport/CI and approved merge after wording
+fixes: correctCIstatus and authorwhole/range vs reviewer rangeonly visualreview.
+Updates applied. No new tests/provider calls needed; docs-only checkpoint, clean
+squashmerge and postmerge ordinaryCI next. Earlier pending entries are chronological
+checkpoints superseded by finalsuccessfulCI/resultreview above.

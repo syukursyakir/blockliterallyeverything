@@ -28,3 +28,17 @@
    exact262→264/$2.906652672/899760 reconciliation with prior history intact/no lock.
    No discard/translation/late adjustment; media23.258 atcover before23.875candidate.
    Approved safe control only under unchanged freeze/audit/maximum3 reservations.
+6. Independently reviewed safe41013029918 FAILED two-fresh-check bound. Only one
+   accepted video check after neutral; .03 secondvideo result discarded with22.7618%
+   changed pair,0blocks and3calls. Error from planned trial subcap, not cumulative3
+   exhaustion/modelFP. No per-capture media alignment/specific-cut cause proven.
+   Lateadjustment0; exact264→267/$2.939682816/910488 fullhistory/no lock reconciled.
+   Approved preservefailure/closecohort, no paid rerun/tuning; finishCI/report review.
+
+7. Final report/CI independently reviewed: correct two early positive passes and
+   failed safe freshness bound, full seven-call accounting, one-source/instrumented/
+   physical-deployment limits. SourceCI41013150612 at0cc5c3a passed95unit+1skip,9UI,
+   14installedfixtures/build/native smoke/installer, release skipped. Corrected
+   stale pending status and visual-review attribution: author viewed whole/range
+   sheets, reviewer independently viewed range only. Approved docs-only checkpoint
+   then merge with clean squashsubject and postmerge ordinaryCI; no more paid work.
