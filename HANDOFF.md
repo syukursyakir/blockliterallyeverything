@@ -4,6 +4,23 @@ Read AGENTS.md, DESIGN.md, docs/WORKLOG.md, docs/RELIABILITY.md and this file fi
 WORKLOG.md and saved reports retain history; this file supersedes old missing-key,
 permission and budget blockers. Do not repeat completed experiments as new evidence.
 
+## Current continuation — final session-control test gaps
+
+User clarified that video understanding is unnecessary for blocking a visible watch
+page and asked any other useful on-our-end tests be completed FIRST. Stop video
+research/repeating completed media cohorts. Two agents audited current coverage;
+only covered-session expiry and ignored-abort latepositive paths were useful gaps.
+Added2actualmainunit regressions in tests/unit/desktop.test.ts, both pass (3oldtests
+intentionally filtered), reviewer approved. No productionfix needed. See
+SESSION-CONTROL-CHECKS.md. Initialfalsefailure was mutable unit baseline corrected
+withstructuredClone to matchIPCcopy, not appbug. No provider/native/video job.
+Branch validation/session-control-boundaries-20261030/PR13. SourceCI41032668528
+at66f254f PASSED100unit+1skip/9UI/14installed/native smoke/build/installer, release
+skipped. Secondreviewer independentlyverified finalCI/claims/authoritybytehash and
+approved merge. Complete merge/postmergeCI/finalhandoff inoneprompt. Authority267/
+$2.939682816/910488/history/cap3 unchanged5maxleft, no lock/release. No more tests
+beyond these+requiredCI unless failure shows realcause; nextphysicaloperator check.
+
 ## Latest completed milestone — FREE native capture/media timing
 
 User asks whole milestone in ONE prompt without routine goaheads; preserve second-

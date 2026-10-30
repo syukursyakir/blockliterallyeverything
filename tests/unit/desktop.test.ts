@@ -331,3 +331,63 @@ it('keeps a stalled display phase cycle while another display accepts and uses c
   expect(waits.slice(0,4)).toEqual([3250,3500,3750,4000])
  }finally{call('stop');await flush();timerSpy.mockRestore();mock.capture=null;mock.displayIds=['1','2'];vi.useRealTimers()}
 })
+
+it('session deadline releases an existing cover and stays paused without another request',async()=>{
+ vi.useFakeTimers();await import('../../electron/main');await flush()
+ const sender=mock.windows[0].webContents,event={sender,senderFrame:sender.mainFrame}
+ const call=(name:string,...args:unknown[])=>mock.handlers.get(name)!(event,...args)
+ call('stop');await flush();mock.displayIds=['1'];mock.capture=null
+ try{
+  await call('set-cloud-key','fixture-only-offline-key')
+  const settings=(await call('snapshot')).settings
+  await call('save',{...settings,backend:'jev',cloudConsent:true,cloudBudgetUsd:3,detectionOnly:false,sessionMinutes:1,intervalSeconds:3,rules:settings.rules.map((r:any)=>({...r,enabled:r.id==='explicit'}))})
+  mock.fetch.mockResolvedValue(new Response(JSON.stringify({model:'jev-1.14.0',usage:{input_tokens:100},answers:{explicit:{noul:0.95}}})))
+  const calls=mock.fetch.mock.calls.length
+  await call('start');await flush()
+  expect((await call('snapshot')).status.mode).toBe('blocked')
+  const covers=mock.windows.filter(w=>w!==mock.windows[0]&&!w.destroyed)
+  expect(covers).toHaveLength(1)
+  await vi.advanceTimersByTimeAsync(59999)
+  expect((await call('snapshot')).status.mode).toBe('blocked');expect(covers[0].destroyed).toBe(false)
+  await vi.advanceTimersByTimeAsync(1);await flush()
+  expect((await call('snapshot')).status).toMatchObject({mode:'idle',endsAt:null,error:null,delayedDisplays:{}})
+  expect(covers[0].destroyed).toBe(true)
+  expect((await call('snapshot')).status.activity[0].message).toBe('Focus session complete.')
+  await vi.advanceTimersByTimeAsync(30000);await flush()
+  expect((await call('snapshot')).status.mode).toBe('idle')
+  expect(mock.fetch.mock.calls.length-calls).toBe(1)
+ }finally{call('stop');await flush();mock.displayIds=['1','2'];mock.capture=null;vi.useRealTimers()}
+})
+
+it('ignores a positive reply that settles after pause despite abort, then freshly checks the next session',async()=>{
+ vi.useFakeTimers();await import('../../electron/main');await flush()
+ const sender=mock.windows[0].webContents,event={sender,senderFrame:sender.mainFrame}
+ const call=(name:string,...args:unknown[])=>mock.handlers.get(name)!(event,...args)
+ call('stop');await flush();mock.displayIds=['1'];mock.capture=null
+ let release:((value:Response)=>void)|undefined,signal:AbortSignal|undefined
+ const response=(probability:number)=>new Response(JSON.stringify({model:'jev-1.14.0',usage:{input_tokens:100},answers:{explicit:{noul:probability}}}))
+ try{
+  await call('set-cloud-key','fixture-only-offline-key')
+  const settings=(await call('snapshot')).settings
+  await call('save',{...settings,backend:'jev',cloudConsent:true,cloudBudgetUsd:3,detectionOnly:false,sessionMinutes:1,intervalSeconds:3,rules:settings.rules.map((r:any)=>({...r,enabled:r.id==='explicit'}))})
+  const before=structuredClone((await call('snapshot')).status),calls=mock.fetch.mock.calls.length
+  mock.fetch.mockImplementation((_url:any,init:any)=>{signal=init.signal;return new Promise<Response>(resolve=>{release=resolve})}) // deliberately ignores abort
+  await call('start');await flush()
+  expect(mock.fetch.mock.calls.length-calls).toBe(1)
+  call('stop');expect(signal?.aborted).toBe(true)
+  await expect(call('start')).rejects.toThrow('Finish or pause the current operation first.')
+  release!(response(0.95));release=undefined;await flush()
+  const stopped=(await call('snapshot')).status
+  expect(stopped).toMatchObject({mode:'idle',error:null,endsAt:null,checks:before.checks,blocks:before.blocks})
+  expect(mock.windows.filter(w=>!w.destroyed)).toHaveLength(1)
+  expect(stopped.cloudRequests).toBe(before.cloudRequests+1) // prior reservation/usage must still reconcile
+  mock.fetch.mockImplementation(async()=>response(0.02))
+  await call('start');await flush()
+  const fresh=(await call('snapshot')).status
+  expect(mock.fetch.mock.calls.length-calls).toBe(2) // old reply did not populate unchanged-screen cache
+  expect(fresh).toMatchObject({mode:'watching',error:null,checks:before.checks+1,blocks:before.blocks})
+  expect(mock.windows.filter(w=>!w.destroyed)).toHaveLength(1)
+  await vi.advanceTimersByTimeAsync(3000);await flush()
+  expect(mock.fetch.mock.calls.length-calls).toBe(2) // only the accepted fresh reply can seed this cache
+ }finally{call('stop');release?.(response(0.95));await flush();mock.displayIds=['1','2'];mock.capture=null;vi.useRealTimers()}
+})
