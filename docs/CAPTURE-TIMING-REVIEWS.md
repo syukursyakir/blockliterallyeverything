@@ -21,3 +21,17 @@
    only normalizedLF hash addition approved without repeating capture. Final
    claims should preserve prior failed paid safe control, app-scheduler/latency/
    accuracy/physical-device limits, and continue through CI/merge/handoff.
+
+5. Final report and physical handoff reviewed against actual fixture script and
+   native evidence. Corrected visibility/focus claim to initial per-layout assertion,
+   not continuous verification. Existing14-case fixture procedure correctly uses
+   explicit installed executable, isolated profile, no key/model calls, one-display
+   scope and local screenshot/report handling. Requires final successful CI links
+   and source/mainCI verification before close. No further capture/model rerun.
+
+6. Independently verified compact52→54/53→55 media brackets,312.6/301.0ms gaps and
+   4.041%/3.948% global changes with local-detail rejection. Compatibility-only
+   wording/no exact-exposure/old-run-cause claim approved. SourceCI41016981357 at
+   3521899 passed98unit+1skip,9UI,14installedfixtures/build/native smoke/installer,
+   release skipped. Approved finaldocs checkpoint/PR12merge and ordinarymainCI,
+   unchangedauthority verification and physical-operator handoff. No furthercalls.

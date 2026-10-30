@@ -24,8 +24,11 @@ censored of1323gaprows, no skipped/overshootmissing. Actualmedians~300/900/1650
 vsnominal200/800/1600. Guard sensitivity varies withgeometry; no newdefensible
 productionbug/tuning. See CAPTURE-TIMING-RESULTS/REVIEWS and savedraw/summary.
 CollectorLF/CRLFsourcehash mismatch exactlyexplained/reviewed, rawdatahashverified;
-future metadata normalizedLF hash added, no recapture. FinalCI/claims/merge/handoff
-remain; do not replay old paid trials. Authority267/$2.939682816/910488 original3cap/history bytehash frozen,
+future metadata normalizedLF hash added, no recapture. Final sourceCI41016981357 at3521899 PASSED98unit+1skip/9UI/14installedfixtures/
+native smoke/build/installer, release skipped. Reviewer approved finalclaims/CI/
+compact examples/physicalguide. Merge/postmergeCI/finalhandoff remain inthisprompt;
+do not replay old paid trials. Physicaloperator procedure prepared in
+docs/PHYSICAL-WINDOWS-VALIDATION.md, not executed on a physicalPC here. Authority267/$2.939682816/910488 original3cap/history bytehash frozen,
 no lock;5max reservations remain and must stayunused during thisFREE milestone.
 Continue autonomously through results/review/supportedfixes/CI/merge/handoff.
 

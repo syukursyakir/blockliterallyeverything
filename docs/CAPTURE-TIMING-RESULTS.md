@@ -45,13 +45,25 @@ semantic correctness, natural-frequency estimates or general reliability rates.
 No translation exception applied. No guard threshold, prompt or inference provider
 was tuned on these consumed media conditions.
 
+Two overlapping compact examples provide concrete timing pointers: sample52→54
+(actual312.6ms) brackets media27.787–27.830s then28.087–28.143s;53→55(actual301.0ms)
+brackets27.936–27.980s then28.238–28.282s. Both trigger local-detail loss while global
+mean changes are only4.041%/3.948%, below8%. Those coarse media-clock spans enclose
+the prelisted28.083s scene candidate/black transition. This is compatible with the
+intended detail-loss guard rejecting a cut inside an otherwise persistent watch
+layout. Brackets are not exact exposure timestamps or proof of a unique cut cause,
+and these are overlapping comparisons from this NEW diagnostic, not the old failed
+paid safe run's captured pair. No semantic-model verdict was involved.
+
+
 ## What was actually captured
 
 Windows workflow41016095774 at1b698d58df2a26b54f2b34510aba7c949839cea7 completed
 one continuous sequence per existing wide/compact/unbranded layout. The built actual
 Electron app used a fresh isolated profile, stayedidle with0checks/0cloudRequests,
-and never started protection. New fullscreen media scene stayed visible/focused;
-no hide/show around captures, clock injection, provider or capture substitution.
+and never started protection. Initial scene visible/focused/fullscreen state was asserted at each layout start;
+no intentional window changes during the sequence. No hide/show around captures,
+clock injection, provider or capture substitution.
 One hosted1024×768 display,scale1; actual production acquisition options1280×1280
 screen thumbnail, primarydisplay mapping and native64×64 resize/bitmap path.
 
@@ -96,7 +108,14 @@ and censor denominators, invalid/nonmonotonic input. Strict affected-runner type
 bundling, syntax and workflow gates passed. Actual preparation CLI pinned download,
 no-overwrite refusal and Linux native-refusal checks passed without model calls.
 Source review caught and fixed a missing timing exclusion in the inference-job gate
-before any run. Final source CI/review/merge status will be recorded below.
+before any run.
+
+[Source Windows CI41016981357](https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41016981357)
+at3521899b414b2e71b62fc49d0e42551a8898484a PASSED98unit+1intendedskip,9UI,
+14installedfixture scenarios, native desktop smoke and installer build/install;
+release step skipped. Summary windows-ci-run-41016981357.json. Reviewer independently
+verified final claims, compact timing examples and sourceCI before approving merge.
+These fixture checks are not extra model/capture-cohort accuracy samples.
 
 ## Outcome and remaining limits
 
@@ -112,3 +131,7 @@ model accuracy, arbitrary user rules,95% reliability and original source27 miss
 remain open. Further tuning needs prospective new evidence and a defined tradeoff,
 not repeats of this clip. The useful next deployment milestone is explicitly scoped
 physical Windows testing; hosted results cannot certify the user's machine.
+
+The physical handoff is prepared in PHYSICAL-WINDOWS-VALIDATION.md using the existing
+no-paid-call fixture suite and a matching CI installer. Executing it requires an
+operator at the physical machine; this workspace has only hosted Windows access.
