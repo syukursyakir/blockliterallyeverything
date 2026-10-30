@@ -32,3 +32,14 @@ validation. No private screenshots/keys sent to reviewer; same local source/repo
    existing15s unresolved-discard warning, with new disjoint timing parameters.
    Used holdout becomes development. No production edit/paid run without separate
    review and actual-main parity; no repeating holdout to tune until green.
+
+8. Escalation source reviewed BEFORE grid; added explicit cancel20000 during active
+   wait19400->22650 unit. One3198version-case execution: dev4blocking no-match
+   settings rescued, no successful first-match regressions; new576param timing
+   holdout has ZERO escalation activations, so it supports healthy invariance only.
+9. Missing activation metadata reconstructed deterministically, exact row equality
+   against every recorded candidate case; reconstruction extended to retain traces
+   and distinguish actual shifted polls. No changed policy/input or new independent
+   experiment: development10activated offsets =>9requests+1cached poll shifted;
+   fresh holdout0; explicitcontrol1. Reviewer verified result/limits and approved
+   separate activation-rich stress family plus helper/map design before app edits.

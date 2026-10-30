@@ -59,3 +59,19 @@ it('experimental discard-only phase shift resets on a settled acceptance and pre
  expect(()=>replay(base,undefined,[-1])).toThrow()
  expect(()=>replay(base,undefined,[1001])).toThrow()
 })
+
+it('escalation waits15s from unresolved discard, starts at250, and leaves healthy traces unchanged',()=>{
+ const offsets=[250,500,750,1000]
+ for(const s of parityScenarios.filter(s=>s.id!=='explicit-phase-lock'))expect(replay(s,undefined,offsets,15000).events).toEqual(replay(s).events)
+ const lock=parityScenarios.find(s=>s.id==='explicit-phase-lock')!
+ const baseTrace=replay(lock),candidate=replay(lock,undefined,offsets,15000)
+ const activation=baseTrace.events.find(e=>e.kind==='discard')!.at+15000
+ expect(candidate.events.filter(e=>e.at<activation)).toEqual(baseTrace.events.filter(e=>e.at<activation))
+ const firstActiveDiscard=candidate.events.find(e=>e.kind==='discard'&&e.at>=activation)!
+ expect(candidate.events.some(e=>e.kind==='request'&&e.at===firstActiveDiscard.at+3250)).toBe(true)
+ expect(candidate.firstMatchAtMs).not.toBeNull()
+ const stopped=replay({...lock,cancelAtMs:20000,horizonMs:24000},undefined,offsets,15000)
+ expect(stopped.ended).toBe('cancel');expect(stopped.observationEndMs).toBe(20000)
+ expect(stopped.events.every(e=>e.at<=20000)).toBe(true)
+ expect(()=>replay(base,undefined,offsets,NaN)).toThrow()
+})

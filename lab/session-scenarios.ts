@@ -34,3 +34,13 @@ export function timingHoldout(): Scenario[] {
   }
   return scenarios
 }
+
+export function escalationHoldout(): Scenario[] {
+  const scenarios: Scenario[] = []
+  for (const kind of ['periodic', 'drift'] as const) for (const periodMs of kind === 'periodic' ? [2300, 4600, 9100] : [13000]) {
+    for (const flatMs of [200, 650, 1100]) for (const phase of [0.15, 0.4, 0.65, 0.9]) for (const responseMs of [220, 650, 1250]) for (const moving of [false, true]) for (const detectionOnly of [false, true]) {
+      scenarios.push({ id: ['escalation-holdout',kind,periodMs,flatMs,phase,responseMs,moving?'moving':'static',detectionOnly?'observe':'block'].join('-'),kind,periodMs,flatMs,offsetMs:periodMs*phase,driftPeriods:kind==='drift'?[2600,4300,6100]:undefined,responseMs,moving,detectionOnly })
+    }
+  }
+  return scenarios
+}

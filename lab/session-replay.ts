@@ -4,7 +4,7 @@ import { ScreenCache, changedSubstantially, lostLocalDetail, sameTranslatedFrame
 export type Scenario = {
   id: string; kind: 'periodic' | 'drift' | 'neutral' | 'positive' | 'settled-cut' | 'switch-fresh' | 'cache-return' | 'brief' | 'cancel' | 'deadline' | 'timeout'
   responseMs: number; moving: boolean; detectionOnly: boolean; periodMs?: number; flatMs?: number; offsetMs?: number
-  horizonMs?: number; cancelAtMs?: number; sessionMs?: number
+  driftPeriods?: readonly number[]; horizonMs?: number; cancelAtMs?: number; sessionMs?: number
 }
 export type Comparator = { changedSubstantially: typeof changedSubstantially; sameTranslatedFrame: typeof sameTranslatedFrame; lostLocalDetail?: typeof lostLocalDetail }
 export const currentComparator: Comparator = { changedSubstantially, sameTranslatedFrame, lostLocalDetail }
@@ -16,7 +16,7 @@ export function frameAt(s: Scenario, at: number) {
     if (s.kind === 'periodic' || s.kind === 'drift') {
       let phase = relative + (s.offsetMs ?? 0)
       if (s.kind === 'periodic') phase %= s.periodMs!
-      else { phase %= 11000; for (const period of [2100, 3700, 5200]) { if (phase < period) break; phase -= period } }
+      else { const periods = s.driftPeriods ?? [2100, 3700, 5200]; phase %= periods.reduce((a,b)=>a+b,0); for (const period of periods) { if (phase < period) break; phase -= period } }
       if (phase < s.flatMs!) state = 'flat'
     } else if (s.kind === 'settled-cut' && relative >= 3100) state = 'flat'
     else if ((s.kind === 'switch-fresh' || s.kind === 'cache-return') && relative >= 3100) { state = 'neutral'; variant = s.kind === 'switch-fresh' ? 1 : 0 }
@@ -35,21 +35,23 @@ export function frameAt(s: Scenario, at: number) {
   return { state, positive: state !== 'neutral', pixels, hash: createHash('sha256').update(pixels).digest('hex') }
 }
 export type ReplayEvent = { at: number; kind: 'request' | 'accepted' | 'discard' | 'cache' | 'pending' | 'timeout' | 'cancel' | 'deadline'; capturedState?: string; responseState?: string; positive?: boolean; stale?: boolean }
-export function replay(s: Scenario, comparator: Comparator = currentComparator, discardOffsetsMs: readonly number[] = []) {
+export function replay(s: Scenario, comparator: Comparator = currentComparator, discardOffsetsMs: readonly number[] = [], activationAfterMs = 0) {
   for (const value of [s.responseMs, s.horizonMs ?? 60000, s.sessionMs ?? 120000, s.cancelAtMs ?? 0, s.offsetMs ?? 0]) if (!Number.isFinite(value) || value < 0) throw new Error('Replay durations must be finite and nonnegative.')
   if (s.responseMs <= 0 || (s.sessionMs ?? 120000) <= 0) throw new Error('Response/session duration must be positive.')
   if (s.kind === 'periodic' || s.kind === 'drift') {
-    const period = s.kind === 'periodic' ? s.periodMs : 2100
+    const period = s.kind === 'periodic' ? s.periodMs : Math.min(...(s.driftPeriods ?? [2100,3700,5200]))
     if (!Number.isFinite(period) || period! <= 0 || !Number.isFinite(s.flatMs) || s.flatMs! <= 0 || s.flatMs! >= period!) throw new Error('Flat dwell must be positive and shorter than its period.')
   }
+  if (!Number.isFinite(activationAfterMs) || activationAfterMs < 0) throw new Error('Activation age must be finite and nonnegative.')
   if (discardOffsetsMs.some(n => !Number.isFinite(n) || n < 0 || n > 1000)) throw new Error('Experimental offsets must stay within0..1000ms.')
+  if (s.driftPeriods && (!s.driftPeriods.length || s.driftPeriods.some(n=>!Number.isFinite(n)||n<=0))) throw new Error('Drift periods must be positive finite durations.')
   const cache = new ScreenCache(), events: ReplayEvent[] = []
   const horizon = s.horizonMs ?? 60000, stopAt = Math.min(s.sessionMs ?? 120000, s.cancelAtMs ?? Infinity)
   let at = 0, end = horizon, ended = 'horizon', delayedSince: number | null = null, warningMs = 0, firstWarningAt: number | null = null
-  let consecutive = 0, maxConsecutive = 0
+  let consecutive = 0, maxConsecutive = 0, phaseIndex = 0
   const clearDelay = (time: number) => {
     if (delayedSince !== null && time >= delayedSince + 15000) { firstWarningAt ??= delayedSince + 15000; warningMs += time - (delayedSince + 15000) }
-    delayedSince = null
+    delayedSince = null; phaseIndex = 0
   }
   while (at <= horizon) {
     if (stopAt <= at) { end = stopAt; ended = s.cancelAtMs === stopAt ? 'cancel' : 'deadline'; events.push({ at: end, kind: ended as 'cancel' | 'deadline' }); break }
@@ -75,7 +77,9 @@ export function replay(s: Scenario, comparator: Comparator = currentComparator, 
       clearDelay(finish); consecutive = 0
       if (before.positive && !s.detectionOnly) { end = finish; ended = after.positive ? 'blocked-positive' : 'stale-block'; break }
     }
-    at = finish + 3000 + (discarded && discardOffsetsMs.length ? discardOffsetsMs[(consecutive - 1) % discardOffsetsMs.length] : 0)
+    let phaseOffset = 0
+    if (discarded && discardOffsetsMs.length && finish - delayedSince! >= activationAfterMs) phaseOffset = discardOffsetsMs[phaseIndex++ % discardOffsetsMs.length]
+    at = finish + 3000 + phaseOffset
   }
   // Stop timers also fire while waiting for the next poll, even beyond the final loop iteration.
   if (ended === 'horizon' && stopAt <= horizon) { end = stopAt; ended = s.cancelAtMs === stopAt ? 'cancel' : 'deadline'; events.push({ at: end, kind: ended as 'cancel' | 'deadline' }) }
