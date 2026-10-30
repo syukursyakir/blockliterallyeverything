@@ -1060,3 +1060,20 @@ fixed safe failurecodes and elapsedlayoutcoverage, both applied and strict types
 passed. Bytehash frozenauthority267/$2.939682816/910488/history/no lock unchanged.
 Next oneFREE nativecapturecohort, review data and any demonstrated toolingfix
 autonomously, then requiredCI/merge/fullhandoff. No guardtuning on consumedmedia.
+
+
+FREE nativecohort41016095774 at1b698d58 PASSED3x147captures/one22ssequenceeach,
+0provider/0checks/appidle/nativeexited. Actualsourcepath1280->64, media-clock
+brackets,1observedloop each, no skippedslots.1323requested=1266measured+57horizon
+censored,0outoftolerance; actualmedians~300/900/1650 vsnominal200/800/1600. Wide
+discard17/145,58/141,74/136; compact2/145,10/141,12/136(alllocaldetail), unbranded
+45/145,87/141,119/136. These areoverlappingguardcomparisons, notmodelFP/missrates.
+Captureacquisition20.6..72.5ms/fullbrackets27.3..78.9ms;441selfcontrols eligible.
+Collector initiallyfailed bytehash:WindowsCRLF vsfrozenLF; reviewer independently
+verified EACHexactexpectedCRLFhash, approvedexplicitmatch validation/preserveall
+rawhashes, no datamodification/recapture. ChunkreportexactSHAverified/noencoding
+repair. Futuremetadata-only normalizedLFhash added; stricttypespassed. Reviewer
+approvedanalysis: conservativeguard/motion/geometrytradeoff, no newproductionbug
+or justifiedthresholdfix. Originalpaid safefailure remainsfailed; no oldcutcause
+claim. Authority267/fullhistory byte-identical, no lock/paidcalls/release. Reports
+andreviews saved; finalCI/claims/merge/handoff nextinthisprompt, no routinegoahead.

@@ -1,0 +1,265 @@
+{
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "1b698d58df2a26b54f2b34510aba7c949839cea7",
+    "jobs": [
+      {
+        "completedAt": "2026-10-30T06:49:08Z",
+        "conclusion": "success",
+        "databaseId": 123932649695,
+        "name": "capture-timing",
+        "startedAt": "2026-10-30T06:47:00Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Refuse mixed modes or publishing",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-node@v4",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run npm ci",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run npm run build",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Prepare pinned public timing media without allowance",
+            "number": 7,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Capture native sequence and compare reception gaps without inference",
+            "number": 8,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Preserve numeric timing evidence only",
+            "number": 9,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-node@v4",
+            "number": 17,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 18,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 19,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41016095774/job/123932649695"
+      },
+      {
+        "completedAt": "2026-10-30T06:46:56Z",
+        "conclusion": "skipped",
+        "databaseId": 123932651095,
+        "name": "capture-public",
+        "startedAt": "2026-10-30T06:46:57Z",
+        "status": "completed",
+        "steps": [],
+        "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41016095774/job/123932651095"
+      },
+      {
+        "completedAt": "2026-10-30T06:46:56Z",
+        "conclusion": "skipped",
+        "databaseId": 123932651559,
+        "name": "reconcile",
+        "startedAt": "2026-10-30T06:46:57Z",
+        "status": "completed",
+        "steps": [],
+        "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41016095774/job/123932651559"
+      },
+      {
+        "completedAt": "2026-10-30T06:46:56Z",
+        "conclusion": "skipped",
+        "databaseId": 123932651743,
+        "name": "windows",
+        "startedAt": "2026-10-30T06:46:57Z",
+        "status": "completed",
+        "steps": [],
+        "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41016095774/job/123932651743"
+      },
+      {
+        "completedAt": "2026-10-30T06:46:56Z",
+        "conclusion": "skipped",
+        "databaseId": 123932684333,
+        "name": "live-detection",
+        "startedAt": "2026-10-30T06:47:03Z",
+        "status": "completed",
+        "steps": [],
+        "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41016095774/job/123932684333"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41016095774"
+  },
+  "reportSha256WithoutTrailingNewline": "713e4fc9187422cbac114485b38bc77bc38bfb2cef59291cbd9478efe4e83c40",
+  "wireRecovery": "none",
+  "sourceFileMatches": {
+    "lab/run-capture-timing.ts": {
+      "rawReportedSha256": "f8fb966235406d8503060ce75364ca54c61821f32e44d1b70a176c2550790af6",
+      "frozenLfSha256": "2ec3e8888842aa79e4197a1f4b446904b59c09982fa54fdc67f48692eec40eb0",
+      "matchKind": "exact-Windows-CRLF-of-frozen-LF"
+    },
+    "lab/capture-timing.ts": {
+      "rawReportedSha256": "c56a5c867313cf77219b6c06c6f8471ae5d50fb326d1ce7e9fce6164dddaa58f",
+      "frozenLfSha256": "52f4b52bf2cd55944ecd94f4b7e726849ab2717c696a4890fdf9836b012c7fd4",
+      "matchKind": "exact-Windows-CRLF-of-frozen-LF"
+    },
+    "lab/video-scene.ts": {
+      "rawReportedSha256": "89eb363078a64d98575350c82f9e86c4436ed99c54dc89d14cce495c95bef2d5",
+      "frozenLfSha256": "454531e13e70715181dc8862d056c262eb7ec74e5a005d5e34291c3bfb6b9a55",
+      "matchKind": "exact-Windows-CRLF-of-frozen-LF"
+    },
+    "electron/screen-cache.ts": {
+      "rawReportedSha256": "bbb405cd7e3f4dc008ffa34460a179d117017d4e7407817491c1f1f1b3079c8c",
+      "frozenLfSha256": "68ecea1e7c96ce746e3ed4bcfae247b98bdd4e16c5244f2262cc2e043d3ae3ba",
+      "matchKind": "exact-Windows-CRLF-of-frozen-LF"
+    },
+    "lab/reviewed-videos.json": {
+      "rawReportedSha256": "9937853bc7c48313f1367e6066aca10608c0275b2f5fb63a4a70f847858c9f9f",
+      "frozenLfSha256": "5ad1db55ccfdd6c15e11646ae40528f4ad44f7b79de8ca033ae989de811244fa",
+      "matchKind": "exact-Windows-CRLF-of-frozen-LF"
+    }
+  },
+  "authorityByteHashUnchanged": true,
+  "providerCalls": 0,
+  "report": {
+    "sha256": "713e4fc9187422cbac114485b38bc77bc38bfb2cef59291cbd9478efe4e83c40",
+    "completed": true,
+    "layouts": [
+      {
+        "context": "youtube",
+        "completed": true,
+        "captures": 147,
+        "summary": [
+          {
+            "requestedMs": 200,
+            "requested": 147,
+            "measured": 145,
+            "discarded": 17,
+            "outOfTolerance": 0,
+            "horizonCensored": 2
+          },
+          {
+            "requestedMs": 800,
+            "requested": 147,
+            "measured": 141,
+            "discarded": 58,
+            "outOfTolerance": 0,
+            "horizonCensored": 6
+          },
+          {
+            "requestedMs": 1600,
+            "requested": 147,
+            "measured": 136,
+            "discarded": 74,
+            "outOfTolerance": 0,
+            "horizonCensored": 11
+          }
+        ]
+      },
+      {
+        "context": "youtube-compact",
+        "completed": true,
+        "captures": 147,
+        "summary": [
+          {
+            "requestedMs": 200,
+            "requested": 147,
+            "measured": 145,
+            "discarded": 2,
+            "outOfTolerance": 0,
+            "horizonCensored": 2
+          },
+          {
+            "requestedMs": 800,
+            "requested": 147,
+            "measured": 141,
+            "discarded": 10,
+            "outOfTolerance": 0,
+            "horizonCensored": 6
+          },
+          {
+            "requestedMs": 1600,
+            "requested": 147,
+            "measured": 136,
+            "discarded": 12,
+            "outOfTolerance": 0,
+            "horizonCensored": 11
+          }
+        ]
+      },
+      {
+        "context": "unbranded",
+        "completed": true,
+        "captures": 147,
+        "summary": [
+          {
+            "requestedMs": 200,
+            "requested": 147,
+            "measured": 145,
+            "discarded": 45,
+            "outOfTolerance": 0,
+            "horizonCensored": 2
+          },
+          {
+            "requestedMs": 800,
+            "requested": 147,
+            "measured": 141,
+            "discarded": 87,
+            "outOfTolerance": 0,
+            "horizonCensored": 6
+          },
+          {
+            "requestedMs": 1600,
+            "requested": 147,
+            "measured": 136,
+            "discarded": 119,
+            "outOfTolerance": 0,
+            "horizonCensored": 11
+          }
+        ]
+      }
+    ],
+    "providerCalls": 0,
+    "nativeProcessStopped": true
+  }
+}

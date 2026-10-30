@@ -19,8 +19,13 @@ compositor exposure/oldfailedrun cause/accuracy/providerlatency claims. Observed
 not everyframeproof. Numericreport only viaartifact/chunkedstandardlogs.
 3newpairunits/strict types/bundle/syntax/workflowparse and actualprep CLI/refusal
 checks passed. Reviewer approved scope/source, safe failurecodes/elapsedcoverage
-refinements applied. Waiting frozen sourcecommit then one nativecohort; do not replay
-old paid trials. Authority267/$2.939682816/910488 original3cap/history bytehash frozen,
+refinements applied. Nativecohort41016095774 at1b698d58 PASSED441captures/3layouts,1266measured+57
+censored of1323gaprows, no skipped/overshootmissing. Actualmedians~300/900/1650
+vsnominal200/800/1600. Guard sensitivity varies withgeometry; no newdefensible
+productionbug/tuning. See CAPTURE-TIMING-RESULTS/REVIEWS and savedraw/summary.
+CollectorLF/CRLFsourcehash mismatch exactlyexplained/reviewed, rawdatahashverified;
+future metadata normalizedLF hash added, no recapture. FinalCI/claims/merge/handoff
+remain; do not replay old paid trials. Authority267/$2.939682816/910488 original3cap/history bytehash frozen,
 no lock;5max reservations remain and must stayunused during thisFREE milestone.
 Continue autonomously through results/review/supportedfixes/CI/merge/handoff.
 

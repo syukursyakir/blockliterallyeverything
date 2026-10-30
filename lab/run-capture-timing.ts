@@ -113,8 +113,8 @@ finally{
  if(desktop)await desktop.close().catch(()=>{})
  report.nativeProcessStopped=exited()
  if(!report.nativeProcessStopped){report.completed=false;report.cleanupCode='TIMING_NATIVE_NOT_STOPPED';process.exitCode=1}
- report.codeSha256={}
- for(const file of ['lab/run-capture-timing.ts','lab/capture-timing.ts','lab/video-scene.ts','electron/screen-cache.ts','lab/reviewed-videos.json'])report.codeSha256[file]=hash(await readFile(file))
+ report.codeSha256={};report.codeLfSha256={}
+ for(const file of ['lab/run-capture-timing.ts','lab/capture-timing.ts','lab/video-scene.ts','electron/screen-cache.ts','lab/reviewed-videos.json']){const source=await readFile(file);report.codeSha256[file]=hash(source);report.codeLfSha256[file]=hash(source.toString('utf8').replace(/\r\n/g,'\n'))}
  const serialized=JSON.stringify(report)
  await writeFile(output+'.tmp',serialized+'\n',{mode:0o600});await rename(output+'.tmp',output)
  const total=Math.ceil(serialized.length/9000)

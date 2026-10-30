@@ -1,0 +1,337 @@
+{
+  "scope": "Descriptive free native capture reception-gap analysis; not provider/app scheduling/accuracy, no old-run cut causality. Coarse media brackets are not exposure times.",
+  "sourceReportSha256WithoutTrailingNewline": "713e4fc9187422cbac114485b38bc77bc38bfb2cef59291cbd9478efe4e83c40",
+  "totalCaptures": 441,
+  "totalRequestedPairs": 1323,
+  "totalMeasuredPairs": 1266,
+  "totalHorizonCensored": 57,
+  "layouts": [
+    {
+      "context": "youtube",
+      "captures": 147,
+      "elapsedMs": 22050.2169,
+      "captureReceptionSpanMs": 21871.1786,
+      "skippedSlots": 0,
+      "receptionCadenceMs": {
+        "n": 146,
+        "min": 112.99599999999919,
+        "median": 150.26790000000074,
+        "max": 182.1420999999973
+      },
+      "getSourcesMs": {
+        "n": 147,
+        "min": 20.795099999999366,
+        "median": 39.317099999999755,
+        "max": 72.45349999999962
+      },
+      "fullBracketMs": {
+        "n": 147,
+        "min": 28.827299999999013,
+        "median": 47.866199999999935,
+        "max": 78.91979999999967
+      },
+      "uniqueCaptureHashes": 140,
+      "observedLoops": 1,
+      "firstMediaState": {
+        "epochMs": 1793342875354,
+        "rendererMonotonicMs": 611.1999999999825,
+        "time": 20.003895,
+        "decodedFrames": 14,
+        "paused": false,
+        "rate": 1,
+        "readyState": 4
+      },
+      "lastMediaState": {
+        "epochMs": 1793342897296,
+        "rendererMonotonicMs": 22552.5,
+        "time": 23.860089,
+        "decodedFrames": 554,
+        "paused": false,
+        "rate": 1,
+        "readyState": 4
+      },
+      "mediaRangeObserved": [
+        20.003895,
+        37.982567
+      ],
+      "allSteadyEligible": true,
+      "pairs": [
+        {
+          "requestedMs": 200,
+          "requestedRows": 147,
+          "measured": 145,
+          "discarded": 17,
+          "eligible": 128,
+          "globalTriggered": 16,
+          "localDetailTriggered": 1,
+          "translationExceptions": 0,
+          "horizonCensored": 2,
+          "outOfTolerance": 0,
+          "actualGapMs": {
+            "n": 145,
+            "min": 264.90049999999974,
+            "median": 300.1245999999992,
+            "max": 338.09410000000025
+          },
+          "uniquePixelPairs": 145
+        },
+        {
+          "requestedMs": 800,
+          "requestedRows": 147,
+          "measured": 141,
+          "discarded": 58,
+          "eligible": 83,
+          "globalTriggered": 49,
+          "localDetailTriggered": 9,
+          "translationExceptions": 0,
+          "horizonCensored": 6,
+          "outOfTolerance": 0,
+          "actualGapMs": {
+            "n": 141,
+            "min": 869.9899000000005,
+            "median": 899.3630999999996,
+            "max": 935.1998000000003
+          },
+          "uniquePixelPairs": 141
+        },
+        {
+          "requestedMs": 1600,
+          "requestedRows": 147,
+          "measured": 136,
+          "discarded": 74,
+          "eligible": 62,
+          "globalTriggered": 65,
+          "localDetailTriggered": 9,
+          "translationExceptions": 0,
+          "horizonCensored": 11,
+          "outOfTolerance": 0,
+          "actualGapMs": {
+            "n": 136,
+            "min": 1614.257099999999,
+            "median": 1650.5535,
+            "max": 1682.6249000000025
+          },
+          "uniquePixelPairs": 135
+        }
+      ]
+    },
+    {
+      "context": "youtube-compact",
+      "captures": 147,
+      "elapsedMs": 22050.418200000004,
+      "captureReceptionSpanMs": 21898.876600000003,
+      "skippedSlots": 0,
+      "receptionCadenceMs": {
+        "n": 146,
+        "min": 113.43149999999878,
+        "median": 149.72489999999743,
+        "max": 183.78759999999602
+      },
+      "getSourcesMs": {
+        "n": 147,
+        "min": 20.739000000001397,
+        "median": 39.763599999998405,
+        "max": 70.36929999999847
+      },
+      "fullBracketMs": {
+        "n": 147,
+        "min": 27.644000000000233,
+        "median": 47.58559999999852,
+        "max": 78.34399999999732
+      },
+      "uniqueCaptureHashes": 141,
+      "observedLoops": 1,
+      "firstMediaState": {
+        "epochMs": 1793342897930,
+        "rendererMonotonicMs": 23186.699999999983,
+        "time": 20.006913,
+        "decodedFrames": 14,
+        "paused": false,
+        "rate": 1,
+        "readyState": 4
+      },
+      "lastMediaState": {
+        "epochMs": 1793342919873,
+        "rendererMonotonicMs": 45129.5,
+        "time": 23.85938,
+        "decodedFrames": 554,
+        "paused": false,
+        "rate": 1,
+        "readyState": 4
+      },
+      "mediaRangeObserved": [
+        20.001782,
+        37.986453
+      ],
+      "allSteadyEligible": true,
+      "pairs": [
+        {
+          "requestedMs": 200,
+          "requestedRows": 147,
+          "measured": 145,
+          "discarded": 2,
+          "eligible": 143,
+          "globalTriggered": 0,
+          "localDetailTriggered": 2,
+          "translationExceptions": 0,
+          "horizonCensored": 2,
+          "outOfTolerance": 0,
+          "actualGapMs": {
+            "n": 145,
+            "min": 266.8915000000052,
+            "median": 299.77470000000176,
+            "max": 337.4402000000009
+          },
+          "uniquePixelPairs": 145
+        },
+        {
+          "requestedMs": 800,
+          "requestedRows": 147,
+          "measured": 141,
+          "discarded": 10,
+          "eligible": 131,
+          "globalTriggered": 0,
+          "localDetailTriggered": 10,
+          "translationExceptions": 0,
+          "horizonCensored": 6,
+          "outOfTolerance": 0,
+          "actualGapMs": {
+            "n": 141,
+            "min": 871.0745000000024,
+            "median": 901.2213999999985,
+            "max": 949.2212999999974
+          },
+          "uniquePixelPairs": 141
+        },
+        {
+          "requestedMs": 1600,
+          "requestedRows": 147,
+          "measured": 136,
+          "discarded": 12,
+          "eligible": 124,
+          "globalTriggered": 0,
+          "localDetailTriggered": 12,
+          "translationExceptions": 0,
+          "horizonCensored": 11,
+          "outOfTolerance": 0,
+          "actualGapMs": {
+            "n": 136,
+            "min": 1613.0561000000016,
+            "median": 1650.0411499999973,
+            "max": 1684.0483999999997
+          },
+          "uniquePixelPairs": 136
+        }
+      ]
+    },
+    {
+      "context": "unbranded",
+      "captures": 147,
+      "elapsedMs": 22052.03990000001,
+      "captureReceptionSpanMs": 21918.6656,
+      "skippedSlots": 0,
+      "receptionCadenceMs": {
+        "n": 146,
+        "min": 114.13920000000508,
+        "median": 150.51820000000225,
+        "max": 176.95590000000084
+      },
+      "getSourcesMs": {
+        "n": 147,
+        "min": 20.61139999999432,
+        "median": 38.23189999999886,
+        "max": 59.89800000000105
+      },
+      "fullBracketMs": {
+        "n": 147,
+        "min": 27.297700000002806,
+        "median": 45.86309999998775,
+        "max": 66.39640000000509
+      },
+      "uniqueCaptureHashes": 142,
+      "observedLoops": 1,
+      "firstMediaState": {
+        "epochMs": 1793342920461,
+        "rendererMonotonicMs": 45717.600000000006,
+        "time": 20.011521,
+        "decodedFrames": 14,
+        "paused": false,
+        "rate": 1,
+        "readyState": 4
+      },
+      "lastMediaState": {
+        "epochMs": 1793342942422,
+        "rendererMonotonicMs": 67679.5,
+        "time": 23.877165,
+        "decodedFrames": 553,
+        "paused": false,
+        "rate": 1,
+        "readyState": 4
+      },
+      "mediaRangeObserved": [
+        20,
+        37.991782
+      ],
+      "allSteadyEligible": true,
+      "pairs": [
+        {
+          "requestedMs": 200,
+          "requestedRows": 147,
+          "measured": 145,
+          "discarded": 45,
+          "eligible": 100,
+          "globalTriggered": 43,
+          "localDetailTriggered": 2,
+          "translationExceptions": 0,
+          "horizonCensored": 2,
+          "outOfTolerance": 0,
+          "actualGapMs": {
+            "n": 145,
+            "min": 280.02219999999215,
+            "median": 299.25740000000224,
+            "max": 338.37889999999607
+          },
+          "uniquePixelPairs": 145
+        },
+        {
+          "requestedMs": 800,
+          "requestedRows": 147,
+          "measured": 141,
+          "discarded": 87,
+          "eligible": 54,
+          "globalTriggered": 79,
+          "localDetailTriggered": 8,
+          "translationExceptions": 0,
+          "horizonCensored": 6,
+          "outOfTolerance": 0,
+          "actualGapMs": {
+            "n": 141,
+            "min": 871.8853999999992,
+            "median": 900.6623000000036,
+            "max": 935.1471999999994
+          },
+          "uniquePixelPairs": 141
+        },
+        {
+          "requestedMs": 1600,
+          "requestedRows": 147,
+          "measured": 136,
+          "discarded": 119,
+          "eligible": 17,
+          "globalTriggered": 116,
+          "localDetailTriggered": 3,
+          "translationExceptions": 0,
+          "horizonCensored": 11,
+          "outOfTolerance": 0,
+          "actualGapMs": {
+            "n": 136,
+            "min": 1617.3079999999973,
+            "median": 1649.7293999999965,
+            "max": 1678.4779999999955
+          },
+          "uniquePixelPairs": 136
+        }
+      ]
+    }
+  ]
+}
