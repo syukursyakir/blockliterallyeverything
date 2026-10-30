@@ -7,6 +7,17 @@ The next milestone is measured reliability, ahead of UI polish or publishing.
 
 ## Latest evidence — supersedes historical audit below
 
+Read [FLAT-CUT-RESULTS.md](FLAT-CUT-RESULTS.md): FREE offline comparator probe,
+no production change/model calls. New guard adds12/18compact-watch flat-cut rechecks,
+12/18unbranded-player rechecks and3/5safe-page-transition rechecks. These are NOT
+model false blocks. Large flat cuts already triggered old guard. All64steady
+controls eligible (19unique), reverse transitions add no rechecks.177rows/132unique
+pairs from known media/synthetic fixtures, not representative incidence/accuracy.
+A repeated-pair illustration suggests phase-sensitive delay risk; actual session/
+cache/timing behavior untested. Next: free realistic-cadence session replay before
+guard tuning. Authority260 unchanged/no paidjob/lock/release;12max reservations left.
+
+
 Read [LOCAL-DETAIL-RESULTS.md](LOCAL-DETAIL-RESULTS.md): targeted detailed-to-flat
 patch check plus aligned local detail in translation corrects the controlled small-
 player disappearance case. Actual native switch40985539094 rejected .94 and allowed

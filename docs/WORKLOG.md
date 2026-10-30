@@ -887,3 +887,24 @@ branch/native moving regressions; no broad95%/semantic identity claim. Final
 authority260/$2.862612480/885390 equals final raw chain, prior history intact and
 no lock/paid job. Follow-up is continuity docs only; next free flat-cut/safe-lookalike
 checks, no further paid trial or release.
+
+
+### Free flat-cut/safe-lookalike probe (30 October)
+
+User approved free follow-up. Read continuity/current code and retained evidence;
+new frozen FLAT-CUT-PLAN before execution, no production tuning. Offline Chromium
+runner compares real prePR9 source2a1aced with current guards incl.translation;
+pinned known CC0 flower media,6phases/3flatcolors/3contexts,5author-labeled safe
+fixtures.177rows/132unique pairs;64steady controls only19unique,all eligible.
+Compact watch12new rechecks/18cuts;genericplayer12/18;large0new (old18/18already
+rejected). Safe notes/photo/gallery add3rechecks/5transitions, sign-in nochange,
+quotedarticle rejectedbyboth. Reverse pairs noadditionalrechecks. These are
+freshness decisions, not model falseblocks/recall. Repeated-one-pair illustration
+shows3phase-aligned rejections vs old3eligible; not actual app/timing/cache evidence.
+Strict runner types and fullprobe assertions passed; actual CLI rejects existing
+output without modifying it, rejects malformedmedia before output/browser. Private
+visual screenshots inspected, numeric/hashes only public. No HTTP/provider/Windows
+jobs, no old cohorts replayed. Ledger260/$2.862612480/885390 unchanged, history
+retained, no lock. Production/CI unchanged; no release. Save plan/raw/results/runner;
+next free session replay with realistic cuts/poll-response phases before adjusting
+heuristic. Flat-cut delays quantified without claiming their natural incidence.

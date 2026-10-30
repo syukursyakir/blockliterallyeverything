@@ -4,6 +4,29 @@ Read AGENTS.md, DESIGN.md, docs/WORKLOG.md, docs/RELIABILITY.md and this file fi
 WORKLOG.md and saved reports retain history; this file supersedes old missing-key,
 permission and budget blockers. Do not repeat completed experiments as new evidence.
 
+## Latest30 October checkpoint — free flat-cut probe complete
+
+User authorized free flat-cut/safe-lookalike follow-up. Read FLAT-CUT-RESULTS.md,
+FLAT-CUT-PLAN.md and raw free-flat-cuts-2026-10-30.json. Production unchanged.
+New offline runner lab/run-free-transitions.ts compares actual pre-PR9 Git source
+2a1aced and current comparator, including translation.177rows/132unique pairs;
+known CC0 media/synthetic layouts and author-labeled safe pages, NOT model accuracy.
+- Compact watch cuts: old6/18 rechecks, current18/18;12new (black/gray).
+- Unbranded local player same12new; large cuts18/18 already rejected by old guard.
+- Safe-page transitions:3new rechecks (notes/photo/gallery); sign-in unchanged,
+  quotation article rejected by both. Freshness recheck is NOT a model false block.
+- All64steady controls eligible (only19unique); reverse transitions add no rechecks.
+One pair analytically repeated at3response boundaries illustrates possible repeated
+rejection; not rendered timing, actual app/cache behavior or natural-frequency proof.
+No tuning/release/provider calls/HTTP/native jobs. Strict types/probe assertions and
+actual CLI output-preservation/malformed-media failure checks passed. No completed
+paid/unit/Windows cohort rerun. Keys not passed to offline child browser; review
+screenshots outside Git. Authority remains260/$2.862612480/885390,12max remaining,
+prior history intact/no paid job or lock. Production CI below remains applicable.
+NEXT: free session replay with plausible cut cadence and poll/response phases to
+measure accepted-check gaps before considering any guard adjustment. Keep original
+stale failures and PR9 corrective-path proof; no95% or user-hardware claim.
+
 ## Current30 October continuation — localized disappearance correction validated
 
 PR #9 MERGED at1ecd7e5883ebf194f60aa4fb8dc7856265bf1c32:
@@ -37,7 +60,7 @@ Post-merge mainCI40986393484 at1ecd7e5 PASSED83unit+oneintendedskip,9UI,native
 smoke,installer build/install,13fixtures; release step verified skipped. Summary
 in docs/windows-ci-run-40986393484.json. This correction work is complete; no paid
 job or authority lock. Final follow-up is continuity docs only.
-Next: free flat-cut/safe-lookalike checks to measure potential extra discards. Flat
+That free follow-up is now complete; see latest checkpoint above. Next: cadence/session replay. Flat
 video cuts can trigger detail loss; similarly detailed replacements remain limited.
 No95% claim, release, extension or user hardware certification.
 
