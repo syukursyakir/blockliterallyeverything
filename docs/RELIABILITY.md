@@ -7,6 +7,19 @@ The next milestone is measured reliability, ahead of UI polish or publishing.
 
 ## Latest evidence — supersedes historical audit below
 
+Read [LOCAL-DETAIL-RESULTS.md](LOCAL-DETAIL-RESULTS.md): targeted detailed-to-flat
+patch check plus aligned local detail in translation corrects the controlled small-
+player disappearance case. Actual native switch40985539094 rejected .94 and allowed
+freshneutral.02 with0covers, localDetailLoss1 proving new branch at5.476%global mean.
+Compact/large sustained players still blocked3341/4287ms (.95/.96), full recovery,
+no new discard in those trials. Reused synthetic UI/media: corrective integration,
+not independent/real-service accuracy. Original two failures and source27 miss remain.
+Normal flat cuts may also lose detail; similarly detailed changes remain unaddressed.
+SourceCI40985540342 passed83unit+skip,9UI,13fixtures plus native smoke/installer.
+Current260/$2.862612480/885390tokens,12max left; no paidjob/lock or release. Main
+merge validation pending. No95%/physical hardware claim. Earlier snapshots historical.
+
+
 Read [SUSTAINED-VIDEO-RESULTS.md](SUSTAINED-VIDEO-RESULTS.md): screenshot-only
 periodic checks target sustained distraction; brief appearances are acceptable.
 New synthetic YouTube-like moving-player layouts blocked in4261/3277ms (.94/.95),

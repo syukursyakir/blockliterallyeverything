@@ -828,3 +828,47 @@ complete with both stale-control failures preserved, no claimed detector fix.
 Final authority253/$2.785542144/860235 verified against final raw report, retained
 62-history and approval history intact, no authority lock or active paid job.
 No more experiments; final continuity-only follow-up, no release.
+
+
+### Local detail-loss candidate and frozen correction regression (30 October)
+
+User said next: authorized work on small-player switch-away while preserving ongoing
+video. Read instructions/reliability/handoff/evidence/callers; Ponytail workflow.
+Narrow patch contrast-collapse helper (8px/stride4, prevar>=400/postvar<=4/diff>=.1)
+keeps original8% guard. Free known CC0 decoded scan20phases/layout:20compact
+removals caught despite globalmean false,0extra discards among106motion pairs;
+development only, browser resampling not native. Initial new app-loop test FAILED
+because translation2% aligned mean also diluted tiny vanished patch. Fixed shared
+translation exception by checking aligned local detail; exact retained translations
+still pass. Three new units/21affected tests, build and strict runner tsc passed.
+No provider/rule/threshold/cadence change. Flat video cuts can also lose detail;
+similarly detailed replacements unaddressed. Freeze plan before3native regressions
+(switch/newbranch,compact sustained,wide sustained), max9 retainedcap3, authority
+253/$2.785542144/860235. No paid job dispatched yet, no release.
+
+
+Compact corrected switch40985539094 PASSED on795faf1: real neutral.02, positive.94
+discarded, freshneutral.02,0blocks/covers, localDetailLoss1 proves corrective branch.
+Captured pair mean5.476185917% below8%; newhelper handled low-global-change case.
+3calls, wrapper/report/profile exact match and history retained; atomic256/
+$2.818572288/871015 reconciled. Original failures retained, regression not independent
+accuracy. Compact sustained40985739418 running under lock, then planned wide.
+Source fullWindowsCI40985540342 running. No further source tuning or release.
+
+
+Compact sustained40985739418 PASSED3341ms/.95, full cover/recovery with advancing
+decoded frames; localDetailLoss0/changed0,2calls. Exact wrapper/report/profile chain
+reconciled258/$2.840592384/878204, prior history retained. Wide40985950475 running
+under lock; no further paid trial after it. SourceCI40985540342 at795faf1 PASSED
+83unit+oneintendedskip,9UI,native smoke,installer build/install,13fixture scenarios;
+head/conclusion/steps/log counts verified, release skipped. No tuning after freeze.
+
+
+Wide sustained40985950475 PASSED4287ms/.96, decoded20->138, full cover/recovery,
+localDetailLoss0/changed0,2calls. All fixed3regressions passed; no fourth trial.
+All7reservations reconciled260/$2.862612480/885390,12max left, retained history and
+approval intact, no paidjob/lock. Corrective branch nativeproof plus positive moving
+regressions, not independent/model accuracy. New LOCAL-DETAIL-RESULTS/raw reports
+retain original two failures and heuristic limits. No production provider/rules/
+threshold/polling change. Next mergePR9/postmergeCI then free flat-cut/safe tests;
+no release. SourceCI already passed; remaining changes evidence/continuity only.

@@ -5,7 +5,7 @@ import { readFile, writeFile, rename, mkdir, unlink } from 'node:fs/promises'
 import { createHash, randomUUID } from 'node:crypto'
 import { ModelWorker } from './worker'
 import { emptyLedger, validateLedger, reserveCloud, requestJev, type CloudLedger } from './jev'
-import { ScreenCache, changedSubstantially, sameTranslatedFrame, isBlankCapture } from './screen-cache'
+import { ScreenCache, changedSubstantially, lostLocalDetail, sameTranslatedFrame, isBlankCapture } from './screen-cache'
 import { defaultSettings, initialStatus, validateSettings, upgradeStarterRuleWording, matchingRule, type Settings, type Status, type Snapshot, type CheckResult, type BlockInfo } from '../src/shared'
 
 let mainWindow: BrowserWindow
@@ -149,8 +149,11 @@ async function checkLoop(token: number) {
         if (!fresh || fresh.thumbnail.isEmpty() || isBlankCapture(fresh.thumbnail.toBitmap())) throw new Error('Screen capture became unavailable. Protection is paused.')
         const before = source.thumbnail.resize({width:64,height:64}).toBitmap()
         const after = fresh.thumbnail.resize({width:64,height:64}).toBitmap()
-        if (changedSubstantially(before, after)) {
+        const changed = changedSubstantially(before, after)
+        const detailLost = !changed && lostLocalDetail(before, after, 64)
+        if (changed || detailLost) {
           if (!sameTranslatedFrame(before, after, 64)) {
+            if (detailLost) activity('info', 'A detailed screen region disappeared during analysis.')
             status.delayedDisplays[String(display.id)] ??= Date.now()
             activity('info', 'Screen changed during analysis; checking the new view next.'); continue
           }
