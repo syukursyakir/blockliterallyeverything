@@ -1,0 +1,61 @@
+{
+  "frozenAt": "2026-10-30T06:07:08.775784+00:00",
+  "authorityBefore": {
+    "capUsd": 3,
+    "priorUsage": {
+      "retainedReservations": 62,
+      "cap": 64,
+      "ledgerMissing": true,
+      "source": "HANDOFF.md; not reset or included in new allowance"
+    },
+    "current": {
+      "requests": 260,
+      "reservedUsd": 2.862612480000009,
+      "inputTokens": 885390
+    },
+    "authorizationHistory": [
+      {
+        "approved_at": "2026-10-29T09:46:06.126178+00:00",
+        "fromCapUsd": 0.5,
+        "toCapUsd": 3,
+        "atRequests": 45,
+        "source": "Explicit user approval: Yes, use a $3 cumulative reservation cap. Not a new/reset allowance."
+      }
+    ]
+  },
+  "maximumNewReservations": 9,
+  "maximumTotalRequests": 269,
+  "codeSha256": {
+    "docs/NATURAL-CUTS-PLAN.md": "00e8395cf7b9dcae44fcd8a46ff9372ce75d7a8ae899b4c735c3e356abeec036",
+    "lab/preflight-natural-cuts.ts": "49189c52091b5f0d05a1ac350f2182b1983aeddf13044722799eefd1d50eb224",
+    "lab/reviewed-videos.json": "5ad1db55ccfdd6c15e11646ae40528f4ad44f7b79de8ca033ae989de811244fa",
+    "lab/video-scene.ts": "454531e13e70715181dc8862d056c262eb7ec74e5a005d5e34291c3bfb6b9a55",
+    "scripts/prepare-windows-live.mjs": "b801573f2e274de1b5e0d43e1c51c6ce67df77e1767b006338411ee05ffffb3b",
+    "lab/run-windows-live.ts": "c3c453e2fd86e52619beb04e28a97ca8353311274d8e880e4b8011461a996a68",
+    ".github/workflows/windows.yml": "0931f46cf48af41ff21e6232fe52daec5c5b2eb8adf8eb0c314306f9f386f5d9",
+    "electron/main.ts": "aec2a516b2274b525c89f265d8f077d469b8b9c82a905b6f20f4e2060dc15e84",
+    "electron/screen-cache.ts": "68ecea1e7c96ce746e3ed4bcfae247b98bdd4e16c5244f2262cc2e043d3ae3ba",
+    "electron/recheck-timing.ts": "81b491b69eabc5a6316a2d1c54125ed0c42e116ff73760eec852e16d4c1ea80b"
+  },
+  "trials": [
+    {
+      "name": "wide",
+      "scene": "sintel-wide-video",
+      "motion": "video",
+      "audit": true
+    },
+    {
+      "name": "compact",
+      "scene": "sintel-compact-video",
+      "motion": "video",
+      "audit": true
+    },
+    {
+      "name": "safe",
+      "scene": "sintel-safe-video",
+      "motion": "video-safe",
+      "audit": true
+    }
+  ],
+  "preparationNote": "Local manifest/poster hashes below are actual local preflight only; Windows recreates platform-rendered posters and reports its actual hashes. Pinned source bytes, labels/range/layout code must remain identical."
+}

@@ -7,6 +7,21 @@ The next milestone is measured reliability, ahead of UI polish or publishing.
 
 ## Latest evidence — supersedes historical audit below
 
+Read [NATURAL-CUTS-RESULTS.md](NATURAL-CUTS-RESULTS.md): NEW pinned Sintel
+animation20..38s/1x with natural edits. Wide/compact syntheticwatch conditions
+passed3300/3274ms/.93/.94, fullnativecover/recovery, but blocked before firstlisted
+largecutcandidate: no latercut/15sretryproof. Sameclip/source, not realYouTube or
+independentaccuracy. Safecontrol FAILED twofreshvideocheck requirement: .01/.05/.03,
+onevideoaccepted/onediscarded after22.7618%screenchange,0blocks; planned3calltrial
+cappausedbeforefourth. NotmodelFP or cumulative3exhaustion. Specificcutalignment
+unknown. All7calls reconciled267/$2.939682816/910488, retainedhistory/no lock,5max
+remain. Reviewer checked scope/source/freepreflight/EACHresult. No productionchange,
+paidrerun or release. NextFREE nativecapturetiming acrosscuts; physicalhardware
+and95%remainunproved. SourceCI41013150612 at0cc5c3a passed95unit+1skip,9UI,
+14installedfixtures/native smoke/installer, release skipped. Reviewer approved final
+claims/CI; merge/postmergeCI next.
+
+
 Read [RETRY-PHASE-RESULTS.md](RETRY-PHASE-RESULTS.md): free synthetic session
 replay reproduced fixed-phase freshness rejection loops. Immediate offsets were
 rejected for up9.2s extra delay; only after15s unresolved changes, reviewed policy

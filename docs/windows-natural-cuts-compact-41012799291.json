@@ -1,0 +1,362 @@
+{
+  "scope": "New natural-cut media integration, same source and synthetic layouts, not independent accuracy or real-service evidence.",
+  "accountingEvidence": {
+    "run": 41012799291,
+    "source": "in-run numeric accounting verifier compared wrapper/report/profile before emission",
+    "noExtraProviderCalls": true
+  },
+  "workflow": {
+    "conclusion": "success",
+    "headSha": "ebadcd74060e623eb50989fa22646da17602f603",
+    "jobs": [
+      {
+        "completedAt": "2026-10-30T06:14:44Z",
+        "conclusion": "success",
+        "databaseId": 123922244986,
+        "name": "live-detection",
+        "startedAt": "2026-10-30T06:13:17Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Refuse publishing, missing accounting or missing provider secret",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-node@v4",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run npm ci",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run npm run build",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run npm test",
+            "number": 7,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run npx playwright install chromium",
+            "number": 8,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Prepare controlled scene and retained ledger copy",
+            "number": 9,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Real capture, live Jev, native cover and recovery",
+            "number": 10,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify and emit numeric accounting only",
+            "number": 11,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Preserve numerical evidence and accounting only",
+            "number": 12,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-node@v4",
+            "number": 23,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 24,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 25,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41012799291/job/123922244986"
+      },
+      {
+        "completedAt": "2026-10-30T06:13:14Z",
+        "conclusion": "skipped",
+        "databaseId": 123922246327,
+        "name": "reconcile",
+        "startedAt": "2026-10-30T06:13:15Z",
+        "status": "completed",
+        "steps": [],
+        "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41012799291/job/123922246327"
+      },
+      {
+        "completedAt": "2026-10-30T06:13:14Z",
+        "conclusion": "skipped",
+        "databaseId": 123922246609,
+        "name": "capture-public",
+        "startedAt": "2026-10-30T06:13:15Z",
+        "status": "completed",
+        "steps": [],
+        "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41012799291/job/123922246609"
+      },
+      {
+        "completedAt": "2026-10-30T06:13:14Z",
+        "conclusion": "skipped",
+        "databaseId": 123922297632,
+        "name": "windows",
+        "startedAt": "2026-10-30T06:13:25Z",
+        "status": "completed",
+        "steps": [],
+        "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41012799291/job/123922297632"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41012799291"
+  },
+  "source": "ebadcd74060e623eb50989fa22646da17602f603",
+  "report": {
+    "scope": "Opt-in real Windows capture -> live Jev -> native cover -> button recovery. No capture/provider fixtures. Initial configuration seeded into an isolated profile; onboarding is not tested.",
+    "passed": true,
+    "caseId": "native-sintel-compact-video",
+    "preparedSha256": "85aa10626930bd5ff267599603d273142b9d18894bc88f3745ae44419c9ed0f7",
+    "manifestSha256": "4583b343bd8f4143177dc1f5d1c77ebf4c3b922251546d692c5e8718403203a5",
+    "rule": {
+      "id": "video",
+      "name": "YouTube",
+      "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+      "enabled": true
+    },
+    "caseProvenance": {
+      "origin": "self-authored YouTube-like watch interface with actual decoded licensed video",
+      "source": "https://durian.blender.org/sharing/",
+      "source_sha256": "498d1588f72423cb0460e527a32056d0e3cfc53bd275204511c42ba25f6d46b3",
+      "adult_provenance": "Nonsexual fantasy animation with clothed characters/dragon; not an adult-content source. Agent reviewed sampled20..38s range before inference.",
+      "rights": {
+        "license": "CC BY 3.0",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/",
+        "attribution": "Sintel \u00c2\u00a9 Blender Foundation | durian.blender.org; logos/trademarks excluded from license."
+      }
+    },
+    "protocol": "neutral-to-positive-during-session",
+    "startedAt": "2026-10-30T06:14:30.466Z",
+    "timingMethod": "Epoch timestamp after two requestAnimationFrame callbacks on controlled content; to automation-observed painted cover. Includes poll/IPC delay; not external frame-accurate timing.",
+    "motion": "video",
+    "videoContext": "youtube-compact",
+    "maximumRequests": 3,
+    "budgetBefore": {
+      "requests": 262,
+      "reservedUsd": 2.8846325760000093,
+      "inputTokens": 892571
+    },
+    "recoveryProfile": "D:\\a\\blockliterallyeverything\\blockliterallyeverything\\native-live\\report.json.profile",
+    "instrumentation": "Pass-through net.fetch audit, unchanged request/response and real capture/provider. Only encrypted submitted frames and numeric score metadata retained; no headers/credentials/error bodies.",
+    "runtime": {
+      "os": "10.0.26100",
+      "electron": "45.1.0",
+      "appVersion": "0.1.0",
+      "displays": [
+        {
+          "id": 1979174506,
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1024,
+            "height": 768
+          },
+          "scaleFactor": 1
+        }
+      ]
+    },
+    "capturePreflight": "Actual display capture varied before session start; pixels discarded without provider call or file.",
+    "settings": {
+      "backend": "jev",
+      "cloudConsent": true,
+      "cloudBudgetUsd": 2.91766272000001,
+      "rules": [
+        {
+          "id": "explicit",
+          "name": "Explicit content",
+          "instruction": "Block visible sexual activity and explicit nudity. Do not treat ordinary clothed people as explicit content.",
+          "enabled": false
+        },
+        {
+          "id": "video",
+          "name": "YouTube",
+          "instruction": "Block visible YouTube home or search feeds, YouTube watch pages, and YouTube Shorts. Do not block other video players or pages that only mention YouTube.",
+          "enabled": true
+        },
+        {
+          "id": "social",
+          "name": "Social feeds",
+          "instruction": "Block visible Instagram or TikTok feeds and their scrolling video interfaces. Do not block YouTube (including YouTube Shorts), other video players, or pages that merely mention Instagram or TikTok.",
+          "enabled": false
+        }
+      ],
+      "threshold": 0.4,
+      "intervalSeconds": 3,
+      "sessionMinutes": 25,
+      "detectionOnly": false
+    },
+    "negativeControl": "Live neutral frame allowed without a cover.",
+    "playbackAtStart": {
+      "time": 20.342379,
+      "paused": false,
+      "readyState": 4,
+      "decodedFrames": 23,
+      "playbackRate": 1
+    },
+    "videoSha256": "498d1588f72423cb0460e527a32056d0e3cfc53bd275204511c42ba25f6d46b3",
+    "videoRangeSeconds": [
+      20,
+      38
+    ],
+    "playbackRate": 1,
+    "contentToObservedCoverMs": 3274,
+    "playbackAtCover": {
+      "time": 23.257562,
+      "paused": false,
+      "readyState": 4,
+      "decodedFrames": 92,
+      "playbackRate": 1
+    },
+    "motionLimits": "Synthetic YouTube-like UI with actual decoded licensed video; source/layout correlation retained, not real-service or independent accuracy evidence.",
+    "blockInfo": {
+      "rule": "YouTube",
+      "probability": 0.94
+    },
+    "cover": {
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 768
+      },
+      "visible": true,
+      "topmost": true,
+      "focused": true,
+      "fullScreen": true
+    },
+    "blockedRule": "Blocked: YouTube",
+    "recovery": "Button released cover and paused session.",
+    "playbackAtEnd": {
+      "time": 23.371158,
+      "paused": false,
+      "readyState": 4,
+      "decodedFrames": 95,
+      "playbackRate": 1
+    },
+    "activityCounts": {
+      "recheckTimingAdjustments": 0,
+      "localDetailLoss": 0,
+      "changedDuringAnalysis": 0,
+      "translatedView": 0,
+      "allowed": 1,
+      "blocked": 1,
+      "checks": 2
+    },
+    "captureAudit": [
+      {
+        "capturedAt": 1793340874997,
+        "displayId": "1979174506"
+      },
+      {
+        "capturedAt": 1793340875327,
+        "previousAt": 1793340874997,
+        "displayId": "1979174506",
+        "meanRgbDifference": 0
+      },
+      {
+        "capturedAt": 1793340878384,
+        "previousAt": 1793340875327,
+        "displayId": "1979174506",
+        "meanRgbDifference": 0.8444019990808823
+      },
+      {
+        "capturedAt": 1793340878624,
+        "previousAt": 1793340878384,
+        "displayId": "1979174506",
+        "meanRgbDifference": 0.0073140063316993464
+      }
+    ],
+    "requestAudit": [
+      {
+        "index": 0,
+        "requestAt": 1793340875045,
+        "responseAt": 1793340875282,
+        "sha256": "4e610577733f6debe51ecdd5b03a75acf1e6b0ecc5cba4b6b2c282e227717415",
+        "scores": {
+          "video": 0.02
+        }
+      },
+      {
+        "index": 1,
+        "requestAt": 1793340878484,
+        "responseAt": 1793340878577,
+        "sha256": "fcae111e7d786712d11139c7f8262e4b3766a8950f0f016cf38000daa00b9574",
+        "scores": {
+          "video": 0.94
+        }
+      }
+    ],
+    "budgetAfter": {
+      "requests": 264,
+      "reservedUsd": 2.9066526720000097,
+      "inputTokens": 899760
+    }
+  },
+  "accountingReconciled": true,
+  "budget": {
+    "capUsd": 3,
+    "priorUsage": {
+      "retainedReservations": 62,
+      "cap": 64,
+      "ledgerMissing": true,
+      "source": "HANDOFF.md; not reset or included in new allowance"
+    },
+    "current": {
+      "requests": 264,
+      "reservedUsd": 2.9066526720000097,
+      "inputTokens": 899760
+    },
+    "authorizationHistory": [
+      {
+        "approved_at": "2026-10-29T09:46:06.126178+00:00",
+        "fromCapUsd": 0.5,
+        "toCapUsd": 3,
+        "atRequests": 45,
+        "source": "Explicit user approval: Yes, use a $3 cumulative reservation cap. Not a new/reset allowance."
+      }
+    ]
+  }
+}

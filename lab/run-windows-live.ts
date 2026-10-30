@@ -50,7 +50,7 @@ if(switchesAway){
   report.protocol='switch-away-during-inference'
 }
 if(safeVideo){
-  report.scope='Real decoded safe-video control: actual capture/provider, neutral then plant-only playback, two fresh video checks with zero blocks/covers and clean stop. Not positive-blocking proof.'
+  report.scope='Real decoded safe-video control: actual capture/provider, neutral then reviewed nonsexual playback, two fresh video checks with zero blocks/covers and clean stop. Not positive-blocking proof.'
   report.protocol='negative-video-during-session'
 }
 const playback=()=>desktop!.evaluate(async()=>await (globalThis as any).bleLiveScene.webContents.executeJavaScript(`(()=>{const v=document.querySelector('video');return v?{time:v.currentTime,paused:v.paused,readyState:v.readyState,decodedFrames:v.getVideoPlaybackQuality().totalVideoFrames,playbackRate:v.playbackRate}:null})()`))
@@ -196,7 +196,7 @@ try {
     report.playbackAtCover=await playback()
     expect(report.playbackAtCover).toMatchObject({paused:false})
     expect((report.playbackAtCover as {decodedFrames:number}).decodedFrames).toBeGreaterThan((report.playbackAtStart as {decodedFrames:number}).decodedFrames)
-    report.motionLimits=selected.item.video_context?'Synthetic YouTube-like UI with actual decoded CC0 video; new composition, reused media, not real-service or independent accuracy evidence.':'Actual decoded licensed adult video in reviewed range, source correlation retained, one trial; not representative video recall.'
+    report.motionLimits=selected.item.video_context?'Synthetic YouTube-like UI with actual decoded licensed video; source/layout correlation retained, not real-service or independent accuracy evidence.':'Actual decoded licensed adult video in reviewed range, source correlation retained, one trial; not representative video recall.'
   }
   if(motion==='pan' || motion==='pan-wide'){
     report.motionFrames=await desktop.evaluate(async()=>await (globalThis as any).bleLiveScene.webContents.executeJavaScript('globalThis.bleMotionFrames'))

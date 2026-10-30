@@ -4,12 +4,40 @@ Read AGENTS.md, DESIGN.md, docs/WORKLOG.md, docs/RELIABILITY.md and this file fi
 WORKLOG.md and saved reports retain history; this file supersedes old missing-key,
 permission and budget blockers. Do not repeat completed experiments as new evidence.
 
-## Active continuation — reviewed escalation-only retry mitigation
+## Active continuation — natural-cut cohort complete, CI/review next
+
+User authorized representative media work with second-agent checkpoints. Branch
+validation/natural-cuts-20261030, PR11. Read NATURAL-CUTS-PLAN/RESULTS/REVIEWS.md,
+frozen metadata and3raw windows-natural-cuts reports FIRST; do not repeat trials.
+New pinned3.09MB Sintel trailer20..38s/1x, CC BY3.0 Blender Foundation, sampled
+clothed fantasy/dragon/action labels before inference. One source/group, synthetic
+watch layouts, not realYouTube/independent accuracy. Production unchanged atPR10.
+Free3layout decode/actual-loop preflight passed; all native sourceebadcd7 with
+existing pass-through encrypted audit/numeric scores, privatekey outsideGit.
+- Wide41012509122 PASS3300ms/video.93,2calls/fullcover/recovery,22->93frames.
+- Compact41012799291 PASS3274ms/video.94,2calls/fullcover/recovery,23->92frames.
+Both atmedia23.287/23.258 BEFORE first listed23.875 largecutcandidate, no changed/
+local/translated/lateadjustments. NOT latercut or15sretrybranch proof.
+- Safe41013029918 FAILED twofreshvideocheck bound: .01neutral/.05acceptedvideo/
+.03discardedvideo,0blocks,1changedpair22.7618%,3calls. Planned trialsubcap paused
+beforefourthcall; NOT cumulative3exhaustion/modelFP/cleannegativecontrol pass.
+Decoded22->515 acrossloop, per-capture mediaalignment absent, specificcutcause unknown.
+Reviewer independentlychecked EACH result/accounting before nexttrial. SEVENcalls,
+current authority267/$2.93968281600001/910488, original3cap/priorhistory intact,
+FIVEmax reservations remain, no paidjob/lock. No tuning/retry/release.
+SourceCI41013150612 at0cc5c3a PASSED95unit+1skip,9UI,14installedfixtures,
+native smoke/installer build/install, release skipped. Second reviewer approved final
+report/CI after wording corrections; merge/postmergeCI next.
+NEXT after CI/merge: FREE nativecapturesequence acrosswholecutrange with timestamp
+alignment, no paidrepeat or guardoptimization onconsumedcases. Physicaldeployment,
+95%, arbitraryrules and oldsource27 miss remain open.
+
+## Completed continuation — reviewed escalation-only retry mitigation
 
 User asked autonomous work with a second agent checking meaningfulsteps. Branch
 validation/retry-phase-20261030; reviewers/limits in SESSION-REPLAY-REVIEWS.md.
-No paid provider job/allowance change/release. Current authority260/$2.862612480/
-885390,12max left, original history intact/no lock.
+No paid provider job/allowance change/release. Authority THEN260/$2.862612480/
+885390,12max left at that completed checkpoint; latest267 above supersedes it.
 
 Free session replay found fixed-phase rejection loops; actualmain mock confirmed
 19requests/18discards/no matching accepted positive through60s in explicitlock.
@@ -415,9 +443,9 @@ Installed fixture tests/emitted OS signals do not certify these conditions.
 ## Authoritative accounting — never reset
 
 /workspace/work/ble-real-2026-10-29/app-budget.json
-Current260 reservations,$2.862612480 of approved cumulative3,885390 input tokens,
-~$0.037186380 estimated usage at.042/million. Reservations are not bills; old missing
-62/64 history remains separately preserved, not zero.12 more maximum reservations
+Current267 reservations,$2.939682816 of approved cumulative3,910488 input tokens,
+~$0.038240496 estimated usage at.042/million. Reservations are not bills; old missing
+62/64 history remains separately preserved, not zero.5 more maximum reservations
 fit (272 total). Migration from.50 to3 retained45 attempts/137877 tokens and explicit
 authorizationHistory. No remote paid job or authority lock remains.
 

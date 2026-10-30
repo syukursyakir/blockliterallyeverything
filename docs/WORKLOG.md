@@ -968,3 +968,65 @@ push only; next representative realmedia/deployment evidence, no simulationtunin
 Final independent reviewer checked main logs/proof and authority/history, approved
 close with docs-only push. HANDOFF now marks merged+passed/completed, reset wording
 clarified for multiple displays. No further source/test/paid work for this stage.
+
+
+### Prospective new natural-cut media integration
+
+User authorized nextwork with reviewer checkpoints. New3.09MB Sintel trailer from
+W3C media, CC BY3.0 Blender Foundation; original bunnyWebM404/directory403 acquired
+nothing, no bypass/model call. Reviewed fullcontactsheet+36sampleframes in20..38s
+range before inference; clothed fantasy/dragon/action, no explicitactivity/nudity
+in samples. Labels frozen; sameclip onegroup, syntheticwatchUI not realservice.
+Reviewer approved3case scope/max9 reservations and requested existing pass-through
+audit BEFORE calls; amended plan for encrypted submitted frames/numeric scores,
+private key outsideGit. Free3layouts verified decodedtime/frame advance and actual
+38->20loop at1x, zero provider/externalplayback requests. Metadata/poster hashes
+saved; localposter raster not identical Windows expected. Typed HTMLVideoElement
+annotation corrected strictcheck; emitted preflightJS exactidentical. Initial tsc
+flags incorrectly used nodenext/CJS; correct ignoreConfig/esnext/bundlerstrict pass.
+Newdata/context preparation, provenancecopy/workflow choices only; production
+unchanged. Current260/$2.862612480/885390, no lock/paidcalls yet. Frozenplan+code/
+authority saved, waiting reviewer finalpreflight/source before sequentialWindows.
+
+
+Wide natural-media trial41012509122 PASSED at frozenebadcd7: livevideo.93 after
+neutral.02, observed3300ms, full visible/focused/topmost/fullscreen1024x768cover,
+buttonrecovery. Decoded22->93/media20.343->23.287s atcover, BEFORE first large
+scene candidate23.875; cannot claim latercuts or15sretrybranch exercised. Actual
+capturepostpair global4.197%, no changed/local/translation/retryoffset activity.
+Pass-through audit numeric scores/hashes/noauditerror; encryptedsubmittedframes
+remote artifact, privatekey outsideGit. Wrapper/report/profile fullyreconciled
+260->262/$2.884632576/892571, priorhistory intact/no lock. Saved numericreport,
+second-agent review before compact; source/settings unchanged, no release.
+
+Compact41012799291 PASSED3274ms/video.94 afterneutral.02,2calls; fullcover/recovery,
+decoded23->92/media20.342->23.258s, again before23.875scene candidate. No discard/
+translation/lateadjustment. Exact262->264/$2.906652672/899760 reconciled, history
+intact/no lock. Second reviewer independentlyverified/approved safeonly. Final
+safetrial41013029918 bound frozenebadcd7 with durableauthoritylock from264; no
+production change/release. Source/sharedsettings/range/audit unchanged.
+
+
+Safe41013029918 FAILED twofreshcheckbound: neutral.01, firstvideo.05accepted,
+secondvideo.03discarded;0blocks, checks2 includesneutral, changedpair22.7618%,
+no local/translation/lateadjustment. Threecall trialsubcap causedvisibleerror/pause
+beforefourthprovider call; cumulative3cap NOTexhausted. Decoded22->515 acrossloop
+without per-capture mediaalignment, so specificcutcause unknown. Full264->267/
+$2.93968281600001/910488 reconciled, originalprior/history intact/no lock. Reviewer
+independentlyverified and approved preservefailure/closecohort, no paidretry/tuning.
+SEVENtotalnewcalls,5maxremain. New NATURAL-CUTS-RESULTS distinguishes earlypositive
+blocks from latercut/fallbackproof and failedcontrol fromfalseblock. SourceCI
+41013150612 running; finalreportreview beforemerge, no release. Nextfree native
+capturesequence acrosswholecutsegment withtimestampalignment, no paidrepeat.
+
+SourceCI41013150612 at0cc5c3a PASSED95unit+1intendedskip,9UI,14installedfixtures,
+native desktop smoke/installer build/install; release skipped. Numeric summary
+saved. Final report/continuity and CI sent reviewer beforemerge. No more provider
+calls; originalauthority267/$2.939682816/910488/no lock. This evidence/testtooling
+change does not alter production detection or claim fewseconds/95% reliability.
+
+Second reviewer independentlychecked finalreport/CI and approved merge after wording
+fixes: correctCIstatus and authorwhole/range vs reviewer rangeonly visualreview.
+Updates applied. No new tests/provider calls needed; docs-only checkpoint, clean
+squashmerge and postmerge ordinaryCI next. Earlier pending entries are chronological
+checkpoints superseded by finalsuccessfulCI/resultreview above.
