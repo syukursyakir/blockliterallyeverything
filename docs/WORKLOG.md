@@ -987,3 +987,21 @@ flags incorrectly used nodenext/CJS; correct ignoreConfig/esnext/bundlerstrict p
 Newdata/context preparation, provenancecopy/workflow choices only; production
 unchanged. Current260/$2.862612480/885390, no lock/paidcalls yet. Frozenplan+code/
 authority saved, waiting reviewer finalpreflight/source before sequentialWindows.
+
+
+Wide natural-media trial41012509122 PASSED at frozenebadcd7: livevideo.93 after
+neutral.02, observed3300ms, full visible/focused/topmost/fullscreen1024x768cover,
+buttonrecovery. Decoded22->93/media20.343->23.287s atcover, BEFORE first large
+scene candidate23.875; cannot claim latercuts or15sretrybranch exercised. Actual
+capturepostpair global4.197%, no changed/local/translation/retryoffset activity.
+Pass-through audit numeric scores/hashes/noauditerror; encryptedsubmittedframes
+remote artifact, privatekey outsideGit. Wrapper/report/profile fullyreconciled
+260->262/$2.884632576/892571, priorhistory intact/no lock. Saved numericreport,
+second-agent review before compact; source/settings unchanged, no release.
+
+Compact41012799291 PASSED3274ms/video.94 afterneutral.02,2calls; fullcover/recovery,
+decoded23->92/media20.342->23.258s, again before23.875scene candidate. No discard/
+translation/lateadjustment. Exact262->264/$2.906652672/899760 reconciled, history
+intact/no lock. Second reviewer independentlyverified/approved safeonly. Final
+safetrial41013029918 bound frozenebadcd7 with durableauthoritylock from264; no
+production change/release. Source/sharedsettings/range/audit unchanged.
