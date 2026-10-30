@@ -16,8 +16,7 @@ no new discard in those trials. Reused synthetic UI/media: corrective integratio
 not independent/real-service accuracy. Original two failures and source27 miss remain.
 Normal flat cuts may also lose detail; similarly detailed changes remain unaddressed.
 SourceCI40985540342 passed83unit+skip,9UI,13fixtures plus native smoke/installer.
-Current260/$2.862612480/885390tokens,12max left; no paidjob/lock or release. Main
-merge validation pending. No95%/physical hardware claim. Earlier snapshots historical.
+Current260/$2.862612480/885390tokens,12max left; no paidjob/lock or release. PR9 merged1ecd7e5; main40986393484 passed the same full sequence, release skipped. No95%/physical hardware claim. Earlier snapshots historical.
 
 
 Read [SUSTAINED-VIDEO-RESULTS.md](SUSTAINED-VIDEO-RESULTS.md): screenshot-only

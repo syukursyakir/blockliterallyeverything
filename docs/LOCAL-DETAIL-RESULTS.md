@@ -74,7 +74,12 @@ production runtime adds no intentional screenshot retention.
 Source WindowsCI40985540342 at795faf1 PASSED83unit+oneintendedskip,9UI,native smoke,
 installer build/install and13installed fixture scenarios; release skipped.
 [Numeric summary](windows-ci-run-40985540342.json). Fixture CI is not model accuracy.
-Post-merge verification will be recorded after merge. No release or laptop access.
+PR #9 merged at1ecd7e5883ebf194f60aa4fb8dc7856265bf1c32. Post-merge main
+[40986393484](https://github.com/syukursyakir/blockliterallyeverything/actions/runs/40986393484)
+PASSED83unit+oneintendedskip,9UI,native smoke,installer build/install and13fixtures;
+release skipped ([numeric summary](windows-ci-run-40986393484.json)). Conclusion,
+source head, steps and log counts verified. Final follow-up is continuity docs only.
+No release or laptop access.
 
 This is a narrow heuristic correction. Normal video cuts to flat scenes can lose
 detail and delay decisions; similarly detailed replacements or subtle/low-contrast

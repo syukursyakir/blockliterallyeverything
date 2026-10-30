@@ -6,7 +6,8 @@ permission and budget blockers. Do not repeat completed experiments as new evide
 
 ## Current30 October continuation — localized disappearance correction validated
 
-PR #9 https://github.com/syukursyakir/blockliterallyeverything/pull/9 at795faf1.
+PR #9 MERGED at1ecd7e5883ebf194f60aa4fb8dc7856265bf1c32:
+https://github.com/syukursyakir/blockliterallyeverything/pull/9; source795faf1.
 Read LOCAL-DETAIL-RESULTS.md/PLAN and raw numeric reports. Narrow8px detail-to-flat
 check supplements global8%; translation exception also verifies aligned local detail
 so tiny disappeared content cannot pass its2% mean. Provider/model/rules/threshold/
@@ -32,11 +33,15 @@ installer/install,13fixtures; release skipped.21affected local tests/build/stric
 runner tsc passed. Initial new app-loop test exposed translation dilution gap;
 fixed shared comparator, not a hidden test change. Free scan20compact removals
 caught/0extra discards in106knownclip pairs is development evidence only.
-Next: finish PR9 merge/post-merge CI, then free flat-cut/safe-lookalike checks. Flat
+Post-merge mainCI40986393484 at1ecd7e5 PASSED83unit+oneintendedskip,9UI,native
+smoke,installer build/install,13fixtures; release step verified skipped. Summary
+in docs/windows-ci-run-40986393484.json. This correction work is complete; no paid
+job or authority lock. Final follow-up is continuity docs only.
+Next: free flat-cut/safe-lookalike checks to measure potential extra discards. Flat
 video cuts can trigger detail loss; similarly detailed replacements remain limited.
 No95% claim, release, extension or user hardware certification.
 
-## Current continuation — warning merged, video evidence complete
+## Completed29 October stage — warning and video evidence
 
 PR #7 MERGED at3c2a80b931943164158683fd254df80514236455. SourceCI40898018412 and
 main40898675905 PASSED79unit+oneintendedskip,9UI,native smoke,installer/install,
@@ -62,7 +67,8 @@ unknown. No production fix, threshold relaxation or older source27 causal claim.
 No further paid trials planned. Next: prospectively assess localized-change handling
 without starving ongoing video; do not rerun these cases as new independent evidence.
 
-Current253/$2.785542144/860235tokens,19 max reservations left under cumulative3.
+At PR8 completion253/$2.785542144/860235tokens,19 max reservations left THEN.
+Current authority is260 in the latest section; do not restore this older snapshot.
 All8 new reservations/history reconciled from wrapper/report/profile chains, no paid
 job/lock. Private authority /workspace/work/ble-real-2026-10-29/app-budget.json;
 review key/captures /workspace/work/ble-sustained-2026-10-29 outside Git.

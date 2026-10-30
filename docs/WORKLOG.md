@@ -872,3 +872,18 @@ regressions, not independent/model accuracy. New LOCAL-DETAIL-RESULTS/raw report
 retain original two failures and heuristic limits. No production provider/rules/
 threshold/polling change. Next mergePR9/postmergeCI then free flat-cut/safe tests;
 no release. SourceCI already passed; remaining changes evidence/continuity only.
+
+
+PR9 MERGED1ecd7e5883ebf194f60aa4fb8dc7856265bf1c32 with clean squash title/body
+(no inherited skip markers). MainCI40986393484 running; no paid job/lock,260
+authority unchanged. All native corrective checks complete; no more paid tests.
+Final follow-up will only preserve merge/CI evidence and continuity, no release.
+
+
+Main post-merge40986393484 at1ecd7e5 PASSED83unit+oneintendedskip,9UI,native smoke,
+installer build/install,13fixtures. Conclusion/head/steps/log counts verified;
+release skipped, summary saved. PR9 correction work COMPLETE with controlled
+branch/native moving regressions; no broad95%/semantic identity claim. Final
+authority260/$2.862612480/885390 equals final raw chain, prior history intact and
+no lock/paid job. Follow-up is continuity docs only; next free flat-cut/safe-lookalike
+checks, no further paid trial or release.
