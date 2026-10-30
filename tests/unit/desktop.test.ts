@@ -4,7 +4,7 @@ import { defaultSettings } from '../../src/shared'
 const mock = vi.hoisted(() => ({
   handlers: new Map<string, (...args: any[]) => any>(), windows: [] as any[],
   load: (() => Promise.resolve({ ready: true })) as () => Promise<unknown>, failNextNavigation: false,
-  fetch: vi.fn(),
+  fetch: vi.fn(), displayIds: ['1','2'], onUpdate: undefined as undefined | ((value:any)=>void),
   capture: null as null | (() => Promise<any[]>),
   infer: { verdicts: [{ ruleId: 'explicit', probability: 0.9 }], elapsedMs: 10, foregroundChanged: false },
 }))
@@ -31,7 +31,7 @@ vi.mock('electron', () => {
     show = vi.fn()
     constructor() {
       const events = new Map<string, (...args: any[]) => void>()
-      this.webContents = { id: mock.windows.length + 1, mainFrame: {}, events, send: vi.fn(), setWindowOpenHandler: vi.fn(),
+      this.webContents = { id: mock.windows.length + 1, mainFrame: {}, events, send: vi.fn((channel:string,value:any)=>{if(channel==='update')mock.onUpdate?.(structuredClone(value))}), setWindowOpenHandler: vi.fn(),
         on: (event: string, cb: (...args: any[]) => void) => events.set(event, cb), once: (event: string, cb: (...args: any[]) => void) => events.set(event, cb) }
       mock.windows.push(this)
     }
@@ -55,7 +55,7 @@ vi.mock('electron', () => {
     safeStorage: { isEncryptionAvailable: () => true, getSelectedStorageBackend: () => 'gnome_libsecret', encryptString: (key: string) => Buffer.from('encrypted-test'), decryptString: () => 'saved-key' },
     net: { fetch: (...args: unknown[]) => mock.fetch(...args) },
     nativeImage: { createFromPath: () => ({}), createFromBuffer: () => ({ isEmpty: () => false, getSize: () => ({width:1280,height:900}), resize: () => ({toPNG: () => Buffer.from('image')}) }) },
-    screen: { getAllDisplays: () => [{ id: 1, bounds: {} }, { id: 2, bounds: {} }], getPrimaryDisplay: () => ({ id: 1, bounds: {} }), on: vi.fn() },
+    screen: { getAllDisplays: () => mock.displayIds.map(id=>({id:Number(id),bounds:{}})), getPrimaryDisplay: () => ({ id: 1, bounds: {} }), on: vi.fn() },
     desktopCapturer: { getSources: async () => mock.capture ? mock.capture() : ['1', '2'].map(display_id => ({ display_id, thumbnail: { isEmpty: () => false, toPNG: () => Buffer.from('synthetic pixels'), toBitmap: () => Buffer.from([0,0,0,255,255,255,255,255]), resize: () => ({toBitmap: () => Buffer.alloc(64*64*4)}) } })) },
     globalShortcut: { register: () => true, unregisterAll: vi.fn() }, powerMonitor: { on: vi.fn() }, dialog: { showErrorBox: vi.fn() },
     ipcMain: { handle: (name: string, callback: (...args: any[]) => any) => mock.handlers.set(name, callback) },
@@ -220,3 +220,73 @@ it('desktop lifecycle: cancelled loads remain usable, all displays are covered, 
   expect((await call('snapshot')).status.model).toBe('missing')
   vi.useRealTimers()
 })
+
+it('cross-checks synthetic replay against the actual cloud checkLoop, cache, cancellation and timeout', async()=>{
+  const {frameAt,replay}=await import('../../lab/session-replay')
+  const {parityScenarios}=await import('../../lab/session-scenarios')
+  vi.useFakeTimers();await import('../../electron/main');await flush()
+  const sender=mock.windows[0].webContents,event={sender,senderFrame:sender.mainFrame}
+  const call=(name:string,...args:unknown[])=>mock.handlers.get(name)!(event,...args)
+  call('stop');await flush();mock.displayIds=['1']
+  await call('set-cloud-key','fixture-only-offline-key')
+  const results:any[]=[]
+  try {
+    for(const scenario of parityScenarios){
+      call('stop');await flush();vi.setSystemTime(1_800_000_000_000)
+      const epoch=Date.now(),time=()=>Date.now()-epoch
+      const settings=(await call('snapshot')).settings
+      await call('save',{...settings,backend:'jev',cloudConsent:true,cloudBudgetUsd:3,detectionOnly:scenario.detectionOnly,sessionMinutes:(scenario.sessionMs??120000)/60000,rules:settings.rules.map((r:any)=>({...r,enabled:r.id==='video'}))})
+      const start=await call('snapshot'),requestsBefore=start.status.cloudRequests,checksBefore=start.status.checks
+      const seen=new Set<string>(start.status.activity.map((a:any)=>a.id))
+      const trace:any[]=[],beforeCaptures:any[]=[]
+      let lastFrame=frameAt(scenario,0),awaitingRecapture=false,accepted=0,cacheHits=0,firstTerminal:any=null
+      mock.capture=async()=>{
+        const at=time(),frame=frameAt(scenario,at)
+        if(awaitingRecapture)awaitingRecapture=false
+        else beforeCaptures.push({at,hash:frame.hash,state:frame.state})
+        lastFrame=frame
+        return [{display_id:'1',thumbnail:{isEmpty:()=>false,toBitmap:()=>Buffer.from(frame.pixels),toPNG:()=>Buffer.from(frame.pixels),resize:()=>({toBitmap:()=>Buffer.from(frame.pixels)})}}]
+      }
+      mock.fetch.mockImplementation((_url:any,init:any)=>{
+        const frame=lastFrame // latch capture provenance before recapture mutates lastFrame
+        awaitingRecapture=true;trace.push({at:time(),kind:'request',capturedState:frame.state,positive:frame.positive})
+        return new Promise<Response>((resolve,reject)=>{
+          const id=setTimeout(()=>resolve(new Response(JSON.stringify({model:'jev-1.14.0',usage:{input_tokens:100},answers:{video:{noul:frame.positive?0.95:0.02}}}))),scenario.responseMs)
+          init.signal.addEventListener('abort',()=>{clearTimeout(id);reject(new Error('Fixture aborted'))},{once:true})
+        })
+      })
+      mock.onUpdate=(s:any)=>{
+        const at=time(),status=s.status
+        if(status.checks-checksBefore>accepted){accepted=status.checks-checksBefore;trace.push({at,kind:'accepted'})}
+        for(const a of [...status.activity].reverse())if(!seen.has(a.id)){seen.add(a.id);if(a.message==='Screen changed during analysis; checking the new view next.')trace.push({at,kind:'discard'})}
+        if(status.mode==='watching'){
+          const before=beforeCaptures.at(-1)
+          if(before?.at===at&&!trace.some(e=>e.at===at&&(e.kind==='request'||e.kind==='cache'))){cacheHits++;trace.push({at,kind:'cache'})}
+        }
+        if(!firstTerminal&&['blocked','error','idle'].includes(status.mode))firstTerminal={at,mode:status.mode}
+      }
+      if(scenario.cancelAtMs!==undefined)setTimeout(()=>call('stop'),scenario.cancelAtMs)
+      await call('start');await flush()
+      const horizon=scenario.horizonMs??60000
+      // Process exact fake timer boundaries, including a request launched at the observation horizon.
+      while(time()<horizon&&!firstTerminal){await vi.advanceTimersByTimeAsync(Math.min(50,horizon-time()));await flush()}
+      const final=await call('snapshot'),expected=replay(scenario)
+      const actualRequests=final.status.cloudRequests-requestsBefore
+      const observed=trace.filter(e=>!firstTerminal||e.at<=firstTerminal.at)
+      const relevant=(events:any[])=>events.filter(e=>['request','accepted','discard','cache'].includes(e.kind)).map(e=>({at:e.at,kind:e.kind}))
+      expect(relevant(observed),scenario.id).toEqual(relevant(expected.events))
+      expect(actualRequests,scenario.id).toBe(expected.requests)
+      expect(accepted,scenario.id).toBe(expected.accepted)
+      expect(cacheHits,scenario.id).toBe(expected.cacheHits)
+      if(expected.ended==='timeout')expect(firstTerminal).toEqual({at:10000,mode:'error'})
+      if(expected.ended==='cancel'||expected.ended==='deadline')expect(firstTerminal).toEqual({at:expected.observationEndMs,mode:'idle'})
+      if(expected.ended==='blocked-positive')expect(firstTerminal).toEqual({at:expected.observationEndMs,mode:'blocked'})
+      results.push({id:scenario.id,parityPassed:true,requests:actualRequests,accepted,cacheHits,expectedEnd:expected.ended,actualTerminal:firstTerminal,events:observed})
+      mock.onUpdate=undefined;call('stop');await flush()
+    }
+    if(process.env.BLE_SESSION_PARITY_OUTPUT){
+      const fs=await vi.importActual<typeof import('node:fs/promises')>('node:fs/promises')
+      await fs.writeFile(process.env.BLE_SESSION_PARITY_OUTPUT,JSON.stringify({scope:'Actual main.ts with mocked Electron/capture/provider/finance filesystem and fake time; no native/model accuracy.',providerCalls:0,results},null,2)+'\n')
+    }
+  }finally{mock.onUpdate=undefined;call('stop');await flush();mock.capture=null;mock.displayIds=['1','2'];vi.useRealTimers()}
+},30000)
