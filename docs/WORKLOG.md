@@ -1100,3 +1100,17 @@ analysis/metadatahashfix/CI/merge/handoff.0modelcalls, no screenshotartifact/rel
 Physicalno-paidoperator guide links matchingmainCIinstaller; physicalPC notavailable
 here, actualdevice check needsoperator. No furthercapture/model rerun justified on
 consumedconditions. Finalcontinuity push only; fiveoriginalmaxreservations unused.
+
+
+### Final useful non-media checks before physical handoff
+
+User steered awayfromvideo understanding/research and requestedother usefulhosted
+tests first. Twoagents audited existingcoverage and identifiedonlycovereddeadline
+andignored-abort latepositive gaps. Added2focused actualmainunits, passed2/other3
+filtered. Deadlinecover stays59999ms, destroyed60000, idle/endsAtnull/noautoresume;
+noncooperative.95afterpause cannotcover/changechecks/error/cache, restartrefused
+whilebusy, laterfresh.02requiredonsamecapture. Initialassertfalsefailure tracedto
+mutablemock snapshotbaseline; structuredClone matchesrealIPC, testnowpass. Reviewer
+approved source/assertions/cleanup; no appfix needed, no provider/video/nativejob.
+Original267authority unchanged, no lock/release. NormalPRCI thenmerge/mainCI and
+finalhandoffnext, no additionaltestingloop. PhysicalPCprocedure alreadyprepared.
