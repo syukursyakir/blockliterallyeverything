@@ -22,3 +22,13 @@ validation. No private screenshots/keys sent to reviewer; same local source/repo
    current matches, stale-switch preservation, steady controls unchanged, latency
    and request-count regressions retained. Candidate remains a simulator hypothesis
    until actually wired and cross-checked. Later checkpoints will be appended.
+
+6. Immediate-discard candidate code reviewed before one execution; reset/cycle and
+   longer-wait cancellation checks passed. Independent results review REJECTED
+   promotion: known four no-matches removed, but timing holdout20/216blocking
+   settings slower, worst+9200ms and16.85s from onset, extra requests. Preserve
+   negative evidence; do not ship or spend paid allowance on that candidate.
+7. Reviewer approved a separately frozen FREE escalation-only hypothesis tied to
+   existing15s unresolved-discard warning, with new disjoint timing parameters.
+   Used holdout becomes development. No production edit/paid run without separate
+   review and actual-main parity; no repeating holdout to tune until green.

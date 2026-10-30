@@ -26,3 +26,11 @@ export function gridScenarios(): Scenario[] {
   }
   return scenarios
 }
+
+export function timingHoldout(): Scenario[] {
+  const scenarios: Scenario[] = []
+  for (const periodMs of [1700, 4100, 8300]) for (const flatMs of [150, 450, 900]) for (const phase of [0.1, 0.35, 0.6, 0.85]) for (const responseMs of [180, 550, 850]) for (const moving of [false, true]) for (const detectionOnly of [false, true]) {
+    scenarios.push({ id: ['holdout', periodMs, flatMs, phase, responseMs, moving ? 'moving' : 'static', detectionOnly ? 'observe' : 'block'].join('-'), kind: 'periodic', periodMs, flatMs, offsetMs: periodMs * phase, responseMs, moving, detectionOnly })
+  }
+  return scenarios
+}

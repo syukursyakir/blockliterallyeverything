@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest'
-import { frameAt, replay, type Scenario } from '../../lab/session-replay'
+import { frameAt, replay, currentComparator, type Scenario } from '../../lab/session-replay'
 import { isBlankCapture } from '../../electron/screen-cache'
 import { parityScenarios } from '../../lab/session-scenarios'
 const base: Scenario = { id: 'unit', kind: 'neutral', responseMs: 300, moving: false, detectionOnly: true }
@@ -41,4 +41,21 @@ it('does not create post-block observations, tracks warning origin and nonblank 
 })
 it('rejects invalid replay parameters',()=>{
  for(const patch of [{responseMs:NaN},{horizonMs:-1},{sessionMs:0},{kind:'periodic' as const,periodMs:100,flatMs:100}])expect(()=>replay({...base,...patch})).toThrow()
+})
+
+it('experimental discard-only phase shift resets on a settled acceptance and preserves stop boundaries',()=>{
+ const offsets=[250,500,750,1000]
+ const settled=parityScenarios.find(s=>s.id==='settled-cut-block')!
+ expect(replay(settled,undefined,offsets).firstMatchAtMs).toBe(replay(settled).firstMatchAtMs!+250)
+ const normal=parityScenarios.find(s=>s.id==='static-positive-cache')!
+ expect(replay(normal,undefined,offsets).events).toEqual(replay(normal).events)
+ const stopped={...base,kind:'settled-cut' as const,cancelAtMs:6700,horizonMs:7000,moving:true}
+ expect(replay(stopped,undefined,offsets).observationEndMs).toBe(6700)
+ expect(replay(stopped,undefined,offsets).ended).toBe('cancel')
+ const cycle=replay({...base,horizonMs:20000},{...currentComparator,changedSubstantially:()=>true,sameTranslatedFrame:()=>false},offsets)
+ expect(cycle.events.filter(e=>e.kind==='request').map(e=>e.at)).toEqual([0,3550,7350,11400,15700,19250])
+ const observed=replay(parityScenarios.find(s=>s.id==='settled-cut-observe')!,undefined,offsets)
+ expect(observed.events.some(e=>e.kind==='request'&&e.at===10150)).toBe(true)
+ expect(()=>replay(base,undefined,[-1])).toThrow()
+ expect(()=>replay(base,undefined,[1001])).toThrow()
 })

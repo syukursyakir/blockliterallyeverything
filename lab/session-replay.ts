@@ -35,13 +35,14 @@ export function frameAt(s: Scenario, at: number) {
   return { state, positive: state !== 'neutral', pixels, hash: createHash('sha256').update(pixels).digest('hex') }
 }
 export type ReplayEvent = { at: number; kind: 'request' | 'accepted' | 'discard' | 'cache' | 'pending' | 'timeout' | 'cancel' | 'deadline'; capturedState?: string; responseState?: string; positive?: boolean; stale?: boolean }
-export function replay(s: Scenario, comparator: Comparator = currentComparator) {
+export function replay(s: Scenario, comparator: Comparator = currentComparator, discardOffsetsMs: readonly number[] = []) {
   for (const value of [s.responseMs, s.horizonMs ?? 60000, s.sessionMs ?? 120000, s.cancelAtMs ?? 0, s.offsetMs ?? 0]) if (!Number.isFinite(value) || value < 0) throw new Error('Replay durations must be finite and nonnegative.')
   if (s.responseMs <= 0 || (s.sessionMs ?? 120000) <= 0) throw new Error('Response/session duration must be positive.')
   if (s.kind === 'periodic' || s.kind === 'drift') {
     const period = s.kind === 'periodic' ? s.periodMs : 2100
     if (!Number.isFinite(period) || period! <= 0 || !Number.isFinite(s.flatMs) || s.flatMs! <= 0 || s.flatMs! >= period!) throw new Error('Flat dwell must be positive and shorter than its period.')
   }
+  if (discardOffsetsMs.some(n => !Number.isFinite(n) || n < 0 || n > 1000)) throw new Error('Experimental offsets must stay within0..1000ms.')
   const cache = new ScreenCache(), events: ReplayEvent[] = []
   const horizon = s.horizonMs ?? 60000, stopAt = Math.min(s.sessionMs ?? 120000, s.cancelAtMs ?? Infinity)
   let at = 0, end = horizon, ended = 'horizon', delayedSince: number | null = null, warningMs = 0, firstWarningAt: number | null = null
@@ -64,7 +65,8 @@ export function replay(s: Scenario, comparator: Comparator = currentComparator) 
     const after = frameAt(s, finish)
     const changed = comparator.changedSubstantially(before.pixels, after.pixels)
     const local = !changed && (comparator.lostLocalDetail?.(before.pixels, after.pixels, 64) ?? false)
-    if ((changed || local) && !comparator.sameTranslatedFrame(before.pixels, after.pixels, 64)) {
+    const discarded = (changed || local) && !comparator.sameTranslatedFrame(before.pixels, after.pixels, 64)
+    if (discarded) {
       events.push({ at: finish, kind: 'discard', capturedState: before.state, responseState: after.state, positive: before.positive })
       delayedSince ??= finish; consecutive++; maxConsecutive = Math.max(maxConsecutive, consecutive)
     } else {
@@ -73,7 +75,7 @@ export function replay(s: Scenario, comparator: Comparator = currentComparator) 
       clearDelay(finish); consecutive = 0
       if (before.positive && !s.detectionOnly) { end = finish; ended = after.positive ? 'blocked-positive' : 'stale-block'; break }
     }
-    at = finish + 3000
+    at = finish + 3000 + (discarded && discardOffsetsMs.length ? discardOffsetsMs[(consecutive - 1) % discardOffsetsMs.length] : 0)
   }
   // Stop timers also fire while waiting for the next poll, even beyond the final loop iteration.
   if (ended === 'horizon' && stopAt <= horizon) { end = stopAt; ended = s.cancelAtMs === stopAt ? 'cancel' : 'deadline'; events.push({ at: end, kind: ended as 'cancel' | 'deadline' }) }
