@@ -4,7 +4,7 @@ Read AGENTS.md, DESIGN.md, docs/WORKLOG.md, docs/RELIABILITY.md and this file fi
 WORKLOG.md and saved reports retain history; this file supersedes old missing-key,
 permission and budget blockers. Do not repeat completed experiments as new evidence.
 
-## Active continuation — natural-cut cohort complete, CI/review next
+## Latest completed stage — natural-cut media cohort
 
 User authorized representative media work with second-agent checkpoints. Branch
 validation/natural-cuts-20261030, PR11. Read NATURAL-CUTS-PLAN/RESULTS/REVIEWS.md,
@@ -27,8 +27,12 @@ current authority267/$2.93968281600001/910488, original3cap/priorhistory intact,
 FIVEmax reservations remain, no paidjob/lock. No tuning/retry/release.
 SourceCI41013150612 at0cc5c3a PASSED95unit+1skip,9UI,14installedfixtures,
 native smoke/installer build/install, release skipped. Second reviewer approved final
-report/CI after wording corrections; merge/postmergeCI next.
-NEXT after CI/merge: FREE nativecapturesequence acrosswholecutrange with timestamp
+report/CI after wording corrections. PR11 MERGED696ced359a198492ad92b5f050b2fb27c0ce636e.
+Postmerge mainCI41013682785 PASSED same95unit+1skip/9UI/14installedfixtures,
+native smoke/build/installer; release skipped. Summary saved; second reviewer
+independently verified mainproof and exact267authority/fullhistory/no lock.
+This cohort/testtooling/evidence stage is COMPLETE; finalcontinuity push only.
+NEXT: FREE nativecapturesequence acrosswholecutrange with timestamp
 alignment, no paidrepeat or guardoptimization onconsumedcases. Physicaldeployment,
 95%, arbitraryrules and oldsource27 miss remain open.
 

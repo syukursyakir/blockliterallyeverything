@@ -100,7 +100,11 @@ PR11 preserves test tooling/evidence only. Windows sourceCI41013150612 at
 14installedfixture scenarios, native desktop smoke and installer build/install.
 Release step skipped; summary windows-ci-run-41013150612.json. Final reviewer
 independently checked final claims and CI and approved merge after the documented
-wording corrections; no release publication.
+wording corrections. PR11 merged696ced359a198492ad92b5f050b2fb27c0ce636e.
+Postmerge mainCI41013682785 passed the same95unit+1skip,9UI,14installedfixtures,
+native smoke and installer build/install, release skipped. Saved summary
+windows-ci-run-41013682785.json; second reviewer independently verified main
+logs/fixture proof and final267authority/history/no lock. No release publication.
 Do not present sourceCI fixtures as extra model accuracy. One hosted display and
 seeded onboarding do not certify physical hardware, multi-monitor/DPI, exclusive
 fullscreen, arbitrary English rules or95% reliability. Earlier source27 miss remains

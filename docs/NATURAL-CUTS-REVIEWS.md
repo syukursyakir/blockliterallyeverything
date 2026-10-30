@@ -42,3 +42,12 @@
    stale pending status and visual-review attribution: author viewed whole/range
    sheets, reviewer independently viewed range only. Approved docs-only checkpoint
    then merge with clean squashsubject and postmerge ordinaryCI; no more paid work.
+
+8. Merge checkpoint verified cleanmain696ced359a198492ad92b5f050b2fb27c0ce636e,
+   clean squashsubject and corrected review attribution/sourceCI wording. Final
+   mainCI41013682785 independently checked:95unit+1skip,9UI,14installedfixtures,
+   build/native smoke/installer, release skipped; saved retryfixture1250ms callback
+   then thirdrequest40ms later is fixture integration only. All ten frozenhashes
+   match, production diff empty; exact267/$2.93968281600001/910488 authority equals
+   finalsafe budget with fullprior/history/cap3/no lock. Approved finaldocs-only
+   push/closecohort, no more paidcalls; free alignednativecapture next.

@@ -19,7 +19,9 @@ remain. Reviewer checked scope/source/freepreflight/EACHresult. No productioncha
 paidrerun or release. NextFREE nativecapturetiming acrosscuts; physicalhardware
 and95%remainunproved. SourceCI41013150612 at0cc5c3a passed95unit+1skip,9UI,
 14installedfixtures/native smoke/installer, release skipped. Reviewer approved final
-claims/CI; merge/postmergeCI next.
+claims/CI. PR11 merged696ced3; mainCI41013682785 passed the same full sequence,
+release skipped. Reviewer independently verified finalmainCI and retained267
+authority/history/no lock. Cohort complete; nextFREE alignednativecapture work.
 
 
 Read [RETRY-PHASE-RESULTS.md](RETRY-PHASE-RESULTS.md): free synthetic session

@@ -1030,3 +1030,14 @@ fixes: correctCIstatus and authorwhole/range vs reviewer rangeonly visualreview.
 Updates applied. No new tests/provider calls needed; docs-only checkpoint, clean
 squashmerge and postmerge ordinaryCI next. Earlier pending entries are chronological
 checkpoints superseded by finalsuccessfulCI/resultreview above.
+
+
+PR11 MERGED696ced359a198492ad92b5f050b2fb27c0ce636e with clean squashsubject.
+MainCI41013682785 PASSED95unit+1intendedskip,9UI,14installedfixtures, native smoke,
+build/installer build/install; release skipped. Saved summary and second reviewer
+independentlyverified log/proof and final267/$2.93968281600001/910488authority
+with fullhistory/cap3/no lock. Ten frozensource hashesmatch mergedsource; production
+diff vsbeforecohort empty. A ghwatch status401 was transient, read-onlywatch resumed;
+actualCIneverfailed/reran. Cohort COMPLETE, two earlypositivepasses/one failedsafe
+freshnessbound retained, sevenpaidcalls total/fivemaxleft. Finalcontinuity only;
+nextFREE nativecapture/mediaalignment acrosswholecutrange, no paidreplay/tuning.
