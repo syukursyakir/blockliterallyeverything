@@ -4,6 +4,35 @@ Read AGENTS.md, DESIGN.md, docs/WORKLOG.md, docs/RELIABILITY.md and this file fi
 WORKLOG.md and saved reports retain history; this file supersedes old missing-key,
 permission and budget blockers. Do not repeat completed experiments as new evidence.
 
+## Active continuation — reviewed escalation-only retry mitigation
+
+User asked autonomous work with a second agent checking meaningfulsteps. Branch
+validation/retry-phase-20261030; reviewers/limits in SESSION-REPLAY-REVIEWS.md.
+No paid provider job/allowance change/release. Current authority260/$2.862612480/
+885390,12max left, original history intact/no lock.
+
+Free session replay found fixed-phase rejection loops; actualmain mock confirmed
+19requests/18discards/no matching accepted positive through60s in explicitlock.
+First immediate retry-offset candidate REJECTED: new timingcases up9.2s slower;
+raw negative results preserved. Escalation-only policy fixed before nextholdout:
+ONLY after15s unresolved discards, add250/500/750/1000ms to nominal wait, reset
+onaccept/cache/session. Never force stale acceptance or earlier-than-configured poll.
+Free dev4blocking no-matches rescued; all previously successful firstmatches same.
+Fresh576parameter timing holdout0activations (healthy invariance only, not rescue
+proof). Activation-rich108deliberate lock/near-lock settings: blocking36/54no-match
+->0, no slower existing successes; late recovery up30.66s, NOT fewseconds guarantee.
+One audit-counter bug aborted first stress computation; fixed auditonly, incomplete
+marker retained, no policy/threshold/input tuning. All raw/evidence on branch.
+
+Reviewed main helper/map reset applied locally.16current-main mocktraces match
+candidate, plus2display accepting/cache screen does not reset stalledscreen cycle.
+13focused tests/build/strict types pass. No comparator/provider/model/rule change.
+Settings copy mentions up-to1extra second whenchecksremaindelayed. New installed
+Windows fixture uses injected clock/capture/provider reply, actualpoll callback
+and nativecover recovery (NOT realmedia/cadence/accuracy). Pending second-agent
+source review before fullWindowsCI/PRmerge. Actualnative model trials NOT repeated;
+keep remaining paid budget for meaningful representative evidence.
+
 ## Latest30 October checkpoint — free flat-cut probe complete
 
 User authorized free flat-cut/safe-lookalike follow-up. Read FLAT-CUT-RESULTS.md,

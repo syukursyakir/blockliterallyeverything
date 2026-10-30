@@ -43,3 +43,18 @@ validation. No private screenshots/keys sent to reviewer; same local source/repo
    experiment: development10activated offsets =>9requests+1cached poll shifted;
    fresh holdout0; explicitcontrol1. Reviewer verified result/limits and approved
    separate activation-rich stress family plus helper/map design before app edits.
+
+10. Activation-rich216version-case probe initially ABORTED on audit assertion
+    3250!=3500: reconstruction failed to reset its cycle across separate successful
+    decisions, while policy correctly reset. Reviewer approved audit-only fix.
+    Original zero-byte output work/retry-activation-stress-2026-10-30.json and error
+    marker retained; corrected computation uses NEW verified output. Not a pristine
+    first execution or policy tuning. Final blocking54:36no-match->0, no slower
+    earlier successes;36active/52offsets. Observe39active/64offsets:58requests,3cache,
+   3unobserved past horizon. Recovery worst30.66s after onset, not fewseconds.
+11. Reviewer approved helper+proposed main diff before applying: oldest per-display
+    flag afterall displays, explicitnull handling(timestamp0 valid),15s boundary,
+    cycle/reset/invalid state guards. Applied main passed16single-display parity
+    traces plus2display fixture: healthyaccept/cache cannot reset stalledscreen's
+    3250/3500/3750/4000cycle.13focused tests/build passed. Installedclock/capture/
+    reply fixture authored for subsequent Windows review/CI, no paid calls.

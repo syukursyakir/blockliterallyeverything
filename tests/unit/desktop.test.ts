@@ -231,7 +231,7 @@ it('cross-checks synthetic replay against the actual cloud checkLoop, cache, can
   await call('set-cloud-key','fixture-only-offline-key')
   const results:any[]=[]
   try {
-    for(const scenario of parityScenarios){
+    for(const scenario of [...parityScenarios,{...parityScenarios.find(s=>s.id==='explicit-phase-lock')!,id:'cancel-active-wait',cancelAtMs:20000,horizonMs:24000}]){
       call('stop');await flush();vi.setSystemTime(1_800_000_000_000)
       const epoch=Date.now(),time=()=>Date.now()-epoch
       const settings=(await call('snapshot')).settings
@@ -270,7 +270,7 @@ it('cross-checks synthetic replay against the actual cloud checkLoop, cache, can
       const horizon=scenario.horizonMs??60000
       // Process exact fake timer boundaries, including a request launched at the observation horizon.
       while(time()<horizon&&!firstTerminal){await vi.advanceTimersByTimeAsync(Math.min(50,horizon-time()));await flush()}
-      const final=await call('snapshot'),expected=replay(scenario)
+      const final=await call('snapshot'),expected=replay(scenario,undefined,[250,500,750,1000],15000)
       const actualRequests=final.status.cloudRequests-requestsBefore
       const observed=trace.filter(e=>!firstTerminal||e.at<=firstTerminal.at)
       const relevant=(events:any[])=>events.filter(e=>['request','accepted','discard','cache'].includes(e.kind)).map(e=>({at:e.at,kind:e.kind}))
@@ -279,14 +279,55 @@ it('cross-checks synthetic replay against the actual cloud checkLoop, cache, can
       expect(accepted,scenario.id).toBe(expected.accepted)
       expect(cacheHits,scenario.id).toBe(expected.cacheHits)
       if(expected.ended==='timeout')expect(firstTerminal).toEqual({at:10000,mode:'error'})
-      if(expected.ended==='cancel'||expected.ended==='deadline')expect(firstTerminal).toEqual({at:expected.observationEndMs,mode:'idle'})
+      if(expected.ended==='cancel'||expected.ended==='deadline'){expect(firstTerminal).toEqual({at:expected.observationEndMs,mode:'idle'});expect(final.status.mode).toBe('idle')}
       if(expected.ended==='blocked-positive')expect(firstTerminal).toEqual({at:expected.observationEndMs,mode:'blocked'})
       results.push({id:scenario.id,parityPassed:true,requests:actualRequests,accepted,cacheHits,expectedEnd:expected.ended,actualTerminal:firstTerminal,events:observed})
       mock.onUpdate=undefined;call('stop');await flush()
     }
     if(process.env.BLE_SESSION_PARITY_OUTPUT){
       const fs=await vi.importActual<typeof import('node:fs/promises')>('node:fs/promises')
-      await fs.writeFile(process.env.BLE_SESSION_PARITY_OUTPUT,JSON.stringify({scope:'Actual main.ts with mocked Electron/capture/provider/finance filesystem and fake time; no native/model accuracy.',providerCalls:0,results},null,2)+'\n')
+      await fs.writeFile(process.env.BLE_SESSION_PARITY_OUTPUT,JSON.stringify({scope:'Actual main.ts with escalation policy, mocked Electron/capture/provider/finance filesystem and fake time; no native/model accuracy.',providerCalls:0,results},null,2)+'\n')
     }
   }finally{mock.onUpdate=undefined;call('stop');await flush();mock.capture=null;mock.displayIds=['1','2'];vi.useRealTimers()}
 },30000)
+
+it('keeps a stalled display phase cycle while another display accepts and uses cache',async()=>{
+ vi.useFakeTimers();await import('../../electron/main');await flush()
+ const sender=mock.windows[0].webContents,event={sender,senderFrame:sender.mainFrame}
+ const call=(name:string,...args:unknown[])=>mock.handlers.get(name)!(event,...args)
+ call('stop');await flush();mock.displayIds=['1','2'];vi.setSystemTime(1_800_000_000_000)
+ const multiEpoch=Date.now()
+ const {frameAt}=await import('../../lab/session-replay')
+ const scenario={id:'multi',kind:'positive' as const,responseMs:300,moving:false,detectionOnly:true}
+ const detail=frameAt(scenario,1000),flat=frameAt({...scenario,kind:'settled-cut'},4000),neutral=frameAt({...scenario,kind:'neutral'},0)
+ let recapture=false,requestFrame=neutral
+ mock.capture=async()=>{
+  const after=recapture;recapture=false
+  return ['1','2'].map(id=>{
+   const f=id==='1'?(after?flat:detail):neutral
+   const pixels=Buffer.from(f.pixels)
+   if(id==='2'&&Date.now()-multiEpoch>=20000)pixels[(63*64+63)*4]=31 // force a fresh healthy result mid-cycle, not at wrap
+   return {display_id:id,thumbnail:{isEmpty:()=>false,toBitmap:()=>Buffer.from(pixels),toPNG:()=>{requestFrame=f;return Buffer.from(pixels)},resize:()=>({toBitmap:()=>Buffer.from(pixels)})}}
+  })
+ }
+ mock.fetch.mockImplementation((_url:any,init:any)=>{
+  const captured=requestFrame;recapture=true
+  return new Promise<Response>((resolve,reject)=>{
+   const timer=setTimeout(()=>resolve(new Response(JSON.stringify({model:'jev-1.14.0',usage:{input_tokens:100},answers:{video:{noul:captured.positive?0.95:0.02}}}))),300)
+   init.signal.addEventListener('abort',()=>{clearTimeout(timer);reject(new Error('Fixture cancelled'))},{once:true})
+  })
+ })
+ await call('set-cloud-key','fixture-only-offline-key')
+ const settings=(await call('snapshot')).settings
+ await call('save',{...settings,backend:'jev',cloudConsent:true,cloudBudgetUsd:3,detectionOnly:true,intervalSeconds:3,sessionMinutes:2,rules:settings.rules.map((r:any)=>({...r,enabled:r.id==='video'}))})
+ const before=(await call('snapshot')).status.checks
+ const timerSpy=vi.spyOn(globalThis,'setTimeout')
+ try{
+  await call('start');await flush();await vi.advanceTimersByTimeAsync(40000);await flush()
+  const status=(await call('snapshot')).status
+  expect(status.delayedDisplays['1']).toBeTypeOf('number');expect(status.delayedDisplays['2']).toBeUndefined()
+  expect(status.checks).toBeGreaterThan(before) // display2 accepted and later refreshed
+  const waits=timerSpy.mock.calls.map((args:any[])=>args[1]).filter((n:any)=>[3250,3500,3750,4000].includes(n))
+  expect(waits.slice(0,4)).toEqual([3250,3500,3750,4000])
+ }finally{call('stop');await flush();timerSpy.mockRestore();mock.capture=null;mock.displayIds=['1','2'];vi.useRealTimers()}
+})

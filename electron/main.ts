@@ -5,6 +5,7 @@ import { readFile, writeFile, rename, mkdir, unlink } from 'node:fs/promises'
 import { createHash, randomUUID } from 'node:crypto'
 import { ModelWorker } from './worker'
 import { emptyLedger, validateLedger, reserveCloud, requestJev, type CloudLedger } from './jev'
+import { recheckTiming } from './recheck-timing'
 import { ScreenCache, changedSubstantially, lostLocalDetail, sameTranslatedFrame, isBlankCapture } from './screen-cache'
 import { defaultSettings, initialStatus, validateSettings, upgradeStarterRuleWording, matchingRule, type Settings, type Status, type Snapshot, type CheckResult, type BlockInfo } from '../src/shared'
 
@@ -30,6 +31,7 @@ let cloudLedgerError = false
 let cloudBusy = false
 let cloudAbort: AbortController | undefined
 const screenCache = new ScreenCache()
+let retryPhaseIndex = 0
 function cloudPaths() { return { key: path.join(app.getPath('userData'), 'jev-key.enc'), ledger: path.join(app.getPath('userData'), 'jev-budget.json') } }
 function cloudStatus() { status.cloudKeyConfigured = Boolean(cloudKey); status.cloudSpentUsd = cloudLedger.reservedUsd; status.cloudEstimatedUsd = cloudLedger.inputTokens * 0.042 / 1_000_000; status.cloudRequests = cloudLedger.requests }
 async function persistLedger(next: CloudLedger) {
@@ -94,12 +96,12 @@ function loadUI(window: BrowserWindow, hash = '') {
 function browserOptions() { return { preload: path.join(__dirname, 'preload.js'), contextIsolation: true, nodeIntegration: false, sandbox: true, webSecurity: true, devTools: !app.isPackaged } }
 function closeCovers() { for (const cover of covers) { cover.removeAllListeners('close'); cover.destroy() }; covers.clear(); coverInfo.clear() }
 function stop(message = 'Session paused.') {
-  generation++; cloudAbort?.abort(); screenCache.clear(); clearTimeout(timer); clearTimeout(sessionTimer); closeCovers()
+  generation++; cloudAbort?.abort(); screenCache.clear(); retryPhaseIndex = 0; clearTimeout(timer); clearTimeout(sessionTimer); closeCovers()
   status.delayedDisplays = {}; status.mode = 'idle'; status.endsAt = null; status.error = null
   activity('info', message)
 }
 function fail(error: unknown) {
-  generation++; cloudAbort?.abort(); screenCache.clear(); clearTimeout(timer); clearTimeout(sessionTimer); closeCovers()
+  generation++; cloudAbort?.abort(); screenCache.clear(); retryPhaseIndex = 0; clearTimeout(timer); clearTimeout(sessionTimer); closeCovers()
   status.delayedDisplays = {}; status.mode = 'error'; status.endsAt = null
   status.error = error instanceof Error ? error.message : 'Something went wrong. Protection is paused.'
   activity('error', status.error)
@@ -175,7 +177,11 @@ async function checkLoop(token: number) {
     }
     if (token !== generation) return
     status.mode = 'watching'; publish()
-    timer = setTimeout(() => void checkLoop(token), settings.intervalSeconds * 1000)
+    const unresolved = Object.values(status.delayedDisplays)
+    const timing = recheckTiming(settings.intervalSeconds * 1000, Date.now(), unresolved.length ? Math.min(...unresolved) : null, retryPhaseIndex)
+    retryPhaseIndex = timing.phaseIndex
+    if (timing.adjusted) activity('info', 'Checks remain delayed; varying the next recheck time.')
+    timer = setTimeout(() => void checkLoop(token), timing.waitMs)
   } catch (error) { if (token === generation) fail(error) }
 }
 async function start() {
@@ -192,7 +198,7 @@ async function start() {
       if (settings.backend === 'local') { status.model = 'ready'; status.modelMessage = 'OmniJev · running locally'; publish() }
     }
     if (token !== generation) return
-    screenCache.clear(); status.delayedDisplays = {}; status.lastCheck = null; status.lastLatency = null; publish()
+    screenCache.clear(); retryPhaseIndex = 0; status.delayedDisplays = {}; status.lastCheck = null; status.lastLatency = null; publish()
     status.endsAt = Date.now() + settings.sessionMinutes * 60_000
     sessionTimer = setTimeout(() => stop('Focus session complete.'), settings.sessionMinutes * 60_000)
     activity('info', settings.detectionOnly ? 'Detection-only session started. No screen covers.' : 'Blocking session started. Emergency pause: Ctrl+Shift+F12.')

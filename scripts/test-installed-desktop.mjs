@@ -7,7 +7,7 @@ import { tmpdir } from 'node:os'
 import path from 'node:path'
 
 // Runs real Windows/Electron/UI/storage/capture/overlay code. Only the provider
-// replies and explicitly labeled capture faults are fixtures; lock/suspend signals
+// replies, explicitly labeled capture faults and retry clock are fixtures; lock/suspend signals
 // are emitted in-process. No real keys, API calls, charges or accuracy claims.
 if (process.platform !== 'win32') throw new Error('This suite requires a Windows desktop.')
 const profile = await mkdtemp(path.join(tmpdir(), 'ble-installed-tests-'))
@@ -16,7 +16,7 @@ await mkdir(evidence, { recursive: true })
 const executable = process.env.BLE_SMOKE_APP_EXE || electron
 const args = [...(process.env.BLE_SMOKE_APP_EXE ? [] : [path.resolve('.')]), '--user-data-dir=' + profile]
 const env = { ...process.env, TYPESAFE_API_KEY: '', BLE_DEV_URL: '' }
-const report = { scope: 'Real Windows installed-app checks with fixture provider replies, injected blank/missing/translation/replacement captures, and emitted lock/suspend signals. No real AI inference or paid calls.', cases: [], displays: null }
+const report = { scope: 'Real Windows installed-app checks with fixture provider replies, injected blank/missing/translation/replacement/retry captures, injected retry clock, and emitted lock/suspend signals. No real AI inference or paid calls.', cases: [], displays: null }
 const testKey = 'ble-ci-fixture-not-a-provider-key'
 let desktop, page
 const snapshot = () => page.evaluate(() => window.desktop.snapshot())
@@ -40,6 +40,7 @@ async function launch() {
     net.fetch = async (url, options) => {
       if (url !== 'https://api.typesafe.ai/v1/systemone') throw new Error('Unexpected test transport destination')
       state.calls++
+      if(state.capture==='retry-phase')state.requestTimeline.push({call:state.calls,at:state.realNow()})
       const payload = JSON.parse(options.body)
       if (state.mode === 'offline') throw new Error('Fixture connection unavailable')
       if (state.mode === 'hang') return new Promise((_, reject) => {
@@ -59,6 +60,16 @@ async function launch() {
         const bitmap = Buffer.alloc(320 * 320 * 4, 255)
         return sources.map(source => ({ ...source, thumbnail: nativeImage.createFromBitmap(bitmap, { width: 320, height: 320 }) }))
       }
+      if (state.capture === 'retry-phase') {
+        const index=state.captureCalls++
+        if(index===2)state.clockOffset=16000 // Jump BEFORE main records this capture's age.
+        const bitmap=Buffer.alloc(64*64*4,15)
+        for(let i=3;i<bitmap.length;i+=4)bitmap[i]=255
+        const put=(x,y,color)=>{const i=(y*64+x)*4;bitmap[i]=bitmap[i+1]=bitmap[i+2]=color}
+        for(let y=2;y<5;y++)for(let x=3;x<35;x++)if(x%4<2)put(x,y,220)
+        if(![1,3].includes(index))for(let y=14;y<30;y++)for(let x=4;x<30;x++)put(x,y,(Math.floor(x/2)+Math.floor(y/2))%2?180:60)
+        return sources.map(source=>({...source,thumbnail:nativeImage.createFromBitmap(bitmap,{width:64,height:64})}))
+      }
       if (['translated', 'replacement', 'cropped'].includes(state.capture)) {
         const after = state.captureCalls++ > 0
         const bitmap = Buffer.alloc(64 * 64 * 4, 240)
@@ -76,7 +87,7 @@ async function launch() {
 }
 async function run(name, action) {
   const started = Date.now()
-  try { await action(); report.cases.push({ name, passed: true, milliseconds: Date.now() - started }); console.log('PASS:', name) }
+  try { const details=await action(); report.cases.push({ name, passed: true, milliseconds: Date.now() - started, ...(details?{details}:{}) }); console.log('PASS:', name) }
   catch (error) {
     report.cases.push({ name, passed: false, milliseconds: Date.now() - started, error: String(error.message) })
     await page?.screenshot({ path: path.join(evidence, 'failure.png') }).catch(() => {})
@@ -198,6 +209,40 @@ try {
       await api('stop'); await expectPaused()
     }
     await fixture('allow')
+  })
+  await run('clock-injected retry fixture schedules adjusted poll, then covers and recovers', async () => {
+    expect(report.displays).toBe(1)
+    try{
+      await desktop.evaluate(()=>{
+        const state=globalThis.bleTestFixture,now=Date.now,timer=globalThis.setTimeout
+        state.realNow=now;state.clockOffset=0;state.pollScheduled=[];state.pollFired=[];state.requestTimeline=[]
+        state.restoreRetryClock=()=>{Date.now=now;globalThis.setTimeout=timer;state.clockOffset=0}
+        Date.now=()=>now()+state.clockOffset
+        globalThis.setTimeout=(callback,delay,...args)=>{
+          if(delay===1250&&typeof callback==='function'&&Function.prototype.toString.call(callback).includes('checkLoop')){
+            const id=state.pollScheduled.length
+            state.pollScheduled.push({id,delay,at:now()})
+            return timer(()=>{state.pollFired.push({id,at:now()});return callback(...args)},delay)
+          }
+          return timer(callback,delay,...args)
+        }
+      })
+      const cover=await startCover('retry-phase')
+      const proof=await desktop.evaluate(()=>{
+        const s=globalThis.bleTestFixture
+        return {scope:'Injected main clock/captures/provider replies; actual scheduled poll callback and native cover, not real media/cadence.',scheduled:s.pollScheduled,fired:s.pollFired,requests:s.requestTimeline,captureCalls:s.captureCalls}
+      })
+      expect(proof.scheduled).toHaveLength(1);expect(proof.scheduled[0].delay).toBe(1250)
+      expect(proof.fired).toHaveLength(1);expect(proof.fired[0].id).toBe(proof.scheduled[0].id)
+      expect(proof.requests).toHaveLength(3);expect(proof.requests[2].at).toBeGreaterThanOrEqual(proof.fired[0].at)
+      expect((await snapshot()).status.activity.some(a=>a.message==='Checks remain delayed; varying the next recheck time.')).toBe(true)
+      await cover.getByRole('button',{name:'Pause & return to app'}).click();await expectPaused()
+      return proof
+    }finally{
+      await api('stop').catch(()=>{})
+      await desktop.evaluate(()=>globalThis.bleTestFixture.restoreRetryClock?.())
+      await fixture('allow','real')
+    }
   })
   await run('native close dismisses covers and pauses rather than trapping the desktop', async () => {
     const cover = await startCover(); const window = await desktop.browserWindow(cover)
