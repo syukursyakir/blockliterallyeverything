@@ -41,3 +41,11 @@ tests beyond required postmergeCI are recommended.
 The remaining useful deployment step needs an operator on a physical Windows PC;
 PHYSICAL-WINDOWS-VALIDATION.md provides a no-paid-call fixture procedure. Hosted
 checks cannot establish actual sleep/lock, mixed displays or exclusive fullscreen.
+
+
+PR13 merged atae60ebed50433091a9c72aedbf2050a266abead1. Postmerge mainWindows
+CI41033207441 PASSED100unit+1intendedskip,9UI,14installedfixture scenarios, native
+smoke/build/installer build/install; release skipped. Summary
+windows-ci-run-41033207441.json. Second reviewer independently checked finalrawCI,
+emptyproductiondiff and entirebyte-identical authority/history/no lock.
+No further hosted tests recommended before the physical-PC procedure.

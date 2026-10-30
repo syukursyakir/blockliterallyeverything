@@ -1120,3 +1120,14 @@ native smoke/build/installer build/install; release skipped. Secondagent checked
 rawCI(all5desktopfiletests pass), exactauthoritybytehash/fullhistory/cap3/no lock,
 and claims; approved finaldocscheckpoint/PR13merge. No appchange/modelcalls/new
 mediajob. RequiredpostmergeCI thenhandoff only; no furtherhostedtesting warranted.
+
+
+PR13 MERGEDae60ebed50433091a9c72aedbf2050a266abead1 cleannon-skip squash. Final
+mainCI41033207441 PASSED100unit+1intendedskip,9UI,14installedfixtures/native smoke/
+build/installer build/install; release skipped. Saved summary. Secondreviewer
+independentlyverified finalrawCI, emptyproductionelectron/srcdiff, exact267/
+$2.93968281600001/910488authorityBYTEhash+JSON/fullpriorhistory/cap3/no lock.
+Bothusefulnewcontroltests covered; no productionbugfix needed, no realprovider
+calls/videojob/release. Sessionhandoffready; physicalguide updated matchingmain
+installer41033207441. No furtherhostedtesting warranted beforeactualphysicalPC
+operatorcheck. Usersteering stopvideo research preserved; do not restartoldcohorts.

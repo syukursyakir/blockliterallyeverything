@@ -13,8 +13,10 @@ regressions pass: deadlinewhilecovered releasescover/stayspaused; ignored-abort
 latepositive cannotblock/poisoncache, nextsessionneedsfreshreply. No appbug/fix
 needed. Reviewer approvedtests/claims and sourceCI41032668528 at66f254f:100unit+
 1skip,9UI,14installedfixtures/native smoke/installer, release skipped. Budgetfile
-byte-identical267/history/cap3/no lock, zero provider calls. Nextmerge/mainCI and
-physicaloperator check; no more hosted/video testing loops warranted.
+byte-identical267/history/cap3/no lock, zero provider calls. PR13 mergedae60ebe;
+mainCI41033207441 passed the same100unit+1skip/9UI/14installed/native smoke/installer,
+release skipped. Final independent review passed. Sessionhandoffready; nextphysical
+operator check, no more hosted/video testing loops warranted.
 
 
 Read [CAPTURE-TIMING-RESULTS.md](CAPTURE-TIMING-RESULTS.md): FREE actual native

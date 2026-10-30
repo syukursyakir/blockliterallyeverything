@@ -5,9 +5,10 @@ This is the remaining deployment check that needs an operator at that machine;
 no remote access or personal screenshot collection is implied or required.
 
 Use the installer artifact `windows-jev-installer-unsigned` from the successfully
-verified [main Actions run41017630086](https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41017630086),
-source2adfef5871b7ff88acb7d349a1deea82c7fe5f9d. Full counts and limits are in
-CAPTURE-TIMING-RESULTS.md. The old public
+verified [main Actions run41033207441](https://github.com/syukursyakir/blockliterallyeverything/actions/runs/41033207441),
+sourceae60ebed50433091a9c72aedbf2050a266abead1. Latest100unit/9UI/14installed
+checks and limits are in SESSION-CONTROL-CHECKS.md. Earlier capture limits remain
+in CAPTURE-TIMING-RESULTS.md. The old public
 v0.1.0-alpha.1 release lacks newer changes; it is not the build being validated.
 No new release was published. Record the Actions run/SHA and downloaded installer
 SHA256 alongside Windows version, monitor resolution and scale.

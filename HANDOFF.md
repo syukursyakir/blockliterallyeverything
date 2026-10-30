@@ -4,7 +4,7 @@ Read AGENTS.md, DESIGN.md, docs/WORKLOG.md, docs/RELIABILITY.md and this file fi
 WORKLOG.md and saved reports retain history; this file supersedes old missing-key,
 permission and budget blockers. Do not repeat completed experiments as new evidence.
 
-## Current continuation — final session-control test gaps
+## Latest completed checks — session controls; ready for handoff
 
 User clarified that video understanding is unnecessary for blocking a visible watch
 page and asked any other useful on-our-end tests be completed FIRST. Stop video
@@ -17,9 +17,15 @@ withstructuredClone to matchIPCcopy, not appbug. No provider/native/video job.
 Branch validation/session-control-boundaries-20261030/PR13. SourceCI41032668528
 at66f254f PASSED100unit+1skip/9UI/14installed/native smoke/build/installer, release
 skipped. Secondreviewer independentlyverified finalCI/claims/authoritybytehash and
-approved merge. Complete merge/postmergeCI/finalhandoff inoneprompt. Authority267/
+approved merge. PR13 MERGEDae60ebed50433091a9c72aedbf2050a266abead1. MainCI
+41033207441 PASSEDsame100unit+1skip/9UI/14installed/native smoke/build/installer,
+release skipped; reviewer independentlyverified finalCI and unchangedproduction/
+fullauthoritybytehash/history/no lock. Tests/docsonly, no appfix needed. Thisstage
+is COMPLETE; finalcontinuity only, sessionhandoffready. Authority267/
 $2.939682816/910488/history/cap3 unchanged5maxleft, no lock/release. No more tests
-beyond these+requiredCI unless failure shows realcause; nextphysicaloperator check.
+recommended beforephysicalvalidation. NextactualsteprequiresphysicalWindows
+operator viaPHYSICAL-WINDOWS-VALIDATION.md; matchinglatestmainCI41033207441, no
+realkey/modelcalls. Do not reopenvideo research/replaycohorts or repeatoldtests.
 
 ## Latest completed milestone — FREE native capture/media timing
 
