@@ -17,6 +17,10 @@ on:
         description: Run opt-in real capture and Jev detection without building or publishing an installer
         type: boolean
         default: false
+      capture_timing:
+        description: Free native capture and media-clock timing; no model calls or provider secret
+        type: boolean
+        default: false
       capture_only:
         description: Capture public pages for encrypted local review, with no model calls
         type: boolean
@@ -73,7 +77,7 @@ permissions:
   contents: read
 jobs:
   windows:
-    if: github.event_name != 'workflow_dispatch' || (!inputs.live_detection && !inputs.capture_only && !inputs.recover_run)
+    if: github.event_name != 'workflow_dispatch' || (!inputs.live_detection && !inputs.capture_only && !inputs.capture_timing && !inputs.recover_run)
     permissions:
       contents: write
     runs-on: windows-latest
@@ -134,7 +138,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'Release publication failed' }
 
   live-detection:
-    if: github.event_name == 'workflow_dispatch' && inputs.live_detection && !inputs.capture_only && !inputs.recover_run
+    if: github.event_name == 'workflow_dispatch' && inputs.live_detection && !inputs.capture_only && !inputs.capture_timing && !inputs.recover_run
     runs-on: windows-latest
     timeout-minutes: 15
     permissions:
@@ -209,7 +213,7 @@ jobs:
           retention-days: 7
 
   capture-public:
-    if: github.event_name == 'workflow_dispatch' && inputs.capture_only && !inputs.recover_run
+    if: github.event_name == 'workflow_dispatch' && inputs.capture_only && !inputs.recover_run && !inputs.capture_timing
     runs-on: windows-latest
     timeout-minutes: 12
     permissions:
@@ -244,7 +248,7 @@ jobs:
           retention-days: 2
 
   reconcile:
-    if: github.event_name == 'workflow_dispatch' && inputs.recover_run && !inputs.live_detection && !inputs.capture_only && !inputs.publish_alpha
+    if: github.event_name == 'workflow_dispatch' && inputs.recover_run && !inputs.live_detection && !inputs.capture_only && !inputs.capture_timing && !inputs.publish_alpha
     permissions:
       actions: read
       contents: read
@@ -280,3 +284,40 @@ jobs:
           assert profile['inputTokens'] >= report['budgetBefore']['inputTokens']
           assert abs(profile['reservedUsd'] - profile['requests'] * 262144 * .042 / 1000000) < 1e-6
           print('VERIFIED_ACCOUNTING=' + json.dumps({'wrapper': wrapper, 'profile': profile, 'report': report}, separators=(',', ':')))
+
+  capture-timing:
+    if: github.event_name == 'workflow_dispatch' && inputs.capture_timing
+    runs-on: windows-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Refuse mixed modes or publishing
+        shell: pwsh
+        env:
+          PUBLISH_REQUESTED: ${{ inputs.publish_alpha }}
+          LIVE_REQUESTED: ${{ inputs.live_detection }}
+          CAPTURE_REQUESTED: ${{ inputs.capture_only }}
+          RECOVERY_REQUESTED: ${{ inputs.recover_run }}
+        run: |
+          if ($env:PUBLISH_REQUESTED -eq 'true' -or $env:LIVE_REQUESTED -eq 'true' -or $env:CAPTURE_REQUESTED -eq 'true' -or $env:RECOVERY_REQUESTED) { throw 'Timing capture refuses inference, other capture, recovery and publishing.' }
+          if ($env:TYPESAFE_API_KEY) { throw 'Timing capture refuses a provider credential.' }
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Prepare pinned public timing media without allowance
+        run: node scripts/prepare-timing-media.mjs capture-timing
+      - name: Capture native sequence and compare reception gaps without inference
+        run: node scripts/test-capture-timing.mjs --media capture-timing/reviewed.webm --output capture-timing/report.json
+      - name: Preserve numeric timing evidence only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-capture-timing-${{ github.run_id }}-${{ github.run_attempt }}
+          path: capture-timing/report.json
+          if-no-files-found: warn
+          retention-days: 7

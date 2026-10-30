@@ -1,0 +1,42 @@
+{
+  "frozenAt": "2026-10-30T06:46:38.888173+00:00",
+  "authorityBefore": {
+    "capUsd": 3,
+    "priorUsage": {
+      "retainedReservations": 62,
+      "cap": 64,
+      "ledgerMissing": true,
+      "source": "HANDOFF.md; not reset or included in new allowance"
+    },
+    "current": {
+      "requests": 267,
+      "reservedUsd": 2.93968281600001,
+      "inputTokens": 910488
+    },
+    "authorizationHistory": [
+      {
+        "approved_at": "2026-10-29T09:46:06.126178+00:00",
+        "fromCapUsd": 0.5,
+        "toCapUsd": 3,
+        "atRequests": 45,
+        "source": "Explicit user approval: Yes, use a $3 cumulative reservation cap. Not a new/reset allowance."
+      }
+    ]
+  },
+  "authorityFileSha256": "8b0e2eda5e87c03767bda3e81efd28151b0dbd9654c5c728e7787c96ef93cd3b",
+  "providerCallsPlanned": 0,
+  "codeSha256": {
+    "docs/CAPTURE-TIMING-PLAN.md": "2dd11dac440b896e60ed8e241f5f1246f3977b6e32c41e8ddf8f4d989ec6c578",
+    "lab/run-capture-timing.ts": "2ec3e8888842aa79e4197a1f4b446904b59c09982fa54fdc67f48692eec40eb0",
+    "lab/capture-timing.ts": "52f4b52bf2cd55944ecd94f4b7e726849ab2717c696a4890fdf9836b012c7fd4",
+    "lab/video-scene.ts": "454531e13e70715181dc8862d056c262eb7ec74e5a005d5e34291c3bfb6b9a55",
+    "lab/reviewed-videos.json": "5ad1db55ccfdd6c15e11646ae40528f4ad44f7b79de8ca033ae989de811244fa",
+    "electron/screen-cache.ts": "68ecea1e7c96ce746e3ed4bcfae247b98bdd4e16c5244f2262cc2e043d3ae3ba",
+    "scripts/prepare-timing-media.mjs": "efe8cab09630bd06bb7f112f27981b7d73c02739a96727fc75508173d39a4a3e",
+    "scripts/test-capture-timing.mjs": "c80d2e3b3bd65d59234c742612d9ab1d26bf9e5db54dc692e5ce2204cbb88cf2",
+    ".github/workflows/windows.yml": "eda567279793076697bd43e64d1700f012f24bbcf06d630876b6c5076f5e49a5",
+    "tests/unit/capture-timing.test.ts": "1b341481e421b7f5913c4fa2801c94cd8c1324df10c3ff6dbc420674f35eb139"
+  },
+  "branch": "validation/native-capture-timing-20261030",
+  "cohort": "One22s continuous capture sequence per existing wide/compact/unbranded layout; same reviewed media20..38/1x, no paid protocol repeat."
+}

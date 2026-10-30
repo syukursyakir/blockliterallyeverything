@@ -1041,3 +1041,22 @@ diff vsbeforecohort empty. A ghwatch status401 was transient, read-onlywatch res
 actualCIneverfailed/reran. Cohort COMPLETE, two earlypositivepasses/one failedsafe
 freshnessbound retained, sevenpaidcalls total/fivemaxleft. Finalcontinuity only;
 nextFREE nativecapture/mediaalignment acrosswholecutrange, no paidreplay/tuning.
+
+
+### Whole-milestone free native capture timing investigation
+
+User asked to complete implementation/review/checks/handoff in one prompt rather
+than repeated goaheads. Read continuity/research/design and Ponytail/runtime guidance.
+Frozen CAPTURE-TIMING-PLAN, zero modelcalls/budgetcopies/release. New secret-free
+workflow capture_timing mode excludes inference/recovery/othercapture/publishing.
+Actual app keptidle/freshprofile, real1280desktop capture/native64resize, RAM-only
+pixels, media-clock/monotonicbrackets and22s/layout continuous playback. Pair every
+capture at200/800/1600ms first-at-or-after +150overshoot; retain missing/censored
+rows. New3purepair unit tests pass, strict runner types/bundle/syntax/workflow parse
+pass; actual CLI pinnedmedia download/no-overwrite and Linuxnative refusal pass.
+Initial strict typing inference error and missed live-jobtiming exclusion fixed
+BEFOREcohort; no paid/native trials yet. Reviewer approved scope/source, requested
+fixed safe failurecodes and elapsedlayoutcoverage, both applied and strict types
+passed. Bytehash frozenauthority267/$2.939682816/910488/history/no lock unchanged.
+Next oneFREE nativecapturecohort, review data and any demonstrated toolingfix
+autonomously, then requiredCI/merge/fullhandoff. No guardtuning on consumedmedia.

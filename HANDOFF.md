@@ -4,6 +4,26 @@ Read AGENTS.md, DESIGN.md, docs/WORKLOG.md, docs/RELIABILITY.md and this file fi
 WORKLOG.md and saved reports retain history; this file supersedes old missing-key,
 permission and budget blockers. Do not repeat completed experiments as new evidence.
 
+## Active milestone — FREE native capture/media timing
+
+User asks whole milestone in ONE prompt without routine goaheads; preserve second-
+agent review after meaningful steps. Branch validation/native-capture-timing-20261030.
+Read CAPTURE-TIMING-PLAN and capture-timing-freeze-2026-10-30.json. New standalone
+secret-free Windows capture_timing job; no modelcalls/allowance/profilebudget input,
+no release/production changes. ActualElectron app remainsidle, newisolatedprofile,
+controlled fullscreen media, real1280desktopcapture/native64resize, pixelsRAMonly.
+One22s continuous sequence per existingwide/compact/unbrandedlayout, Sintel20..38/1x.
+Brackets media/monotonic timing, skipped150msslots; compare everycapture requested
+200/800/1600msgap firstlater +150overshoot, retain censored/missing rows. No exact
+compositor exposure/oldfailedrun cause/accuracy/providerlatency claims. Observedloop
+not everyframeproof. Numericreport only viaartifact/chunkedstandardlogs.
+3newpairunits/strict types/bundle/syntax/workflowparse and actualprep CLI/refusal
+checks passed. Reviewer approved scope/source, safe failurecodes/elapsedcoverage
+refinements applied. Waiting frozen sourcecommit then one nativecohort; do not replay
+old paid trials. Authority267/$2.939682816/910488 original3cap/history bytehash frozen,
+no lock;5max reservations remain and must stayunused during thisFREE milestone.
+Continue autonomously through results/review/supportedfixes/CI/merge/handoff.
+
 ## Latest completed stage — natural-cut media cohort
 
 User authorized representative media work with second-agent checkpoints. Branch
