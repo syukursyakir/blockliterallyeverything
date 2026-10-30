@@ -237,6 +237,7 @@ try {
       expect(proof.requests).toHaveLength(3);expect(proof.requests[2].at).toBeGreaterThanOrEqual(proof.fired[0].at)
       expect((await snapshot()).status.activity.some(a=>a.message==='Checks remain delayed; varying the next recheck time.')).toBe(true)
       await cover.getByRole('button',{name:'Pause & return to app'}).click();await expectPaused()
+      console.log('RETRY_FIXTURE_PROOF='+JSON.stringify(proof))
       return proof
     }finally{
       await api('stop').catch(()=>{})
