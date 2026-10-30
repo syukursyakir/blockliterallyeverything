@@ -14,8 +14,10 @@ Added2actualmainunit regressions in tests/unit/desktop.test.ts, both pass (3oldt
 intentionally filtered), reviewer approved. No productionfix needed. See
 SESSION-CONTROL-CHECKS.md. Initialfalsefailure was mutable unit baseline corrected
 withstructuredClone to matchIPCcopy, not appbug. No provider/native/video job.
-Branch validation/session-control-boundaries-20261030; ordinaryCI expected100unit+
-1skip/9UI/14installed. Complete review/CI/merge/handoff inoneprompt. Authority267/
+Branch validation/session-control-boundaries-20261030/PR13. SourceCI41032668528
+at66f254f PASSED100unit+1skip/9UI/14installed/native smoke/build/installer, release
+skipped. Secondreviewer independentlyverified finalCI/claims/authoritybytehash and
+approved merge. Complete merge/postmergeCI/finalhandoff inoneprompt. Authority267/
 $2.939682816/910488/history/cap3 unchanged5maxleft, no lock/release. No more tests
 beyond these+requiredCI unless failure shows realcause; nextphysicaloperator check.
 

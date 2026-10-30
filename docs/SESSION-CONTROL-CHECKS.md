@@ -29,7 +29,14 @@ Second agent reviewed the two tests, cleanup and results and approved ordinary C
 Production source, provider/rules/thresholds unchanged. Do not add more video tests
 or spend remaining model allowance to repeat these conditions. Original authority
 267/$2.93968281600001/910488tokens/cap3/priorhistory unchanged, five maximum requests
-remain. No release. Final CI/merge status is recorded below when complete.
+remain. No release.
+
+Source WindowsCI41032668528 at66f254fecce6fa271502980c6a71912e70dfe9a3 PASSED
+100unit+1intendedskip,9UI,14installedfixture scenarios, native smoke/build/installer
+build/install; release skipped. Summary windows-ci-run-41032668528.json. The second
+agent independently checked rawCI, fullauthoritybytehash/history/no lock, and final
+claims; approved merge after docs checkpoint. Production unchanged; no more hosted
+tests beyond required postmergeCI are recommended.
 
 The remaining useful deployment step needs an operator on a physical Windows PC;
 PHYSICAL-WINDOWS-VALIDATION.md provides a no-paid-call fixture procedure. Hosted

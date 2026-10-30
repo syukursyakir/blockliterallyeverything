@@ -7,6 +7,16 @@ The next milestone is measured reliability, ahead of UI polish or publishing.
 
 ## Latest evidence — supersedes historical audit below
 
+Read [SESSION-CONTROL-CHECKS.md](SESSION-CONTROL-CHECKS.md): usersteeredawayfrom
+video research, requested remainingusefulchecks first. Two new mocked actualmain
+regressions pass: deadlinewhilecovered releasescover/stayspaused; ignored-abort
+latepositive cannotblock/poisoncache, nextsessionneedsfreshreply. No appbug/fix
+needed. Reviewer approvedtests/claims and sourceCI41032668528 at66f254f:100unit+
+1skip,9UI,14installedfixtures/native smoke/installer, release skipped. Budgetfile
+byte-identical267/history/cap3/no lock, zero provider calls. Nextmerge/mainCI and
+physicaloperator check; no more hosted/video testing loops warranted.
+
+
 Read [CAPTURE-TIMING-RESULTS.md](CAPTURE-TIMING-RESULTS.md): FREE actual native
 capture/media-clock diagnostic completed441captures,1323gaprows=1266measured+57
 censored. Actual medians≈300/900/1650ms (nominal200/800/1600), no dropped missing
