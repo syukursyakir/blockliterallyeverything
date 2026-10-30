@@ -7,6 +7,20 @@ The next milestone is measured reliability, ahead of UI polish or publishing.
 
 ## Latest evidence — supersedes historical audit below
 
+Read [CAPTURE-TIMING-RESULTS.md](CAPTURE-TIMING-RESULTS.md): FREE actual native
+capture/media-clock diagnostic completed441captures,1323gaprows=1266measured+57
+censored. Actual medians≈300/900/1650ms (nominal200/800/1600), no dropped missing
+rows/slots. Larger/unbranded media produce more guardrejections; compact all24
+combinedrejections localdetail, overlappingpairs/notindependentsamples. No new
+productionbug/tuning justified; productionunchanged. Brackets notexactcompositor
+exposure; oldpaid safefailure remainsfailed/specificcutcause unknown. Zero model
+calls, authority267/$2.939682816/910488 filebyte-identical/fullhistory/no lock.
+SourceCI41016981357 at3521899 passed98unit+1skip,9UI,14installedfixtures/native
+smoke/installer, release skipped. Reviewer checked scope/source/rawdata/CRLFhash
+validation/analysis/finalclaims. Physicalprocedure prepared, actualPC unavailable
+inthisworkspace. Nextmerge/postmergeCI/finalhandoff, then physicaloperator check.
+
+
 Read [NATURAL-CUTS-RESULTS.md](NATURAL-CUTS-RESULTS.md): NEW pinned Sintel
 animation20..38s/1x with natural edits. Wide/compact syntheticwatch conditions
 passed3300/3274ms/.93/.94, fullnativecover/recovery, but blocked before firstlisted

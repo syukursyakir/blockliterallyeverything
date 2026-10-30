@@ -1041,3 +1041,50 @@ diff vsbeforecohort empty. A ghwatch status401 was transient, read-onlywatch res
 actualCIneverfailed/reran. Cohort COMPLETE, two earlypositivepasses/one failedsafe
 freshnessbound retained, sevenpaidcalls total/fivemaxleft. Finalcontinuity only;
 nextFREE nativecapture/mediaalignment acrosswholecutrange, no paidreplay/tuning.
+
+
+### Whole-milestone free native capture timing investigation
+
+User asked to complete implementation/review/checks/handoff in one prompt rather
+than repeated goaheads. Read continuity/research/design and Ponytail/runtime guidance.
+Frozen CAPTURE-TIMING-PLAN, zero modelcalls/budgetcopies/release. New secret-free
+workflow capture_timing mode excludes inference/recovery/othercapture/publishing.
+Actual app keptidle/freshprofile, real1280desktop capture/native64resize, RAM-only
+pixels, media-clock/monotonicbrackets and22s/layout continuous playback. Pair every
+capture at200/800/1600ms first-at-or-after +150overshoot; retain missing/censored
+rows. New3purepair unit tests pass, strict runner types/bundle/syntax/workflow parse
+pass; actual CLI pinnedmedia download/no-overwrite and Linuxnative refusal pass.
+Initial strict typing inference error and missed live-jobtiming exclusion fixed
+BEFOREcohort; no paid/native trials yet. Reviewer approved scope/source, requested
+fixed safe failurecodes and elapsedlayoutcoverage, both applied and strict types
+passed. Bytehash frozenauthority267/$2.939682816/910488/history/no lock unchanged.
+Next oneFREE nativecapturecohort, review data and any demonstrated toolingfix
+autonomously, then requiredCI/merge/fullhandoff. No guardtuning on consumedmedia.
+
+
+FREE nativecohort41016095774 at1b698d58 PASSED3x147captures/one22ssequenceeach,
+0provider/0checks/appidle/nativeexited. Actualsourcepath1280->64, media-clock
+brackets,1observedloop each, no skippedslots.1323requested=1266measured+57horizon
+censored,0outoftolerance; actualmedians~300/900/1650 vsnominal200/800/1600. Wide
+discard17/145,58/141,74/136; compact2/145,10/141,12/136(alllocaldetail), unbranded
+45/145,87/141,119/136. These areoverlappingguardcomparisons, notmodelFP/missrates.
+Captureacquisition20.6..72.5ms/fullbrackets27.3..78.9ms;441selfcontrols eligible.
+Collector initiallyfailed bytehash:WindowsCRLF vsfrozenLF; reviewer independently
+verified EACHexactexpectedCRLFhash, approvedexplicitmatch validation/preserveall
+rawhashes, no datamodification/recapture. ChunkreportexactSHAverified/noencoding
+repair. Futuremetadata-only normalizedLFhash added; stricttypespassed. Reviewer
+approvedanalysis: conservativeguard/motion/geometrytradeoff, no newproductionbug
+or justifiedthresholdfix. Originalpaid safefailure remainsfailed; no oldcutcause
+claim. Authority267/fullhistory byte-identical, no lock/paidcalls/release. Reports
+andreviews saved; finalCI/claims/merge/handoff nextinthisprompt, no routinegoahead.
+
+
+FinalsourceCI41016981357 at3521899 PASSED98unit+1intendedskip,9UI,14installed
+fixture scenarios/native smoke/build/installer build/install, release skipped.
+Reviewer independentlyverified rawCI and compact52->54/53->55 clockspan examples
+compatiblewith28.083candidate blacktransition, notexactexposure/oldrunproof.
+Report wordingcorrected: visibility/focus assertedatlayoutstart only, notcontinuously.
+Physicalno-paid-call operatorprocedure prepared usingmatchingCIinstaller/existing
+fixture suite; requiresactualphysicalPC, not available here. Reviewer approvedfinal
+claims/CI/guide and PR12merge afterdocs-onlycheckpoint. No additionalcapture/model
+run; completepostmergeCI/authoritybytecheck/handoff autonomously inthisprompt.
