@@ -1,0 +1,135 @@
+{
+  "scope": "Offline Chromium decoded-media/layout preflight; not native capture/model accuracy.",
+  "completed": true,
+  "providerCalls": 0,
+  "externalRequests": 0,
+  "sourceCommit": "0bf653bebcb0aaac5a82310a0e8ecdc49e305068",
+  "chromium": "154.0.8037.57",
+  "codeSha256": {
+    "lab/preflight-natural-cuts.ts": "49189c52091b5f0d05a1ac350f2182b1983aeddf13044722799eefd1d50eb224",
+    "lab/video-scene.ts": "454531e13e70715181dc8862d056c262eb7ec74e5a005d5e34291c3bfb6b9a55",
+    "scripts/prepare-windows-live.mjs": "b801573f2e274de1b5e0d43e1c51c6ce67df77e1767b006338411ee05ffffb3b",
+    "lab/reviewed-videos.json": "5ad1db55ccfdd6c15e11646ae40528f4ad44f7b79de8ca033ae989de811244fa"
+  },
+  "reports": [
+    {
+      "scene": "sintel-wide-video",
+      "manifestSha256": "a526c785c5475f87520193c65d3f82bebd84f9f17d55ca778f3b2e94d8abfc1d",
+      "posterSha256": "6d6f74b2f1c6c32990bf1703763250b5ebf30aa85e642435c562aa2e4848759f",
+      "mediaSha256": "498d1588f72423cb0460e527a32056d0e3cfc53bd275204511c42ba25f6d46b3",
+      "labels": {
+        "explicit": false,
+        "video": true,
+        "social": false
+      },
+      "videoContext": "youtube",
+      "start": {
+        "time": 20.179046,
+        "frames": 18,
+        "paused": false,
+        "rate": 1,
+        "width": 798.71875
+      },
+      "advancing": {
+        "time": 21.589821,
+        "frames": 52,
+        "paused": false,
+        "rate": 1,
+        "width": 798.71875
+      },
+      "beforeLoop": {
+        "time": 37.732332,
+        "frames": 440,
+        "paused": false,
+        "rate": 1,
+        "width": 798.71875
+      },
+      "looped": {
+        "time": 20.188485,
+        "frames": 466,
+        "paused": false,
+        "rate": 1,
+        "width": 798.71875
+      }
+    },
+    {
+      "scene": "sintel-compact-video",
+      "manifestSha256": "7573221759d767973d77b1cc05d3a718555fadcc8b2ca182edd61550808f1145",
+      "posterSha256": "76d9988de2a6447db8a62651ad75737cdbbf5a18182bf55bbbdb58e20d6227dc",
+      "mediaSha256": "498d1588f72423cb0460e527a32056d0e3cfc53bd275204511c42ba25f6d46b3",
+      "labels": {
+        "explicit": false,
+        "video": true,
+        "social": false
+      },
+      "videoContext": "youtube-compact",
+      "start": {
+        "time": 20.156431,
+        "frames": 18,
+        "paused": false,
+        "rate": 1,
+        "width": 430.078125
+      },
+      "advancing": {
+        "time": 21.549722,
+        "frames": 51,
+        "paused": false,
+        "rate": 1,
+        "width": 430.078125
+      },
+      "beforeLoop": {
+        "time": 37.741612,
+        "frames": 440,
+        "paused": false,
+        "rate": 1,
+        "width": 430.078125
+      },
+      "looped": {
+        "time": 20.156247,
+        "frames": 465,
+        "paused": false,
+        "rate": 1,
+        "width": 430.078125
+      }
+    },
+    {
+      "scene": "sintel-safe-video",
+      "manifestSha256": "8e5fa199d470731173eb243d8f8f406001b7d1f7ffd2f2f3315d17b0ab8a14d1",
+      "posterSha256": "0cb8b6a81d9d52a392e09591489899694d2e5886dc071f32c1e2f096527fed71",
+      "mediaSha256": "498d1588f72423cb0460e527a32056d0e3cfc53bd275204511c42ba25f6d46b3",
+      "labels": {
+        "explicit": false,
+        "video": false,
+        "social": false
+      },
+      "start": {
+        "time": 20.14195,
+        "frames": 18,
+        "paused": false,
+        "rate": 1,
+        "width": 983.03125
+      },
+      "advancing": {
+        "time": 21.532074,
+        "frames": 51,
+        "paused": false,
+        "rate": 1,
+        "width": 983.03125
+      },
+      "beforeLoop": {
+        "time": 37.703685,
+        "frames": 439,
+        "paused": false,
+        "rate": 1,
+        "width": 983.03125
+      },
+      "looped": {
+        "time": 20.149861,
+        "frames": 470,
+        "paused": false,
+        "rate": 1,
+        "width": 983.03125
+      }
+    }
+  ]
+}

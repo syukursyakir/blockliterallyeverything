@@ -64,5 +64,49 @@
     "start": 0.2,
     "end": 4.5,
     "explicit": false
+  },
+  "sintel-wide-video": {
+    "url": "https://media.w3.org/2010/05/sintel/trailer.webm",
+    "sha256": "498d1588f72423cb0460e527a32056d0e3cfc53bd275204511c42ba25f6d46b3",
+    "source": "https://durian.blender.org/sharing/",
+    "adult_provenance": "Nonsexual fantasy animation with clothed characters/dragon; not an adult-content source. Agent reviewed sampled20..38s range before inference.",
+    "rights": {
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "Sintel \u00a9 Blender Foundation | durian.blender.org; logos/trademarks excluded from license."
+    },
+    "start": 20,
+    "end": 38,
+    "explicit": false,
+    "context": "youtube"
+  },
+  "sintel-compact-video": {
+    "url": "https://media.w3.org/2010/05/sintel/trailer.webm",
+    "sha256": "498d1588f72423cb0460e527a32056d0e3cfc53bd275204511c42ba25f6d46b3",
+    "source": "https://durian.blender.org/sharing/",
+    "adult_provenance": "Nonsexual fantasy animation with clothed characters/dragon; not an adult-content source. Agent reviewed sampled20..38s range before inference.",
+    "rights": {
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "Sintel \u00a9 Blender Foundation | durian.blender.org; logos/trademarks excluded from license."
+    },
+    "start": 20,
+    "end": 38,
+    "explicit": false,
+    "context": "youtube-compact"
+  },
+  "sintel-safe-video": {
+    "url": "https://media.w3.org/2010/05/sintel/trailer.webm",
+    "sha256": "498d1588f72423cb0460e527a32056d0e3cfc53bd275204511c42ba25f6d46b3",
+    "source": "https://durian.blender.org/sharing/",
+    "adult_provenance": "Nonsexual fantasy animation with clothed characters/dragon; not an adult-content source. Agent reviewed sampled20..38s range before inference.",
+    "rights": {
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "Sintel \u00a9 Blender Foundation | durian.blender.org; logos/trademarks excluded from license."
+    },
+    "start": 20,
+    "end": 38,
+    "explicit": false
   }
 }

@@ -43,6 +43,9 @@ on:
           - safe-video
           - youtube-video
           - youtube-compact-video
+          - sintel-wide-video
+          - sintel-compact-video
+          - sintel-safe-video
         default: social-synthetic
       positive_at_start:
         description: Explicit single-request positive-at-session-start protocol (no active-session transition claim)

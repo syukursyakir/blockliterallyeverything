@@ -4,7 +4,28 @@ Read AGENTS.md, DESIGN.md, docs/WORKLOG.md, docs/RELIABILITY.md and this file fi
 WORKLOG.md and saved reports retain history; this file supersedes old missing-key,
 permission and budget blockers. Do not repeat completed experiments as new evidence.
 
-## Active continuation — reviewed escalation-only retry mitigation
+## Active continuation — new natural-cut media validation
+
+User approved next real-media/deployment evidence with second-agent checks. Branch
+validation/natural-cuts-20261030; frozen NATURAL-CUTS-PLAN.md, metadata/code authority
+natural-cuts-freeze-2026-10-30.json. NEW Sintel trailer CC BY3.0, pinned3.09MB WebM,
+20..38s natural cuts,1x. Agent/reviewer sampled frames: clothed fantasy/dragon,
+no sexualactivity/nudity; not exhaustive/human annotation. Three conditions share
+one clip/source: widewatch, compactwatch, unbranded explicit-negative. Max3 each9
+new reservations, current authority260/$2.862612480/885390 unchanged12max remain.
+Free offline3layout preparation, decode/advance and actual38->20loop passed;
+no model/external playback requests. Private samples under work/natural-cuts-20261030;
+metadata saved natural-cuts-preflight-2026-10-30.json. Test-only scene data/context
+mapping/provenance/workflow choices; production unchanged atPR10. Reviewer approved
+scope and requested existing encrypted pass-through audit before any paid calls;
+plan amended, private key stays /workspace/work/ble-sustained-2026-10-29 outsideGit.
+Waiting final preflight/source/accounting review before dispatch. No lock/paidcall
+this stage yet. Do not call3cases independent accuracy/realYouTube; positive can
+block before later cuts, no guaranteed15sbranch activation/physicalhardware proof.
+Next sequential native trials with durable authority lock/reconcile after each;
+stop transport/capture/accounting errors, preserve bounded misses/no reruns/release.
+
+## Completed continuation — reviewed escalation-only retry mitigation
 
 User asked autonomous work with a second agent checking meaningfulsteps. Branch
 validation/retry-phase-20261030; reviewers/limits in SESSION-REPLAY-REVIEWS.md.

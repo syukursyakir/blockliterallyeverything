@@ -968,3 +968,22 @@ push only; next representative realmedia/deployment evidence, no simulationtunin
 Final independent reviewer checked main logs/proof and authority/history, approved
 close with docs-only push. HANDOFF now marks merged+passed/completed, reset wording
 clarified for multiple displays. No further source/test/paid work for this stage.
+
+
+### Prospective new natural-cut media integration
+
+User authorized nextwork with reviewer checkpoints. New3.09MB Sintel trailer from
+W3C media, CC BY3.0 Blender Foundation; original bunnyWebM404/directory403 acquired
+nothing, no bypass/model call. Reviewed fullcontactsheet+36sampleframes in20..38s
+range before inference; clothed fantasy/dragon/action, no explicitactivity/nudity
+in samples. Labels frozen; sameclip onegroup, syntheticwatchUI not realservice.
+Reviewer approved3case scope/max9 reservations and requested existing pass-through
+audit BEFORE calls; amended plan for encrypted submitted frames/numeric scores,
+private key outsideGit. Free3layouts verified decodedtime/frame advance and actual
+38->20loop at1x, zero provider/externalplayback requests. Metadata/poster hashes
+saved; localposter raster not identical Windows expected. Typed HTMLVideoElement
+annotation corrected strictcheck; emitted preflightJS exactidentical. Initial tsc
+flags incorrectly used nodenext/CJS; correct ignoreConfig/esnext/bundlerstrict pass.
+Newdata/context preparation, provenancecopy/workflow choices only; production
+unchanged. Current260/$2.862612480/885390, no lock/paidcalls yet. Frozenplan+code/
+authority saved, waiting reviewer finalpreflight/source before sequentialWindows.
