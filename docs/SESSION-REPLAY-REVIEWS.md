@@ -64,7 +64,7 @@ validation. No private screenshots/keys sent to reviewer; same local source/repo
     callback evidence. Approved numeric-only CI log for saved proof; no pixels,
     keys, headers or private profile data. First source CI41003753513 atadcfef1
     passed95unit+1intendedskip,9UI,14installedfixtures, native smoke and installer;
-    release skipped. Final log-only headb688023 CI pending. Narrative reviewed;
+    release skipped. Final log-only headb688023 CI was pending at this checkpoint; superseded by13. Narrative reviewed;
     clarified cycle resets only when no overdue display remains/session resets.
 
 13. Reviewer independently inspected final CI41004046093 log and numeric summary
@@ -73,3 +73,11 @@ validation. No private screenshots/keys sent to reviewer; same local source/repo
     cover/recovery assertions passed. Approved corrected narrative and merge
     after docs-only checkpoint; require clean squash subject/postmergeCI and
     unchanged260authority/no lock. No realmedia/cadence/model claim.
+
+14. Reviewer independently verified postmerge mainCI41004556822 ataaa658d:
+    95unit+1intendedskip,9UI,14installedfixtures;1250ms sameid0 callback fired
+   1259ms after scheduling, thirdfixture request48ms later,3requests/6captures,
+    cover/recovery passed. Retained260/$2.862612480/885390 authority,3cap/prior
+    history intact/no lock verified. Approved close after docs-only final push.
+    Representative real-media/deployment evidence next; no further source/test/
+    paid work needed for this implementation stage. No fewseconds/accuracy claim.

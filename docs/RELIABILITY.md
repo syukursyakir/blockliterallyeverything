@@ -19,6 +19,8 @@ CI41004046093 passed95unit+1skip,9UI,14installedfixtures, native smoke/installer
 release skipped. New installed fixture injects clock/capture/replies, verifies actual
 adjusted timer then native cover/recovery. No new model calls or budget use.
 Current260/$2.862612480/885390 unchanged; original source27 miss remains open.
+PR10 mergedaaa658d; mainCI41004556822 passed the same full sequence, release
+skipped. Numeric proof saved; no new model-accuracy samples.
 Next: representative cut/motion content and deployment conditions, no release.
 
 

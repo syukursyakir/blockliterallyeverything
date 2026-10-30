@@ -15,16 +15,17 @@ Free session replay found fixed-phase rejection loops; actualmain mock confirmed
 19requests/18discards/no matching accepted positive through60s in explicitlock.
 First immediate retry-offset candidate REJECTED: new timingcases up9.2s slower;
 raw negative results preserved. Escalation-only policy fixed before nextholdout:
-ONLY after15s unresolved discards, add250/500/750/1000ms to nominal wait, reset
-onaccept/cache/session. Never force stale acceptance or earlier-than-configured poll.
+ONLY after15s unresolved discards, add250/500/750/1000ms to nominal wait. Reset
+when no overdue display remains or session resets; a healthy screen alone cannot
+reset a stalled screen’s cycle. Never force stale acceptance or earlier-than-configured poll.
 Free dev4blocking no-matches rescued; all previously successful firstmatches same.
 Fresh576parameter timing holdout0activations (healthy invariance only, not rescue
 proof). Activation-rich108deliberate lock/near-lock settings: blocking36/54no-match
 ->0, no slower existing successes; late recovery up30.66s, NOT fewseconds guarantee.
 One audit-counter bug aborted first stress computation; fixed auditonly, incomplete
-marker retained, no policy/threshold/input tuning. All raw/evidence on branch.
+marker retained, no policy/threshold/input tuning. All raw/evidence merged on main.
 
-Reviewed main helper/map reset applied locally.16current-main mocktraces match
+Reviewed main helper/map reset merged.16current-main mocktraces match
 candidate, plus2display accepting/cache screen does not reset stalledscreen cycle.
 13focused tests/build/strict types pass. No comparator/provider/model/rule change.
 Settings copy mentions up-to1extra second whenchecksremaindelayed. New installed
@@ -34,7 +35,16 @@ CI41004046093 PASSED95unit+1intendedskip,9UI,14installedfixtures, native smoke
 and installer build/install; release skipped. Logged1250ms callback fired1252ms
 after scheduling, thirdfixture request48ms later;3requests/6captures. Prior
 sourceadcfef1 CI41003753513 also passed. Saved summaries/results; second reviewer
-approved source/evidence/merge. Merge and postmergeCI next. Actualnative model trials NOT repeated;
+approved source/evidence/merge. PR10 MERGED ataaa658d598e87cdc1616f6f6a99611a41569819c;
+postmerge WindowsCI41004556822 PASSED95unit+1intendedskip,9UI,14installed
+fixtures, native smoke/build/install; release skipped. Same adjusted callback
+proof onmain:1250ms requested,1259ms tofire, thirdfixture request48ms later.
+Results: docs/RETRY-PHASE-RESULTS.md; numeric summary windows-ci-run-41004556822.json.
+Second agent independently verified main evidence and unchanged budget/history.
+This implementation/check stage is complete; final continuity only.
+NEXT: representative real-media cut/motion/deployment evidence rather than more
+simulation tuning or replaying old paid successes. No95%/fewseconds guarantee.
+Actualnative model trials NOT repeated;
 keep remaining paid budget for meaningful representative evidence.
 
 ## Latest30 October checkpoint — free flat-cut probe complete

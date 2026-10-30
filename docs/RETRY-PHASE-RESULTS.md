@@ -89,6 +89,17 @@ CI41003753513 atadcfef1 also passed the same sequence before log-only addition.
 Saved numeric summaries windows-ci-run-41003753513.json and
 windows-ci-run-41004046093.json. Second agent independently reviewed final logs/proof and approved merge.
 
+## Merge and main verification
+
+PR10 merged ataaa658d598e87cdc1616f6f6a99611a41569819c. Postmerge Windows
+CI41004556822 PASSED95unit+1intendedskip,9UI,14installedfixture cases, native
+desktop smoke and installer build/install; release step skipped. The same injected
+fixture logged1250ms scheduled callbackid0, firing1259ms after scheduling; third
+fixture inference48ms later,3requests/6captures, nativecover/recovery passed.
+Numeric summary: windows-ci-run-41004556822.json. These are integration checks,
+not new model-accuracy samples. Retained authority rechecked260requests/885390tokens/
+$2.862612480reservations, original3cap/prior history intact, no lock or paid job.
+
 ## Evidence index and next work
 
 - session-replay-2026-10-30.json; session-main-parity-2026-10-30.json (original current-only15)

@@ -952,3 +952,19 @@ Injected clock/captures/replies do not measure realmedia/native polling cadence.
 Earlier sourceCI41003753513 atadcfef1 also passed same fullpipeline. Reviewer
 approved logging and narrative; final evidence review beforemerge. Authority
 rechecked260/$2.862612480/885390, no lock, no paidcalls/release this continuation.
+
+
+PR10 squashmergedaaa658d598e87cdc1616f6f6a99611a41569819c after second-agent
+independent final source/log/proof approval. Clean squashsubject allows mainCI.
+Postmerge41004556822 PASSED95unit+1intendedskip,9UI,14installedfixture scenarios,
+native smoke/build/installer install; release skipped. Injected1250ms poll callback
+fired1259ms later, thirdfixture request48ms later;3requests/6captures, cover/recovery
+assertions pass. Saved main numeric summary; not realmedia/cadence/model accuracy.
+Retained authority rechecked260/$2.862612480/885390,3cap and priorhistory present,
+no lock; zero paid calls/release in this continuation. No further production change
+or completed-cohort rerun needed. Final reviewer mainevidence check and continuity
+push only; next representative realmedia/deployment evidence, no simulationtuning.
+
+Final independent reviewer checked main logs/proof and authority/history, approved
+close with docs-only push. HANDOFF now marks merged+passed/completed, reset wording
+clarified for multiple displays. No further source/test/paid work for this stage.
