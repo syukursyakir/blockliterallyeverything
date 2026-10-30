@@ -31,7 +31,9 @@ Negative evidence retained in retry-phase-immediate*.json, not hidden by later w
 Only after15s of unresolved screen-change discards (the existing delayed-check
 warning threshold), vary the following wait by250/500/750/1000ms cyclically. Normal
 configured wait remains a lower bound; timeout/errors still pause without retry.
-Accept/cache/session reset clears the cycle. Never accept a discarded/stale result
+When recovery leaves no overdue display flags (or the session resets), the cycle
+resets. A healthy display alone does not clear another display’s delayed state.
+Never accept a discarded/stale result
 or weaken the screenshot comparator. These are deterministic phase shifts, not
 random jitter or a guarantee that every adversarial alignment will break.
 
@@ -78,7 +80,14 @@ clock jump16s BEFORE recording capture age; real timers remain. It requires the
 identified adjusted poll callback to schedule/fire, third fixture inference after
 it, then real native cover/button recovery. Clock/timer restoration occurs in finally
 after pausing. This is timer/IPC/native-cover wiring, NOT real media/provider or
-native polling cadence/latency. Full Windows CI pending; no merge before review.
+native polling cadence/latency. Final source Windows CI41004046093 atb688023
+PASSED95unit+1intendedskip,9UI,14installedfixtures, desktop smoke and installer
+build/install. Release step skipped. Numeric proof: scheduled1250ms callbackid0
+fired1252ms after scheduling; thirdfixture request48ms after firing;3requests/
+6captures. Native cover/button recovery assertions passed. Prior source
+CI41003753513 atadcfef1 also passed the same sequence before log-only addition.
+Saved numeric summaries windows-ci-run-41003753513.json and
+windows-ci-run-41004046093.json. Second agent independently reviewed final logs/proof and approved merge.
 
 ## Evidence index and next work
 

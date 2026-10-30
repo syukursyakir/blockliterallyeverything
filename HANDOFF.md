@@ -29,8 +29,12 @@ candidate, plus2display accepting/cache screen does not reset stalledscreen cycl
 13focused tests/build/strict types pass. No comparator/provider/model/rule change.
 Settings copy mentions up-to1extra second whenchecksremaindelayed. New installed
 Windows fixture uses injected clock/capture/provider reply, actualpoll callback
-and nativecover recovery (NOT realmedia/cadence/accuracy). Pending second-agent
-source review before fullWindowsCI/PRmerge. Actualnative model trials NOT repeated;
+and nativecover recovery (NOT realmedia/cadence/accuracy). PR10 sourceb688023
+CI41004046093 PASSED95unit+1intendedskip,9UI,14installedfixtures, native smoke
+and installer build/install; release skipped. Logged1250ms callback fired1252ms
+after scheduling, thirdfixture request48ms later;3requests/6captures. Prior
+sourceadcfef1 CI41003753513 also passed. Saved summaries/results; second reviewer
+approved source/evidence/merge. Merge and postmergeCI next. Actualnative model trials NOT repeated;
 keep remaining paid budget for meaningful representative evidence.
 
 ## Latest30 October checkpoint — free flat-cut probe complete

@@ -58,3 +58,18 @@ validation. No private screenshots/keys sent to reviewer; same local source/repo
     traces plus2display fixture: healthyaccept/cache cannot reset stalledscreen's
     3250/3500/3750/4000cycle.13focused tests/build passed. Installedclock/capture/
     reply fixture authored for subsequent Windows review/CI, no paid calls.
+
+12. Reviewer checked installed fixture cleanup/restoration, numeric display count,
+    capture-clock injection before capture-age recording and identified timer
+    callback evidence. Approved numeric-only CI log for saved proof; no pixels,
+    keys, headers or private profile data. First source CI41003753513 atadcfef1
+    passed95unit+1intendedskip,9UI,14installedfixtures, native smoke and installer;
+    release skipped. Final log-only headb688023 CI pending. Narrative reviewed;
+    clarified cycle resets only when no overdue display remains/session resets.
+
+13. Reviewer independently inspected final CI41004046093 log and numeric summary
+    atb688023:95unit+1skip,9UI,14installedfixtures,1250ms timerid0 fired1252ms
+    after schedule, thirdfixture inference48ms later,3requests/6captures and
+    cover/recovery assertions passed. Approved corrected narrative and merge
+    after docs-only checkpoint; require clean squash subject/postmergeCI and
+    unchanged260authority/no lock. No realmedia/cadence/model claim.

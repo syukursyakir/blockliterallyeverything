@@ -942,3 +942,13 @@ main mocked traces+2display cycle test pass;13focused tests/build. Sourceclock
 installedfixture authored; actualtimer/cover/recovery but syntheticcaptures/replies/
 clock, no realmedia/provider proof. Waitingreview beforeWindowsCI. No paidcalls,
 authority260/history unchanged/no lock/release. Comparator/model/rules unchanged.
+
+
+Final source CI41004046093 atb688023 passed95unit+1intendedskip,9UI,14installed
+fixtures, native desktop smoke and installer build/install; release skipped.
+Numeric-only retry fixture proof:1250ms scheduleid0 fired1252ms after scheduling,
+thirdfixture request48ms later;3requests/6captures, real cover/button recovery.
+Injected clock/captures/replies do not measure realmedia/native polling cadence.
+Earlier sourceCI41003753513 atadcfef1 also passed same fullpipeline. Reviewer
+approved logging and narrative; final evidence review beforemerge. Authority
+rechecked260/$2.862612480/885390, no lock, no paidcalls/release this continuation.
