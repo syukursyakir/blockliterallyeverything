@@ -1,0 +1,511 @@
+{
+  "development-block": {
+    "cases": 288,
+    "currentNoMatch": 4,
+    "candidateNoMatch": 0,
+    "newNoMatch": [],
+    "rescued": [
+      "periodic-2000-500-0.25-1000-static-block",
+      "periodic-2000-500-0.25-1000-moving-block",
+      "periodic-2000-1500-0.5-1000-static-block",
+      "periodic-2000-1500-0.5-1000-moving-block"
+    ],
+    "slowerCount": 26,
+    "maxSlowerMs": 250,
+    "maxCandidateOnsetMatchMs": 8200,
+    "requestDeltas": {
+      "-13": 4,
+      "0": 284
+    },
+    "slower": [
+      [
+        250,
+        "periodic-5000-500-0.25-1000-static-block"
+      ],
+      [
+        250,
+        "periodic-5000-500-0.25-1000-moving-block"
+      ],
+      [
+        250,
+        "periodic-5000-1500-0.25-1000-static-block"
+      ],
+      [
+        250,
+        "periodic-5000-1500-0.25-1000-moving-block"
+      ],
+      [
+        250,
+        "periodic-2000-500-0.5-300-static-block"
+      ],
+      [
+        250,
+        "periodic-2000-500-0.5-300-moving-block"
+      ],
+      [
+        250,
+        "periodic-2000-500-0.5-100-static-block"
+      ],
+      [
+        250,
+        "periodic-2000-500-0.5-100-moving-block"
+      ],
+      [
+        250,
+        "periodic-2000-1500-0.5-300-static-block"
+      ],
+      [
+        250,
+        "periodic-2000-1500-0.5-300-moving-block"
+      ],
+      [
+        250,
+        "periodic-2000-1500-0.5-100-static-block"
+      ],
+      [
+        250,
+        "periodic-2000-1500-0.5-100-moving-block"
+      ],
+      [
+        250,
+        "periodic-2000-100-0.5-100-static-block"
+      ],
+      [
+        250,
+        "periodic-2000-100-0.5-100-moving-block"
+      ],
+      [
+        250,
+        "drift-11000-500-0.25-300-static-block"
+      ],
+      [
+        250,
+        "drift-11000-500-0.25-300-moving-block"
+      ],
+      [
+        250,
+        "drift-11000-500-0.25-100-static-block"
+      ],
+      [
+        250,
+        "drift-11000-500-0.25-100-moving-block"
+      ],
+      [
+        250,
+        "drift-11000-1500-0.25-300-static-block"
+      ],
+      [
+        250,
+        "drift-11000-1500-0.25-300-moving-block"
+      ],
+      [
+        250,
+        "drift-11000-1500-0.25-1000-static-block"
+      ],
+      [
+        250,
+        "drift-11000-1500-0.25-1000-moving-block"
+      ],
+      [
+        250,
+        "drift-11000-1500-0.25-100-static-block"
+      ],
+      [
+        250,
+        "drift-11000-1500-0.25-100-moving-block"
+      ],
+      [
+        250,
+        "drift-11000-100-0.25-100-static-block"
+      ],
+      [
+        250,
+        "drift-11000-100-0.25-100-moving-block"
+      ]
+    ]
+  },
+  "development-observe": {
+    "cases": 288,
+    "currentNoMatch": 4,
+    "candidateNoMatch": 0,
+    "newNoMatch": [],
+    "rescued": [
+      "periodic-2000-500-0.25-1000-static-observe",
+      "periodic-2000-500-0.25-1000-moving-observe",
+      "periodic-2000-1500-0.5-1000-static-observe",
+      "periodic-2000-1500-0.5-1000-moving-observe"
+    ],
+    "slowerCount": 26,
+    "maxSlowerMs": 250,
+    "maxCandidateOnsetMatchMs": 8200,
+    "requestDeltas": {
+      "-12": 2,
+      "-11": 1,
+      "-10": 1,
+      "-8": 1,
+      "-6": 1,
+      "-5": 1,
+      "-3": 2,
+      "-2": 6,
+      "-1": 18,
+      "0": 243,
+      "1": 3,
+      "2": 7,
+      "3": 1,
+      "5": 1
+    },
+    "slower": [
+      [
+        250,
+        "periodic-5000-500-0.25-1000-static-observe"
+      ],
+      [
+        250,
+        "periodic-5000-500-0.25-1000-moving-observe"
+      ],
+      [
+        250,
+        "periodic-5000-1500-0.25-1000-static-observe"
+      ],
+      [
+        250,
+        "periodic-5000-1500-0.25-1000-moving-observe"
+      ],
+      [
+        250,
+        "periodic-2000-500-0.5-300-static-observe"
+      ],
+      [
+        250,
+        "periodic-2000-500-0.5-300-moving-observe"
+      ],
+      [
+        250,
+        "periodic-2000-500-0.5-100-static-observe"
+      ],
+      [
+        250,
+        "periodic-2000-500-0.5-100-moving-observe"
+      ],
+      [
+        250,
+        "periodic-2000-1500-0.5-300-static-observe"
+      ],
+      [
+        250,
+        "periodic-2000-1500-0.5-300-moving-observe"
+      ],
+      [
+        250,
+        "periodic-2000-1500-0.5-100-static-observe"
+      ],
+      [
+        250,
+        "periodic-2000-1500-0.5-100-moving-observe"
+      ],
+      [
+        250,
+        "periodic-2000-100-0.5-100-static-observe"
+      ],
+      [
+        250,
+        "periodic-2000-100-0.5-100-moving-observe"
+      ],
+      [
+        250,
+        "drift-11000-500-0.25-300-static-observe"
+      ],
+      [
+        250,
+        "drift-11000-500-0.25-300-moving-observe"
+      ],
+      [
+        250,
+        "drift-11000-500-0.25-100-static-observe"
+      ],
+      [
+        250,
+        "drift-11000-500-0.25-100-moving-observe"
+      ],
+      [
+        250,
+        "drift-11000-1500-0.25-300-static-observe"
+      ],
+      [
+        250,
+        "drift-11000-1500-0.25-300-moving-observe"
+      ],
+      [
+        250,
+        "drift-11000-1500-0.25-1000-static-observe"
+      ],
+      [
+        250,
+        "drift-11000-1500-0.25-1000-moving-observe"
+      ],
+      [
+        250,
+        "drift-11000-1500-0.25-100-static-observe"
+      ],
+      [
+        250,
+        "drift-11000-1500-0.25-100-moving-observe"
+      ],
+      [
+        250,
+        "drift-11000-100-0.25-100-static-observe"
+      ],
+      [
+        250,
+        "drift-11000-100-0.25-100-moving-observe"
+      ]
+    ]
+  },
+  "timing-holdout-block": {
+    "cases": 216,
+    "currentNoMatch": 0,
+    "candidateNoMatch": 0,
+    "newNoMatch": [],
+    "rescued": [],
+    "slowerCount": 20,
+    "maxSlowerMs": 9200,
+    "maxCandidateOnsetMatchMs": 16850,
+    "requestDeltas": {
+      "-1": 4,
+      "0": 204,
+      "1": 4,
+      "2": 4
+    },
+    "slower": [
+      [
+        9200,
+        "holdout-4100-900-0.1-850-static-block"
+      ],
+      [
+        9200,
+        "holdout-4100-900-0.1-850-moving-block"
+      ],
+      [
+        9200,
+        "holdout-4100-450-0.1-850-static-block"
+      ],
+      [
+        9200,
+        "holdout-4100-450-0.1-850-moving-block"
+      ],
+      [
+        5350,
+        "holdout-1700-900-0.85-850-static-block"
+      ],
+      [
+        5350,
+        "holdout-1700-900-0.85-850-moving-block"
+      ],
+      [
+        4600,
+        "holdout-4100-150-0.1-850-static-block"
+      ],
+      [
+        4600,
+        "holdout-4100-150-0.1-850-moving-block"
+      ],
+      [
+        250,
+        "holdout-8300-900-0.6-850-static-block"
+      ],
+      [
+        250,
+        "holdout-8300-900-0.6-850-moving-block"
+      ],
+      [
+        250,
+        "holdout-8300-900-0.6-550-static-block"
+      ],
+      [
+        250,
+        "holdout-8300-900-0.6-550-moving-block"
+      ],
+      [
+        250,
+        "holdout-8300-450-0.6-550-static-block"
+      ],
+      [
+        250,
+        "holdout-8300-450-0.6-550-moving-block"
+      ],
+      [
+        250,
+        "holdout-1700-900-0.1-850-static-block"
+      ],
+      [
+        250,
+        "holdout-1700-900-0.1-850-moving-block"
+      ],
+      [
+        250,
+        "holdout-1700-450-0.85-850-static-block"
+      ],
+      [
+        250,
+        "holdout-1700-450-0.85-850-moving-block"
+      ],
+      [
+        250,
+        "holdout-1700-150-0.85-850-static-block"
+      ],
+      [
+        250,
+        "holdout-1700-150-0.85-850-moving-block"
+      ]
+    ]
+  },
+  "timing-holdout-observe": {
+    "cases": 216,
+    "currentNoMatch": 0,
+    "candidateNoMatch": 0,
+    "newNoMatch": [],
+    "rescued": [],
+    "slowerCount": 20,
+    "maxSlowerMs": 9200,
+    "maxCandidateOnsetMatchMs": 16850,
+    "requestDeltas": {
+      "-4": 2,
+      "-3": 3,
+      "-2": 3,
+      "-1": 9,
+      "0": 179,
+      "1": 7,
+      "2": 8,
+      "3": 3,
+      "4": 1,
+      "5": 1
+    },
+    "slower": [
+      [
+        9200,
+        "holdout-4100-900-0.1-850-static-observe"
+      ],
+      [
+        9200,
+        "holdout-4100-900-0.1-850-moving-observe"
+      ],
+      [
+        9200,
+        "holdout-4100-450-0.1-850-static-observe"
+      ],
+      [
+        9200,
+        "holdout-4100-450-0.1-850-moving-observe"
+      ],
+      [
+        5350,
+        "holdout-1700-900-0.85-850-static-observe"
+      ],
+      [
+        5350,
+        "holdout-1700-900-0.85-850-moving-observe"
+      ],
+      [
+        4600,
+        "holdout-4100-150-0.1-850-static-observe"
+      ],
+      [
+        4600,
+        "holdout-4100-150-0.1-850-moving-observe"
+      ],
+      [
+        250,
+        "holdout-8300-900-0.6-850-static-observe"
+      ],
+      [
+        250,
+        "holdout-8300-900-0.6-850-moving-observe"
+      ],
+      [
+        250,
+        "holdout-8300-900-0.6-550-static-observe"
+      ],
+      [
+        250,
+        "holdout-8300-900-0.6-550-moving-observe"
+      ],
+      [
+        250,
+        "holdout-8300-450-0.6-550-static-observe"
+      ],
+      [
+        250,
+        "holdout-8300-450-0.6-550-moving-observe"
+      ],
+      [
+        250,
+        "holdout-1700-900-0.1-850-static-observe"
+      ],
+      [
+        250,
+        "holdout-1700-900-0.1-850-moving-observe"
+      ],
+      [
+        250,
+        "holdout-1700-450-0.85-850-static-observe"
+      ],
+      [
+        250,
+        "holdout-1700-450-0.85-850-moving-observe"
+      ],
+      [
+        250,
+        "holdout-1700-150-0.85-850-static-observe"
+      ],
+      [
+        250,
+        "holdout-1700-150-0.85-850-moving-observe"
+      ]
+    ]
+  },
+  "control-block": {
+    "cases": 8,
+    "currentNoMatch": 5,
+    "candidateNoMatch": 4,
+    "newNoMatch": [],
+    "rescued": [
+      "explicit-phase-lock"
+    ],
+    "slowerCount": 1,
+    "maxSlowerMs": 250,
+    "maxCandidateOnsetMatchMs": 12949,
+    "requestDeltas": {
+      "-16": 1,
+      "0": 7
+    },
+    "slower": [
+      [
+        250,
+        "settled-cut-block"
+      ]
+    ]
+  },
+  "control-observe": {
+    "cases": 7,
+    "currentNoMatch": 2,
+    "candidateNoMatch": 2,
+    "newNoMatch": [],
+    "rescued": [],
+    "slowerCount": 2,
+    "maxSlowerMs": 250,
+    "maxCandidateOnsetMatchMs": 6800,
+    "requestDeltas": {
+      "0": 7
+    },
+    "slower": [
+      [
+        250,
+        "settled-cut-observe"
+      ],
+      [
+        250,
+        "drift-observe"
+      ]
+    ]
+  }
+}

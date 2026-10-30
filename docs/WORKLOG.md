@@ -908,3 +908,47 @@ jobs, no old cohorts replayed. Ledger260/$2.862612480/885390 unchanged, history
 retained, no lock. Production/CI unchanged; no release. Save plan/raw/results/runner;
 next free session replay with realistic cuts/poll-response phases before adjusting
 heuristic. Flat-cut delays quantified without claiming their natural incidence.
+
+
+### Reviewer-driven session replay and rejected retry candidate
+
+User requested autonomous continuation with another agent after each meaningful
+step. Reviewer checked plan/source/tests/results; found cancelled session during
+final pollwait could be missed, fixed independent stop handling before fullgrid;
+added staticpositivecache control.5new focused units + actualmain mocked15trace
+parity pass (7tests with existing lifecycle). Focused parity repeated only to export
+artifact, not independent evidence.1152grid versioncases+30controls executedonce.
+Current4/288blocking no-match (two periodic schedules duplicated hashmodes); drift
+0/72 no-match. Explicit lock actualmain19requests/18discards, onlyinitialneutral;
+59s censored observationgap not native outage. Cache fresh30.3s vs observation3.3s.
+Froze one immediate retryoffset hypothesis;2046versioncases including disjointtiming
+holdout. Knownlocks cleared, but20/216holdoutblocking slower,max9.2s extra/onset16.85s,
+requestcounts increase. Reviewer independently REJECTED promotion. Saved both bad
+and good outcomes, no production/paid changes. Separately frozen15s escalation-only
+policy tied to existingwarning, new timingholdout defined beforeexecution;7focused
+units/types pass, waiting reviewer sourceapproval. Oldholdout nowdevelopment.
+Authority260/$2.862612480/885390/history untouched/no lock/release/native job.
+
+
+Escalation-only fresh576settings showed0activation, so healthy invariance only,
+not latebranch rescue proof. Deterministic metadata reconstruction verified every
+recorded metric;10dev activations=>9requests/1cache shift;1explicitcontrol. Not new
+independent experiment. Reviewer requested prospectiveactivation-rich family216
+versions; initial computation aborted audit reset3250!=3500 (policyresetcorrect).
+Audit-only phasecounter fix reviewed; originalincomplete/zerooutput preserved,
+verifiednewoutput completed. Blocking36/54no-match->0, no slower earliermatches;
+late recovery up30.66s. Reviewers approved helper/main mapreset beforeapply;16actual
+main mocked traces+2display cycle test pass;13focused tests/build. Sourceclock
+installedfixture authored; actualtimer/cover/recovery but syntheticcaptures/replies/
+clock, no realmedia/provider proof. Waitingreview beforeWindowsCI. No paidcalls,
+authority260/history unchanged/no lock/release. Comparator/model/rules unchanged.
+
+
+Final source CI41004046093 atb688023 passed95unit+1intendedskip,9UI,14installed
+fixtures, native desktop smoke and installer build/install; release skipped.
+Numeric-only retry fixture proof:1250ms scheduleid0 fired1252ms after scheduling,
+thirdfixture request48ms later;3requests/6captures, real cover/button recovery.
+Injected clock/captures/replies do not measure realmedia/native polling cadence.
+Earlier sourceCI41003753513 atadcfef1 also passed same fullpipeline. Reviewer
+approved logging and narrative; final evidence review beforemerge. Authority
+rechecked260/$2.862612480/885390, no lock, no paidcalls/release this continuation.

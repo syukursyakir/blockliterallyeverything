@@ -1,0 +1,1 @@
+{"completed":false,"reason":"Audit-only reconstructed phase index failed to reset on acceptance/cache; policy did reset. Assertion3250!=3500 stopped before final report. Original zero-byte report retained; no model calls. Correct audit without policy/input changes."}

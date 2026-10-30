@@ -7,6 +7,21 @@ The next milestone is measured reliability, ahead of UI polish or publishing.
 
 ## Latest evidence — supersedes historical audit below
 
+Read [RETRY-PHASE-RESULTS.md](RETRY-PHASE-RESULTS.md): free synthetic session
+replay reproduced fixed-phase freshness rejection loops. Immediate offsets were
+rejected for up9.2s extra delay; only after15s unresolved changes, reviewed policy
+adds250/500/750/1000ms cyclically. Freshness/model unchanged. Fresh timing holdout
+had0activations (healthy invariance only); separately frozen activation-rich
+blocking fixtures36/54no-match->0, no slower prior successes, recovery up30.66s.
+This is fallback wiring/synthetic recovery, not real-video or fewsecond proof.
+16actual-main mocked traces plus2display control passed. Sourceb688023 Windows
+CI41004046093 passed95unit+1skip,9UI,14installedfixtures, native smoke/installer;
+release skipped. New installed fixture injects clock/capture/replies, verifies actual
+adjusted timer then native cover/recovery. No new model calls or budget use.
+Current260/$2.862612480/885390 unchanged; original source27 miss remains open.
+Next: representative cut/motion content and deployment conditions, no release.
+
+
 Read [FLAT-CUT-RESULTS.md](FLAT-CUT-RESULTS.md): FREE offline comparator probe,
 no production change/model calls. New guard adds12/18compact-watch flat-cut rechecks,
 12/18unbranded-player rechecks and3/5safe-page-transition rechecks. These are NOT

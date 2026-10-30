@@ -1,0 +1,1567 @@
+{
+  "scope": "Actual main.ts with escalation policy, mocked Electron/capture/provider/finance filesystem and fake time; no native/model accuracy.",
+  "providerCalls": 0,
+  "results": [
+    {
+      "id": "static-neutral-cache",
+      "parityPassed": true,
+      "requests": 2,
+      "accepted": 2,
+      "cacheHits": 18,
+      "expectedEnd": "horizon",
+      "actualTerminal": null,
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 300,
+          "kind": "accepted"
+        },
+        {
+          "at": 3300,
+          "kind": "cache"
+        },
+        {
+          "at": 6300,
+          "kind": "cache"
+        },
+        {
+          "at": 9300,
+          "kind": "cache"
+        },
+        {
+          "at": 12300,
+          "kind": "cache"
+        },
+        {
+          "at": 15300,
+          "kind": "cache"
+        },
+        {
+          "at": 18300,
+          "kind": "cache"
+        },
+        {
+          "at": 21300,
+          "kind": "cache"
+        },
+        {
+          "at": 24300,
+          "kind": "cache"
+        },
+        {
+          "at": 27300,
+          "kind": "cache"
+        },
+        {
+          "at": 30300,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 30600,
+          "kind": "accepted"
+        },
+        {
+          "at": 33600,
+          "kind": "cache"
+        },
+        {
+          "at": 36600,
+          "kind": "cache"
+        },
+        {
+          "at": 39600,
+          "kind": "cache"
+        },
+        {
+          "at": 42600,
+          "kind": "cache"
+        },
+        {
+          "at": 45600,
+          "kind": "cache"
+        },
+        {
+          "at": 48600,
+          "kind": "cache"
+        },
+        {
+          "at": 51600,
+          "kind": "cache"
+        },
+        {
+          "at": 54600,
+          "kind": "cache"
+        },
+        {
+          "at": 57600,
+          "kind": "cache"
+        }
+      ]
+    },
+    {
+      "id": "static-positive-cache",
+      "parityPassed": true,
+      "requests": 3,
+      "accepted": 3,
+      "cacheHits": 17,
+      "expectedEnd": "horizon",
+      "actualTerminal": null,
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 300,
+          "kind": "accepted"
+        },
+        {
+          "at": 3300,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 3600,
+          "kind": "accepted"
+        },
+        {
+          "at": 6600,
+          "kind": "cache"
+        },
+        {
+          "at": 9600,
+          "kind": "cache"
+        },
+        {
+          "at": 12600,
+          "kind": "cache"
+        },
+        {
+          "at": 15600,
+          "kind": "cache"
+        },
+        {
+          "at": 18600,
+          "kind": "cache"
+        },
+        {
+          "at": 21600,
+          "kind": "cache"
+        },
+        {
+          "at": 24600,
+          "kind": "cache"
+        },
+        {
+          "at": 27600,
+          "kind": "cache"
+        },
+        {
+          "at": 30600,
+          "kind": "cache"
+        },
+        {
+          "at": 33600,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 33900,
+          "kind": "accepted"
+        },
+        {
+          "at": 36900,
+          "kind": "cache"
+        },
+        {
+          "at": 39900,
+          "kind": "cache"
+        },
+        {
+          "at": 42900,
+          "kind": "cache"
+        },
+        {
+          "at": 45900,
+          "kind": "cache"
+        },
+        {
+          "at": 48900,
+          "kind": "cache"
+        },
+        {
+          "at": 51900,
+          "kind": "cache"
+        },
+        {
+          "at": 54900,
+          "kind": "cache"
+        },
+        {
+          "at": 57900,
+          "kind": "cache"
+        }
+      ]
+    },
+    {
+      "id": "moving-positive-block",
+      "parityPassed": true,
+      "requests": 2,
+      "accepted": 2,
+      "cacheHits": 0,
+      "expectedEnd": "blocked-positive",
+      "actualTerminal": {
+        "at": 3600,
+        "mode": "blocked"
+      },
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 300,
+          "kind": "accepted"
+        },
+        {
+          "at": 3300,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 3600,
+          "kind": "accepted"
+        }
+      ]
+    },
+    {
+      "id": "settled-cut-block",
+      "parityPassed": true,
+      "requests": 3,
+      "accepted": 2,
+      "cacheHits": 0,
+      "expectedEnd": "blocked-positive",
+      "actualTerminal": {
+        "at": 6900,
+        "mode": "blocked"
+      },
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 300,
+          "kind": "accepted"
+        },
+        {
+          "at": 3300,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 3600,
+          "kind": "discard"
+        },
+        {
+          "at": 6600,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 6900,
+          "kind": "accepted"
+        }
+      ]
+    },
+    {
+      "id": "settled-cut-observe",
+      "parityPassed": true,
+      "requests": 19,
+      "accepted": 18,
+      "cacheHits": 0,
+      "expectedEnd": "horizon",
+      "actualTerminal": null,
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 300,
+          "kind": "accepted"
+        },
+        {
+          "at": 3300,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 3600,
+          "kind": "discard"
+        },
+        {
+          "at": 6600,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 6900,
+          "kind": "accepted"
+        },
+        {
+          "at": 9900,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 10200,
+          "kind": "accepted"
+        },
+        {
+          "at": 13200,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 13500,
+          "kind": "accepted"
+        },
+        {
+          "at": 16500,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 16800,
+          "kind": "accepted"
+        },
+        {
+          "at": 19800,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 20100,
+          "kind": "accepted"
+        },
+        {
+          "at": 23100,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 23400,
+          "kind": "accepted"
+        },
+        {
+          "at": 26400,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 26700,
+          "kind": "accepted"
+        },
+        {
+          "at": 29700,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 30000,
+          "kind": "accepted"
+        },
+        {
+          "at": 33000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 33300,
+          "kind": "accepted"
+        },
+        {
+          "at": 36300,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 36600,
+          "kind": "accepted"
+        },
+        {
+          "at": 39600,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 39900,
+          "kind": "accepted"
+        },
+        {
+          "at": 42900,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 43200,
+          "kind": "accepted"
+        },
+        {
+          "at": 46200,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 46500,
+          "kind": "accepted"
+        },
+        {
+          "at": 49500,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 49800,
+          "kind": "accepted"
+        },
+        {
+          "at": 52800,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 53100,
+          "kind": "accepted"
+        },
+        {
+          "at": 56100,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 56400,
+          "kind": "accepted"
+        },
+        {
+          "at": 59400,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 59700,
+          "kind": "accepted"
+        }
+      ]
+    },
+    {
+      "id": "periodic-stress-observe",
+      "parityPassed": true,
+      "requests": 16,
+      "accepted": 15,
+      "cacheHits": 0,
+      "expectedEnd": "horizon",
+      "actualTerminal": null,
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 1000,
+          "kind": "accepted"
+        },
+        {
+          "at": 4000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 5000,
+          "kind": "accepted"
+        },
+        {
+          "at": 8000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 9000,
+          "kind": "accepted"
+        },
+        {
+          "at": 12000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 13000,
+          "kind": "accepted"
+        },
+        {
+          "at": 16000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 17000,
+          "kind": "accepted"
+        },
+        {
+          "at": 20000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 21000,
+          "kind": "accepted"
+        },
+        {
+          "at": 24000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 25000,
+          "kind": "accepted"
+        },
+        {
+          "at": 28000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 29000,
+          "kind": "accepted"
+        },
+        {
+          "at": 32000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 33000,
+          "kind": "accepted"
+        },
+        {
+          "at": 36000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 37000,
+          "kind": "accepted"
+        },
+        {
+          "at": 40000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 41000,
+          "kind": "accepted"
+        },
+        {
+          "at": 44000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 45000,
+          "kind": "accepted"
+        },
+        {
+          "at": 48000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 49000,
+          "kind": "accepted"
+        },
+        {
+          "at": 52000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 53000,
+          "kind": "accepted"
+        },
+        {
+          "at": 56000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 57000,
+          "kind": "accepted"
+        },
+        {
+          "at": 60000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        }
+      ]
+    },
+    {
+      "id": "drift-observe",
+      "parityPassed": true,
+      "requests": 19,
+      "accepted": 17,
+      "cacheHits": 0,
+      "expectedEnd": "horizon",
+      "actualTerminal": null,
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 300,
+          "kind": "accepted"
+        },
+        {
+          "at": 3300,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 3600,
+          "kind": "discard"
+        },
+        {
+          "at": 6600,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 6900,
+          "kind": "accepted"
+        },
+        {
+          "at": 9900,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 10200,
+          "kind": "accepted"
+        },
+        {
+          "at": 13200,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 13500,
+          "kind": "accepted"
+        },
+        {
+          "at": 16500,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 16800,
+          "kind": "accepted"
+        },
+        {
+          "at": 19800,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 20100,
+          "kind": "accepted"
+        },
+        {
+          "at": 23100,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 23400,
+          "kind": "accepted"
+        },
+        {
+          "at": 26400,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 26700,
+          "kind": "accepted"
+        },
+        {
+          "at": 29700,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 30000,
+          "kind": "accepted"
+        },
+        {
+          "at": 33000,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 33300,
+          "kind": "accepted"
+        },
+        {
+          "at": 36300,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 36600,
+          "kind": "discard"
+        },
+        {
+          "at": 39600,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 39900,
+          "kind": "accepted"
+        },
+        {
+          "at": 42900,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 43200,
+          "kind": "accepted"
+        },
+        {
+          "at": 46200,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 46500,
+          "kind": "accepted"
+        },
+        {
+          "at": 49500,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 49800,
+          "kind": "accepted"
+        },
+        {
+          "at": 52800,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 53100,
+          "kind": "accepted"
+        },
+        {
+          "at": 56100,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 56400,
+          "kind": "accepted"
+        },
+        {
+          "at": 59400,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 59700,
+          "kind": "accepted"
+        }
+      ]
+    },
+    {
+      "id": "fresh-switch-block",
+      "parityPassed": true,
+      "requests": 4,
+      "accepted": 3,
+      "cacheHits": 16,
+      "expectedEnd": "horizon",
+      "actualTerminal": null,
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 300,
+          "kind": "accepted"
+        },
+        {
+          "at": 3300,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 3600,
+          "kind": "discard"
+        },
+        {
+          "at": 6600,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 6900,
+          "kind": "accepted"
+        },
+        {
+          "at": 9900,
+          "kind": "cache"
+        },
+        {
+          "at": 12900,
+          "kind": "cache"
+        },
+        {
+          "at": 15900,
+          "kind": "cache"
+        },
+        {
+          "at": 18900,
+          "kind": "cache"
+        },
+        {
+          "at": 21900,
+          "kind": "cache"
+        },
+        {
+          "at": 24900,
+          "kind": "cache"
+        },
+        {
+          "at": 27900,
+          "kind": "cache"
+        },
+        {
+          "at": 30900,
+          "kind": "cache"
+        },
+        {
+          "at": 33900,
+          "kind": "cache"
+        },
+        {
+          "at": 36900,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 37200,
+          "kind": "accepted"
+        },
+        {
+          "at": 40200,
+          "kind": "cache"
+        },
+        {
+          "at": 43200,
+          "kind": "cache"
+        },
+        {
+          "at": 46200,
+          "kind": "cache"
+        },
+        {
+          "at": 49200,
+          "kind": "cache"
+        },
+        {
+          "at": 52200,
+          "kind": "cache"
+        },
+        {
+          "at": 55200,
+          "kind": "cache"
+        },
+        {
+          "at": 58200,
+          "kind": "cache"
+        }
+      ]
+    },
+    {
+      "id": "cached-return-observe",
+      "parityPassed": true,
+      "requests": 3,
+      "accepted": 2,
+      "cacheHits": 17,
+      "expectedEnd": "horizon",
+      "actualTerminal": null,
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 300,
+          "kind": "accepted"
+        },
+        {
+          "at": 3300,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 3600,
+          "kind": "discard"
+        },
+        {
+          "at": 6600,
+          "kind": "cache"
+        },
+        {
+          "at": 9600,
+          "kind": "cache"
+        },
+        {
+          "at": 12600,
+          "kind": "cache"
+        },
+        {
+          "at": 15600,
+          "kind": "cache"
+        },
+        {
+          "at": 18600,
+          "kind": "cache"
+        },
+        {
+          "at": 21600,
+          "kind": "cache"
+        },
+        {
+          "at": 24600,
+          "kind": "cache"
+        },
+        {
+          "at": 27600,
+          "kind": "cache"
+        },
+        {
+          "at": 30600,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 30900,
+          "kind": "accepted"
+        },
+        {
+          "at": 33900,
+          "kind": "cache"
+        },
+        {
+          "at": 36900,
+          "kind": "cache"
+        },
+        {
+          "at": 39900,
+          "kind": "cache"
+        },
+        {
+          "at": 42900,
+          "kind": "cache"
+        },
+        {
+          "at": 45900,
+          "kind": "cache"
+        },
+        {
+          "at": 48900,
+          "kind": "cache"
+        },
+        {
+          "at": 51900,
+          "kind": "cache"
+        },
+        {
+          "at": 54900,
+          "kind": "cache"
+        },
+        {
+          "at": 57900,
+          "kind": "cache"
+        }
+      ]
+    },
+    {
+      "id": "brief-between-polls",
+      "parityPassed": true,
+      "requests": 2,
+      "accepted": 2,
+      "cacheHits": 18,
+      "expectedEnd": "horizon",
+      "actualTerminal": null,
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 300,
+          "kind": "accepted"
+        },
+        {
+          "at": 3300,
+          "kind": "cache"
+        },
+        {
+          "at": 6300,
+          "kind": "cache"
+        },
+        {
+          "at": 9300,
+          "kind": "cache"
+        },
+        {
+          "at": 12300,
+          "kind": "cache"
+        },
+        {
+          "at": 15300,
+          "kind": "cache"
+        },
+        {
+          "at": 18300,
+          "kind": "cache"
+        },
+        {
+          "at": 21300,
+          "kind": "cache"
+        },
+        {
+          "at": 24300,
+          "kind": "cache"
+        },
+        {
+          "at": 27300,
+          "kind": "cache"
+        },
+        {
+          "at": 30300,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 30600,
+          "kind": "accepted"
+        },
+        {
+          "at": 33600,
+          "kind": "cache"
+        },
+        {
+          "at": 36600,
+          "kind": "cache"
+        },
+        {
+          "at": 39600,
+          "kind": "cache"
+        },
+        {
+          "at": 42600,
+          "kind": "cache"
+        },
+        {
+          "at": 45600,
+          "kind": "cache"
+        },
+        {
+          "at": 48600,
+          "kind": "cache"
+        },
+        {
+          "at": 51600,
+          "kind": "cache"
+        },
+        {
+          "at": 54600,
+          "kind": "cache"
+        },
+        {
+          "at": 57600,
+          "kind": "cache"
+        }
+      ]
+    },
+    {
+      "id": "cancel-in-flight",
+      "parityPassed": true,
+      "requests": 2,
+      "accepted": 1,
+      "cacheHits": 0,
+      "expectedEnd": "cancel",
+      "actualTerminal": {
+        "at": 3500,
+        "mode": "idle"
+      },
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 300,
+          "kind": "accepted"
+        },
+        {
+          "at": 3300,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        }
+      ]
+    },
+    {
+      "id": "session-deadline",
+      "parityPassed": true,
+      "requests": 3,
+      "accepted": 3,
+      "cacheHits": 17,
+      "expectedEnd": "deadline",
+      "actualTerminal": {
+        "at": 60000,
+        "mode": "idle"
+      },
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 300,
+          "kind": "accepted"
+        },
+        {
+          "at": 3300,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 3600,
+          "kind": "accepted"
+        },
+        {
+          "at": 6600,
+          "kind": "cache"
+        },
+        {
+          "at": 9600,
+          "kind": "cache"
+        },
+        {
+          "at": 12600,
+          "kind": "cache"
+        },
+        {
+          "at": 15600,
+          "kind": "cache"
+        },
+        {
+          "at": 18600,
+          "kind": "cache"
+        },
+        {
+          "at": 21600,
+          "kind": "cache"
+        },
+        {
+          "at": 24600,
+          "kind": "cache"
+        },
+        {
+          "at": 27600,
+          "kind": "cache"
+        },
+        {
+          "at": 30600,
+          "kind": "cache"
+        },
+        {
+          "at": 33600,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 33900,
+          "kind": "accepted"
+        },
+        {
+          "at": 36900,
+          "kind": "cache"
+        },
+        {
+          "at": 39900,
+          "kind": "cache"
+        },
+        {
+          "at": 42900,
+          "kind": "cache"
+        },
+        {
+          "at": 45900,
+          "kind": "cache"
+        },
+        {
+          "at": 48900,
+          "kind": "cache"
+        },
+        {
+          "at": 51900,
+          "kind": "cache"
+        },
+        {
+          "at": 54900,
+          "kind": "cache"
+        },
+        {
+          "at": 57900,
+          "kind": "cache"
+        }
+      ]
+    },
+    {
+      "id": "provider-timeout",
+      "parityPassed": true,
+      "requests": 1,
+      "accepted": 0,
+      "cacheHits": 0,
+      "expectedEnd": "timeout",
+      "actualTerminal": {
+        "at": 10000,
+        "mode": "error"
+      },
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        }
+      ]
+    },
+    {
+      "id": "below-timeout",
+      "parityPassed": true,
+      "requests": 2,
+      "accepted": 2,
+      "cacheHits": 0,
+      "expectedEnd": "blocked-positive",
+      "actualTerminal": {
+        "at": 22998,
+        "mode": "blocked"
+      },
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 9999,
+          "kind": "accepted"
+        },
+        {
+          "at": 12999,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 22998,
+          "kind": "accepted"
+        }
+      ]
+    },
+    {
+      "id": "explicit-phase-lock",
+      "parityPassed": true,
+      "requests": 8,
+      "accepted": 2,
+      "cacheHits": 0,
+      "expectedEnd": "blocked-positive",
+      "actualTerminal": {
+        "at": 22850,
+        "mode": "blocked"
+      },
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 200,
+          "kind": "accepted"
+        },
+        {
+          "at": 3200,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 3400,
+          "kind": "discard"
+        },
+        {
+          "at": 6400,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 6600,
+          "kind": "discard"
+        },
+        {
+          "at": 9600,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 9800,
+          "kind": "discard"
+        },
+        {
+          "at": 12800,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 13000,
+          "kind": "discard"
+        },
+        {
+          "at": 16000,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 16200,
+          "kind": "discard"
+        },
+        {
+          "at": 19200,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 19400,
+          "kind": "discard"
+        },
+        {
+          "at": 22650,
+          "kind": "request",
+          "capturedState": "flat",
+          "positive": true
+        },
+        {
+          "at": 22850,
+          "kind": "accepted"
+        }
+      ]
+    },
+    {
+      "id": "cancel-active-wait",
+      "parityPassed": true,
+      "requests": 7,
+      "accepted": 1,
+      "cacheHits": 0,
+      "expectedEnd": "cancel",
+      "actualTerminal": {
+        "at": 20000,
+        "mode": "idle"
+      },
+      "events": [
+        {
+          "at": 0,
+          "kind": "request",
+          "capturedState": "neutral",
+          "positive": false
+        },
+        {
+          "at": 200,
+          "kind": "accepted"
+        },
+        {
+          "at": 3200,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 3400,
+          "kind": "discard"
+        },
+        {
+          "at": 6400,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 6600,
+          "kind": "discard"
+        },
+        {
+          "at": 9600,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 9800,
+          "kind": "discard"
+        },
+        {
+          "at": 12800,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 13000,
+          "kind": "discard"
+        },
+        {
+          "at": 16000,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 16200,
+          "kind": "discard"
+        },
+        {
+          "at": 19200,
+          "kind": "request",
+          "capturedState": "detail",
+          "positive": true
+        },
+        {
+          "at": 19400,
+          "kind": "discard"
+        }
+      ]
+    }
+  ],
+  "testCodeNote": "16controlled actual-main mocked traces after wiring reviewed escalation; real provider/capture/codec/Windows latency not exercised."
+}
